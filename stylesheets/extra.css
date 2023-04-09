@@ -1,0 +1,678 @@
+@font-face {
+  /* font-family: "Hack Nerd Font"; */
+  /* src: url("font/Hack.ttf"); */
+  font-family: "OperatorMonoSSm-Medium";
+  src: url("font/OperatorMonoSSm-Medium.otf");
+}
+
+@font-face {
+  font-family: "Hack Nerd Font";
+  src: url("font/Hack.ttf");
+  /* font-family: "Fira Code";
+  src: url("font/FiraCode-Bold.ttf"); */
+}
+:root {
+  --md-source-stars-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"/></svg>');
+  /* --md-code-font: "Hack Nerd Font"; */
+  /* --md-code-font: "OperatorMonoSSm-Bold"; */
+  /* 代码的字体 */
+  --md-code-font: "OperatorMonoSSm-Medium";
+  /* 其他字体 */
+  --md-text-font: "OperatorMonoSSm-Book";
+  --md-nav-icon--open: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>folder-open-outline</title><path d="M6.1,10L4,18V8H21A2,2 0 0,0 19,6H12L10,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H19C19.9,20 20.7,19.4 20.9,18.5L23.2,10H6.1M19,18H6L7.6,12H20.6L19,18Z" /></svg>');
+  --md-nav-icon--close: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>folder-outline</title><path d="M20,18H4V8H20M20,6H12L10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6Z" /></svg>');
+
+
+  --background-secondary: #161616;
+  --background-secondary-main: #1f212f;
+  --text-title-h2: #ff79c6;
+  --text-title-h3: orange;
+  --text-title-h4:#f0fd57;
+  --text-title-h5: #c3efbb;
+  /* --text-title-h1: #ddf3a4; */
+  --Grey-Accent-1-Darker: #0b0f13;
+  --Gold-Accent-1: #d6ba7c;
+  --Pure-White: #ffffff;
+  --Grey-Accent-1-Lighten: #232830;
+  --Neutral-Accent-1-Lighten: var(--Grey-Accent-1-Lighten);
+  --Primary-Accent-1: var(--Gold-Accent-1);
+  --Neutral-Accent-1-Darker: var(--Grey-Accent-1-Darker);
+  --Pure-White-Accent-1: var(--Pure-White);
+  --nav__link--active--bgcolor: #fcec61;
+  --nav__link--active--textcolor: orangered;
+  --highlighttable-filename-bg-color: #edf7fa;
+  --tabbed-set-checked-bg-color: #fcec61;
+
+}
+/* dark-mode 下, 设置,看mkdocs.yml里的scheme配置, 然后对应你的dark-mode添加对应的配置 */
+[data-md-color-scheme="slate"][data-md-color-primary="indigo"] {
+  --nav__link--active--bgcolor: #596c77;
+  --nav__link--active--textcolor: #6c91d5;
+  --highlighttable-filename-bg-color: #313d4b;;
+  --tabbed-set-checked-bg-color: #313d4b;
+}
+.md-grid {
+  max-width: 1440px;
+}
+.md-tag {
+  background-color: #eef9ef;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+.yellow {
+  color: yellow;
+}
+.blue {
+  color: blue;
+}
+.gray {
+  color: gray;
+}
+.orange {
+  color: #e67700;
+}
+
+.md-typeset > h1 {
+  font-size: 2.4625em !important;
+  font-weight: bold !important;
+  /* color: var(--text-title-h1) !important;
+  text-shadow: -1px -1px 2px var(--background-secondary-main),
+    -1px 1px 2px var(--background-secondary-main),
+    1px -1px 2px var(--background-secondary-main),
+    1px 1px 2px var(--background-secondary-main); */
+}
+
+.md-typeset > h2 {
+  font-size: 1.8625em !important;
+  font-weight: bold !important;
+  color: var(--text-title-h2);
+  text-shadow: -1px -1px 2px var(--background-secondary-main),
+    -1px 1px 2px var(--background-secondary-main),
+    1px -1px 2px var(--background-secondary-main),
+    1px 1px 2px var(--background-secondary-main);
+}
+
+.md-typeset > h3 {
+  font-size: 1.5625em !important;
+  font-weight: bold !important;
+  color: var(--text-title-h3);
+  text-shadow: -1px -1px 2px var(--background-secondary-main),
+    -1px 1px 2px var(--background-secondary-main),
+    1px -1px 2px var(--background-secondary-main),
+    1px 1px 2px var(--background-secondary-main);
+}
+
+.md-typeset > h4 {
+  font-size: 1.3625em !important;
+  font-weight: bold !important;
+  color: var(--text-title-h4);
+  text-shadow: -1px -1px 2px var(--background-secondary-main),
+    -1px 1px 2px var(--background-secondary-main),
+    1px -1px 2px var(--background-secondary-main),
+    1px 1px 2px var(--background-secondary-main);
+}
+
+/* .tabbed-content code{
+  font-size: 0.95em !important;
+} */
+
+.md-nav__item .md-nav__link--active {
+  color: var(--nav__link--active--textcolor);
+  font-weight: bold !important;
+  background-color: var(--nav__link--active--bgcolor);
+  box-shadow: 0 0 0.2rem #0000001a, 0 0.2rem 0.4rem #0003;
+  transition: transform 0.25s cubic-bezier(0.1, 0.7, 0.1, 1), box-shadow 0.25s;
+  text-shadow: -1px -1px 2px var(--background-secondary-main),
+    -1px 1px 2px var(--background-secondary-main),
+    1px -1px 2px var(--background-secondary-main),
+    1px 1px 2px var(--background-secondary-main);
+}
+.md-nav__link:focus,
+.md-nav__link:hover {
+  color: var(--nav__link--active--textcolor);
+  background-color: var(--nav__link--active--bgcolor);
+}
+
+.md-content {
+  box-shadow: inset 0px 0px 1em 0.2em var(--Neutral-Accent-1-Darker);
+  border-top: 2px solid var(--Primary-Accent-1);
+  border-left: 2px solid var(--Primary-Accent-1);
+  /* border-bottom: 2px solid var(--Pure-White-Accent-1); */
+}
+
+.md-nav--primary .md-nav__link .md-nav__icon:after {
+  background-color: currentcolor;
+  content: "";
+  display: block;
+  height: 100%;
+  -webkit-mask-image: var(--md-nav-icon--close);
+  mask-image: var(--md-nav-icon--close);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  width: 100%;
+}
+
+.md-nav__item--nested
+  .md-nav__toggle:checked
+  ~ .md-nav__link
+  .md-nav__icon:after,
+.md-nav__item--nested
+  .md-nav__toggle:indeterminate
+  ~ .md-nav__link
+  .md-nav__icon:after {
+  transform: rotate(0deg);
+  background-color: currentcolor;
+  content: "";
+  display: block;
+  height: 100%;
+  -webkit-mask-image: var(--md-nav-icon--open);
+  mask-image: var(--md-nav-icon--open);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  width: 100%;
+}
+
+
+
+
+.tabbed-content{
+  background-color: var(--md-admonition-bg-color);
+  border: 0.05rem solid #448aff ;
+  border-radius: 0.2rem;
+  box-shadow: var(--md-shadow-z1);
+  color: var(--md-admonition-fg-color);
+  display: flow-root;
+  font-size: 0.64rem;
+  /* margin: 1.5625em 0; */
+  padding: 0.6rem 0.6rem;
+  page-break-inside: avoid;
+}
+
+.highlighttable th.filename span.filename {
+  margin-top: 0;
+  background-color: var(--highlighttable-filename-bg-color) ;
+  /* border-bottom: 1px solid #56b5d0; */
+}
+
+/* .highlighttable th.filename span.filename::before {
+  background-color: #448aff;
+  content: "";
+  height: 1rem;
+  -webkit-mask-image: var(--md-admonition-icon--note);
+  mask-image: var(--md-admonition-icon--note);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  position: relative;
+  top: 0.625em;
+  width: 1rem;
+}  */
+.tabbed-labels label{
+  border: 0.5px outset ;
+}
+/* .tabbed-set 选中后背景变色, */
+@media screen {
+  .md-typeset
+    .tabbed-set
+    > input:first-child:checked
+    ~ .tabbed-labels
+    > :first-child,
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(10):checked
+    ~ .tabbed-labels
+    > :nth-child(10),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(11):checked
+    ~ .tabbed-labels
+    > :nth-child(11),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(12):checked
+    ~ .tabbed-labels
+    > :nth-child(12),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(13):checked
+    ~ .tabbed-labels
+    > :nth-child(13),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(14):checked
+    ~ .tabbed-labels
+    > :nth-child(14),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(15):checked
+    ~ .tabbed-labels
+    > :nth-child(15),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(16):checked
+    ~ .tabbed-labels
+    > :nth-child(16),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(17):checked
+    ~ .tabbed-labels
+    > :nth-child(17),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(18):checked
+    ~ .tabbed-labels
+    > :nth-child(18),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(19):checked
+    ~ .tabbed-labels
+    > :nth-child(19),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(2):checked
+    ~ .tabbed-labels
+    > :nth-child(2),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(20):checked
+    ~ .tabbed-labels
+    > :nth-child(20),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(3):checked
+    ~ .tabbed-labels
+    > :nth-child(3),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(4):checked
+    ~ .tabbed-labels
+    > :nth-child(4),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(5):checked
+    ~ .tabbed-labels
+    > :nth-child(5),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(6):checked
+    ~ .tabbed-labels
+    > :nth-child(6),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(7):checked
+    ~ .tabbed-labels
+    > :nth-child(7),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(8):checked
+    ~ .tabbed-labels
+    > :nth-child(8),
+  .md-typeset
+    .tabbed-set
+    > input:nth-child(9):checked
+    ~ .tabbed-labels
+    > :nth-child(9) {
+    color: var(--md-accent-fg-color);
+    background-color: var(--tabbed-set-checked-bg-color);
+    border: 1px inset ;
+  }
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:first-child:checked
+    ~ .tabbed-labels
+    > :first-child,
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(10):checked
+    ~ .tabbed-labels
+    > :nth-child(10),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(11):checked
+    ~ .tabbed-labels
+    > :nth-child(11),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(12):checked
+    ~ .tabbed-labels
+    > :nth-child(12),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(13):checked
+    ~ .tabbed-labels
+    > :nth-child(13),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(14):checked
+    ~ .tabbed-labels
+    > :nth-child(14),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(15):checked
+    ~ .tabbed-labels
+    > :nth-child(15),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(16):checked
+    ~ .tabbed-labels
+    > :nth-child(16),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(17):checked
+    ~ .tabbed-labels
+    > :nth-child(17),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(18):checked
+    ~ .tabbed-labels
+    > :nth-child(18),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(19):checked
+    ~ .tabbed-labels
+    > :nth-child(19),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(2):checked
+    ~ .tabbed-labels
+    > :nth-child(2),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(20):checked
+    ~ .tabbed-labels
+    > :nth-child(20),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(3):checked
+    ~ .tabbed-labels
+    > :nth-child(3),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(4):checked
+    ~ .tabbed-labels
+    > :nth-child(4),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(5):checked
+    ~ .tabbed-labels
+    > :nth-child(5),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(6):checked
+    ~ .tabbed-labels
+    > :nth-child(6),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(7):checked
+    ~ .tabbed-labels
+    > :nth-child(7),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(8):checked
+    ~ .tabbed-labels
+    > :nth-child(8),
+  .md-typeset
+    .no-js
+    .tabbed-set
+    > input:nth-child(9):checked
+    ~ .tabbed-labels
+    > :nth-child(9),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:first-child:checked
+    ~ .tabbed-labels
+    > :first-child,
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(10):checked
+    ~ .tabbed-labels
+    > :nth-child(10),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(11):checked
+    ~ .tabbed-labels
+    > :nth-child(11),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(12):checked
+    ~ .tabbed-labels
+    > :nth-child(12),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(13):checked
+    ~ .tabbed-labels
+    > :nth-child(13),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(14):checked
+    ~ .tabbed-labels
+    > :nth-child(14),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(15):checked
+    ~ .tabbed-labels
+    > :nth-child(15),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(16):checked
+    ~ .tabbed-labels
+    > :nth-child(16),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(17):checked
+    ~ .tabbed-labels
+    > :nth-child(17),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(18):checked
+    ~ .tabbed-labels
+    > :nth-child(18),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(19):checked
+    ~ .tabbed-labels
+    > :nth-child(19),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(2):checked
+    ~ .tabbed-labels
+    > :nth-child(2),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(20):checked
+    ~ .tabbed-labels
+    > :nth-child(20),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(3):checked
+    ~ .tabbed-labels
+    > :nth-child(3),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(4):checked
+    ~ .tabbed-labels
+    > :nth-child(4),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(5):checked
+    ~ .tabbed-labels
+    > :nth-child(5),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(6):checked
+    ~ .tabbed-labels
+    > :nth-child(6),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(7):checked
+    ~ .tabbed-labels
+    > :nth-child(7),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(8):checked
+    ~ .tabbed-labels
+    > :nth-child(8),
+  .no-js
+    .md-typeset
+    .tabbed-set
+    > input:nth-child(9):checked
+    ~ .tabbed-labels
+    > :nth-child(9) {
+    border-color: var(--md-accent-fg-color);
+  }
+}
+.md-typeset
+  .tabbed-set
+  > input:first-child.focus-visible
+  ~ .tabbed-labels
+  > :first-child,
+.md-typeset
+  .tabbed-set
+  > input:nth-child(10).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(10),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(11).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(11),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(12).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(12),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(13).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(13),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(14).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(14),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(15).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(15),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(16).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(16),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(17).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(17),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(18).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(18),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(19).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(19),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(2).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(2),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(20).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(20),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(3).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(3),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(4).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(4),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(5).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(5),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(6).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(6),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(7).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(7),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(8).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(8),
+.md-typeset
+  .tabbed-set
+  > input:nth-child(9).focus-visible
+  ~ .tabbed-labels
+  > :nth-child(9) {
+  background-color: var(--md-accent-fg-color--transparent);
+}
