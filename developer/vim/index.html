@@ -1,0 +1,2889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ssh/">
+      
+      
+        <link rel="next" href="../terminal/">
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
+    
+    
+      
+        <title>vim - 斯巴拉稀</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+  
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+  
+  <style>.md-tag--html{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m0 32 34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>');}.md-tag--js{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/></svg>');}.md-tag--css{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m480 32-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"/></svg>');}.md-tag--linux{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.62 8.35c-.42.28-1.75 1.04-1.95 1.19-.39.31-.75.29-1.14-.01-.2-.16-1.53-.92-1.95-1.19-.48-.31-.45-.7.08-.92 1.64-.69 3.28-.64 4.91.03.49.21.51.6.05.9m7.22 7.28c-.93-2.09-2.2-3.99-3.84-5.66a4.31 4.31 0 0 1-1.06-1.88c-.1-.33-.17-.67-.24-1.01-.2-.88-.29-1.78-.7-2.61-.73-1.58-2-2.4-3.84-2.47-1.81.05-3.16.81-3.95 2.4-.21.43-.36.88-.46 1.34-.17.76-.32 1.55-.5 2.32-.15.65-.45 1.21-.96 1.71-1.61 1.57-2.9 3.37-3.88 5.35-.14.29-.28.58-.37.88-.19.66.29 1.12.99.96.44-.09.88-.18 1.3-.31.41-.15.57-.05.67.35.65 2.15 2.07 3.66 4.24 4.5 4.12 1.56 8.93-.66 9.97-4.58.07-.27.17-.37.47-.27.46.14.93.24 1.4.35.49.09.85-.16.92-.64.03-.26-.06-.49-.16-.73"/></svg>');}.md-tag--golang{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M400.1 194.8c-10.9 2.8-19.9 4.3-29.1 7.6-7.3 1.9-14.7 3.9-23.2 6.1l-.6.1c-4.2 1.2-4.6 1.3-8.5-3.2-4.7-5.3-8.1-8.7-14.6-11.9-19.7-9.6-38.7-6.8-56.4 4.7-21.2 13.7-32.1 34-31.8 59.2.3 25 17.4 45.5 41.2 48.9 22 2.8 39.8-4.6 53.8-20.5 2.1-2.6 4-5.3 6.1-8.3.8-1 1.5-2.1 2.3-3.3h-60.1c-6.5 0-8.1-4-5.9-9.3 4-9.7 11.5-25.9 15.9-34 .9-1.8 3.1-5.8 6.9-5.8h101.1c4.5-13.4 11.8-26.9 21.6-39.7 22.7-29.9 49.3-45.5 87.2-52 31.8-5.6 61.7-2.5 88.9 15.9 24.6 16.8 39.8 39.6 43.9 69.5 5.3 42.1-6.9 76.3-36.7 105.6-19.7 20.9-44.9 34-73.9 39.9-5.6 1-11.1 1.5-16.5 2-2.9.2-5.7.5-8.5.8-28.3-.6-54.2-8.7-76-27.4-15.3-13.3-25.9-29.6-31.1-48.5-3.7 7.3-8 14.4-14 21.1-21.6 29.6-50.9 48-87.9 52.9-30.6 4.1-58.9-1.8-83.9-20.5-23-17.5-36.1-40.5-39.5-69.2-4.1-34 5.9-65.4 26.4-91.3 22.2-29 51.5-47.4 87.3-53.9 29.3-6.2 57.3-1.9 82.6 15.3 16.5 10.9 28.3 25.8 36.1 43.9 1.9 2.8.6 4.4-3.1 5.3zm-351.8 5.6c-1.25 0-1.56-.6-.94-1.6l6.55-8.4c.62-.9 2.18-1.5 3.43-1.5H168.6c1.2 0 1.5.9.9 1.8l-5.3 8.1c-.6 1-2.2 1.9-3.1 1.9l-112.8-.3zM1.246 229.1c-1.246 0-1.558-.7-.934-1.6l6.543-8.4c.624-.9 2.182-1.6 3.425-1.6H152.4c1.2 0 1.8 1 1.5 1.9l-2.5 7.5c-.3 1.2-1.5 1.9-2.8 1.9l-147.354.3zm74.474 26.8c-.62.9-.31 1.8.93 1.8l67.95.3c.9 0 2.2-.9 2.2-2.1l.6-7.5c0-1.3-.6-2.2-1.9-2.2H83.2c-1.25 0-2.49.9-3.12 1.9l-4.36 7.8zm501.48-18c-.2-2.6-.3-4.8-.7-7-5.6-30.8-34-48.3-63.6-41.4-29 6.5-47.7 24.9-54.5 54.2-5.6 24.3 6.2 48.9 28.6 58.9 17.2 7.5 34.3 6.6 50.8-1.9 24.6-13.6 38-32.7 39.6-59.5-.1-1.2-.1-2.3-.2-3.3z"/></svg>');}.md-tag--rust{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m508.52 249.75-21.82-13.51c-.17-2-.34-3.93-.55-5.88l18.72-17.5a7.35 7.35 0 0 0-2.44-12.25l-24-9c-.54-1.88-1.08-3.78-1.67-5.64l15-20.83a7.35 7.35 0 0 0-4.79-11.54l-25.42-4.15c-.9-1.73-1.79-3.45-2.73-5.15l10.68-23.42a7.35 7.35 0 0 0-6.95-10.39l-25.82.91q-1.79-2.22-3.61-4.4L439 81.84a7.36 7.36 0 0 0-8.84-8.84L405 78.93q-2.17-1.83-4.4-3.61l.91-25.82a7.35 7.35 0 0 0-10.39-7L367.7 53.23c-1.7-.94-3.43-1.84-5.15-2.73l-4.15-25.42a7.35 7.35 0 0 0-11.54-4.79L326 35.26c-1.86-.59-3.75-1.13-5.64-1.67l-9-24a7.35 7.35 0 0 0-12.25-2.44l-17.5 18.72c-1.95-.21-3.91-.38-5.88-.55L262.25 3.48a7.35 7.35 0 0 0-12.5 0L236.24 25.3c-2 .17-3.93.34-5.88.55l-17.5-18.72a7.35 7.35 0 0 0-12.25 2.44l-9 24c-1.89.55-3.79 1.08-5.66 1.68l-20.82-15a7.35 7.35 0 0 0-11.54 4.79l-4.15 25.41c-1.73.9-3.45 1.79-5.16 2.73l-23.4-10.63a7.35 7.35 0 0 0-10.39 7l.92 25.81c-1.49 1.19-3 2.39-4.42 3.61L81.84 73A7.36 7.36 0 0 0 73 81.84L78.93 107c-1.23 1.45-2.43 2.93-3.62 4.41l-25.81-.91a7.42 7.42 0 0 0-6.37 3.26 7.35 7.35 0 0 0-.57 7.13l10.66 23.41c-.94 1.7-1.83 3.43-2.73 5.16l-25.41 4.14a7.35 7.35 0 0 0-4.79 11.54l15 20.82c-.59 1.87-1.13 3.77-1.68 5.66l-24 9a7.35 7.35 0 0 0-2.44 12.25l18.72 17.5c-.21 1.95-.38 3.91-.55 5.88l-21.86 13.5a7.35 7.35 0 0 0 0 12.5l21.82 13.51c.17 2 .34 3.92.55 5.87l-18.72 17.5a7.35 7.35 0 0 0 2.44 12.25l24 9c.55 1.89 1.08 3.78 1.68 5.65l-15 20.83a7.35 7.35 0 0 0 4.79 11.54l25.42 4.15c.9 1.72 1.79 3.45 2.73 5.14l-10.63 23.43a7.35 7.35 0 0 0 .57 7.13 7.13 7.13 0 0 0 6.37 3.26l25.83-.91q1.77 2.22 3.6 4.4L73 430.16a7.36 7.36 0 0 0 8.84 8.84l25.16-5.93q2.18 1.83 4.41 3.61l-.92 25.82a7.35 7.35 0 0 0 10.39 6.95l23.43-10.68c1.69.94 3.42 1.83 5.14 2.73l4.15 25.42a7.34 7.34 0 0 0 11.54 4.78l20.83-15c1.86.6 3.76 1.13 5.65 1.68l9 24a7.36 7.36 0 0 0 12.25 2.44l17.5-18.72c1.95.21 3.92.38 5.88.55l13.51 21.82a7.35 7.35 0 0 0 12.5 0l13.51-21.82c2-.17 3.93-.34 5.88-.56l17.5 18.73a7.36 7.36 0 0 0 12.25-2.44l9-24c1.89-.55 3.78-1.08 5.65-1.68l20.82 15a7.34 7.34 0 0 0 11.54-4.78l4.15-25.42c1.72-.9 3.45-1.79 5.15-2.73l23.42 10.68a7.35 7.35 0 0 0 10.39-6.95l-.91-25.82q2.22-1.79 4.4-3.61l25.15 5.93a7.36 7.36 0 0 0 8.84-8.84L433.07 405q1.83-2.17 3.61-4.4l25.82.91a7.23 7.23 0 0 0 6.37-3.26 7.35 7.35 0 0 0 .58-7.13l-10.68-23.42c.94-1.7 1.83-3.43 2.73-5.15l25.42-4.15a7.35 7.35 0 0 0 4.79-11.54l-15-20.83c.59-1.87 1.13-3.76 1.67-5.65l24-9a7.35 7.35 0 0 0 2.44-12.25l-18.72-17.5c.21-1.95.38-3.91.55-5.87l21.82-13.51a7.35 7.35 0 0 0 0-12.5Zm-151 129.08A13.91 13.91 0 0 0 341 389.51l-7.64 35.67a187.51 187.51 0 0 1-156.36-.74l-7.64-35.66a13.87 13.87 0 0 0-16.46-10.68l-31.51 6.76a187.38 187.38 0 0 1-16.26-19.21H258.3c1.72 0 2.89-.29 2.89-1.91v-54.19c0-1.57-1.17-1.91-2.89-1.91h-44.83l.05-34.35H262c4.41 0 23.66 1.28 29.79 25.87 1.91 7.55 6.17 32.14 9.06 40 2.89 8.82 14.6 26.46 27.1 26.46H407a187.3 187.3 0 0 1-17.34 20.09Zm25.77 34.49A15.24 15.24 0 1 1 368 398.08h.44a15.23 15.23 0 0 1 14.8 15.24Zm-225.62-.68a15.24 15.24 0 1 1-15.25-15.25h.45a15.25 15.25 0 0 1 14.75 15.25Zm-88.1-178.49 32.83-14.6a13.88 13.88 0 0 0 7.06-18.33L102.69 186h26.56v119.73h-53.6a187.65 187.65 0 0 1-6.08-71.58Zm-11.26-36.06a15.24 15.24 0 0 1 15.23-15.25H74a15.24 15.24 0 1 1-15.67 15.24Zm155.16 24.49.05-35.32h63.26c3.28 0 23.07 3.77 23.07 18.62 0 12.29-15.19 16.7-27.68 16.7ZM399 306.71c-9.8 1.13-20.63-4.12-22-10.09-5.78-32.49-15.39-39.4-30.57-51.4 18.86-11.95 38.46-29.64 38.46-53.26 0-25.52-17.49-41.59-29.4-49.48-16.76-11-35.28-13.23-40.27-13.23h-198.9a187.49 187.49 0 0 1 104.89-59.19l23.47 24.6a13.82 13.82 0 0 0 19.6.44l26.26-25a187.51 187.51 0 0 1 128.37 91.43l-18 40.57a14 14 0 0 0 7.09 18.33l34.59 15.33a187.12 187.12 0 0 1 .4 32.54h-19.28c-1.91 0-2.69 1.27-2.69 3.13v8.82C421 301 409.31 305.58 399 306.71ZM240 60.21A15.24 15.24 0 0 1 255.21 45h.45A15.24 15.24 0 1 1 240 60.21ZM436.84 214a15.24 15.24 0 1 1 0-30.48h.44a15.24 15.24 0 0 1-.44 30.48Z"/></svg>');}.md-tag--python{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>');}.md-tag--k8s{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.95 13.5h-.23c-.18.11-.26.32-.18.5l.86 2.11c.83-.53 1.46-1.32 1.79-2.25l-2.23-.36h-.01m-3.45.29a.415.415 0 0 0-.38-.29h-.08l-2.22.37c.33.92.96 1.7 1.79 2.23l.85-2.07V14c.04-.05.04-.14.04-.21m1.83.81a.378.378 0 0 0-.51-.15c-.07.05-.12.08-.15.15h-.01l-1.09 1.97c.78.26 1.62.31 2.43.12.14-.03.29-.07.43-.12l-1.09-1.97h-.01m3.45-4.57L14.1 11.5l.01.03a.37.37 0 0 0-.04.53c.05.06.11.1.18.12l.01.01 2.17.62c.07-.97-.14-1.95-.65-2.78m-3.11.16c.01.21.18.37.39.36.08 0 .15-.02.21-.05h.01l1.83-1.31a4.45 4.45 0 0 0-2.57-1.24l.13 2.24m-1.94.31c.17.11.4.08.52-.09.05-.06.07-.13.08-.21h.01l.12-2.25c-.15.02-.3.05-.46.08-.8.18-1.54.58-2.12 1.16l1.84 1.31h.01m-.99 1.69c.2-.05.32-.26.26-.46 0-.08-.05-.14-.11-.19v-.01L8.21 10c-.52.86-.74 1.84-.63 2.82l2.16-.62v-.01m1.64.66.62.3.62-.3.15-.67-.43-.53h-.69l-.43.53.16.67m10.89 1.32L20.5 6.5c-.09-.42-.37-.76-.74-.94l-7.17-3.43c-.37-.17-.81-.17-1.19 0L4.24 5.56c-.37.18-.65.52-.74.94l-1.77 7.67c-.05.2-.05.4 0 .59.01.06.03.12.05.18.03.09.08.19.13.27.03.04.05.08.09.11l4.95 6.18c.02 0 .05.04.05.06.1.09.19.16.28.22.12.08.26.14.4.17.11.05.23.05.32.05h8.12c.07 0 .14-.03.2-.05.05-.01.1-.03.14-.04.04-.02.07-.03.11-.05.05-.02.1-.05.15-.08.12-.08.23-.18.33-.28l.15-.2 4.8-5.98c.1-.12.17-.25.22-.38.02-.06.04-.12.05-.18.05-.19.05-.4 0-.59m-7.43 2.99c.02.06.04.12.07.17-.04.08-.06.17-.03.26.12.24.23.46.38.68.08.11.16.23.24.34 0 .03.03.08.04.12.12.2.06.46-.15.59s-.47.05-.59-.15c-.01-.03-.02-.05-.03-.08-.02-.03-.04-.09-.06-.09-.05-.15-.09-.28-.12-.41-.09-.25-.17-.49-.3-.72a.375.375 0 0 0-.21-.14l-.08-.16c-1.29.48-2.7.48-3.97-.01l-.1.18c-.07.01-.14.04-.19.09-.14.24-.24.49-.33.77-.03.13-.07.26-.12.4-.02 0-.04.07-.06.1a.43.43 0 0 1-.81-.29c.01-.03.03-.05.04-.08.04-.03.04-.08.04-.11.09-.12.16-.23.24-.35.16-.21.29-.45.39-.69a.54.54 0 0 0-.03-.25l.07-.18a5.611 5.611 0 0 1-2.47-3.09l-.2.03a.388.388 0 0 0-.23-.09c-.27.05-.51.13-.77.22-.11.06-.24.11-.37.15-.03.01-.07.02-.13.03a.438.438 0 0 1-.54-.27c-.07-.23.04-.47.28-.55.02 0 .05-.01.08-.01v-.01h.01l.11-.02c.14-.04.28-.04.41-.04.26 0 .52-.06.77-.12.08-.05.14-.11.19-.19l.19-.05c-.21-1.36.1-2.73.86-3.87l-.14-.12c0-.09-.03-.18-.08-.25-.2-.17-.41-.32-.64-.45-.12-.06-.24-.13-.36-.21-.02-.02-.06-.05-.08-.07l-.01-.01c-.2-.16-.25-.42-.11-.63.09-.1.21-.15.35-.15.11.01.21.05.3.12l.09.07c.1.09.19.2.28.3.18.19.37.37.58.52.08.04.17.05.26.03l.15.11c.75-.8 1.73-1.36 2.8-1.6.25-.06.52-.1.78-.12l.01-.18a.45.45 0 0 0 .14-.23c.01-.26-.01-.52-.05-.77-.03-.13-.05-.27-.06-.41V5.1c-.02-.24.15-.45.39-.48s.44.15.47.38v.22c-.01.14-.03.28-.06.41-.04.25-.06.51-.05.77.02.1.07.17.14.22l.01.19c1.36.12 2.62.73 3.56 1.72l.16-.12c.09.02.18.01.26-.03.21-.15.41-.33.58-.52.09-.1.18-.2.28-.3.03-.02.07-.06.1-.06.17-.18.44-.18.59 0 .19.16.18.43 0 .6 0 .02-.03.04-.06.06a2.495 2.495 0 0 1-.44.28c-.23.13-.45.28-.64.45-.06.07-.09.15-.08.24l-.16.14a5.44 5.44 0 0 1 .88 3.86l.19.05c.04.08.11.14.19.18.25.07.51.11.77.14h.41c.03.03.08.04.12.05.24.03.4.25.37.49-.05.23-.24.4-.48.37-.03-.01-.07-.01-.07-.02v-.01c-.06 0-.1-.01-.14-.02-.13-.04-.25-.09-.36-.15-.26-.1-.5-.17-.77-.21-.09 0-.17 0-.23.08-.07-.01-.13-.02-.19-.03-.41 1.31-1.31 2.41-2.47 3.11Z"/></svg>');}.md-tag--docker{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>');}.md-tag--bash{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9h2.31l.32-3h2l-.32 3h2l.32-3h2l-.32 3H15v2h-1.9l-.2 2H15v2h-2.31l-.32 3h-2l.32-3h-2l-.32 3h-2l.32-3H5v-2h1.9l.2-2H5V9m4.1 2-.2 2h2l.2-2M19 6h-2v8h2m0 2h-2v2h2Z"/></svg>');}.md-tag--newbie{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 6h16v10H4m16 2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4c-1.11 0-2 .89-2 2v10a2 2 0 0 0 2 2H0v2h24v-2h-4Z"/></svg>');}.md-tag--mysql{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.68 12.32a4.49 4.49 0 0 0-6.36.01 4.49 4.49 0 0 0 0 6.36 4.508 4.508 0 0 0 5.57.63L21 22.39 22.39 21l-3.09-3.11c1.13-1.77.87-4.09-.62-5.57m-1.41 4.95c-.98.98-2.56.97-3.54 0-.97-.98-.97-2.56.01-3.54.97-.97 2.55-.97 3.53 0 .97.98.97 2.56 0 3.54M10.9 20.1a6.527 6.527 0 0 1-1.48-2.32C6.27 17.25 4 15.76 4 14v3c0 2.21 3.58 4 8 4-.4-.26-.77-.56-1.1-.9M4 9v3c0 1.68 2.07 3.12 5 3.7v-.2c0-.93.2-1.85.58-2.69C6.34 12.3 4 10.79 4 9m8-6C7.58 3 4 4.79 4 7c0 2 3 3.68 6.85 4h.05c1.2-1.26 2.86-2 4.6-2 .91 0 1.81.19 2.64.56A3.215 3.215 0 0 0 20 7c0-2.21-3.58-4-8-4Z"/></svg>');}</style>
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="斯巴拉稀" class="md-header__button md-logo" aria-label="斯巴拉稀" data-md-component="logo">
+      
+  <img src="../../images/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            斯巴拉稀
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              vim
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../linux/bash/getting-started/" class="md-tabs__link">
+        linux
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../go/env/" class="md-tabs__link">
+        go
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../python/env/" class="md-tabs__link">
+        python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../c/quick-start/" class="md-tabs__link">
+        c
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rust/basic/env/" class="md-tabs__link">
+        rust
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../db/mysql/env/" class="md-tabs__link">
+        db
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../devops/docker/architecture/" class="md-tabs__link">
+        devops
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cs/os/" class="md-tabs__link">
+        CS
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../git/" class="md-tabs__link md-tabs__link--active">
+        程序员预备
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../tags/" class="md-tabs__link">
+      tags
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="斯巴拉稀" class="md-nav__button md-logo" aria-label="斯巴拉稀" data-md-component="logo">
+      
+  <img src="../../images/favicon.png" alt="logo">
+
+    </a>
+    斯巴拉稀
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          bash
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          bash
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/bash/getting-started/" class="md-nav__link">
+        getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/bash/sed/" class="md-nav__link">
+        sed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/bash/%E7%BB%BC%E5%90%88%E4%BE%8B%E5%AD%90/" class="md-nav__link">
+        综合例子
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          性能分析
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          性能分析
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/systems-performance/cpu/" class="md-nav__link">
+        cpu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/systems-performance/mem/" class="md-nav__link">
+        mem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/systems-performance/io/" class="md-nav__link">
+        io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/systems-performance/network/" class="md-nav__link">
+        network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/systems-performance/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/" class="md-nav__link">
+        服务器问题集锦
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          go
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          go
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go/env/" class="md-nav__link">
+        环境准备
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/env/" class="md-nav__link">
+        环境准备
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          c
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          c
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/quick-start/" class="md-nav__link">
+        快速入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/pointer/" class="md-nav__link">
+        指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/structure_mem/" class="md-nav__link">
+        结构体与内存
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/file/" class="md-nav__link">
+        文件操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/func/" class="md-nav__link">
+        函数调用过程
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          beginning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          beginning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rust/basic/env/" class="md-nav__link">
+        环境准备
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          db
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          db
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+          mysql
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          mysql
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/env/" class="md-nav__link">
+        环境准备
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/backup-recovery/" class="md-nav__link">
+        备份与恢复
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/" class="md-nav__link">
+        索引底层
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/sql/" class="md-nav__link">
+        SQL语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/optimization/" class="md-nav__link">
+        SQL优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/binlog/" class="md-nav__link">
+        二进制日志
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/redo/" class="md-nav__link">
+        redo日志
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/undo/" class="md-nav__link">
+        undo日志
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/transaction/" class="md-nav__link">
+        事务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/lock/" class="md-nav__link">
+        锁
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mysql/ha/" class="md-nav__link">
+        高可用
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          redis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          redis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/redis/install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          kafka
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          kafka
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/kafka/install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          mongodb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          mongodb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/mongodb/install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          elasticsearch
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          elasticsearch
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/es/env/" class="md-nav__link">
+        Env
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          devops
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          devops
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+          docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/architecture/" class="md-nav__link">
+        架构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/env/" class="md-nav__link">
+        环境准备
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/docker/" class="md-nav__link">
+        常用命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/ip/" class="md-nav__link">
+        流量走向分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/docker-file/" class="md-nav__link">
+        dockerfile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/namespace/" class="md-nav__link">
+        namespace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/cgroup/" class="md-nav__link">
+        cgroup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/union-fs/" class="md-nav__link">
+        union fs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/network/" class="md-nav__link">
+        network
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          k8s
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          k8s
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/k8s/env/" class="md-nav__link">
+        环境准备
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          CS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          CS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/os/" class="md-nav__link">
+        os
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          程序员预备
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          程序员预备
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssh/" class="md-nav__link">
+        ssh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        vim
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal/" class="md-nav__link">
+        terminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weird/" class="md-nav__link">
+        其他需求
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        tags
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="TOC">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+  <h1>vim</h1>
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-0-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-0-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-0-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-0-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-0-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-0-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-0-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-0-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-0-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-0-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-0-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-0-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-0-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-0-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-0-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-0-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-0-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-0-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-0-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-0-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-0-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-0-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-0-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-0-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-0-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-0-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-0-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-0-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-0-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-0-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-0-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-0-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-0-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-0-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-0-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-0-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-0-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-0-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-0-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-0-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-0-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-0-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-0-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-0-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-0-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-0-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-0-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-0-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-0-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-0-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#__codelineno-0-102">102</a></span>
+<span class="normal"><a href="#__codelineno-0-103">103</a></span>
+<span class="normal"><a href="#__codelineno-0-104">104</a></span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#__codelineno-0-111">111</a></span>
+<span class="normal"><a href="#__codelineno-0-112">112</a></span>
+<span class="normal"><a href="#__codelineno-0-113">113</a></span>
+<span class="normal"><a href="#__codelineno-0-114">114</a></span>
+<span class="normal"><a href="#__codelineno-0-115">115</a></span>
+<span class="normal"><a href="#__codelineno-0-116">116</a></span>
+<span class="normal"><a href="#__codelineno-0-117">117</a></span>
+<span class="normal"><a href="#__codelineno-0-118">118</a></span>
+<span class="normal"><a href="#__codelineno-0-119">119</a></span>
+<span class="normal"><a href="#__codelineno-0-120">120</a></span>
+<span class="normal"><a href="#__codelineno-0-121">121</a></span>
+<span class="normal"><a href="#__codelineno-0-122">122</a></span>
+<span class="normal"><a href="#__codelineno-0-123">123</a></span>
+<span class="normal"><a href="#__codelineno-0-124">124</a></span>
+<span class="normal"><a href="#__codelineno-0-125">125</a></span>
+<span class="normal"><a href="#__codelineno-0-126">126</a></span>
+<span class="normal"><a href="#__codelineno-0-127">127</a></span>
+<span class="normal"><a href="#__codelineno-0-128">128</a></span>
+<span class="normal"><a href="#__codelineno-0-129">129</a></span>
+<span class="normal"><a href="#__codelineno-0-130">130</a></span>
+<span class="normal"><a href="#__codelineno-0-131">131</a></span>
+<span class="normal"><a href="#__codelineno-0-132">132</a></span>
+<span class="normal"><a href="#__codelineno-0-133">133</a></span>
+<span class="normal"><a href="#__codelineno-0-134">134</a></span>
+<span class="normal"><a href="#__codelineno-0-135">135</a></span>
+<span class="normal"><a href="#__codelineno-0-136">136</a></span>
+<span class="normal"><a href="#__codelineno-0-137">137</a></span>
+<span class="normal"><a href="#__codelineno-0-138">138</a></span>
+<span class="normal"><a href="#__codelineno-0-139">139</a></span>
+<span class="normal"><a href="#__codelineno-0-140">140</a></span>
+<span class="normal"><a href="#__codelineno-0-141">141</a></span>
+<span class="normal"><a href="#__codelineno-0-142">142</a></span>
+<span class="normal"><a href="#__codelineno-0-143">143</a></span>
+<span class="normal"><a href="#__codelineno-0-144">144</a></span>
+<span class="normal"><a href="#__codelineno-0-145">145</a></span>
+<span class="normal"><a href="#__codelineno-0-146">146</a></span>
+<span class="normal"><a href="#__codelineno-0-147">147</a></span>
+<span class="normal"><a href="#__codelineno-0-148">148</a></span>
+<span class="normal"><a href="#__codelineno-0-149">149</a></span>
+<span class="normal"><a href="#__codelineno-0-150">150</a></span>
+<span class="normal"><a href="#__codelineno-0-151">151</a></span>
+<span class="normal"><a href="#__codelineno-0-152">152</a></span>
+<span class="normal"><a href="#__codelineno-0-153">153</a></span>
+<span class="normal"><a href="#__codelineno-0-154">154</a></span>
+<span class="normal"><a href="#__codelineno-0-155">155</a></span>
+<span class="normal"><a href="#__codelineno-0-156">156</a></span>
+<span class="normal"><a href="#__codelineno-0-157">157</a></span>
+<span class="normal"><a href="#__codelineno-0-158">158</a></span>
+<span class="normal"><a href="#__codelineno-0-159">159</a></span>
+<span class="normal"><a href="#__codelineno-0-160">160</a></span>
+<span class="normal"><a href="#__codelineno-0-161">161</a></span>
+<span class="normal"><a href="#__codelineno-0-162">162</a></span>
+<span class="normal"><a href="#__codelineno-0-163">163</a></span>
+<span class="normal"><a href="#__codelineno-0-164">164</a></span>
+<span class="normal"><a href="#__codelineno-0-165">165</a></span>
+<span class="normal"><a href="#__codelineno-0-166">166</a></span>
+<span class="normal"><a href="#__codelineno-0-167">167</a></span>
+<span class="normal"><a href="#__codelineno-0-168">168</a></span>
+<span class="normal"><a href="#__codelineno-0-169">169</a></span>
+<span class="normal"><a href="#__codelineno-0-170">170</a></span>
+<span class="normal"><a href="#__codelineno-0-171">171</a></span>
+<span class="normal"><a href="#__codelineno-0-172">172</a></span>
+<span class="normal"><a href="#__codelineno-0-173">173</a></span>
+<span class="normal"><a href="#__codelineno-0-174">174</a></span>
+<span class="normal"><a href="#__codelineno-0-175">175</a></span>
+<span class="normal"><a href="#__codelineno-0-176">176</a></span>
+<span class="normal"><a href="#__codelineno-0-177">177</a></span>
+<span class="normal"><a href="#__codelineno-0-178">178</a></span>
+<span class="normal"><a href="#__codelineno-0-179">179</a></span>
+<span class="normal"><a href="#__codelineno-0-180">180</a></span>
+<span class="normal"><a href="#__codelineno-0-181">181</a></span>
+<span class="normal"><a href="#__codelineno-0-182">182</a></span>
+<span class="normal"><a href="#__codelineno-0-183">183</a></span>
+<span class="normal"><a href="#__codelineno-0-184">184</a></span>
+<span class="normal"><a href="#__codelineno-0-185">185</a></span>
+<span class="normal"><a href="#__codelineno-0-186">186</a></span>
+<span class="normal"><a href="#__codelineno-0-187">187</a></span>
+<span class="normal"><a href="#__codelineno-0-188">188</a></span>
+<span class="normal"><a href="#__codelineno-0-189">189</a></span>
+<span class="normal"><a href="#__codelineno-0-190">190</a></span>
+<span class="normal"><a href="#__codelineno-0-191">191</a></span>
+<span class="normal"><a href="#__codelineno-0-192">192</a></span>
+<span class="normal"><a href="#__codelineno-0-193">193</a></span>
+<span class="normal"><a href="#__codelineno-0-194">194</a></span>
+<span class="normal"><a href="#__codelineno-0-195">195</a></span>
+<span class="normal"><a href="#__codelineno-0-196">196</a></span>
+<span class="normal"><a href="#__codelineno-0-197">197</a></span>
+<span class="normal"><a href="#__codelineno-0-198">198</a></span>
+<span class="normal"><a href="#__codelineno-0-199">199</a></span>
+<span class="normal"><a href="#__codelineno-0-200">200</a></span>
+<span class="normal"><a href="#__codelineno-0-201">201</a></span>
+<span class="normal"><a href="#__codelineno-0-202">202</a></span>
+<span class="normal"><a href="#__codelineno-0-203">203</a></span>
+<span class="normal"><a href="#__codelineno-0-204">204</a></span>
+<span class="normal"><a href="#__codelineno-0-205">205</a></span>
+<span class="normal"><a href="#__codelineno-0-206">206</a></span>
+<span class="normal"><a href="#__codelineno-0-207">207</a></span>
+<span class="normal"><a href="#__codelineno-0-208">208</a></span>
+<span class="normal"><a href="#__codelineno-0-209">209</a></span>
+<span class="normal"><a href="#__codelineno-0-210">210</a></span>
+<span class="normal"><a href="#__codelineno-0-211">211</a></span>
+<span class="normal"><a href="#__codelineno-0-212">212</a></span>
+<span class="normal"><a href="#__codelineno-0-213">213</a></span>
+<span class="normal"><a href="#__codelineno-0-214">214</a></span>
+<span class="normal"><a href="#__codelineno-0-215">215</a></span>
+<span class="normal"><a href="#__codelineno-0-216">216</a></span>
+<span class="normal"><a href="#__codelineno-0-217">217</a></span>
+<span class="normal"><a href="#__codelineno-0-218">218</a></span>
+<span class="normal"><a href="#__codelineno-0-219">219</a></span>
+<span class="normal"><a href="#__codelineno-0-220">220</a></span>
+<span class="normal"><a href="#__codelineno-0-221">221</a></span>
+<span class="normal"><a href="#__codelineno-0-222">222</a></span>
+<span class="normal"><a href="#__codelineno-0-223">223</a></span>
+<span class="normal"><a href="#__codelineno-0-224">224</a></span>
+<span class="normal"><a href="#__codelineno-0-225">225</a></span>
+<span class="normal"><a href="#__codelineno-0-226">226</a></span>
+<span class="normal"><a href="#__codelineno-0-227">227</a></span>
+<span class="normal"><a href="#__codelineno-0-228">228</a></span>
+<span class="normal"><a href="#__codelineno-0-229">229</a></span>
+<span class="normal"><a href="#__codelineno-0-230">230</a></span>
+<span class="normal"><a href="#__codelineno-0-231">231</a></span>
+<span class="normal"><a href="#__codelineno-0-232">232</a></span>
+<span class="normal"><a href="#__codelineno-0-233">233</a></span>
+<span class="normal"><a href="#__codelineno-0-234">234</a></span>
+<span class="normal"><a href="#__codelineno-0-235">235</a></span>
+<span class="normal"><a href="#__codelineno-0-236">236</a></span>
+<span class="normal"><a href="#__codelineno-0-237">237</a></span>
+<span class="normal"><a href="#__codelineno-0-238">238</a></span>
+<span class="normal"><a href="#__codelineno-0-239">239</a></span>
+<span class="normal"><a href="#__codelineno-0-240">240</a></span>
+<span class="normal"><a href="#__codelineno-0-241">241</a></span>
+<span class="normal"><a href="#__codelineno-0-242">242</a></span>
+<span class="normal"><a href="#__codelineno-0-243">243</a></span>
+<span class="normal"><a href="#__codelineno-0-244">244</a></span>
+<span class="normal"><a href="#__codelineno-0-245">245</a></span>
+<span class="normal"><a href="#__codelineno-0-246">246</a></span>
+<span class="normal"><a href="#__codelineno-0-247">247</a></span>
+<span class="normal"><a href="#__codelineno-0-248">248</a></span>
+<span class="normal"><a href="#__codelineno-0-249">249</a></span>
+<span class="normal"><a href="#__codelineno-0-250">250</a></span>
+<span class="normal"><a href="#__codelineno-0-251">251</a></span>
+<span class="normal"><a href="#__codelineno-0-252">252</a></span>
+<span class="normal"><a href="#__codelineno-0-253">253</a></span>
+<span class="normal"><a href="#__codelineno-0-254">254</a></span>
+<span class="normal"><a href="#__codelineno-0-255">255</a></span>
+<span class="normal"><a href="#__codelineno-0-256">256</a></span>
+<span class="normal"><a href="#__codelineno-0-257">257</a></span>
+<span class="normal"><a href="#__codelineno-0-258">258</a></span>
+<span class="normal"><a href="#__codelineno-0-259">259</a></span>
+<span class="normal"><a href="#__codelineno-0-260">260</a></span>
+<span class="normal"><a href="#__codelineno-0-261">261</a></span>
+<span class="normal"><a href="#__codelineno-0-262">262</a></span>
+<span class="normal"><a href="#__codelineno-0-263">263</a></span>
+<span class="normal"><a href="#__codelineno-0-264">264</a></span>
+<span class="normal"><a href="#__codelineno-0-265">265</a></span>
+<span class="normal"><a href="#__codelineno-0-266">266</a></span>
+<span class="normal"><a href="#__codelineno-0-267">267</a></span>
+<span class="normal"><a href="#__codelineno-0-268">268</a></span>
+<span class="normal"><a href="#__codelineno-0-269">269</a></span>
+<span class="normal"><a href="#__codelineno-0-270">270</a></span>
+<span class="normal"><a href="#__codelineno-0-271">271</a></span>
+<span class="normal"><a href="#__codelineno-0-272">272</a></span>
+<span class="normal"><a href="#__codelineno-0-273">273</a></span>
+<span class="normal"><a href="#__codelineno-0-274">274</a></span>
+<span class="normal"><a href="#__codelineno-0-275">275</a></span>
+<span class="normal"><a href="#__codelineno-0-276">276</a></span>
+<span class="normal"><a href="#__codelineno-0-277">277</a></span>
+<span class="normal"><a href="#__codelineno-0-278">278</a></span>
+<span class="normal"><a href="#__codelineno-0-279">279</a></span>
+<span class="normal"><a href="#__codelineno-0-280">280</a></span>
+<span class="normal"><a href="#__codelineno-0-281">281</a></span>
+<span class="normal"><a href="#__codelineno-0-282">282</a></span>
+<span class="normal"><a href="#__codelineno-0-283">283</a></span>
+<span class="normal"><a href="#__codelineno-0-284">284</a></span>
+<span class="normal"><a href="#__codelineno-0-285">285</a></span>
+<span class="normal"><a href="#__codelineno-0-286">286</a></span>
+<span class="normal"><a href="#__codelineno-0-287">287</a></span>
+<span class="normal"><a href="#__codelineno-0-288">288</a></span>
+<span class="normal"><a href="#__codelineno-0-289">289</a></span>
+<span class="normal"><a href="#__codelineno-0-290">290</a></span>
+<span class="normal"><a href="#__codelineno-0-291">291</a></span>
+<span class="normal"><a href="#__codelineno-0-292">292</a></span>
+<span class="normal"><a href="#__codelineno-0-293">293</a></span>
+<span class="normal"><a href="#__codelineno-0-294">294</a></span>
+<span class="normal"><a href="#__codelineno-0-295">295</a></span>
+<span class="normal"><a href="#__codelineno-0-296">296</a></span>
+<span class="normal"><a href="#__codelineno-0-297">297</a></span>
+<span class="normal"><a href="#__codelineno-0-298">298</a></span>
+<span class="normal"><a href="#__codelineno-0-299">299</a></span>
+<span class="normal"><a href="#__codelineno-0-300">300</a></span>
+<span class="normal"><a href="#__codelineno-0-301">301</a></span>
+<span class="normal"><a href="#__codelineno-0-302">302</a></span>
+<span class="normal"><a href="#__codelineno-0-303">303</a></span>
+<span class="normal"><a href="#__codelineno-0-304">304</a></span>
+<span class="normal"><a href="#__codelineno-0-305">305</a></span>
+<span class="normal"><a href="#__codelineno-0-306">306</a></span>
+<span class="normal"><a href="#__codelineno-0-307">307</a></span>
+<span class="normal"><a href="#__codelineno-0-308">308</a></span>
+<span class="normal"><a href="#__codelineno-0-309">309</a></span>
+<span class="normal"><a href="#__codelineno-0-310">310</a></span>
+<span class="normal"><a href="#__codelineno-0-311">311</a></span>
+<span class="normal"><a href="#__codelineno-0-312">312</a></span>
+<span class="normal"><a href="#__codelineno-0-313">313</a></span>
+<span class="normal"><a href="#__codelineno-0-314">314</a></span>
+<span class="normal"><a href="#__codelineno-0-315">315</a></span>
+<span class="normal"><a href="#__codelineno-0-316">316</a></span>
+<span class="normal"><a href="#__codelineno-0-317">317</a></span>
+<span class="normal"><a href="#__codelineno-0-318">318</a></span>
+<span class="normal"><a href="#__codelineno-0-319">319</a></span>
+<span class="normal"><a href="#__codelineno-0-320">320</a></span>
+<span class="normal"><a href="#__codelineno-0-321">321</a></span>
+<span class="normal"><a href="#__codelineno-0-322">322</a></span>
+<span class="normal"><a href="#__codelineno-0-323">323</a></span>
+<span class="normal"><a href="#__codelineno-0-324">324</a></span>
+<span class="normal"><a href="#__codelineno-0-325">325</a></span>
+<span class="normal"><a href="#__codelineno-0-326">326</a></span>
+<span class="normal"><a href="#__codelineno-0-327">327</a></span>
+<span class="normal"><a href="#__codelineno-0-328">328</a></span>
+<span class="normal"><a href="#__codelineno-0-329">329</a></span>
+<span class="normal"><a href="#__codelineno-0-330">330</a></span>
+<span class="normal"><a href="#__codelineno-0-331">331</a></span>
+<span class="normal"><a href="#__codelineno-0-332">332</a></span>
+<span class="normal"><a href="#__codelineno-0-333">333</a></span>
+<span class="normal"><a href="#__codelineno-0-334">334</a></span>
+<span class="normal"><a href="#__codelineno-0-335">335</a></span>
+<span class="normal"><a href="#__codelineno-0-336">336</a></span>
+<span class="normal"><a href="#__codelineno-0-337">337</a></span>
+<span class="normal"><a href="#__codelineno-0-338">338</a></span>
+<span class="normal"><a href="#__codelineno-0-339">339</a></span>
+<span class="normal"><a href="#__codelineno-0-340">340</a></span>
+<span class="normal"><a href="#__codelineno-0-341">341</a></span>
+<span class="normal"><a href="#__codelineno-0-342">342</a></span>
+<span class="normal"><a href="#__codelineno-0-343">343</a></span>
+<span class="normal"><a href="#__codelineno-0-344">344</a></span>
+<span class="normal"><a href="#__codelineno-0-345">345</a></span>
+<span class="normal"><a href="#__codelineno-0-346">346</a></span>
+<span class="normal"><a href="#__codelineno-0-347">347</a></span>
+<span class="normal"><a href="#__codelineno-0-348">348</a></span>
+<span class="normal"><a href="#__codelineno-0-349">349</a></span>
+<span class="normal"><a href="#__codelineno-0-350">350</a></span>
+<span class="normal"><a href="#__codelineno-0-351">351</a></span>
+<span class="normal"><a href="#__codelineno-0-352">352</a></span>
+<span class="normal"><a href="#__codelineno-0-353">353</a></span>
+<span class="normal"><a href="#__codelineno-0-354">354</a></span>
+<span class="normal"><a href="#__codelineno-0-355">355</a></span>
+<span class="normal"><a href="#__codelineno-0-356">356</a></span>
+<span class="normal"><a href="#__codelineno-0-357">357</a></span>
+<span class="normal"><a href="#__codelineno-0-358">358</a></span>
+<span class="normal"><a href="#__codelineno-0-359">359</a></span>
+<span class="normal"><a href="#__codelineno-0-360">360</a></span>
+<span class="normal"><a href="#__codelineno-0-361">361</a></span>
+<span class="normal"><a href="#__codelineno-0-362">362</a></span>
+<span class="normal"><a href="#__codelineno-0-363">363</a></span>
+<span class="normal"><a href="#__codelineno-0-364">364</a></span>
+<span class="normal"><a href="#__codelineno-0-365">365</a></span>
+<span class="normal"><a href="#__codelineno-0-366">366</a></span>
+<span class="normal"><a href="#__codelineno-0-367">367</a></span>
+<span class="normal"><a href="#__codelineno-0-368">368</a></span>
+<span class="normal"><a href="#__codelineno-0-369">369</a></span>
+<span class="normal"><a href="#__codelineno-0-370">370</a></span>
+<span class="normal"><a href="#__codelineno-0-371">371</a></span>
+<span class="normal"><a href="#__codelineno-0-372">372</a></span>
+<span class="normal"><a href="#__codelineno-0-373">373</a></span>
+<span class="normal"><a href="#__codelineno-0-374">374</a></span>
+<span class="normal"><a href="#__codelineno-0-375">375</a></span>
+<span class="normal"><a href="#__codelineno-0-376">376</a></span>
+<span class="normal"><a href="#__codelineno-0-377">377</a></span>
+<span class="normal"><a href="#__codelineno-0-378">378</a></span>
+<span class="normal"><a href="#__codelineno-0-379">379</a></span>
+<span class="normal"><a href="#__codelineno-0-380">380</a></span>
+<span class="normal"><a href="#__codelineno-0-381">381</a></span>
+<span class="normal"><a href="#__codelineno-0-382">382</a></span>
+<span class="normal"><a href="#__codelineno-0-383">383</a></span>
+<span class="normal"><a href="#__codelineno-0-384">384</a></span>
+<span class="normal"><a href="#__codelineno-0-385">385</a></span>
+<span class="normal"><a href="#__codelineno-0-386">386</a></span>
+<span class="normal"><a href="#__codelineno-0-387">387</a></span>
+<span class="normal"><a href="#__codelineno-0-388">388</a></span>
+<span class="normal"><a href="#__codelineno-0-389">389</a></span>
+<span class="normal"><a href="#__codelineno-0-390">390</a></span>
+<span class="normal"><a href="#__codelineno-0-391">391</a></span>
+<span class="normal"><a href="#__codelineno-0-392">392</a></span>
+<span class="normal"><a href="#__codelineno-0-393">393</a></span>
+<span class="normal"><a href="#__codelineno-0-394">394</a></span>
+<span class="normal"><a href="#__codelineno-0-395">395</a></span>
+<span class="normal"><a href="#__codelineno-0-396">396</a></span>
+<span class="normal"><a href="#__codelineno-0-397">397</a></span>
+<span class="normal"><a href="#__codelineno-0-398">398</a></span>
+<span class="normal"><a href="#__codelineno-0-399">399</a></span>
+<span class="normal"><a href="#__codelineno-0-400">400</a></span>
+<span class="normal"><a href="#__codelineno-0-401">401</a></span>
+<span class="normal"><a href="#__codelineno-0-402">402</a></span>
+<span class="normal"><a href="#__codelineno-0-403">403</a></span>
+<span class="normal"><a href="#__codelineno-0-404">404</a></span>
+<span class="normal"><a href="#__codelineno-0-405">405</a></span>
+<span class="normal"><a href="#__codelineno-0-406">406</a></span>
+<span class="normal"><a href="#__codelineno-0-407">407</a></span>
+<span class="normal"><a href="#__codelineno-0-408">408</a></span>
+<span class="normal"><a href="#__codelineno-0-409">409</a></span>
+<span class="normal"><a href="#__codelineno-0-410">410</a></span>
+<span class="normal"><a href="#__codelineno-0-411">411</a></span>
+<span class="normal"><a href="#__codelineno-0-412">412</a></span>
+<span class="normal"><a href="#__codelineno-0-413">413</a></span>
+<span class="normal"><a href="#__codelineno-0-414">414</a></span>
+<span class="normal"><a href="#__codelineno-0-415">415</a></span>
+<span class="normal"><a href="#__codelineno-0-416">416</a></span>
+<span class="normal"><a href="#__codelineno-0-417">417</a></span>
+<span class="normal"><a href="#__codelineno-0-418">418</a></span>
+<span class="normal"><a href="#__codelineno-0-419">419</a></span>
+<span class="normal"><a href="#__codelineno-0-420">420</a></span>
+<span class="normal"><a href="#__codelineno-0-421">421</a></span>
+<span class="normal"><a href="#__codelineno-0-422">422</a></span>
+<span class="normal"><a href="#__codelineno-0-423">423</a></span>
+<span class="normal"><a href="#__codelineno-0-424">424</a></span>
+<span class="normal"><a href="#__codelineno-0-425">425</a></span>
+<span class="normal"><a href="#__codelineno-0-426">426</a></span>
+<span class="normal"><a href="#__codelineno-0-427">427</a></span>
+<span class="normal"><a href="#__codelineno-0-428">428</a></span>
+<span class="normal"><a href="#__codelineno-0-429">429</a></span>
+<span class="normal"><a href="#__codelineno-0-430">430</a></span>
+<span class="normal"><a href="#__codelineno-0-431">431</a></span>
+<span class="normal"><a href="#__codelineno-0-432">432</a></span>
+<span class="normal"><a href="#__codelineno-0-433">433</a></span>
+<span class="normal"><a href="#__codelineno-0-434">434</a></span>
+<span class="normal"><a href="#__codelineno-0-435">435</a></span>
+<span class="normal"><a href="#__codelineno-0-436">436</a></span>
+<span class="normal"><a href="#__codelineno-0-437">437</a></span>
+<span class="normal"><a href="#__codelineno-0-438">438</a></span>
+<span class="normal"><a href="#__codelineno-0-439">439</a></span>
+<span class="normal"><a href="#__codelineno-0-440">440</a></span>
+<span class="normal"><a href="#__codelineno-0-441">441</a></span>
+<span class="normal"><a href="#__codelineno-0-442">442</a></span>
+<span class="normal"><a href="#__codelineno-0-443">443</a></span>
+<span class="normal"><a href="#__codelineno-0-444">444</a></span>
+<span class="normal"><a href="#__codelineno-0-445">445</a></span>
+<span class="normal"><a href="#__codelineno-0-446">446</a></span>
+<span class="normal"><a href="#__codelineno-0-447">447</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&quot; basic settings
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>set history=500
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>set shortmess=atI   &quot; 启动的时候不显示那个援助乌干达儿童的提示 
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>&quot; Use Vim settings, rather than Vi settings (much better!).
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>&quot; This must be first, because it changes other options as a side effect.
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>set nocompatible  &quot;去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>set nobackup &quot;不备份
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>set ruler       &quot; show the cursor position all the time
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>set showcmd     &quot; display incomplete commands
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>set incsearch       &quot; do incremental searching
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>set nu
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>set foldenable      &quot; 允许折叠  
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>set foldmethod=manual   &quot; 手动折叠 
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>&quot;Always show current position
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>set ruler
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>&quot; Height of the command bar
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>set cmdheight=2
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>syntax on
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>let $LANG=&#39;en&#39;
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>set langmenu=en
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>let g:coc_global_extensions = [
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>  \  &quot;coc-explorer&quot;,
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>  \  &quot;coc-translator&quot;,
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>  \  &quot;coc-python&quot;,
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>  \  &quot;coc-vimlsp&quot;,
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>  \ &quot;coc-gitignore&quot;,
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>  \  &quot;coc-json&quot;,
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>  \  &quot;coc-rust-analyzer&quot;,
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>  \  &quot;coc-go&quot;,
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>  \  &quot;coc-yaml&quot;,
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>  \  &quot;coc-syntax&quot;,
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>  \  &quot;coc-html&quot;
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>\ ]
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>autocmd BufWritePre *.go :silent call CocAction(&#39;runCommand&#39;, &#39;editor.action.organizeImport&#39;)
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>inoremap &lt;silent&gt;&lt;expr&gt; &lt;TAB&gt;
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>      \ pumvisible() ? &quot;\&lt;C-n&gt;&quot; :
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>      \ &lt;SID&gt;check_back_space() ? &quot;\&lt;TAB&gt;&quot; :
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>      \ coc#refresh()
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>inoremap &lt;expr&gt;&lt;S-TAB&gt; pumvisible() ? &quot;\&lt;C-p&gt;&quot; : &quot;\&lt;C-h&gt;&quot;
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>function! s:check_back_space() abort
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>  let col = col(&#39;.&#39;) - 1
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>  return !col || getline(&#39;.&#39;)[col - 1]  =~# &#39;\s&#39;
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>endfunction
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>&quot; 提示 主动的快捷键
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>if has(&#39;nvim&#39;)
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>  inoremap &lt;silent&gt;&lt;expr&gt; &lt;c-o&gt; coc#refresh()
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>else
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>  inoremap &lt;silent&gt;&lt;expr&gt; &lt;c-o&gt; coc#refresh()
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>endif
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>nmap &lt;silent&gt; [g &lt;Plug&gt;(coc-diagnostic-prev)
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>nmap &lt;silent&gt; ]g &lt;Plug&gt;(coc-diagnostic-next)
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>inoremap &lt;silent&gt;&lt;expr&gt; &lt;cr&gt; pumvisible() ? coc#_select_confirm()
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>                              \: &quot;\&lt;C-g&gt;u\&lt;CR&gt;\&lt;c-r&gt;=coc#on_enter()\&lt;CR&gt;&quot;
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>&quot; GoTo code navigation.
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>nmap &lt;silent&gt; gd &lt;Plug&gt;(coc-definition)
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>nmap &lt;silent&gt; gy &lt;Plug&gt;(coc-type-definition)
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>nmap &lt;silent&gt; gi &lt;Plug&gt;(coc-implementation)
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>nmap &lt;silent&gt; gr &lt;Plug&gt;(coc-references)
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>&quot; Use K to show documentation in preview window.
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>&quot;nnoremap &lt;silent&gt; &lt;LEADER&gt;h :call &lt;SID&gt;show_documentation()&lt;CR&gt;
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>nnoremap &lt;silent&gt; K :call &lt;SID&gt;show_documentation()&lt;CR&gt;
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>nnoremap tt :CocCommand explorer&lt;CR&gt;
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>&quot; coc-translator
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>nmap ts &lt;Plug&gt;(coc-translator-p)
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>function! s:show_documentation()
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>  if (index([&#39;vim&#39;,&#39;help&#39;], &amp;filetype) &gt;= 0)
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>    execute &#39;h &#39;.expand(&#39;&lt;cword&gt;&#39;)
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>  elseif (coc#rpc#ready())
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    call CocActionAsync(&#39;doHover&#39;)
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>  else
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    execute &#39;!&#39; . &amp;keywordprg . &quot; &quot; . expand(&#39;&lt;cword&gt;&#39;)
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>  endif
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>endfunction
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>xmap &lt;leader&gt;a  &lt;Plug&gt;(coc-codeaction-selected)
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>nmap &lt;leader&gt;a  &lt;Plug&gt;(coc-codeaction-selected)
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>&quot; Highlight the symbol and its references when holding the cursor.
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>autocmd CursorHold * silent call CocActionAsync(&#39;highlight&#39;)
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>&quot; Symbol renaming.
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>nmap &lt;leader&gt;rn &lt;Plug&gt;(coc-rename)
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>&quot; Formatting selected code.
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>xmap &lt;leader&gt;f  &lt;Plug&gt;(coc-format-selected)
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a>nmap &lt;leader&gt;f  &lt;Plug&gt;(coc-format-selected)
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>augroup mygroup
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>  autocmd!
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>  &quot; Setup formatexpr specified filetype(s).
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>  autocmd FileType typescript,json setl formatexpr=CocAction(&#39;formatSelected&#39;)
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>  &quot; Update signature help on jump placeholder.
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>  autocmd User CocJumpPlaceholder call CocActionAsync(&#39;showSignatureHelp&#39;)
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>augroup end
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>&quot; Applying codeAction to the selected region.
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>&quot; Example: `&lt;leader&gt;aap` for current paragraph
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>xmap &lt;leader&gt;a  &lt;Plug&gt;(coc-codeaction-selected)
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>nmap &lt;leader&gt;a  &lt;Plug&gt;(coc-codeaction-selected)
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>&quot; Remap keys for applying codeAction to the current buffer.
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>nmap &lt;leader&gt;ac  &lt;Plug&gt;(coc-codeaction)
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>&quot; Apply AutoFix to problem on the current line.
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>nmap &lt;leader&gt;qf  &lt;Plug&gt;(coc-fix-current)
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a>&quot; Run the Code Lens action on the current line.
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>nmap &lt;leader&gt;cl  &lt;Plug&gt;(coc-codelens-action)
+<a id="__codelineno-0-109" name="__codelineno-0-109"></a>
+<a id="__codelineno-0-110" name="__codelineno-0-110"></a>&quot; Map function and class text objects
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a>&quot; NOTE: Requires &#39;textDocument.documentSymbol&#39; support from the language server.
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a>xmap if &lt;Plug&gt;(coc-funcobj-i)
+<a id="__codelineno-0-113" name="__codelineno-0-113"></a>omap if &lt;Plug&gt;(coc-funcobj-i)
+<a id="__codelineno-0-114" name="__codelineno-0-114"></a>xmap af &lt;Plug&gt;(coc-funcobj-a)
+<a id="__codelineno-0-115" name="__codelineno-0-115"></a>omap af &lt;Plug&gt;(coc-funcobj-a)
+<a id="__codelineno-0-116" name="__codelineno-0-116"></a>xmap ic &lt;Plug&gt;(coc-classobj-i)
+<a id="__codelineno-0-117" name="__codelineno-0-117"></a>omap ic &lt;Plug&gt;(coc-classobj-i)
+<a id="__codelineno-0-118" name="__codelineno-0-118"></a>xmap ac &lt;Plug&gt;(coc-classobj-a)
+<a id="__codelineno-0-119" name="__codelineno-0-119"></a>omap ac &lt;Plug&gt;(coc-classobj-a)
+<a id="__codelineno-0-120" name="__codelineno-0-120"></a>
+<a id="__codelineno-0-121" name="__codelineno-0-121"></a>&quot; Remap &lt;C-f&gt; and &lt;C-b&gt; for scroll float windows/popups.
+<a id="__codelineno-0-122" name="__codelineno-0-122"></a>if has(&#39;nvim-0.4.0&#39;) || has(&#39;patch-8.2.0750&#39;)
+<a id="__codelineno-0-123" name="__codelineno-0-123"></a>  nnoremap &lt;silent&gt;&lt;nowait&gt;&lt;expr&gt; &lt;C-f&gt; coc#float#has_scroll() ? coc#float#scroll(1) : &quot;\&lt;C-f&gt;&quot;
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a>  nnoremap &lt;silent&gt;&lt;nowait&gt;&lt;expr&gt; &lt;C-b&gt; coc#float#has_scroll() ? coc#float#scroll(0) : &quot;\&lt;C-b&gt;&quot;
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>  inoremap &lt;silent&gt;&lt;nowait&gt;&lt;expr&gt; &lt;C-f&gt; coc#float#has_scroll() ? &quot;\&lt;c-r&gt;=coc#float#scroll(1)\&lt;cr&gt;&quot; : &quot;\&lt;Right&gt;&quot;
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>  inoremap &lt;silent&gt;&lt;nowait&gt;&lt;expr&gt; &lt;C-b&gt; coc#float#has_scroll() ? &quot;\&lt;c-r&gt;=coc#float#scroll(0)\&lt;cr&gt;&quot; : &quot;\&lt;Left&gt;&quot;
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a>  vnoremap &lt;silent&gt;&lt;nowait&gt;&lt;expr&gt; &lt;C-f&gt; coc#float#has_scroll() ? coc#float#scroll(1) : &quot;\&lt;C-f&gt;&quot;
+<a id="__codelineno-0-128" name="__codelineno-0-128"></a>  vnoremap &lt;silent&gt;&lt;nowait&gt;&lt;expr&gt; &lt;C-b&gt; coc#float#has_scroll() ? coc#float#scroll(0) : &quot;\&lt;C-b&gt;&quot;
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a>endif
+<a id="__codelineno-0-130" name="__codelineno-0-130"></a>
+<a id="__codelineno-0-131" name="__codelineno-0-131"></a>&quot; Use CTRL-S for selections ranges.
+<a id="__codelineno-0-132" name="__codelineno-0-132"></a>&quot; Requires &#39;textDocument/selectionRange&#39; support of language server.
+<a id="__codelineno-0-133" name="__codelineno-0-133"></a>nmap &lt;silent&gt; &lt;C-s&gt; &lt;Plug&gt;(coc-range-select)
+<a id="__codelineno-0-134" name="__codelineno-0-134"></a>xmap &lt;silent&gt; &lt;C-s&gt; &lt;Plug&gt;(coc-range-select)
+<a id="__codelineno-0-135" name="__codelineno-0-135"></a>
+<a id="__codelineno-0-136" name="__codelineno-0-136"></a>&quot; Add `:Format` command to format current buffer.
+<a id="__codelineno-0-137" name="__codelineno-0-137"></a>command! -nargs=0 Format :call CocActionAsync(&#39;format&#39;)
+<a id="__codelineno-0-138" name="__codelineno-0-138"></a>
+<a id="__codelineno-0-139" name="__codelineno-0-139"></a>&quot; Add `:Fold` command to fold current buffer.
+<a id="__codelineno-0-140" name="__codelineno-0-140"></a>command! -nargs=? Fold :call     CocAction(&#39;fold&#39;, &lt;f-args&gt;)
+<a id="__codelineno-0-141" name="__codelineno-0-141"></a>
+<a id="__codelineno-0-142" name="__codelineno-0-142"></a>&quot; Add `:OR` command for organize imports of the current buffer.
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a>command! -nargs=0 OR   :call     CocActionAsync(&#39;runCommand&#39;, &#39;editor.action.organizeImport&#39;)
+<a id="__codelineno-0-144" name="__codelineno-0-144"></a>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a>&quot; Add (Neo)Vim&#39;s native statusline support.
+<a id="__codelineno-0-146" name="__codelineno-0-146"></a>&quot; NOTE: Please see `:h coc-status` for integrations with external plugins that
+<a id="__codelineno-0-147" name="__codelineno-0-147"></a>&quot; provide custom statusline: lightline.vim, vim-airline.
+<a id="__codelineno-0-148" name="__codelineno-0-148"></a>set statusline^=%{coc#status()}%{get(b:,&#39;coc_current_function&#39;,&#39;&#39;)}
+<a id="__codelineno-0-149" name="__codelineno-0-149"></a>
+<a id="__codelineno-0-150" name="__codelineno-0-150"></a>&quot; Mappings for CoCList
+<a id="__codelineno-0-151" name="__codelineno-0-151"></a>&quot; Show all diagnostics.
+<a id="__codelineno-0-152" name="__codelineno-0-152"></a>nnoremap &lt;silent&gt;&lt;nowait&gt; &lt;space&gt;a  :&lt;C-u&gt;CocList diagnostics&lt;cr&gt;
+<a id="__codelineno-0-153" name="__codelineno-0-153"></a>&quot; Manage extensions.
+<a id="__codelineno-0-154" name="__codelineno-0-154"></a>nnoremap &lt;silent&gt;&lt;nowait&gt; &lt;space&gt;e  :&lt;C-u&gt;CocList extensions&lt;cr&gt;
+<a id="__codelineno-0-155" name="__codelineno-0-155"></a>&quot; Show commands.
+<a id="__codelineno-0-156" name="__codelineno-0-156"></a>nnoremap &lt;silent&gt;&lt;nowait&gt; &lt;space&gt;c  :&lt;C-u&gt;CocList commands&lt;cr&gt;
+<a id="__codelineno-0-157" name="__codelineno-0-157"></a>&quot; Find symbol of current document.
+<a id="__codelineno-0-158" name="__codelineno-0-158"></a>nnoremap &lt;silent&gt;&lt;nowait&gt; &lt;space&gt;o  :&lt;C-u&gt;CocList outline&lt;cr&gt;
+<a id="__codelineno-0-159" name="__codelineno-0-159"></a>&quot; Search workspace symbols.
+<a id="__codelineno-0-160" name="__codelineno-0-160"></a>nnoremap &lt;silent&gt;&lt;nowait&gt; &lt;space&gt;s  :&lt;C-u&gt;CocList -I symbols&lt;cr&gt;
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a>&quot; Do default action for next item.
+<a id="__codelineno-0-162" name="__codelineno-0-162"></a>nnoremap &lt;silent&gt;&lt;nowait&gt; &lt;space&gt;j  :&lt;C-u&gt;CocNext&lt;CR&gt;
+<a id="__codelineno-0-163" name="__codelineno-0-163"></a>&quot; Do default action for previous item.
+<a id="__codelineno-0-164" name="__codelineno-0-164"></a>nnoremap &lt;silent&gt;&lt;nowait&gt; &lt;space&gt;k  :&lt;C-u&gt;CocPrev&lt;CR&gt;
+<a id="__codelineno-0-165" name="__codelineno-0-165"></a>&quot; Resume latest coc list.
+<a id="__codelineno-0-166" name="__codelineno-0-166"></a>nnoremap &lt;silent&gt;&lt;nowait&gt; &lt;space&gt;p  :&lt;C-u&gt;CocListResume&lt;CR&gt;
+<a id="__codelineno-0-167" name="__codelineno-0-167"></a>&quot;set clipboard+=unnamed
+<a id="__codelineno-0-168" name="__codelineno-0-168"></a>
+<a id="__codelineno-0-169" name="__codelineno-0-169"></a>&quot; Turn on the WiLd menu
+<a id="__codelineno-0-170" name="__codelineno-0-170"></a>&quot;set wildmenu
+<a id="__codelineno-0-171" name="__codelineno-0-171"></a>
+<a id="__codelineno-0-172" name="__codelineno-0-172"></a>&quot; Ignore compiled files
+<a id="__codelineno-0-173" name="__codelineno-0-173"></a>&quot;set wildignore=*.o,*~,*.pyc
+<a id="__codelineno-0-174" name="__codelineno-0-174"></a>&quot;if has(&quot;win16&quot;) || has(&quot;win32&quot;)
+<a id="__codelineno-0-175" name="__codelineno-0-175"></a>&quot;    set wildignore+=.git\*,.hg\*,.svn\*
+<a id="__codelineno-0-176" name="__codelineno-0-176"></a>&quot;else
+<a id="__codelineno-0-177" name="__codelineno-0-177"></a>&quot;    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+<a id="__codelineno-0-178" name="__codelineno-0-178"></a>&quot;endif
+<a id="__codelineno-0-179" name="__codelineno-0-179"></a>
+<a id="__codelineno-0-180" name="__codelineno-0-180"></a>
+<a id="__codelineno-0-181" name="__codelineno-0-181"></a>&quot; When started as &quot;evim&quot;, evim.vim will already have done these settings.
+<a id="__codelineno-0-182" name="__codelineno-0-182"></a>if v:progname =~? &quot;evim&quot;
+<a id="__codelineno-0-183" name="__codelineno-0-183"></a>  finish
+<a id="__codelineno-0-184" name="__codelineno-0-184"></a>endif
+<a id="__codelineno-0-185" name="__codelineno-0-185"></a>
+<a id="__codelineno-0-186" name="__codelineno-0-186"></a>
+<a id="__codelineno-0-187" name="__codelineno-0-187"></a>&quot; allow backspacing over everything in insert mode
+<a id="__codelineno-0-188" name="__codelineno-0-188"></a>set backspace=indent,eol,start
+<a id="__codelineno-0-189" name="__codelineno-0-189"></a>  &quot;set undofile     &quot; keep an undo file (undo changes after closing)
+<a id="__codelineno-0-190" name="__codelineno-0-190"></a>
+<a id="__codelineno-0-191" name="__codelineno-0-191"></a>&quot; Don&#39;t use Ex mode, use Q for formatting
+<a id="__codelineno-0-192" name="__codelineno-0-192"></a>map Q gq
+<a id="__codelineno-0-193" name="__codelineno-0-193"></a>
+<a id="__codelineno-0-194" name="__codelineno-0-194"></a>&quot; CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+<a id="__codelineno-0-195" name="__codelineno-0-195"></a>&quot; so that you can undo CTRL-U after inserting a line break.
+<a id="__codelineno-0-196" name="__codelineno-0-196"></a>inoremap &lt;C-U&gt; &lt;C-G&gt;u&lt;C-U&gt;
+<a id="__codelineno-0-197" name="__codelineno-0-197"></a>&quot; In many terminal emulators the mouse works just fine, thus enable it.
+<a id="__codelineno-0-198" name="__codelineno-0-198"></a>if has(&#39;mouse&#39;)
+<a id="__codelineno-0-199" name="__codelineno-0-199"></a>  &quot;set mouse=a
+<a id="__codelineno-0-200" name="__codelineno-0-200"></a>endif
+<a id="__codelineno-0-201" name="__codelineno-0-201"></a>&quot; Switch syntax highlighting on, when the terminal has colors
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a>&quot; Also switch on highlighting the last used search pattern.
+<a id="__codelineno-0-203" name="__codelineno-0-203"></a>if &amp;t_Co &gt; 2 || has(&quot;gui_running&quot;)
+<a id="__codelineno-0-204" name="__codelineno-0-204"></a>  syntax on
+<a id="__codelineno-0-205" name="__codelineno-0-205"></a>  set hlsearch
+<a id="__codelineno-0-206" name="__codelineno-0-206"></a>endif
+<a id="__codelineno-0-207" name="__codelineno-0-207"></a>
+<a id="__codelineno-0-208" name="__codelineno-0-208"></a>&quot; Only do this part when compiled with support for autocommands.
+<a id="__codelineno-0-209" name="__codelineno-0-209"></a>if has(&quot;autocmd&quot;)
+<a id="__codelineno-0-210" name="__codelineno-0-210"></a>
+<a id="__codelineno-0-211" name="__codelineno-0-211"></a>  &quot; Enable file type detection.
+<a id="__codelineno-0-212" name="__codelineno-0-212"></a>  &quot; Use the default filetype settings, so that mail gets &#39;tw&#39; set to 72,
+<a id="__codelineno-0-213" name="__codelineno-0-213"></a>  &quot; &#39;cindent&#39; is on in C files, etc.
+<a id="__codelineno-0-214" name="__codelineno-0-214"></a>  &quot; Also load indent files, to automatically do language-dependent indenting.
+<a id="__codelineno-0-215" name="__codelineno-0-215"></a>  filetype plugin indent on
+<a id="__codelineno-0-216" name="__codelineno-0-216"></a>
+<a id="__codelineno-0-217" name="__codelineno-0-217"></a>  &quot; Put these in an autocmd group, so that we can delete them easily.
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>  augroup vimrcEx
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a>  au!
+<a id="__codelineno-0-220" name="__codelineno-0-220"></a>
+<a id="__codelineno-0-221" name="__codelineno-0-221"></a>  &quot; For all text files set &#39;textwidth&#39; to 78 characters.
+<a id="__codelineno-0-222" name="__codelineno-0-222"></a>  autocmd FileType text setlocal textwidth=78
+<a id="__codelineno-0-223" name="__codelineno-0-223"></a>
+<a id="__codelineno-0-224" name="__codelineno-0-224"></a>  &quot; When editing a file, always jump to the last known cursor position.
+<a id="__codelineno-0-225" name="__codelineno-0-225"></a>  &quot; Don&#39;t do it when the position is invalid or when inside an event handler
+<a id="__codelineno-0-226" name="__codelineno-0-226"></a>  &quot; (happens when dropping a file on gvim).
+<a id="__codelineno-0-227" name="__codelineno-0-227"></a>  &quot; Also don&#39;t do it when the mark is in the first line, that is the default
+<a id="__codelineno-0-228" name="__codelineno-0-228"></a>  &quot; position when opening a file.
+<a id="__codelineno-0-229" name="__codelineno-0-229"></a>  autocmd BufReadPost *
+<a id="__codelineno-0-230" name="__codelineno-0-230"></a>    \ if line(&quot;&#39;\&quot;&quot;) &gt; 1 &amp;&amp; line(&quot;&#39;\&quot;&quot;) &lt;= line(&quot;$&quot;) |
+<a id="__codelineno-0-231" name="__codelineno-0-231"></a>    \   exe &quot;normal! g`\&quot;&quot; |
+<a id="__codelineno-0-232" name="__codelineno-0-232"></a>    \ endif
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a>  augroup END
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>
+<a id="__codelineno-0-236" name="__codelineno-0-236"></a>else
+<a id="__codelineno-0-237" name="__codelineno-0-237"></a>
+<a id="__codelineno-0-238" name="__codelineno-0-238"></a>  set autoindent        &quot; always set autoindenting on
+<a id="__codelineno-0-239" name="__codelineno-0-239"></a>
+<a id="__codelineno-0-240" name="__codelineno-0-240"></a>endif &quot; has(&quot;autocmd&quot;)
+<a id="__codelineno-0-241" name="__codelineno-0-241"></a>
+<a id="__codelineno-0-242" name="__codelineno-0-242"></a>&quot; Convenient command to see the difference between the current buffer and the
+<a id="__codelineno-0-243" name="__codelineno-0-243"></a>&quot; file it was loaded from, thus the changes you made.
+<a id="__codelineno-0-244" name="__codelineno-0-244"></a>&quot; Only define it when not defined already.
+<a id="__codelineno-0-245" name="__codelineno-0-245"></a>if !exists(&quot;:DiffOrig&quot;)
+<a id="__codelineno-0-246" name="__codelineno-0-246"></a>  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+<a id="__codelineno-0-247" name="__codelineno-0-247"></a>          \ | wincmd p | diffthis
+<a id="__codelineno-0-248" name="__codelineno-0-248"></a>endif
+<a id="__codelineno-0-249" name="__codelineno-0-249"></a>&quot; rust
+<a id="__codelineno-0-250" name="__codelineno-0-250"></a>autocmd Filetype rust set foldmethod=syntax
+<a id="__codelineno-0-251" name="__codelineno-0-251"></a>
+<a id="__codelineno-0-252" name="__codelineno-0-252"></a>&quot; SYNTAX HIGHLIGHTING:
+<a id="__codelineno-0-253" name="__codelineno-0-253"></a>set t_Co=256
+<a id="__codelineno-0-254" name="__codelineno-0-254"></a>&quot;syntax on
+<a id="__codelineno-0-255" name="__codelineno-0-255"></a>&quot;colorscheme ir_black
+<a id="__codelineno-0-256" name="__codelineno-0-256"></a>set bs=2
+<a id="__codelineno-0-257" name="__codelineno-0-257"></a>filetype off                  &quot; required
+<a id="__codelineno-0-258" name="__codelineno-0-258"></a>&quot; set the runtime path to include Vundle and initialize
+<a id="__codelineno-0-259" name="__codelineno-0-259"></a>&quot;set rtp+=~/.vim/bundle/Vundle.vim
+<a id="__codelineno-0-260" name="__codelineno-0-260"></a>&quot;call vundle#begin()
+<a id="__codelineno-0-261" name="__codelineno-0-261"></a>&quot;call vundle#begin(&#39;~/some/path/here&#39;)
+<a id="__codelineno-0-262" name="__codelineno-0-262"></a>call plug#begin()
+<a id="__codelineno-0-263" name="__codelineno-0-263"></a>&quot;Plugin &#39;VundleVim/Vundle.vim&#39;
+<a id="__codelineno-0-264" name="__codelineno-0-264"></a>Plug &#39;jiangmiao/auto-pairs&#39;
+<a id="__codelineno-0-265" name="__codelineno-0-265"></a>Plug &#39;tomtom/tcomment_vim&#39;  &quot;in &lt;space&gt;cn to comment a line
+<a id="__codelineno-0-266" name="__codelineno-0-266"></a>&quot; type yskw&#39; to wrap the word with &#39;&#39; or type cs&#39;` to change &#39;word&#39; to `word`
+<a id="__codelineno-0-267" name="__codelineno-0-267"></a>Plug &#39;tpope/vim-surround&#39; 
+<a id="__codelineno-0-268" name="__codelineno-0-268"></a>&quot; in Visual mode, type k&#39; to select all text in &#39;&#39;, or type k) k] k} kp
+<a id="__codelineno-0-269" name="__codelineno-0-269"></a>Plug &#39;gcmt/wildfire.vim&#39; 
+<a id="__codelineno-0-270" name="__codelineno-0-270"></a>Plug &#39;ryanoasis/vim-devicons&#39;
+<a id="__codelineno-0-271" name="__codelineno-0-271"></a>Plug &#39;tpope/vim-fugitive&#39;
+<a id="__codelineno-0-272" name="__codelineno-0-272"></a>Plug &#39;bling/vim-airline&#39;
+<a id="__codelineno-0-273" name="__codelineno-0-273"></a>&quot; 在 Vim 中快速导航文件,好像需要ruby支持,暂时不按照
+<a id="__codelineno-0-274" name="__codelineno-0-274"></a>&quot; Plugin &#39;git://git.wincent.com/command-t.git&#39;
+<a id="__codelineno-0-275" name="__codelineno-0-275"></a>&quot;Plug &#39;rstacruz/sparkup&#39;, {&#39;rtp&#39;: &#39;vim/&#39;}
+<a id="__codelineno-0-276" name="__codelineno-0-276"></a>Plug &#39;rust-lang/rust.vim&#39;
+<a id="__codelineno-0-277" name="__codelineno-0-277"></a>&quot;Bundle &#39;Rykka/riv.vim&#39;
+<a id="__codelineno-0-278" name="__codelineno-0-278"></a>Plug &#39;ctrlpvim/ctrlp.vim&#39;
+<a id="__codelineno-0-279" name="__codelineno-0-279"></a>Plug &#39;nvim-treesitter/nvim-treesitter&#39;
+<a id="__codelineno-0-280" name="__codelineno-0-280"></a>&quot; pretty dress
+<a id="__codelineno-0-281" name="__codelineno-0-281"></a>Plug &#39;theniceboy/nvim-deus&#39;
+<a id="__codelineno-0-282" name="__codelineno-0-282"></a>Plug &#39;scrooloose/nerdtree&#39;
+<a id="__codelineno-0-283" name="__codelineno-0-283"></a>Plug &#39;neoclide/coc.nvim&#39;, {&#39;branch&#39;: &#39;release&#39;}
+<a id="__codelineno-0-284" name="__codelineno-0-284"></a>Plug &#39;wellle/tmux-complete.vim&#39;
+<a id="__codelineno-0-285" name="__codelineno-0-285"></a>
+<a id="__codelineno-0-286" name="__codelineno-0-286"></a>&quot; 这个插件可以显示文件的 Git 增删状态
+<a id="__codelineno-0-287" name="__codelineno-0-287"></a>Plug &#39;Xuyuanp/nerdtree-git-plugin&#39;
+<a id="__codelineno-0-288" name="__codelineno-0-288"></a>&quot;Plugin &#39;user/L9&#39;, {&#39;name&#39;: &#39;newL9&#39;}
+<a id="__codelineno-0-289" name="__codelineno-0-289"></a>&quot;Plug &#39;scrooloose/syntastic&#39;
+<a id="__codelineno-0-290" name="__codelineno-0-290"></a>Plug &#39;tpope/vim-markdown&#39;
+<a id="__codelineno-0-291" name="__codelineno-0-291"></a>Plug &#39;mattn/emmet-vim&#39;
+<a id="__codelineno-0-292" name="__codelineno-0-292"></a>Plug &#39;kien/rainbow_parentheses.vim&#39;
+<a id="__codelineno-0-293" name="__codelineno-0-293"></a>Plug &#39;godlygeek/tabular&#39;
+<a id="__codelineno-0-294" name="__codelineno-0-294"></a>Plug &#39;Yggdroot/indentLine&#39;
+<a id="__codelineno-0-295" name="__codelineno-0-295"></a>Plug &#39;majutsushi/tagbar&#39;
+<a id="__codelineno-0-296" name="__codelineno-0-296"></a>Plug &#39;junegunn/fzf&#39;, { &#39;do&#39;: { -&gt; fzf#install() } }
+<a id="__codelineno-0-297" name="__codelineno-0-297"></a>call plug#end()
+<a id="__codelineno-0-298" name="__codelineno-0-298"></a>
+<a id="__codelineno-0-299" name="__codelineno-0-299"></a>
+<a id="__codelineno-0-300" name="__codelineno-0-300"></a>
+<a id="__codelineno-0-301" name="__codelineno-0-301"></a>&quot;call vundle#end()            &quot; required
+<a id="__codelineno-0-302" name="__codelineno-0-302"></a>filetype plugin indent on    &quot; required
+<a id="__codelineno-0-303" name="__codelineno-0-303"></a>set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 12
+<a id="__codelineno-0-304" name="__codelineno-0-304"></a>set nu
+<a id="__codelineno-0-305" name="__codelineno-0-305"></a>let mapleader=&#39;;&#39;
+<a id="__codelineno-0-306" name="__codelineno-0-306"></a>autocmd InsertLeave * if pumvisible() == 0|pclose|endif &quot;离开插入模式后自动关闭预览窗口
+<a id="__codelineno-0-307" name="__codelineno-0-307"></a>&quot;autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+<a id="__codelineno-0-308" name="__codelineno-0-308"></a>set shiftwidth=4
+<a id="__codelineno-0-309" name="__codelineno-0-309"></a>set tabstop=4
+<a id="__codelineno-0-310" name="__codelineno-0-310"></a>set softtabstop=4
+<a id="__codelineno-0-311" name="__codelineno-0-311"></a>set expandtab                  &quot;将tab替换为相应数量空格
+<a id="__codelineno-0-312" name="__codelineno-0-312"></a>set smartindent
+<a id="__codelineno-0-313" name="__codelineno-0-313"></a>set encoding=utf8               &quot;设置内部编码为utf8
+<a id="__codelineno-0-314" name="__codelineno-0-314"></a>set fileencoding=utf8            &quot;当前编辑的文件编码
+<a id="__codelineno-0-315" name="__codelineno-0-315"></a>set fileencodings=uft8-bom,utf8,gbk,gb2312,big5   &quot;打开支持编码的文件
+<a id="__codelineno-0-316" name="__codelineno-0-316"></a>set backspace=2               &quot;可随时用倒退键删除
+<a id="__codelineno-0-317" name="__codelineno-0-317"></a>&quot;imap ;; &lt;ESC&gt;
+<a id="__codelineno-0-318" name="__codelineno-0-318"></a>&quot;cmap ;; &lt;ESC&gt;
+<a id="__codelineno-0-319" name="__codelineno-0-319"></a>vmap &lt;C-c&gt; &quot;+y
+<a id="__codelineno-0-320" name="__codelineno-0-320"></a>set cursorline
+<a id="__codelineno-0-321" name="__codelineno-0-321"></a>set hlsearch
+<a id="__codelineno-0-322" name="__codelineno-0-322"></a>set incsearch
+<a id="__codelineno-0-323" name="__codelineno-0-323"></a>set showmatch
+<a id="__codelineno-0-324" name="__codelineno-0-324"></a>set report=0
+<a id="__codelineno-0-325" name="__codelineno-0-325"></a>set laststatus=2
+<a id="__codelineno-0-326" name="__codelineno-0-326"></a>let g:airline_powerline_fonts = 1
+<a id="__codelineno-0-327" name="__codelineno-0-327"></a>&quot;let g:airline_symbols
+<a id="__codelineno-0-328" name="__codelineno-0-328"></a>&quot;let g:airline_left_sep=&#39;▶&#39;
+<a id="__codelineno-0-329" name="__codelineno-0-329"></a>&quot;let g:airline_right_sep=&#39;◀&#39;
+<a id="__codelineno-0-330" name="__codelineno-0-330"></a>let g:airline#extensions#tabline#enabled = 1
+<a id="__codelineno-0-331" name="__codelineno-0-331"></a>syntax enable
+<a id="__codelineno-0-332" name="__codelineno-0-332"></a>&quot; 如果是在xshell下vim 这里需要打开
+<a id="__codelineno-0-333" name="__codelineno-0-333"></a>&quot; 百度搜索 xshell vim solarized
+<a id="__codelineno-0-334" name="__codelineno-0-334"></a>let g:solarized_termcolors=256
+<a id="__codelineno-0-335" name="__codelineno-0-335"></a>set background=dark
+<a id="__codelineno-0-336" name="__codelineno-0-336"></a>colorscheme solarized
+<a id="__codelineno-0-337" name="__codelineno-0-337"></a>let g:ctrlp_map = &#39;&lt;c-p&gt;&#39;
+<a id="__codelineno-0-338" name="__codelineno-0-338"></a>let g:ctrlp_cmd = &#39;CtrlP&#39;
+<a id="__codelineno-0-339" name="__codelineno-0-339"></a>let g:ctrlp_working_path_mode = &#39;ra&#39;
+<a id="__codelineno-0-340" name="__codelineno-0-340"></a>set wildignore+=*/tmp/*,*.so,*.swp,*.zip     &quot; MacOSX/Linux
+<a id="__codelineno-0-341" name="__codelineno-0-341"></a>set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  &quot; Windows
+<a id="__codelineno-0-342" name="__codelineno-0-342"></a>
+<a id="__codelineno-0-343" name="__codelineno-0-343"></a>&quot;let g:ctrlp_custom_ignore = &#39;\v[\/]\.(git|hg|svn)$&#39;
+<a id="__codelineno-0-344" name="__codelineno-0-344"></a>let g:ctrlp_custom_ignore = {
+<a id="__codelineno-0-345" name="__codelineno-0-345"></a>  \ &#39;dir&#39;:  &#39;\v[\/]\.(git|hg|svn)$&#39;,
+<a id="__codelineno-0-346" name="__codelineno-0-346"></a>  \ &#39;file&#39;: &#39;\v\.(exe|so|dll)$&#39;,
+<a id="__codelineno-0-347" name="__codelineno-0-347"></a>  \ &#39;link&#39;: &#39;some_bad_symbolic_links&#39;,
+<a id="__codelineno-0-348" name="__codelineno-0-348"></a>  \}
+<a id="__codelineno-0-349" name="__codelineno-0-349"></a>map &lt;F3&gt; :NERDTreeToggle&lt;CR&gt;
+<a id="__codelineno-0-350" name="__codelineno-0-350"></a>&quot; 可直接复制到系统剪贴板
+<a id="__codelineno-0-351" name="__codelineno-0-351"></a>set clipboard=unnamed
+<a id="__codelineno-0-352" name="__codelineno-0-352"></a>&quot;autocmd vimenter * NERDTree
+<a id="__codelineno-0-353" name="__codelineno-0-353"></a>let g:NERDTreeDirArrowExpandable = &#39;❤&#39;
+<a id="__codelineno-0-354" name="__codelineno-0-354"></a>let g:NERDTreeDirArrowCollapsible = &#39;▼&#39;
+<a id="__codelineno-0-355" name="__codelineno-0-355"></a>let g:NERDTreeGitStatusIndicatorMapCustom= {
+<a id="__codelineno-0-356" name="__codelineno-0-356"></a>    \ &quot;Modified&quot;  : &quot;✹&quot;,
+<a id="__codelineno-0-357" name="__codelineno-0-357"></a>    \ &quot;Staged&quot;    : &quot;✚&quot;,
+<a id="__codelineno-0-358" name="__codelineno-0-358"></a>    \ &quot;Untracked&quot; : &quot;✭&quot;,
+<a id="__codelineno-0-359" name="__codelineno-0-359"></a>    \ &quot;Renamed&quot;   : &quot;➜&quot;,
+<a id="__codelineno-0-360" name="__codelineno-0-360"></a>    \ &quot;Unmerged&quot;  : &quot;═&quot;,
+<a id="__codelineno-0-361" name="__codelineno-0-361"></a>    \ &quot;Deleted&quot;   : &quot;✖&quot;,
+<a id="__codelineno-0-362" name="__codelineno-0-362"></a>    \ &quot;Dirty&quot;     : &quot;✗&quot;,
+<a id="__codelineno-0-363" name="__codelineno-0-363"></a>    \ &quot;Clean&quot;     : &quot;✔︎&quot;,
+<a id="__codelineno-0-364" name="__codelineno-0-364"></a>    \ &quot;Unknown&quot;   : &quot;?&quot;
+<a id="__codelineno-0-365" name="__codelineno-0-365"></a>    \ }
+<a id="__codelineno-0-366" name="__codelineno-0-366"></a>let g:autoclose_vim_commentmode = 1
+<a id="__codelineno-0-367" name="__codelineno-0-367"></a>set statusline+=%#warningmsg#
+<a id="__codelineno-0-368" name="__codelineno-0-368"></a>set statusline+=%{SyntasticStatuslineFlag()}
+<a id="__codelineno-0-369" name="__codelineno-0-369"></a>set statusline+=%*
+<a id="__codelineno-0-370" name="__codelineno-0-370"></a>
+<a id="__codelineno-0-371" name="__codelineno-0-371"></a>let g:syntastic_always_populate_loc_list = 1
+<a id="__codelineno-0-372" name="__codelineno-0-372"></a>let g:syntastic_auto_loc_list = 1
+<a id="__codelineno-0-373" name="__codelineno-0-373"></a>let g:syntastic_check_on_open = 1
+<a id="__codelineno-0-374" name="__codelineno-0-374"></a>let g:syntastic_check_on_wq = 0
+<a id="__codelineno-0-375" name="__codelineno-0-375"></a>let g:user_emmet_install_global = 0
+<a id="__codelineno-0-376" name="__codelineno-0-376"></a>let g:syntastic_ignore_files=[&quot;.*\.rst$&quot;]
+<a id="__codelineno-0-377" name="__codelineno-0-377"></a>autocmd FileType html,css EmmetInstall
+<a id="__codelineno-0-378" name="__codelineno-0-378"></a>let g:rbpt_colorpairs = [
+<a id="__codelineno-0-379" name="__codelineno-0-379"></a>    \ [&#39;brown&#39;,       &#39;RoyalBlue3&#39;],
+<a id="__codelineno-0-380" name="__codelineno-0-380"></a>    \ [&#39;Darkblue&#39;,    &#39;SeaGreen3&#39;],
+<a id="__codelineno-0-381" name="__codelineno-0-381"></a>    \ [&#39;darkgray&#39;,    &#39;DarkOrchid3&#39;],
+<a id="__codelineno-0-382" name="__codelineno-0-382"></a>    \ [&#39;darkgreen&#39;,   &#39;firebrick3&#39;],
+<a id="__codelineno-0-383" name="__codelineno-0-383"></a>    \ [&#39;darkcyan&#39;,    &#39;RoyalBlue3&#39;],
+<a id="__codelineno-0-384" name="__codelineno-0-384"></a>    \ [&#39;darkred&#39;,     &#39;SeaGreen3&#39;],
+<a id="__codelineno-0-385" name="__codelineno-0-385"></a>    \ [&#39;darkmagenta&#39;, &#39;DarkOrchid3&#39;],
+<a id="__codelineno-0-386" name="__codelineno-0-386"></a>    \ [&#39;brown&#39;,       &#39;firebrick3&#39;],
+<a id="__codelineno-0-387" name="__codelineno-0-387"></a>    \ [&#39;gray&#39;,        &#39;RoyalBlue3&#39;],
+<a id="__codelineno-0-388" name="__codelineno-0-388"></a>    \ [&#39;black&#39;,       &#39;SeaGreen3&#39;],
+<a id="__codelineno-0-389" name="__codelineno-0-389"></a>    \ [&#39;darkmagenta&#39;, &#39;DarkOrchid3&#39;],
+<a id="__codelineno-0-390" name="__codelineno-0-390"></a>    \ [&#39;Darkblue&#39;,    &#39;firebrick3&#39;],
+<a id="__codelineno-0-391" name="__codelineno-0-391"></a>    \ [&#39;darkgreen&#39;,   &#39;RoyalBlue3&#39;],
+<a id="__codelineno-0-392" name="__codelineno-0-392"></a>    \ [&#39;darkcyan&#39;,    &#39;SeaGreen3&#39;],
+<a id="__codelineno-0-393" name="__codelineno-0-393"></a>    \ [&#39;darkred&#39;,     &#39;DarkOrchid3&#39;],
+<a id="__codelineno-0-394" name="__codelineno-0-394"></a>    \ [&#39;red&#39;,         &#39;firebrick3&#39;],
+<a id="__codelineno-0-395" name="__codelineno-0-395"></a>    \ ]
+<a id="__codelineno-0-396" name="__codelineno-0-396"></a>let g:rbpt_max = 36
+<a id="__codelineno-0-397" name="__codelineno-0-397"></a>let g:rbpt_loadcmd_toggle = 0
+<a id="__codelineno-0-398" name="__codelineno-0-398"></a>au VimEnter * RainbowParenthesesToggle
+<a id="__codelineno-0-399" name="__codelineno-0-399"></a>au Syntax * RainbowParenthesesLoadRound
+<a id="__codelineno-0-400" name="__codelineno-0-400"></a>au Syntax * RainbowParenthesesLoadSquare
+<a id="__codelineno-0-401" name="__codelineno-0-401"></a>au Syntax * RainbowParenthesesLoadBraces
+<a id="__codelineno-0-402" name="__codelineno-0-402"></a>&quot;let g:indent_guides_auto_colors = 1
+<a id="__codelineno-0-403" name="__codelineno-0-403"></a>&quot;let g:indent_guides_enable_on_vim_startup = 1
+<a id="__codelineno-0-404" name="__codelineno-0-404"></a>let g:indentLine_color_term = 239
+<a id="__codelineno-0-405" name="__codelineno-0-405"></a>let g:indentLine_enabled = 1
+<a id="__codelineno-0-406" name="__codelineno-0-406"></a>&quot;ctrlp
+<a id="__codelineno-0-407" name="__codelineno-0-407"></a>nnoremap &lt;silent&gt; &lt;Leader&gt;f :CtrlPMRU&lt;CR&gt;
+<a id="__codelineno-0-408" name="__codelineno-0-408"></a>nnoremap &lt;silent&gt; &lt;Leader&gt;b :CtrlPBuffer&lt;CR&gt;
+<a id="__codelineno-0-409" name="__codelineno-0-409"></a>&quot; 窗口切换
+<a id="__codelineno-0-410" name="__codelineno-0-410"></a>nnoremap &lt;c-h&gt; &lt;c-w&gt;h
+<a id="__codelineno-0-411" name="__codelineno-0-411"></a>nnoremap &lt;c-l&gt; &lt;c-w&gt;l
+<a id="__codelineno-0-412" name="__codelineno-0-412"></a>nnoremap &lt;c-j&gt; &lt;c-w&gt;j
+<a id="__codelineno-0-413" name="__codelineno-0-413"></a>nnoremap &lt;c-k&gt; &lt;c-w&gt;k
+<a id="__codelineno-0-414" name="__codelineno-0-414"></a>
+<a id="__codelineno-0-415" name="__codelineno-0-415"></a>&quot;设置撤销的目录
+<a id="__codelineno-0-416" name="__codelineno-0-416"></a>set undodir=/tmp/vimundodir 
+<a id="__codelineno-0-417" name="__codelineno-0-417"></a>nnoremap &lt;Leader&gt;w :w&lt;CR&gt;
+<a id="__codelineno-0-418" name="__codelineno-0-418"></a>nnoremap &lt;Leader&gt;q :q&lt;CR&gt;
+<a id="__codelineno-0-419" name="__codelineno-0-419"></a>inoremap &lt;c-a&gt; &lt;ESC&gt;0i
+<a id="__codelineno-0-420" name="__codelineno-0-420"></a>&quot;inoremap &lt;c-e&gt; &lt;ESC&gt;$a
+<a id="__codelineno-0-421" name="__codelineno-0-421"></a>&quot;map &lt;F5&gt; :!javac %&amp;&amp;java %:r &lt;CR&gt;
+<a id="__codelineno-0-422" name="__codelineno-0-422"></a>hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
+<a id="__codelineno-0-423" name="__codelineno-0-423"></a>let g:UltiSnipsExpandTrigger=&quot;&lt;c-y&gt;&quot;
+<a id="__codelineno-0-424" name="__codelineno-0-424"></a>&quot;let g:vimim_cloud = &#39;sogou&#39;
+<a id="__codelineno-0-425" name="__codelineno-0-425"></a>
+<a id="__codelineno-0-426" name="__codelineno-0-426"></a>&quot;tagbar settings
+<a id="__codelineno-0-427" name="__codelineno-0-427"></a>&quot; vim php文件时,按下F8即可
+<a id="__codelineno-0-428" name="__codelineno-0-428"></a>&quot; http://ctags.sourceforge.net/
+<a id="__codelineno-0-429" name="__codelineno-0-429"></a>&quot; 进入某个code目录 ctags -R 生成tags
+<a id="__codelineno-0-430" name="__codelineno-0-430"></a>&quot; &quot; 进入代码目录 ctags -R 生成tags文件
+<a id="__codelineno-0-431" name="__codelineno-0-431"></a>&quot; 打开代码  F8 即可打开右侧
+<a id="__codelineno-0-432" name="__codelineno-0-432"></a>&quot; ctrl + ] 跳转定义
+<a id="__codelineno-0-433" name="__codelineno-0-433"></a>&quot; ctrl + t 调回原来的地方
+<a id="__codelineno-0-434" name="__codelineno-0-434"></a>&quot; nmap 表示 正常模式, n normal
+<a id="__codelineno-0-435" name="__codelineno-0-435"></a>&quot;nmap &lt;M-d&gt; &lt;ctrl-]&gt; 
+<a id="__codelineno-0-436" name="__codelineno-0-436"></a>&quot; 配置插入模式下 也使用ctrl+] 来跳转
+<a id="__codelineno-0-437" name="__codelineno-0-437"></a>imap &lt;c-]&gt; &lt;Esc&gt;&lt;c-]&gt;
+<a id="__codelineno-0-438" name="__codelineno-0-438"></a>nmap &lt;F8&gt; :TagbarToggle&lt;CR&gt;
+<a id="__codelineno-0-439" name="__codelineno-0-439"></a>let g:tagbar_ctags_bin = &#39;ctags&#39;
+<a id="__codelineno-0-440" name="__codelineno-0-440"></a>let g:tagbar_width = 30
+<a id="__codelineno-0-441" name="__codelineno-0-441"></a>&quot; 需要复制一堆东西到vim打开的文件时,会乱了格式,这个就是解决这个问题
+<a id="__codelineno-0-442" name="__codelineno-0-442"></a>&quot; F10 来切换
+<a id="__codelineno-0-443" name="__codelineno-0-443"></a>set pastetoggle=&lt;F10&gt;
+<a id="__codelineno-0-444" name="__codelineno-0-444"></a>&quot;inoremap ( ()&lt;ESC&gt;i
+<a id="__codelineno-0-445" name="__codelineno-0-445"></a>&quot;inoremap [ []&lt;ESC&gt;i
+<a id="__codelineno-0-446" name="__codelineno-0-446"></a>&quot;inoremap { {}&lt;ESC&gt;i
+<a id="__codelineno-0-447" name="__codelineno-0-447"></a>&quot;inoremap &lt; &lt;&gt;&lt;ESC&gt;i
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+    <!-- Link to previous and/or next page -->
+    
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label=""
+      >
+  
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../ssh/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: ssh"
+            rel="prev"
+          >
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                ssh
+              </div>
+            </div>
+          </a>
+        
+  
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../terminal/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="Next: terminal"
+            rel="next"
+          >
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                terminal
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "navigation.tabs", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "tags": {"Bash": "bash", "CSS": "css", "Docker": "docker", "Go": "golang", "HTML5": "html", "JavaScript": "js", "K8s": "k8s", "Linux": "linux", "MySQL": "mysql", "Python": "python", "Rust": "rust", "\u7a0b\u5e8f\u5458\u9884\u5907": "newbie"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="../../javascripts/baidu-statistics.js"></script>
+      
+    
+  </body>
+</html>
