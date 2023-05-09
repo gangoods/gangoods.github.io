@@ -126,7 +126,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -336,7 +347,7 @@
   
     <li class="md-tabs__item">
       <a href="../c/quick-start/" class="md-tabs__link">
-        c
+        c/c++
       </a>
     </li>
   
@@ -408,6 +419,22 @@
     </li>
   
 
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../socket/tcp/" class="md-tabs__link">
+        网络编程
+      </a>
+    </li>
   
 
       
@@ -845,6 +872,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../go/basis/plan9/" class="md-nav__link">
+        汇编相关
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../go/basis/variable-type/" class="md-nav__link">
         变量与类型的本质
       </a>
@@ -1249,6 +1290,68 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          pandas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          pandas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/pandas/quick-start/" class="md-nav__link">
+        基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/pandas/analysis-diagram/" class="md-nav__link">
+        分析与画图
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1273,14 +1376,14 @@
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-          c
+          c/c++
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          c
+          c/c++
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1693,8 +1796,92 @@
   
   
     <li class="md-nav__item">
-      <a href="../db/redis/install/" class="md-nav__link">
-        Install
+      <a href="../db/redis/env/" class="md-nav__link">
+        环境配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db/redis/persistence/" class="md-nav__link">
+        数据持久化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db/redis/data-type/" class="md-nav__link">
+        数据类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db/redis/source-code/" class="md-nav__link">
+        源码分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db/redis/principle/" class="md-nav__link">
+        底层原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db/redis/architecture/" class="md-nav__link">
+        架构设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db/redis/cache/" class="md-nav__link">
+        缓存设计
       </a>
     </li>
   
@@ -2147,12 +2334,61 @@
       
       
         <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
-          设计模式
+          网络编程
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          网络编程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../socket/tcp/" class="md-nav__link">
+        tcp
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          设计模式
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           设计模式
         </label>
@@ -2169,17 +2405,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
       
       
       
-        <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
           创建型模式
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_1">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_1">
           <span class="md-nav__icon md-icon"></span>
           创建型模式
         </label>
@@ -2217,17 +2453,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
       
       
       
-        <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
           结构型模式
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
           <span class="md-nav__icon md-icon"></span>
           结构型模式
         </label>
@@ -2265,17 +2501,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
       
       
       
-        <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
           行为型模式
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_3">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3">
           <span class="md-nav__icon md-icon"></span>
           行为型模式
         </label>
@@ -2321,17 +2557,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
       
       
       
-        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
           CS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_10">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           CS
         </label>
@@ -2348,17 +2584,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_1" >
       
       
       
-        <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
           汇编
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_10_1">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_1">
           <span class="md-nav__icon md-icon"></span>
           汇编
         </label>
@@ -2396,17 +2632,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2" >
       
       
       
-        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
           操作系统
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_10_2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_2">
           <span class="md-nav__icon md-icon"></span>
           操作系统
         </label>
@@ -2421,6 +2657,54 @@
       <a href="../cs/os/" class="md-nav__link">
         Index
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11_2_2" id="__nav_11_2_2_label" tabindex="0">
+          io
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          io
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs/os/io/epoll/" class="md-nav__link">
+        epoll
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2444,17 +2728,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
       
       
       
-        <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
           计算机网络
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_10_3">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11_3">
           <span class="md-nav__icon md-icon"></span>
           计算机网络
         </label>
@@ -2500,17 +2784,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
       
       
       
-        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
           程序员预备
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_11">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           程序员预备
         </label>
@@ -2527,17 +2811,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
       
       
       
-        <label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
           git
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_1_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_11_1">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12_1">
           <span class="md-nav__icon md-icon"></span>
           git
         </label>
@@ -2640,6 +2924,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../developer/mac/" class="md-nav__link">
+        mac
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer/tool/" class="md-nav__link">
+        tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer/blog/" class="md-nav__link">
+        blog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer/tcpdump/" class="md-nav__link">
+        抓包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../developer/weird/" class="md-nav__link">
         其他需求
       </a>
@@ -2729,7 +3069,49 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k8s" class="md-nav__link">
+    k8s
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    mysql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    redis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    汇编
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     程序员预备
   </a>
   
@@ -2805,7 +3187,49 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k8s" class="md-nav__link">
+    k8s
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    mysql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    redis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    汇编
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     程序员预备
   </a>
   
@@ -2854,8 +3278,37 @@
 <ul>
 <li><a href="../python/env/">环境准备</a></li>
 </ul>
-<h2 id="_1"><span class="md-tag md-tag-icon md-tag--newbie">程序员预备</span><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="c"><span class="md-tag md-tag-icon">c</span><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <ul>
+<li><a href="../c/quick-start/">快速入门</a></li>
+</ul>
+<h2 id="docker_1"><span class="md-tag md-tag-icon">docker</span><a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../devops/docker/docker-file/">dockerfile</a></li>
+<li><a href="../devops/docker/docker/">常用命令</a></li>
+</ul>
+<h2 id="k8s"><span class="md-tag md-tag-icon">k8s</span><a class="headerlink" href="#k8s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../devops/k8s/command/">常用命令</a></li>
+</ul>
+<h2 id="mysql"><span class="md-tag md-tag-icon">mysql</span><a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../db/mysql/">索引底层</a></li>
+</ul>
+<h2 id="redis"><span class="md-tag md-tag-icon">redis</span><a class="headerlink" href="#redis" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../db/redis/data-type/">数据类型</a></li>
+<li><a href="../db/redis/env/">环境配置</a></li>
+<li><a href="../db/redis/persistence/">数据持久化</a></li>
+<li><a href="../db/redis/source-code/">源码分析</a></li>
+</ul>
+<h2 id="_1"><span class="md-tag md-tag-icon">汇编</span><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../cs/assembly/">Index</a></li>
+</ul>
+<h2 id="_2"><span class="md-tag md-tag-icon md-tag--newbie">程序员预备</span><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../developer/blog/">blog</a></li>
 <li><a href="../developer/ssh/">ssh</a></li>
 <li><a href="../developer/git/git/">git基础</a></li>
 </ul>
@@ -2942,7 +3395,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top", "navigation.tabs", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "tags": {"Bash": "bash", "CSS": "css", "Docker": "docker", "Go": "golang", "HTML5": "html", "JavaScript": "js", "K8s": "k8s", "Linux": "linux", "MySQL": "mysql", "Python": "python", "Rust": "rust", "\u7a0b\u5e8f\u5458\u9884\u5907": "newbie"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top", "navigation.tabs", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "tags": {"Bash": "bash", "CSS": "css", "Docker": "docker", "Go": "golang", "HTML5": "html", "JavaScript": "js", "K8s": "k8s", "Linux": "linux", "MySQL": "mysql", "Python": "python", "Rust": "rust", "\u7a0b\u5e8f\u5458\u9884\u5907": "newbie"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.19047be9.min.js"></script>
@@ -2954,5 +3407,5 @@
         <script src="../javascripts/baidu-statistics.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
