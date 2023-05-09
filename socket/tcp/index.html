@@ -2450,15 +2450,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     阻塞
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3211,15 +3211,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     阻塞
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3238,11 +3238,27 @@
                   
   
 
+  <nav class="md-tags" >
+    
+      
+        
+        
+      
+      
+        <a href="../../tags/#" class="md-tag md-tag-icon">网络编程</a>
+      
+    
+  </nav>
+
 
 
 
   <h1>tcp</h1>
 
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>未完待续</p>
+</div>
 <h2 id="socket">socket<a class="headerlink" href="#socket" title="Permanent link">&para;</a></h2>
 <ul>
 <li>与网络中的其他应用进行通信的函数接口</li>
@@ -3937,7 +3953,7 @@
 <a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">    </span>读缓冲区大小:<span class="w"> </span><span class="m">425982</span><span class="w"> </span><span class="c1"># 设置的值的2倍</span>
 <a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">    </span>发送低潮限度大小:<span class="w"> </span><span class="m">1</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_5">阻塞<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_5">阻塞<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>阻塞 ,阻塞,  啥是阻塞?<br>
 1. 假设快递, 你要求货到付款的, 快递员来了, 你人不在, GG<br>
 2. 你要求放蜂巢, 快递员发现 蜂巢满了, GG</p>
@@ -3945,6 +3961,54 @@
 
 
 
+
+  <!-- <h2 id="__comments">Comments</h2> -->
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+  data-repo="llibeohs/llibeohs.github.io"
+  data-repo-id="R_kgDOJQ6AsQ"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOJQ6Asc4CVkC6"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="light"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
