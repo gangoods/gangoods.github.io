@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 672 250" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" width="672px" height="250px">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>blockdiag {
+    default_fontsize = 14;
+    node_width = 108;
+    node_height = 30;
+    span_width = 64;
+    span_height = 10;
+    default_shape = roundedbox;
+    hash [label ="Hash Algorithm", color= "yellow",height=40, width=128];
+    B [color = none, style = dashed,shape = note, label ="不推荐使用,安全性较低\n容易受到碰撞攻击",width=180,height=50];
+    SHA256Note [color = none, style = dashed,shape = note, label ="输出长度为256位\n目前广泛使用",width=180,height=50];
+    hash -&gt; MD5 -- B;
+    hash -&gt; SHA-1 -- B;
+    hash -&gt; SHA-256 -- SHA256Note;
+    hash -&gt; SHA-3;
+    hash -&gt; HMAC;
+    //effect [label="作用"];
+    //signFunc [label ="数据经过摘要算法\n得到一个摘要或叫签名", width=200,height=50];
+    //effect -&gt; sign -&gt; signFunc -&gt; ;
+}</desc>
+  <path d="M 75 21 L 187 21 A8,8 0 0 1 195 29 L 195 53 A8,8 0 0 1 187 61 L 75 61 A8,8 0 0 1 67 53 L 67 29 A8,8 0 0 1 75 21" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 26 L 359 26 A8,8 0 0 1 367 34 L 367 48 A8,8 0 0 1 359 56 L 267 56 A8,8 0 0 1 259 48 L 259 34 A8,8 0 0 1 267 26" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 76 L 359 76 A8,8 0 0 1 367 84 L 367 98 A8,8 0 0 1 359 106 L 267 106 A8,8 0 0 1 259 98 L 259 84 A8,8 0 0 1 267 76" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 126 L 359 126 A8,8 0 0 1 367 134 L 367 148 A8,8 0 0 1 359 156 L 267 156 A8,8 0 0 1 259 148 L 259 134 A8,8 0 0 1 267 126" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 176 L 359 176 A8,8 0 0 1 367 184 L 367 198 A8,8 0 0 1 359 206 L 267 206 A8,8 0 0 1 259 198 L 259 184 A8,8 0 0 1 267 176" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 216 L 359 216 A8,8 0 0 1 367 224 L 367 238 A8,8 0 0 1 359 246 L 267 246 A8,8 0 0 1 259 238 L 259 224 A8,8 0 0 1 267 216" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 72 15 L 184 15 A8,8 0 0 1 192 23 L 192 47 A8,8 0 0 1 184 55 L 72 55 A8,8 0 0 1 64 47 L 64 23 A8,8 0 0 1 72 15" fill="rgb(255,255,0)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="106" x="128.0" y="44">Hash Algorithm</text>
+  <polygon fill="none" points="428,10 592,10 608,26 608,60 428,60 428,10" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 592 10 L 592 26" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 592 26 L 608 26" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="144" x="518.0" y="34">不推荐使用,安全性较低</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="112" x="518.0" y="53">容易受到碰撞攻击</text>
+  <polygon fill="none" points="428,110 592,110 608,126 608,160 428,160 428,110" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 592 110 L 592 126" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 592 126 L 608 126" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="108" x="518.0" y="134">输出长度为256位</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="84" x="518.0" y="153">目前广泛使用</text>
+  <path d="M 264 20 L 356 20 A8,8 0 0 1 364 28 L 364 42 A8,8 0 0 1 356 50 L 264 50 A8,8 0 0 1 256 42 L 256 28 A8,8 0 0 1 264 20" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="30" x="310.0" y="43">MD5</text>
+  <path d="M 264 70 L 356 70 A8,8 0 0 1 364 78 L 364 92 A8,8 0 0 1 356 100 L 264 100 A8,8 0 0 1 256 92 L 256 78 A8,8 0 0 1 264 70" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="41" x="310.5" y="93">SHA-1</text>
+  <path d="M 264 120 L 356 120 A8,8 0 0 1 364 128 L 364 142 A8,8 0 0 1 356 150 L 264 150 A8,8 0 0 1 256 142 L 256 128 A8,8 0 0 1 264 120" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="57" x="310.5" y="143">SHA-256</text>
+  <path d="M 264 170 L 356 170 A8,8 0 0 1 364 178 L 364 192 A8,8 0 0 1 356 200 L 264 200 A8,8 0 0 1 256 192 L 256 178 A8,8 0 0 1 264 170" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="41" x="310.5" y="193">SHA-3</text>
+  <path d="M 264 210 L 356 210 A8,8 0 0 1 364 218 L 364 232 A8,8 0 0 1 356 240 L 264 240 A8,8 0 0 1 256 232 L 256 218 A8,8 0 0 1 264 210" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="39" x="310.5" y="233">HMAC</text>
+  <path d="M 192 35 L 248 35" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,35 248,31 248,39 255,35" stroke="rgb(0,0,0)" />
+  <path d="M 192 35 L 224 35" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 35 L 224 85" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 85 L 248 85" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,85 248,81 248,89 255,85" stroke="rgb(0,0,0)" />
+  <path d="M 192 35 L 224 35" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 35 L 224 135" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 135 L 248 135" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,135 248,131 248,139 255,135" stroke="rgb(0,0,0)" />
+  <path d="M 192 35 L 224 35" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 35 L 224 185" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 185 L 248 185" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,185 248,181 248,189 255,185" stroke="rgb(0,0,0)" />
+  <path d="M 192 35 L 224 35" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 35 L 224 225" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 225 L 248 225" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,225 248,221 248,229 255,225" stroke="rgb(0,0,0)" />
+  <path d="M 364 35 L 428 35" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 364 85 L 412 85" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 412 85 L 412 35" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 412 35 L 428 35" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 364 135 L 428 135" fill="none" stroke="rgb(0,0,0)" />
+</svg>

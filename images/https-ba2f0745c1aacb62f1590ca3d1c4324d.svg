@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 368 200" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" width="368px" height="200px">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>blockdiag {
+        default_fontsize = 14;
+    node_width = 88;
+    node_height = 40;
+    span_width = 64;
+    span_height = 20;
+    //orientation = portrait
+    default_shape = roundedbox;
+    //B [style = dotted];
+    //C [style = dashed];
+    //A [width=192,height=64,fontsize=20,textcolor=blue,numbered = 1]
+    //note [color = none, style = dashed,shape = note];
+    //A -&gt; B, C;
+    //D, E -&gt; F;
+
+    Algorithm [label ="算法" ,color=yellow];
+    Algorithm -&gt; AES,DES,3DES;
+    }</desc>
+  <path d="M 75 26 L 147 26 A8,8 0 0 1 155 34 L 155 58 A8,8 0 0 1 147 66 L 75 66 A8,8 0 0 1 67 58 L 67 34 A8,8 0 0 1 75 26" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 227 26 L 299 26 A8,8 0 0 1 307 34 L 307 58 A8,8 0 0 1 299 66 L 227 66 A8,8 0 0 1 219 58 L 219 34 A8,8 0 0 1 227 26" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 227 86 L 299 86 A8,8 0 0 1 307 94 L 307 118 A8,8 0 0 1 299 126 L 227 126 A8,8 0 0 1 219 118 L 219 94 A8,8 0 0 1 227 86" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 227 146 L 299 146 A8,8 0 0 1 307 154 L 307 178 A8,8 0 0 1 299 186 L 227 186 A8,8 0 0 1 219 178 L 219 154 A8,8 0 0 1 227 146" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 72 20 L 144 20 A8,8 0 0 1 152 28 L 152 52 A8,8 0 0 1 144 60 L 72 60 A8,8 0 0 1 64 52 L 64 28 A8,8 0 0 1 72 20" fill="rgb(255,255,0)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="28" x="108.0" y="49">算法</text>
+  <path d="M 224 20 L 296 20 A8,8 0 0 1 304 28 L 304 52 A8,8 0 0 1 296 60 L 224 60 A8,8 0 0 1 216 52 L 216 28 A8,8 0 0 1 224 20" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="25" x="260.5" y="48">AES</text>
+  <path d="M 224 80 L 296 80 A8,8 0 0 1 304 88 L 304 112 A8,8 0 0 1 296 120 L 224 120 A8,8 0 0 1 216 112 L 216 88 A8,8 0 0 1 224 80" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="26" x="260.0" y="108">DES</text>
+  <path d="M 224 140 L 296 140 A8,8 0 0 1 304 148 L 304 172 A8,8 0 0 1 296 180 L 224 180 A8,8 0 0 1 216 172 L 216 148 A8,8 0 0 1 224 140" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="34" x="260.0" y="168">3DES</text>
+  <path d="M 152 40 L 208 40" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="215,40 208,36 208,44 215,40" stroke="rgb(0,0,0)" />
+  <path d="M 152 40 L 184 40" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 184 40 L 184 100" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 184 100 L 208 100" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="215,100 208,96 208,104 215,100" stroke="rgb(0,0,0)" />
+  <path d="M 152 40 L 184 40" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 184 40 L 184 160" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 184 160 L 208 160" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="215,160 208,156 208,164 215,160" stroke="rgb(0,0,0)" />
+</svg>

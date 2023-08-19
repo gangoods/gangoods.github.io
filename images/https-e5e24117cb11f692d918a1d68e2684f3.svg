@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" width="640px" height="140px">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>blockdiag {
+        default_fontsize = 14;
+    node_width = 128;
+    node_height = 40;
+    span_width = 64;
+    span_height = 20;
+    //orientation = portrait
+    default_shape = roundedbox;
+    //B [style = dotted];
+    //C [style = dashed];
+    //A [width=192,height=64,fontsize=20,textcolor=blue,numbered = 1]
+    //note [color = none, style = dashed,shape = note];
+    //A -&gt; B, C;
+    //D, E -&gt; F;
+
+    Algorithm [label ="算法", color =yellow];
+    Algorithm -&gt; RSA,Diffie-Hellman;
+    RSANote [color = none, style = dashed,shape = note, label="最常用"];
+    RSA -- RSANote;
+    DHNote [color = none, style = dashed,shape = note, label="目前主流"];
+    Diffie-Hellman -- DHNote;
+    }</desc>
+  <path d="M 75 26 L 187 26 A8,8 0 0 1 195 34 L 195 58 A8,8 0 0 1 187 66 L 75 66 A8,8 0 0 1 67 58 L 67 34 A8,8 0 0 1 75 26" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 26 L 379 26 A8,8 0 0 1 387 34 L 387 58 A8,8 0 0 1 379 66 L 267 66 A8,8 0 0 1 259 58 L 259 34 A8,8 0 0 1 267 26" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 86 L 379 86 A8,8 0 0 1 387 94 L 387 118 A8,8 0 0 1 379 126 L 267 126 A8,8 0 0 1 259 118 L 259 94 A8,8 0 0 1 267 86" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 72 20 L 184 20 A8,8 0 0 1 192 28 L 192 52 A8,8 0 0 1 184 60 L 72 60 A8,8 0 0 1 64 52 L 64 28 A8,8 0 0 1 72 20" fill="rgb(255,255,0)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="28" x="128.0" y="49">算法</text>
+  <path d="M 264 20 L 376 20 A8,8 0 0 1 384 28 L 384 52 A8,8 0 0 1 376 60 L 264 60 A8,8 0 0 1 256 52 L 256 28 A8,8 0 0 1 264 20" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="27" x="320.5" y="48">RSA</text>
+  <path d="M 264 80 L 376 80 A8,8 0 0 1 384 88 L 384 112 A8,8 0 0 1 376 120 L 264 120 A8,8 0 0 1 256 112 L 256 88 A8,8 0 0 1 264 80" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="99" x="320.5" y="108">Diffie-Hellman</text>
+  <polygon fill="none" points="448,20 560,20 576,36 576,60 448,60 448,20" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 560 20 L 560 36" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 560 36 L 576 36" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="42" x="512.0" y="49">最常用</text>
+  <polygon fill="none" points="448,80 560,80 576,96 576,120 448,120 448,80" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 560 80 L 560 96" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 560 96 L 576 96" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="56" x="512.0" y="109">目前主流</text>
+  <path d="M 192 40 L 248 40" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,40 248,36 248,44 255,40" stroke="rgb(0,0,0)" />
+  <path d="M 192 40 L 224 40" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 40 L 224 100" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 100 L 248 100" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,100 248,96 248,104 255,100" stroke="rgb(0,0,0)" />
+  <path d="M 384 40 L 448 40" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 384 100 L 448 100" fill="none" stroke="rgb(0,0,0)" />
+</svg>

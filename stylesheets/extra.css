@@ -33,7 +33,7 @@
   --text-title-h3: orange;
   --text-title-h4:#3270eb ;
   /* #f0fd57; */
-  --text-title-h5: #c3efbb;
+  --text-title-h5: #9be51c;
   /* --text-title-h1: #ddf3a4; */
   --Grey-Accent-1-Darker: #0b0f13;
   --Gold-Accent-1: #d6ba7c;
@@ -49,7 +49,14 @@
   --tabbed-set-checked-bg-color: #fcec61;
   --md-annotation--bg:#f2de76 ;
   --md-annotation--bg-hover: #f5cc38;
-
+  --md-tabs__li--active-bg-click:rgba(233, 84, 40, 1);
+  --md-tabs__li-breath-color-100: orangered;
+  --md-tabs__li-breath-color-0:#6b1839;
+  --md-tabs__li-breath-text-shadow:0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+  -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+  0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  --md-code--highlight-bg-color:  #fdebed;
+  /* #dcfdd5; */
 }
 /* dark-mode 下, 设置,看mkdocs.yml里的scheme配置, 然后对应你的dark-mode添加对应的配置 */
 [data-md-color-scheme="slate"][data-md-color-primary="indigo"] {
@@ -59,6 +66,13 @@
   --tabbed-set-checked-bg-color: #313d4b;
   --md-annotation--bg:var(--md-default-fg-color--lighter) ;
   --md-annotation--bg-hover:#4352af;
+  --md-tabs__li--active-bg-click: rgba(76,201,240,1);
+  --md-tabs__li-breath-color-100: #fffe54;
+  --md-tabs__li-breath-color-0:#ffe6ff;
+  --md-tabs__li-breath-text-shadow:0 0 0.6rem #ffe6ff, 0 0 1.5rem #d6d571,
+  -0.2rem 0.1rem 1rem #d6d571, 0.2rem 0.1rem 1rem #d6d571,
+  0 -0.5rem 2rem #1281be, 0 0.5rem 3rem #1e81bb;
+  --md-code--highlight-bg-color:#28314a;
 }
 .md-grid {
   max-width: 1440px;
@@ -124,21 +138,32 @@
     1px -1px 2px var(--background-secondary-main),
     1px 1px 2px var(--background-secondary-main); */
 }
-
+.md-typeset > h5 {
+  font-size: 1.1625em !important;
+  font-weight: bold !important;
+  color: var(--text-title-h5);
+  /* text-shadow: -1px -1px 2px var(--background-secondary-main),
+    -1px 1px 2px var(--background-secondary-main),
+    1px -1px 2px var(--background-secondary-main),
+    1px 1px 2px var(--background-secondary-main); */
+}
 /* .tabbed-content code{
   font-size: 0.95em !important;
 } */
 
 .md-nav__item .md-nav__link--active {
-  color: var(--nav__link--active--textcolor);
+  /* color: var(--nav__link--active--textcolor); */
   font-weight: bold !important;
-  background-color: var(--nav__link--active--bgcolor);
-  box-shadow: 0 0 0.2rem #0000001a, 0 0.2rem 0.4rem #0003;
+  /* background-color: var(--nav__link--active--bgcolor); */
+
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+  animation: shine 2s forwards, blink 10s 1s infinite;
+  /* box-shadow: 0 0 0.2rem #0000001a, 0 0.2rem 0.4rem #0003;
   transition: transform 0.25s cubic-bezier(0.1, 0.7, 0.1, 1), box-shadow 0.25s;
   text-shadow: -1px -1px 2px var(--background-secondary-main),
     -1px 1px 2px var(--background-secondary-main),
     1px -1px 2px var(--background-secondary-main),
-    1px 1px 2px var(--background-secondary-main);
+    1px 1px 2px var(--background-secondary-main); */
 }
 .md-nav__link:focus,
 .md-nav__link:hover {
@@ -582,6 +607,87 @@
     > :nth-child(9) {
     border-color: var(--md-accent-fg-color);
   }
+  /* 多层tabbed-set的css设置 */
+  .md-typeset
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(1):checked
+    ~ .tabbed-labels
+    > :nth-child(1) ,
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(2):checked
+    ~ .tabbed-labels
+    > :nth-child(2) ,
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(3):checked
+    ~ .tabbed-labels
+    > :nth-child(3) ,
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(4):checked
+    ~ .tabbed-labels
+    > :nth-child(4) ,
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(5):checked
+    ~ .tabbed-labels
+    > :nth-child(5) {
+    color: var(--md-accent-fg-color);
+    background-color: LightGoldenRodYellow    ;
+    border: 1px inset ;
+  }
+  .md-typeset
+    .tabbed-set
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(1):checked
+    ~ .tabbed-labels
+    > :nth-child(1),
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(2):checked
+    ~ .tabbed-labels
+    > :nth-child(2),
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(3):checked
+    ~ .tabbed-labels
+    > :nth-child(3),
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(4):checked
+    ~ .tabbed-labels
+    > :nth-child(4),
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(5):checked
+    ~ .tabbed-labels
+    > :nth-child(5),
+    .md-typeset
+    .tabbed-set
+    .tabbed-set
+    .tabbed-set
+    > input:nth-child(6):checked
+    ~ .tabbed-labels
+    > :nth-child(6) {
+    color: var(--md-accent-fg-color);
+    background-color: LightCyan;
+    border: 1px inset ;
+  }
 }
 .md-typeset
   .tabbed-set
@@ -710,7 +816,9 @@
   background-color: var(--md-annotation--bg-hover);
 }
 
-
+.md-tooltip--active{
+  width: auto;
+}
 /* 表示全部重置css样式 ,annotation里的表格有问题.. 
 我设置的可能不太好...
 */
@@ -745,4 +853,190 @@ a.headerlink{
 }
 .md-typeset .headerlink:focus, .md-typeset .headerlink:hover, .md-typeset :target > .headerlink{
   color: green;
+}
+/* li a.md-tabs__link--active{ */
+ /* li .md-tabs__link--active{ */
+li.md-tabs__item.md-tabs__li--active{
+  /* background-color: var(--md-tabs__li--active-bg-click);
+  -webkit-box-shadow: 10px 10px 99px 6px var(--md-tabs__li--active-bg-click);
+  -moz-box-shadow: 10px 10px 99px 6px var(--md-tabs__li--active-bg-click);
+  box-shadow: 10px 10px 99px 6px var(--md-tabs__li--active-bg-click); */
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+  animation: shine 2s forwards, blink 10s 1s infinite;
+  /* animation: bounce-in 5s infinite; */
+}
+/* 文字放大动画效果 */
+/* @keyframes bounce-in{
+  0%{
+    transform: scale(0);
+  }
+  50%{
+    transform: scale(2.2,1);
+  }
+  100%{
+    transform: scale(1);
+  }
+} */
+@keyframes shine {
+  0% {
+    color: var(--md-tabs__li-breath-color-0);
+    text-shadow: none;
+    border-bottom:1px solid rgb(216, 194, 138);
+  }
+  100% {
+    font-weight:bolder;
+    /* transform: scale(1.2); 字体放大效果 */
+    /* 变成大写 */
+    text-transform: uppercase;
+    border-bottom:5px solid goldenrod;
+    color:var(--md-tabs__li-breath-color-100);
+    text-shadow: var(--md-tabs__li-breath-text-shadow);
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.highlight .hll{
+  background-color: var(--md-code--highlight-bg-color);
+}
+.tabbed-content{
+  padding: 0.3rem 0.3rem;
+}
+.tabbed-content .tabbed-content{
+  border: 0px;
+  padding: 0.3rem 0.3rem;
+}
+
+.tabbed-content .tabbed-content .tabbed-content{
+  border: 0px;
+  padding: 0;
+}
+
+.admonition .tabbed-content{
+  border: 0px;
+  padding: 0;
 }
