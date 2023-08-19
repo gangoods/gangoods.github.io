@@ -5441,7 +5441,7 @@ https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#insta
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="c1"># 做相应修改..</span>
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a>k<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>calico.yaml
 </span></code></pre></div></td></tr></table></div>
-<a href="http://localhost:8000/zh/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/">network-plugins</a></p>
+<a href="https://kubernetes.io/zh/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/">network-plugins</a></p>
 <p>通过给 Kubelet 传递 --network-plugin=cni 命令行选项可以选择 CNI 插件。 Kubelet 从 --cni-conf-dir （默认是 /etc/cni/net.d） 读取文件并使用 该文件中的 CNI 配置来设置各个 Pod 的网络</p>
 <p>删除calico 需要到 每个节点上的 <code>/etc/cni/net.d</code> 目录下删除 calico 的相关配置, 然后 都<code>systemctl restart kubelet</code></p>
 <h4 id="nodejoin">node节点join<a class="headerlink" href="#nodejoin" title="Permanent link">&para;</a></h4>

@@ -4897,7 +4897,7 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># 定义完 pod的后,我们需要定义pod中容器的 volume mount</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>kubectl<span class="w"> </span>explain<span class="w"> </span>pod.spec.containers.volumeMounts
 </span></code></pre></div></td></tr></table></div>
-<p><a href="http://localhost:8000/zh/docs/concepts/storage/volumes/">官方文档</a></p>
+<p><a href="https://kubernetes.io/zh/docs/concepts/storage/volumes/">官方文档</a></p>
 <h3 id="emptydir">emptyDir<a class="headerlink" href="#emptydir" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -5014,7 +5014,7 @@
 <p class="admonition-title">Tip</p>
 <p>将主机节点文件系统上的文件或目录挂载到你的 Pod 中<br></p>
 </div>
-<p><a href="http://localhost:8000/zh/docs/concepts/storage/volumes/#hostpath">hostPath</a></p>
+<p><a href="https://kubernetes.io/zh/docs/concepts/storage/volumes/#hostpath">hostPath</a></p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -5364,7 +5364,7 @@
 </span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">      </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pvc-nfs-1</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="storageclass">storageClass<a class="headerlink" href="#storageclass" title="Permanent link">&para;</a></h3>
-<p><a href="http://localhost:8000/zh/docs/concepts/storage/storage-classes/">官方文档</a></p>
+<p><a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/">官方文档</a></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>storageClass 没有命名空间一说.<br>
@@ -5476,7 +5476,7 @@
 </span></code></pre></div></td></tr></table></div>
 <p>创建这个pv后, 我们发现上面的 pvc 与pv 绑定了, 说明有这个storageClassName的pv 的应该优先级更高</p>
 <h4 id="nfs_1">nfs<a class="headerlink" href="#nfs_1" title="Permanent link">&para;</a></h4>
-<p><a href="http://localhost:8000/zh/docs/concepts/storage/storage-classes/#nfs">nfs storage class</a></p>
+<p><a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#nfs">nfs storage class</a></p>
 <p><a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">NFS subdir 外部驱动</a></p>
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-21-2"> 2</a></span>

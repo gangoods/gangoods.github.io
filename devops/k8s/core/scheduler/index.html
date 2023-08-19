@@ -4857,7 +4857,7 @@
 <p>kube-scheduler负责调度Pod到集群内的节点上,它监听kube-apiserver,查询还未分配Node的Pod,<br>
 然后根据调度策略为这些Pod分配节点(最终体现为更新Pod的spec.nodeName字段)</p>
 </div>
-<p><a href="http://localhost:8000/zh/docs/concepts/scheduling-eviction/kube-scheduler/">kube-scheduler</a></p>
+<p><a href="https://kubernetes.io/zh/docs/concepts/scheduling-eviction/kube-scheduler/">kube-scheduler</a></p>
 <p><code>pkg/scheduler/scheduler.go#New</code>
 snapshot := internalcache.NewEmptySnapshot()</p>
 <h2 id="nodename">nodeName<a class="headerlink" href="#nodename" title="Permanent link">&para;</a></h2>
@@ -4888,7 +4888,7 @@ snapshot := internalcache.NewEmptySnapshot()</p>
 <p class="admonition-title">Tip</p>
 <p>直接通过键值对将Pod调度到具有特定<code>label</code>的Node上</p>
 </div>
-<p><a href="http://localhost:8000/zh/docs/tasks/configure-pod-container/assign-pods-nodes/">nodeSelector</a>
+<p><a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/assign-pods-nodes/">nodeSelector</a>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -4967,7 +4967,7 @@ snapshot := internalcache.NewEmptySnapshot()</p>
 <p>NodeSelector 的升级版,也是用labels来约束, 支持更丰富的配置规则,使用更灵活<br>
 如果 <code>nodeSelector</code> 和 <code>nodeAffinity</code> 两者都指定，那 node 需要两个条件都满足，pod 才能调度</p>
 </div>
-<p><a href="http://localhost:8000/zh/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity">节点亲和性</a></p>
+<p><a href="https://kubernetes.io/zh/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity">节点亲和性</a></p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -5050,7 +5050,7 @@ snapshot := internalcache.NewEmptySnapshot()</p>
 <p>PodAffinity : 想要和含有某些标签的pod 部署在"一起" (一个topology中) <br>
 podAntiAffinity: 与PodAffinity 相反.<br></p>
 </div>
-<p><a href="http://localhost:8000/zh/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity">pod-affinity</a></p>
+<p><a href="https://kubernetes.io/zh/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity">pod-affinity</a></p>
 <details class="tip">
 <summary>什么是topologyKey</summary>
 <ul>
