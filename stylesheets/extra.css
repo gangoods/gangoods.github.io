@@ -865,6 +865,7 @@ li.md-tabs__item.md-tabs__li--active{
   animation: shine 2s forwards, blink 10s 1s infinite;
   /* animation: bounce-in 5s infinite; */
 }
+
 /* 文字放大动画效果 */
 /* @keyframes bounce-in{
   0%{
