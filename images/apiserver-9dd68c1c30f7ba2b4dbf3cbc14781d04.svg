@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 832 240" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" width="832px" height="240px">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>blockdiag {
+    node_width = 128;  // default value is 128
+    node_height = 40;  // default value is 40
+    span_width = 64;  // default value is 64
+    span_height = 100;  // default value is 40 设置高于 node_height 多少 ,group 框框那里就会看到高出node多少
+    // set default shape
+    default_shape = roundedbox;  // default value is 'box'
+
+    // set default colors
+    // default_node_color = lightblue;
+    default_group_color = "yellow";
+    //  default_linecolor = blue;
+    // default_textcolor = red;
+
+    default_fontsize = 14;
+    api-request -&gt; Authentication -&gt; Authorization -&gt; Admission;
+    api-request [color = "greenyellow"];
+    Authentication [color = "LightCyan", numbered = 1];
+    Authorization [color = "orange", numbered = 2];
+    Admission [color = "DeepSkyBlue", numbered = 3];
+
+    group {
+        label = "API Server";
+        fontsize = 18;
+        //color = "#FF0000";
+        // Set group shape to 'line group' (default is box)
+    // shape = line;
+
+        // Set line style (effects to 'line group' only)
+    // style = dashed;
+        Authentication -&gt; Authorization -&gt; Admission;
+    }
+    }</desc>
+  <rect fill="rgb(255,255,0)" height="90" style="filter:url(#filter_blur)" width="528" x="248" y="75" />
+  <path d="M 75 106 L 187 106 A8,8 0 0 1 195 114 L 195 138 A8,8 0 0 1 187 146 L 75 146 A8,8 0 0 1 67 138 L 67 114 A8,8 0 0 1 75 106" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 106 L 379 106 A8,8 0 0 1 387 114 L 387 138 A8,8 0 0 1 379 146 L 267 146 A8,8 0 0 1 259 138 L 259 114 A8,8 0 0 1 267 106" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 106 L 571 106 A8,8 0 0 1 579 114 L 579 138 A8,8 0 0 1 571 146 L 459 146 A8,8 0 0 1 451 138 L 451 114 A8,8 0 0 1 459 106" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 651 106 L 763 106 A8,8 0 0 1 771 114 L 771 138 A8,8 0 0 1 763 146 L 651 146 A8,8 0 0 1 643 138 L 643 114 A8,8 0 0 1 651 106" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 72 100 L 184 100 A8,8 0 0 1 192 108 L 192 132 A8,8 0 0 1 184 140 L 72 140 A8,8 0 0 1 64 132 L 64 108 A8,8 0 0 1 72 100" fill="rgb(173,255,47)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="79" x="128.5" y="129">api-request</text>
+  <path d="M 264 100 L 376 100 A8,8 0 0 1 384 108 L 384 132 A8,8 0 0 1 376 140 L 264 140 A8,8 0 0 1 256 132 L 256 108 A8,8 0 0 1 264 100" fill="rgb(224,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="101" x="320.5" y="128">Authentication</text>
+  <ellipse cx="256" cy="100" fill="pink" rx="12.0" ry="12.0" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="8" x="256.0" y="108">1</text>
+  <path d="M 456 100 L 568 100 A8,8 0 0 1 576 108 L 576 132 A8,8 0 0 1 568 140 L 456 140 A8,8 0 0 1 448 132 L 448 108 A8,8 0 0 1 456 100" fill="rgb(255,165,0)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="93" x="512.5" y="128">Authorization</text>
+  <ellipse cx="448" cy="100" fill="pink" rx="12.0" ry="12.0" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="8" x="448.0" y="108">2</text>
+  <path d="M 648 100 L 760 100 A8,8 0 0 1 768 108 L 768 132 A8,8 0 0 1 760 140 L 648 140 A8,8 0 0 1 640 132 L 640 108 A8,8 0 0 1 648 100" fill="rgb(0,191,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="71" x="704.5" y="128">Admission</text>
+  <ellipse cx="640" cy="100" fill="pink" rx="12.0" ry="12.0" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="8" x="640.0" y="108">3</text>
+  <path d="M 192 120 L 248 120" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,120 248,116 248,124 255,120" stroke="rgb(0,0,0)" />
+  <path d="M 384 120 L 440 120" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,120 440,116 440,124 447,120" stroke="rgb(0,0,0)" />
+  <path d="M 576 120 L 632 120" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="639,120 632,116 632,124 639,120" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="18" font-style="normal" font-weight="normal" text-anchor="middle" textLength="86" x="512.0" y="86">API Server</text>
+</svg>

@@ -1,0 +1,11 @@
+FROM golang:alpine as base
+WORKDIR /test
+COPY . .
+RUN go env -w GOPROXY=https://goproxy.cn,http://mirrors.aliyun.com/goproxy/,https://goproxy.io,direct \
+    && go mod init go-web \
+    && go mod tidy \
+    && go build
+FROM alpine:3.16
+COPY --from=base /test/go-web /go-web
+EXPOSE 9090
+CMD ["/go-web"]
