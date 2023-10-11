@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 824 840" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" width="824px" height="840px">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>blockdiag {
+default_fontsize = 14;
+node_width = 128;
+node_height = 40;
+span_width = 64;
+span_height = 40;
+//orientation = portrait
+default_shape = roundedbox;
+//database [shape = flowchart.database]
+//B [style = dotted];
+//C [style = dashed];
+//A [width=192,height=64,fontsize=20,textcolor=blue,numbered = 1]
+//note [color = none, style = dashed,shape = note];
+//A -&gt; B, C;
+//D, E -&gt; F;
+ctx [label="context 包", color="yellow"];
+bg [label ="Background()"];
+todo [label ="TODO()"]
+ctx -&gt; 实例化最初的ctx -&gt; bg,todo;
+ctx -&gt; 根据父实例出子ctx -&gt; WithValue,WithCancel,WithDeadline,WithTimeout;
+WithValueNote [style=dashed,shape = note,label="传递数据",width=120,height=40];
+WithValue -- WithValueNote ;
+WithCDTNote [shape=note, style=dashed,width=120,label="用于控制"];
+WithCancel,WithDeadline,WithTimeout -- WithCDTNote;
+
+
+Context [label="Context 接口",color="pink"];
+Deadline [label="Deadline()"]
+Done [label="Done()"]
+Err [label="Err()"]
+Err -- context.Canceled,DeadlineExceeded;
+Value [label="Value()"]
+Context -&gt; Deadline,Done,Err,Value;
+}</desc>
+  <path d="M 75 46 L 187 46 A8,8 0 0 1 195 54 L 195 78 A8,8 0 0 1 187 86 L 75 86 A8,8 0 0 1 67 78 L 67 54 A8,8 0 0 1 75 46" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 46 L 571 46 A8,8 0 0 1 579 54 L 579 78 A8,8 0 0 1 571 86 L 459 86 A8,8 0 0 1 451 78 L 451 54 A8,8 0 0 1 459 46" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 126 L 571 126 A8,8 0 0 1 579 134 L 579 158 A8,8 0 0 1 571 166 L 459 166 A8,8 0 0 1 451 158 L 451 134 A8,8 0 0 1 459 126" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 46 L 379 46 A8,8 0 0 1 387 54 L 387 78 A8,8 0 0 1 379 86 L 267 86 A8,8 0 0 1 259 78 L 259 54 A8,8 0 0 1 267 46" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 206 L 379 206 A8,8 0 0 1 387 214 L 387 238 A8,8 0 0 1 379 246 L 267 246 A8,8 0 0 1 259 238 L 259 214 A8,8 0 0 1 267 206" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 206 L 571 206 A8,8 0 0 1 579 214 L 579 238 A8,8 0 0 1 571 246 L 459 246 A8,8 0 0 1 451 238 L 451 214 A8,8 0 0 1 459 206" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 286 L 571 286 A8,8 0 0 1 579 294 L 579 318 A8,8 0 0 1 571 326 L 459 326 A8,8 0 0 1 451 318 L 451 294 A8,8 0 0 1 459 286" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 366 L 571 366 A8,8 0 0 1 579 374 L 579 398 A8,8 0 0 1 571 406 L 459 406 A8,8 0 0 1 451 398 L 451 374 A8,8 0 0 1 459 366" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 446 L 571 446 A8,8 0 0 1 579 454 L 579 478 A8,8 0 0 1 571 486 L 459 486 A8,8 0 0 1 451 478 L 451 454 A8,8 0 0 1 459 446" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <polygon fill="rgb(0,0,0)" points="643,206 747,206 763,222 763,246 643,246 643,206" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <polygon fill="rgb(0,0,0)" points="643,286 747,286 763,302 763,326 643,326 643,286" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 75 526 L 187 526 A8,8 0 0 1 195 534 L 195 558 A8,8 0 0 1 187 566 L 75 566 A8,8 0 0 1 67 558 L 67 534 A8,8 0 0 1 75 526" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 526 L 379 526 A8,8 0 0 1 387 534 L 387 558 A8,8 0 0 1 379 566 L 267 566 A8,8 0 0 1 259 558 L 259 534 A8,8 0 0 1 267 526" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 606 L 379 606 A8,8 0 0 1 387 614 L 387 638 A8,8 0 0 1 379 646 L 267 646 A8,8 0 0 1 259 638 L 259 614 A8,8 0 0 1 267 606" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 686 L 379 686 A8,8 0 0 1 387 694 L 387 718 A8,8 0 0 1 379 726 L 267 726 A8,8 0 0 1 259 718 L 259 694 A8,8 0 0 1 267 686" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 766 L 379 766 A8,8 0 0 1 387 774 L 387 798 A8,8 0 0 1 379 806 L 267 806 A8,8 0 0 1 259 798 L 259 774 A8,8 0 0 1 267 766" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 686 L 571 686 A8,8 0 0 1 579 694 L 579 718 A8,8 0 0 1 571 726 L 459 726 A8,8 0 0 1 451 718 L 451 694 A8,8 0 0 1 459 686" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 459 766 L 571 766 A8,8 0 0 1 579 774 L 579 798 A8,8 0 0 1 571 806 L 459 806 A8,8 0 0 1 451 798 L 451 774 A8,8 0 0 1 459 766" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 72 40 L 184 40 A8,8 0 0 1 192 48 L 192 72 A8,8 0 0 1 184 80 L 72 80 A8,8 0 0 1 64 72 L 64 48 A8,8 0 0 1 72 40" fill="rgb(255,255,0)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="68" x="128.0" y="69">context 包</text>
+  <path d="M 456 40 L 568 40 A8,8 0 0 1 576 48 L 576 72 A8,8 0 0 1 568 80 L 456 80 A8,8 0 0 1 448 72 L 448 48 A8,8 0 0 1 456 40" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="92" x="512.0" y="69">Background()</text>
+  <path d="M 456 120 L 568 120 A8,8 0 0 1 576 128 L 576 152 A8,8 0 0 1 568 160 L 456 160 A8,8 0 0 1 448 152 L 448 128 A8,8 0 0 1 456 120" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="47" x="512.5" y="149">TODO()</text>
+  <path d="M 264 40 L 376 40 A8,8 0 0 1 384 48 L 384 72 A8,8 0 0 1 376 80 L 264 80 A8,8 0 0 1 256 72 L 256 48 A8,8 0 0 1 264 40" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="104" x="320.0" y="69">实例化最初的ctx</text>
+  <path d="M 264 200 L 376 200 A8,8 0 0 1 384 208 L 384 232 A8,8 0 0 1 376 240 L 264 240 A8,8 0 0 1 256 232 L 256 208 A8,8 0 0 1 264 200" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="118" x="320.0" y="229">根据父实例出子ctx</text>
+  <path d="M 456 200 L 568 200 A8,8 0 0 1 576 208 L 576 232 A8,8 0 0 1 568 240 L 456 240 A8,8 0 0 1 448 232 L 448 208 A8,8 0 0 1 456 200" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="70" x="512.0" y="228">WithValue</text>
+  <path d="M 456 280 L 568 280 A8,8 0 0 1 576 288 L 576 312 A8,8 0 0 1 568 320 L 456 320 A8,8 0 0 1 448 312 L 448 288 A8,8 0 0 1 456 280" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="76" x="512.0" y="308">WithCancel</text>
+  <path d="M 456 360 L 568 360 A8,8 0 0 1 576 368 L 576 392 A8,8 0 0 1 568 400 L 456 400 A8,8 0 0 1 448 392 L 448 368 A8,8 0 0 1 456 360" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="92" x="512.0" y="388">WithDeadline</text>
+  <path d="M 456 440 L 568 440 A8,8 0 0 1 576 448 L 576 472 A8,8 0 0 1 568 480 L 456 480 A8,8 0 0 1 448 472 L 448 448 A8,8 0 0 1 456 440" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="86" x="512.0" y="468">WithTimeout</text>
+  <polygon fill="rgb(255,255,255)" points="640,200 744,200 760,216 760,240 640,240 640,200" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 744 200 L 744 216" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 744 216 L 760 216" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="56" x="700.0" y="229">传递数据</text>
+  <polygon fill="rgb(255,255,255)" points="640,280 744,280 760,296 760,320 640,320 640,280" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 744 280 L 744 296" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 744 296 L 760 296" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="56" x="700.0" y="309">用于控制</text>
+  <path d="M 72 520 L 184 520 A8,8 0 0 1 192 528 L 192 552 A8,8 0 0 1 184 560 L 72 560 A8,8 0 0 1 64 552 L 64 528 A8,8 0 0 1 72 520" fill="rgb(255,192,203)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="83" x="128.5" y="549">Context 接口</text>
+  <path d="M 264 520 L 376 520 A8,8 0 0 1 384 528 L 384 552 A8,8 0 0 1 376 560 L 264 560 A8,8 0 0 1 256 552 L 256 528 A8,8 0 0 1 264 520" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="71" x="320.5" y="549">Deadline()</text>
+  <path d="M 264 600 L 376 600 A8,8 0 0 1 384 608 L 384 632 A8,8 0 0 1 376 640 L 264 640 A8,8 0 0 1 256 632 L 256 608 A8,8 0 0 1 264 600" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="46" x="320.0" y="629">Done()</text>
+  <path d="M 264 680 L 376 680 A8,8 0 0 1 384 688 L 384 712 A8,8 0 0 1 376 720 L 264 720 A8,8 0 0 1 256 712 L 256 688 A8,8 0 0 1 264 680" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="28" x="320.0" y="709">Err()</text>
+  <path d="M 264 760 L 376 760 A8,8 0 0 1 384 768 L 384 792 A8,8 0 0 1 376 800 L 264 800 A8,8 0 0 1 256 792 L 256 768 A8,8 0 0 1 264 760" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="49" x="320.5" y="789">Value()</text>
+  <path d="M 456 680 L 568 680 A8,8 0 0 1 576 688 L 576 712 A8,8 0 0 1 568 720 L 456 720 A8,8 0 0 1 448 712 L 448 688 A8,8 0 0 1 456 680" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="116" x="512.0" y="708">context.Canceled</text>
+  <path d="M 456 760 L 568 760 A8,8 0 0 1 576 768 L 576 792 A8,8 0 0 1 568 800 L 456 800 A8,8 0 0 1 448 792 L 448 768 A8,8 0 0 1 456 760" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="125" x="512.5" y="788">DeadlineExceeded</text>
+  <path d="M 192 60 L 248 60" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,60 248,56 248,64 255,60" stroke="rgb(0,0,0)" />
+  <path d="M 192 60 L 224 60" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 60 L 224 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 220 L 248 220" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,220 248,216 248,224 255,220" stroke="rgb(0,0,0)" />
+  <path d="M 384 60 L 440 60" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,60 440,56 440,64 447,60" stroke="rgb(0,0,0)" />
+  <path d="M 384 60 L 416 60" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 60 L 416 140" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 140 L 440 140" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,140 440,136 440,144 447,140" stroke="rgb(0,0,0)" />
+  <path d="M 384 220 L 440 220" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,220 440,216 440,224 447,220" stroke="rgb(0,0,0)" />
+  <path d="M 384 220 L 416 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 220 L 416 300" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 300 L 440 300" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,300 440,296 440,304 447,300" stroke="rgb(0,0,0)" />
+  <path d="M 384 220 L 416 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 220 L 416 380" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 380 L 440 380" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,380 440,376 440,384 447,380" stroke="rgb(0,0,0)" />
+  <path d="M 384 220 L 416 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 220 L 416 460" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 460 L 440 460" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,460 440,456 440,464 447,460" stroke="rgb(0,0,0)" />
+  <path d="M 576 220 L 640 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 576 300 L 640 300" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 576 380 L 624 380" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 624 380 L 624 300" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 624 300 L 640 300" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 576 460 L 624 460" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 624 460 L 624 300" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 624 300 L 640 300" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 192 540 L 248 540" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,540 248,536 248,544 255,540" stroke="rgb(0,0,0)" />
+  <path d="M 192 540 L 224 540" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 540 L 224 620" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 620 L 248 620" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,620 248,616 248,624 255,620" stroke="rgb(0,0,0)" />
+  <path d="M 192 540 L 224 540" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 540 L 224 700" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 700 L 248 700" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,700 248,696 248,704 255,700" stroke="rgb(0,0,0)" />
+  <path d="M 192 540 L 224 540" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 540 L 224 780" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 780 L 248 780" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,780 248,776 248,784 255,780" stroke="rgb(0,0,0)" />
+  <path d="M 384 700 L 448 700" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 384 700 L 416 700" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 700 L 416 780" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 780 L 448 780" fill="none" stroke="rgb(0,0,0)" />
+</svg>

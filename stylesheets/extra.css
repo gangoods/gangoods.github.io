@@ -57,6 +57,10 @@
   0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
   --md-code--highlight-bg-color:  #fdebed;
   /* #dcfdd5; */
+  --md-tasklist-icon--wip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/></svg>');
+  /* --md-tasklist-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16"><path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/></svg>'); */
+  --md-tasklist-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>');
+  --md-tasklist-icon--perfect: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/></svg>');
 }
 /* dark-mode 下, 设置,看mkdocs.yml里的scheme配置, 然后对应你的dark-mode添加对应的配置 */
 [data-md-color-scheme="slate"][data-md-color-primary="indigo"] {
@@ -1040,4 +1044,44 @@ li.md-tabs__item.md-tabs__li--active{
 .admonition .tabbed-content{
   border: 0px;
   padding: 0;
+}
+
+.md-typeset .task-list-indicator:before {
+  background-color: #909193;
+   /* var(--md-default-fg-color--lightest); */
+  content: "";
+  height: 1.25em;
+  -webkit-mask-image: var(--md-tasklist-icon);
+  mask-image: var(--md-tasklist-icon);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  position: absolute;
+  top: 0.15em;
+  width: 1.25em;
+}
+
+.md-typeset  .task-list-item-todo-finish input[type="checkbox"] + .task-list-indicator:before{
+  background-color: #909193 !important;
+-webkit-mask-image: var(--md-tasklist-icon) !important;
+mask-image: var(--md-tasklist-icon) !important;
+}
+.md-typeset  .task-list-item-todo-finish input[type="checkbox"]:checked + .task-list-indicator:before {
+  background-color: #00e676 !important;
+  -webkit-mask-image: var(--md-tasklist-icon--checked) !important;
+  mask-image: var(--md-tasklist-icon--checked) !important;
+}
+.md-typeset  .task-list-item-wip [type="checkbox"] + .task-list-indicator:before {
+  background-color: orange !important;
+  -webkit-mask-image: var(--md-tasklist-icon--wip) !important;
+  mask-image: var(--md-tasklist-icon--wip) !important;
+}
+
+.md-typeset  .task-list-item-perfect [type="checkbox"]:checked + .task-list-indicator:before {
+  background-color: greenyellow !important;
+  -webkit-mask-image: var(--md-tasklist-icon--perfect) !important;
+  mask-image: var(--md-tasklist-icon--perfect) !important;
 }
