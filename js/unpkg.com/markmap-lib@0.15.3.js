@@ -1,4 +1,4 @@
-/*! markmap-lib v0.15.4 | MIT License */
+/*! markmap-lib v0.15.3 | MIT License */
 (function (global, factory) {
 typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('katex')) :
 typeof define === 'function' && define.amd ? define(['exports', 'katex'], factory) :
@@ -6,7 +6,7 @@ typeof define === 'function' && define.amd ? define(['exports', 'katex'], factor
 })(this, (function (exports, require$$0) { 'use strict';
 
 const template = "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n<title>Markmap</title>\n<style>\n* {\n  margin: 0;\n  padding: 0;\n}\n#mindmap {\n  display: block;\n  width: 100vw;\n  height: 100vh;\n}\n</style>\n<!--CSS-->\n</head>\n<body>\n<svg id=\"mindmap\"></svg>\n<!--JS-->\n</body>\n</html>\n" ;
-const baseJsPaths = [`d3@${"7.8.5"}/dist/d3.min.js`, `markmap-view@${"0.15.4"}/dist/browser/index.js`];
+const baseJsPaths = [`d3@${"7.8.5"}/dist/d3.min.js`, `markmap-view@${"0.15.3"}/dist/browser/index.js`];
 
 function _extends$1() {
   _extends$1 = Object.assign ? Object.assign.bind() : function (target) {
@@ -11324,7 +11324,7 @@ class Transformer {
 }
 
 const transformerVersions = {
-  'markmap-lib': '0.15.4',
+  'markmap-lib': '0.15.3',
   d3: "7.8.5"
 };
 
