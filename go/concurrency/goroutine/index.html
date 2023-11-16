@@ -1481,6 +1481,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../basis/mem/" class="md-nav__link">
+        程序的内存分布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../basis/string/" class="md-nav__link">
         字符串
       </a>
@@ -1727,6 +1741,26 @@
   <a href="#gpm" class="md-nav__link">
     GPM
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    go程序启动流程
+  </a>
+  
+    <nav class="md-nav" aria-label="go程序启动流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    找到程序入口函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4230,6 +4264,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    go程序启动流程
+  </a>
+  
+    <nav class="md-nav" aria-label="go程序启动流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    找到程序入口函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4256,13 +4310,181 @@
 </div>
 <h2 id="goroutine">goroutine与线程<a class="headerlink" href="#goroutine" title="Permanent link">¶</a></h2>
 <ol>
-<li>goroutine 是用户态线程, 需要由自己的调度程序</li>
+<li>goroutine 是用户态线程, 需要由go runtime来调度</li>
 <li>内核态线程由操作系统调度</li>
 </ol>
 <h2 id="gpm">GPM<a class="headerlink" href="#gpm" title="Permanent link">¶</a></h2>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="w"> </span><span class="s2">"-N -l"</span><span class="w"> </span>main.go
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>objdump<span class="w"> </span>-t<span class="w">  </span>main<span class="p">|</span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">'.text'</span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'g0|m0'</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="go">go程序启动流程<a class="headerlink" href="#go" title="Permanent link">¶</a></h2>
+<h3 id="_1">找到程序入口函数<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>main.go
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>readelf<span class="w"> </span>-h<span class="w"> </span>main
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">查看 Entry point address</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>ELF Header:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>  Class:                             ELF64
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>  Data:                              2's complement, little endian
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>  Version:                           1 (current)
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>  OS/ABI:                            UNIX - System V
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>  ABI Version:                       0
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>  Type:                              EXEC (Executable file)
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>  Machine:                           Advanced Micro Devices X86-64
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>  Version:                           0x1
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>  Entry point address:               0x456ca0
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>  Start of program headers:          64 (bytes into file)
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>  Start of section headers:          456 (bytes into file)
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>  Flags:                             0x0
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>  Size of this header:               64 (bytes)
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>  Size of program headers:           56 (bytes)
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>  Number of program headers:         7
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>  Size of section headers:           64 (bytes)
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>  Number of section headers:         23
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a>  Section header string table index: 3
+</span></code></pre></div></td></tr></table></div>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># 查看go 程序执行的入口</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>readelf<span class="w"> </span>-s<span class="w"> </span>main<span class="p">|</span>grep<span class="w"> </span>456ca0
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="m">1034</span>:<span class="w"> </span>0000000000456ca0<span class="w">     </span><span class="m">5</span><span class="w"> </span>FUNC<span class="w">    </span>GLOBAL<span class="w"> </span>DEFAULT<span class="w">    </span><span class="m">1</span><span class="w"> </span>_rt0_amd64_linux
+</span></code></pre></div></td></tr></table></div></p>
+<table>
+<thead>
+<tr>
+<th align="left">item</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">rt0</td>
+<td>runtime0</td>
+</tr>
+</tbody>
+</table>
+<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">go/src/runtime/rt0_linux_amd64.s</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// Copyright 2009 The Go Authors. All rights reserved.</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1">// Use of this source code is governed by a BSD-style</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// license that can be found in the LICENSE file.</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="err">#</span><span class="nx">include</span><span class="w"> </span><span class="s">"textflag.h"</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="nx">TEXT</span><span class="w"> </span><span class="nx">_rt0_amd64_linux</span><span class="p">(</span><span class="nx">SB</span><span class="p">),</span><span class="nx">NOSPLIT</span><span class="p">,</span><span class="err">$</span><span class="o">-</span><span class="mi">8</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="nx">JMP</span><span class="w"> </span><span class="nx">_rt0_amd64</span><span class="p">(</span><span class="nx">SB</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nx">TEXT</span><span class="w"> </span><span class="nx">_rt0_amd64_linux_lib</span><span class="p">(</span><span class="nx">SB</span><span class="p">),</span><span class="nx">NOSPLIT</span><span class="p">,</span><span class="err">$</span><span class="mi">0</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="nx">JMP</span><span class="w"> </span><span class="nx">_rt0_amd64_lib</span><span class="p">(</span><span class="nx">SB</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">我们可以用dlv调试看到入口</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>dlv<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>main
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>l
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>&gt;<span class="w"> </span>_rt0_amd64_linux<span class="o">()</span><span class="w"> </span>/usr/local/go/src/runtime/rt0_linux_amd64.s:8<span class="w"> </span><span class="o">(</span>PC:<span class="w"> </span>0x4567c0<span class="o">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>Warning:<span class="w"> </span>debugging<span class="w"> </span>optimized<span class="w"> </span><span class="k">function</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">     </span><span class="m">3</span>:<span class="w"> </span>//<span class="w"> </span>license<span class="w"> </span>that<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>LICENSE<span class="w"> </span>file.
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">     </span><span class="m">4</span>:
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">     </span><span class="m">5</span>:<span class="w"> </span><span class="c1">#include "textflag.h"</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">     </span><span class="m">6</span>:
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">     </span><span class="m">7</span>:<span class="w"> </span>TEXT<span class="w"> </span>_rt0_amd64_linux<span class="o">(</span>SB<span class="o">)</span>,NOSPLIT,<span class="nv">$-8</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="o">=</span>&gt;<span class="w">   </span><span class="m">8</span>:<span class="w">     </span>JMP<span class="w"> </span>_rt0_amd64<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">     </span><span class="m">9</span>:
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="m">10</span>:<span class="w"> </span>TEXT<span class="w"> </span>_rt0_amd64_linux_lib<span class="o">(</span>SB<span class="o">)</span>,NOSPLIT,<span class="nv">$0</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="m">11</span>:<span class="w">     </span>JMP<span class="w"> </span>_rt0_amd64_lib<span class="o">(</span>SB<span class="o">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">go/src/runtime/asm_amd64.s</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// _rt0_amd64 is common startup code for most amd64 systems when using</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1">// internal linking. This is the entry point for the program from the</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">// kernel for an ordinary -buildmode=exe program. The stack holds the</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">// number of arguments and the C-style argv.</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nx">TEXT</span><span class="w"> </span><span class="nx">_rt0_amd64</span><span class="p">(</span><span class="nx">SB</span><span class="p">),</span><span class="nx">NOSPLIT</span><span class="p">,</span><span class="err">$</span><span class="o">-</span><span class="mi">8</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="mi">0</span><span class="p">(</span><span class="nx">SP</span><span class="p">),</span><span class="w"> </span><span class="nx">DI</span><span class="w">   </span><span class="c1">// argc</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="nx">LEAQ</span><span class="w">    </span><span class="mi">8</span><span class="p">(</span><span class="nx">SP</span><span class="p">),</span><span class="w"> </span><span class="nx">SI</span><span class="w">   </span><span class="c1">// argv</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="nx">JMP</span><span class="w"> </span><span class="nx">runtime</span><span class="err">·</span><span class="nx">rt0_go</span><span class="p">(</span><span class="nx">SB</span><span class="p">)</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="nx">TEXT</span><span class="w"> </span><span class="nx">runtime</span><span class="err">·</span><span class="nx">rt0_go</span><span class="p">(</span><span class="nx">SB</span><span class="p">),</span><span class="nx">NOSPLIT</span><span class="o">|</span><span class="nx">TOPFRAME</span><span class="p">,</span><span class="err">$</span><span class="mi">0</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="c1">// copy arguments forward on an even stack</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="nx">DI</span><span class="p">,</span><span class="w"> </span><span class="nx">AX</span><span class="w">      </span><span class="c1">// argc</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="nx">SI</span><span class="p">,</span><span class="w"> </span><span class="nx">BX</span><span class="w">      </span><span class="c1">// argv</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="nx">SUBQ</span><span class="w">    </span><span class="err">$</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="nx">SP</span><span class="w">      </span><span class="c1">// 3args 2auto</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">    </span><span class="nx">ANDQ</span><span class="w">    </span><span class="err">$</span><span class="o">~</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="nx">SP</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="nx">AX</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">(</span><span class="nx">SP</span><span class="p">)</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="nx">BX</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">(</span><span class="nx">SP</span><span class="p">)</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span><span class="c1">// create istack out of the given (operating system) stack.</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">    </span><span class="c1">// _cgo_init may update stackguard.</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="err">$</span><span class="nx">runtime</span><span class="err">·</span><span class="nx">g0</span><span class="p">(</span><span class="nx">SB</span><span class="p">),</span><span class="w"> </span><span class="nx">DI</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">    </span><span class="nx">LEAQ</span><span class="w">    </span><span class="p">(</span><span class="o">-</span><span class="mi">64</span><span class="o">*</span><span class="mi">1024</span><span class="o">+</span><span class="mi">104</span><span class="p">)(</span><span class="nx">SP</span><span class="p">),</span><span class="w"> </span><span class="nx">BX</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="nx">BX</span><span class="p">,</span><span class="w"> </span><span class="nx">g_stackguard0</span><span class="p">(</span><span class="nx">DI</span><span class="p">)</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="nx">BX</span><span class="p">,</span><span class="w"> </span><span class="nx">g_stackguard1</span><span class="p">(</span><span class="nx">DI</span><span class="p">)</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="nx">BX</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">g_stack</span><span class="o">+</span><span class="nx">stack_lo</span><span class="p">)(</span><span class="nx">DI</span><span class="p">)</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="w">    </span><span class="nx">MOVQ</span><span class="w">    </span><span class="nx">SP</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">g_stack</span><span class="o">+</span><span class="nx">stack_hi</span><span class="p">)(</span><span class="nx">DI</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">go/src/runtime/asm_amd64.s</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>
 </span></code></pre></div></td></tr></table></div>
 
 

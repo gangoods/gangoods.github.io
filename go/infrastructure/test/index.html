@@ -1481,6 +1481,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../basis/mem/" class="md-nav__link">
+        程序的内存分布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../basis/string/" class="md-nav__link">
         字符串
       </a>
@@ -4253,9 +4267,11 @@
 <h2 id="vscode-golang">vscode golang 相关配置<a class="headerlink" href="#vscode-golang" title="Permanent link">¶</a></h2>
 <div class="language-json highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">"go.testFlags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">"go.testFlags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">   </span><span class="s2">"-v"</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">],</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">   </span><span class="s2">"-gcflags=-l"</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">],</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="_1">代码<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">one_test.go 文件名必须以 _test 结尾</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>

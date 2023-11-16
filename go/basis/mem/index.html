@@ -9,13 +9,17 @@
       
       
       
+        <link rel="prev" href="../unsafe/">
+      
+      
+        <link rel="next" href="../string/">
       
       <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
-        <title>Array - 斯巴拉稀</title>
+        <title>程序的内存分布 - 斯巴拉稀</title>
       
     
     
@@ -184,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Array
+              程序的内存分布
             
           </span>
         </div>
@@ -409,6 +413,9 @@
 
   
   
+    
+    
+  
 
 
 <!-- Main navigation item with nested items -->
@@ -450,8 +457,8 @@
 
   <!-- Recurse, if the first item has further nested items -->
   
-    <li class="md-tabs__item ">
-      <a href="../env/" class="md-tabs__link">
+    <li class="md-tabs__item  md-tabs__li--active">
+      <a href="../env/" class="md-tabs__link md-tabs__link--active">
         go
       </a>
     </li>
@@ -1327,14 +1334,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -1343,7 +1352,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           go
@@ -1354,14 +1363,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
       
       
       
@@ -1370,7 +1381,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
           基础
@@ -1465,11 +1476,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../mem/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         程序的内存分布
       </a>
+      
     </li>
   
 
@@ -4178,13 +4197,155 @@
 
 
 
-  <h1>Array</h1>
+  <h1>程序的内存分布</h1>
+
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/mem-812c9322582e079062b6cac4e0be0c0c.svg"><img alt="Kroki" src="/images/mem-812c9322582e079062b6cac4e0be0c0c.svg"/></a></p>
+<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_init_xyz</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_noinit_xyz</span><span class="w"> </span><span class="kt">int64</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_init_strxyz</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"hello"</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_noinit_strxyz</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">global_xyz</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">314</span><span class="w">  </span><span class="c1">// 常量</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">local_xyz</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">local_xyz</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">global_init_xyz</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">global_noinit_xyz</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">global_init_strxyz</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">global_noinit_strxyz</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">global_xyz</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">objdump查看各个段</label><label for="__tabbed_1_2">go tool compile -S -N -l main.go 查看</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="w"> </span><span class="s2">"-N -l"</span><span class="w"> </span>main.go
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># size 可执行文件</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># 查看程序内存的代码段 数据段等</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># 最好使用c程序来 看各个变量在哪个段</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>size<span class="w"> </span>main
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1"># dec = text+data+bss</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1"># hex 是dec的16进制数</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span>text<span class="w">       </span>data<span class="w">     </span>bss<span class="w">     </span>dec<span class="w">     </span>hex<span class="w"> </span>filename
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="m">774543</span><span class="w">    </span><span class="m">13424</span><span class="w">  </span><span class="m">202000</span><span class="w">  </span><span class="m">989967</span><span class="w">   </span>f1b0f<span class="w"> </span>main
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>objdump<span class="w"> </span>-t<span class="w"> </span>main<span class="p">|</span>grep<span class="w"> </span>xyz
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="hll"><span class="w">    </span>00000000004c0170<span class="w"> </span>g<span class="w">     </span>O<span class="w"> </span>.noptrdata<span class="w"> </span><span class="m">0000000000000008</span><span class="w"> </span>main.global_init_xyz
+</span></span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="hll"><span class="w">    </span>00000000004f10a0<span class="w"> </span>g<span class="w">     </span>O<span class="w"> </span>.noptrbss<span class="w">  </span><span class="m">0000000000000008</span><span class="w"> </span>main.global_noinit_xyz
+</span></span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="hll"><span class="w">    </span>00000000004c12e0<span class="w"> </span>g<span class="w">     </span>O<span class="w"> </span>.data<span class="w">  </span><span class="m">0000000000000010</span><span class="w"> </span>main.global_init_strxyz
+</span></span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="hll"><span class="w">    </span>00000000004c35b0<span class="w"> </span>g<span class="w">     </span>O<span class="w"> </span>.bss<span class="w">   </span><span class="m">0000000000000010</span><span class="w"> </span>main.global_noinit_strxyz
+</span></span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>objdump<span class="w"> </span>-t<span class="w"> </span>main<span class="p">|</span>grep<span class="w"> </span>string
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="hll"><span class="w">    </span><span class="m">0000000000466220</span><span class="w"> </span>l<span class="w">     </span>O<span class="w"> </span>.rodata<span class="w">    </span><span class="m">0000000000000000</span><span class="w"> </span>go:string.*
+</span></span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="hll">go:string.<span class="s2">"hello"</span><span class="w"> </span>SRODATA<span class="w"> </span>dupok<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">5</span>
+</span></span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="hll">0x0000<span class="w"> </span><span class="m">68</span><span class="w"> </span><span class="m">65</span><span class="w"> </span>6c<span class="w"> </span>6c<span class="w"> </span>6f<span class="w">                                   </span>hello
+</span></span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>main.global_init_xyz<span class="w"> </span>SNOPTRDATA<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">8</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>main.global_noinit_xyz<span class="w"> </span>SNOPTRBSS<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">8</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>main.global_init_strxyz<span class="w"> </span>SDATA<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">16</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>main.global_noinit_strxyz<span class="w"> </span>SBSS<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">16</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>字符串 字面量 hello这种是在只读的内存区的.<br/>
+定义的常量 global_xyz ,在汇编中可能是以 <code>MOVL    $314, AX</code> 这种形式来操作的,并不存在只读区,具体情况具体分析<br/>
+可以关注到go里有 noptrdata noptrbss这种 无指针的 这种区</p>
+</div>
 
 
 
 
 
+  <!-- <h2 id="__comments">Comments</h2> -->
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+  data-repo="llibeohs/llibeohs.github.io"
+  data-repo-id="R_kgDOJQ6AsQ"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOJQ6Asc4CVkC6"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="light"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
 
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
@@ -4223,6 +4384,58 @@
 <footer class="md-footer">
 
     <!-- Link to previous and/or next page -->
+    
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label=""
+      >
+  
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../unsafe/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: unsafe"
+            rel="prev"
+          >
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                unsafe
+              </div>
+            </div>
+          </a>
+        
+  
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../string/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="Next: 字符串"
+            rel="next"
+          >
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                字符串
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   </footer>

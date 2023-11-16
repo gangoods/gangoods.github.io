@@ -160,11 +160,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1483,6 +1478,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../mem/" class="md-nav__link">
+        程序的内存分布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../string/" class="md-nav__link">
         字符串
       </a>
@@ -1616,40 +1625,9 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          GC
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         GC
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="TOC">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      TOC
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    可执行文件
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -4203,21 +4181,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      TOC
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    可执行文件
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4241,61 +4204,6 @@
 <p class="admonition-title">Tip</p>
 <p>TODO</p>
 </div>
-<h2 id="_1">可执行文件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>以后我会放到操作系统或汇编的教程里再详细讲,这里简单写写</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">程序可能的内存分布情况</p>
-<ul>
-<li>栈区<ul>
-<li>由编译器自动分配释放, 存放函数的参数值,局部变量的值等</li>
-</ul>
-</li>
-<li>堆区<ul>
-<li>一般由程序员分配释放,如果程序员没有主动释放,程序结束时可能由系统回收</li>
-</ul>
-</li>
-<li>全局,静态存储区<ul>
-<li>全局变量和静态变量的存储是放在一块的</li>
-<li>初始化的全局变量和静态变量在一块区域 .data</li>
-<li>未初始化的全局变量和未初始化的静态变量在相邻的另一块区域 .bss</li>
-<li>程序结束后有系统释放</li>
-</ul>
-</li>
-<li>文字常量区<ul>
-<li>常量字符串就是放在这里的,程序结束后由系统释放</li>
-</ul>
-</li>
-<li>代码区 .text<ul>
-<li>存放函数体的二进制代码</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">查看各个段</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># size 可执行文件</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1"># 查看程序的代码段 数据段</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>size<span class="w"> </span>main
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span>text<span class="w">       </span>data<span class="w">     </span>bss<span class="w">     </span>dec<span class="w">     </span>hex<span class="w"> </span>filename
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="m">746162</span><span class="w">    </span><span class="m">13200</span><span class="w">  </span><span class="m">212528</span><span class="w">  </span><span class="m">971890</span><span class="w">   </span>ed472<span class="w"> </span>main
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>objdump<span class="w"> </span>-t<span class="w"> </span>main
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1"># c 语言的情况可以这样</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>gcc<span class="w"> </span>-c<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.o
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1"># 可以看看 变量在哪个数据段</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>objdump<span class="w"> </span>-t<span class="w"> </span>main.o<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s2">"变量名"</span>
-</span></code></pre></div></td></tr></table></div>
 <!-- ## 如何
 
 调用一个函数 show, 里面有在堆上申请内存, 但是返回后,没有再用到, 那么这块堆内存其实就是可以回收的
