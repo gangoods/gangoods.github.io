@@ -161,7 +161,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unsafepointer-uintptr" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -1499,6 +1499,47 @@
       TOC
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一些方法
+  </a>
+  
+    <nav class="md-nav" aria-label="一些方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unsafeslice" class="md-nav__link">
+    unsafe.Slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsafeslicedata" class="md-nav__link">
+    unsafe.SliceData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsafeadd" class="md-nav__link">
+    unsafe.Add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsafestring" class="md-nav__link">
+    unsafe.String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#unsafepointer-uintptr" class="md-nav__link">
@@ -4224,6 +4265,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一些方法
+  </a>
+  
+    <nav class="md-nav" aria-label="一些方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unsafeslice" class="md-nav__link">
+    unsafe.Slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsafeslicedata" class="md-nav__link">
+    unsafe.SliceData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsafeadd" class="md-nav__link">
+    unsafe.Add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsafestring" class="md-nav__link">
+    unsafe.String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#unsafepointer-uintptr" class="md-nav__link">
     unsafe.Pointer &amp; uintptr
   </a>
@@ -4250,6 +4332,129 @@
 
   <h1>unsafe</h1>
 
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>TODO</p>
+</div>
+<h2 id="_1">一些方法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h3 id="unsafeslice">unsafe.Slice<a class="headerlink" href="#unsafeslice" title="Permanent link">¶</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Go 1.17 新增 unsafe.Slice</p>
+</div>
+<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// 等价于  (*[len]ArbitraryType)(unsafe.Pointer(ptr))[:]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">func</span><span class="w"> </span><span class="nx">TestSlice</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nx">st</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="nx">a</span><span class="w"> </span><span class="kt">int8</span><span class="w">  </span><span class="c1">// 内存对齐, 导致补一个字节</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="nx">b</span><span class="w"> </span><span class="kt">int16</span><span class="w"> </span><span class="c1">// 516 ==&gt; 高位字节是 2, 低位字节是4  0x204</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="nx">c</span><span class="w"> </span><span class="kt">int32</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">}{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">516</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="c1">// unsafe.Slice  把任何指针变成一个切片</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="c1">// 切片元素类型是 转递的参数指针的类型 , 这里就是 int8</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="c1">// 比如 如果你传递  &amp;st 虽然地址与&amp;st.a 一样, 但是结果就不一样了.</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="nx">slice</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Slice</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">st</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">slice</span><span class="p">),</span><span class="w"> </span><span class="nb">cap</span><span class="p">(</span><span class="nx">slice</span><span class="p">))</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="c1">// 1 ?(不确定的污染数据) 4 2</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">slice</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="nx">slice</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="nx">slice</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="nx">slice</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="unsafeslicedata">unsafe.SliceData<a class="headerlink" href="#unsafeslicedata" title="Permanent link">¶</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Go 1.20 新增 unsafe.SliceData</p>
+</div>
+<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">TestSliceData</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="nx">slice</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[]</span><span class="kt">int64</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="c1">// unsafe.SliceData 返回指向 切片数据(数组)的指针</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="nx">sliceDataPtr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">SliceData</span><span class="p">(</span><span class="nx">slice</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="nx">reflSlice</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">SliceHeader</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">slice</span><span class="p">))</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">sliceDataPtr</span><span class="p">,</span><span class="w"> </span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="nx">reflSlice</span><span class="p">.</span><span class="nx">Data</span><span class="p">))</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="unsafeadd">unsafe.Add<a class="headerlink" href="#unsafeadd" title="Permanent link">¶</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>uintptr的+ 的操作的简便方式</p>
+</div>
+<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">MyStruct</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nx">age</span><span class="w">    </span><span class="kt">int16</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nx">height</span><span class="w"> </span><span class="kt">int16</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kd">func</span><span class="w"> </span><span class="nx">TestUnsafeAdd</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">ms</span><span class="w"> </span><span class="nx">MyStruct</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="nx">ms</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">32</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="nx">ms</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">182</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nx">ptr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ms</span><span class="p">)</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="nx">offset</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Offsetof</span><span class="p">(</span><span class="nx">ms</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">offset</span><span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="nx">newPtr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">ptr</span><span class="p">,</span><span class="w"> </span><span class="nx">offset</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="c1">// 访问新的地址处的值</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="kt">int16</span><span class="p">)(</span><span class="nx">newPtr</span><span class="p">))</span><span class="w"> </span><span class="c1">// 输出 182</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="unsafestring">unsafe.String<a class="headerlink" href="#unsafestring" title="Permanent link">¶</a></h3>
+<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">TestUnsafe</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nx">slice</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">{</span><span class="sc">'h'</span><span class="p">,</span><span class="w"> </span><span class="sc">'e'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'o'</span><span class="p">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="c1">// 参数1: 字符数组的地址, 参数2: 字符数组长度</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="c1">// 是字符串的2个组成部分</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">slice</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="nx">ss</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">StringHeader</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">s</span><span class="p">))</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="c1">// 相同的, 所以是直接转为 字符串 (将字符串的字符数组地址设置为 上面切片的数组地址)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="nx">ss</span><span class="p">.</span><span class="nx">Data</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">slice</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 <h2 id="unsafepointer-uintptr">unsafe.Pointer &amp; uintptr<a class="headerlink" href="#unsafepointer-uintptr" title="Permanent link">¶</a></h2>
 <p>GC 会管理 unsafe.Pointer
 uintptr 则不会</p>
@@ -4414,12 +4619,6 @@ uintptr 则不会</p>
         <script src="../../../js/tablesort.js"></script>
       
         <script src="../../../js/baidu-statistics.js"></script>
-      
-        <script src="../../../js/unpkg.com/d3@7.js"></script>
-      
-        <script src="../../../js/unpkg.com/markmap-lib@0.15.3.js"></script>
-      
-        <script src="../../../js/unpkg.com/markmap-view@0.15.3.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
