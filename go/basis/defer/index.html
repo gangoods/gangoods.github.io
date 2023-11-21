@@ -1628,6 +1628,33 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    例子分析
+  </a>
+  
+    <nav class="md-nav" aria-label="例子分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    例子1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    例子2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     底层原理
   </a>
   
@@ -4225,6 +4252,33 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    例子分析
+  </a>
+  
+    <nav class="md-nav" aria-label="例子分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    例子1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    例子2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     底层原理
   </a>
   
@@ -4252,9 +4306,11 @@
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>在函数返回前,return之后(先执行return,再defer) 执行,常用于关闭资源</p>
+<p>常用于关闭资源,先进后执行</p>
 </div>
-<p><div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<h2 id="_1">例子分析<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h3 id="1">例子1<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4272,90 +4328,310 @@
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
 <span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">defer1</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"defer1"</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">TestDefer</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="c1">// 先进后执行</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="mi">333</span><span class="p">)</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="p">}()</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="c1">// 实际上会弄一个临时变量来接收i 然后</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="c1">// 后续对i的操作 与 临时变量无关了</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">i</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="kd">func</span><span class="w"> </span><span class="nx">defer2</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="p">}()</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="c1">// 已经有变量名,后续的更改会改变i</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="c1">// 学过操作系统和汇编会更好理解, 这里我就不详细展开了</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">i</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">}</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="kd">func</span><span class="w"> </span><span class="nx">TestDefer</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">    </span><span class="c1">// 先进后执行</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="mi">333</span><span class="p">)</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="p">}()</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span><span class="c1">// 代码块中的defer 也是在函数返回前执行</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">        </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"代码块中的defer"</span><span class="p">)</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">        </span><span class="p">}()</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"代码块执行完毕"</span><span class="p">)</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="mi">444</span><span class="p">)</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">    </span><span class="p">}()</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">defer1</span><span class="p">()</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span><span class="w"> </span><span class="c1">// 0</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">    </span><span class="nx">r2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">defer2</span><span class="p">()</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">r2</span><span class="p">)</span><span class="w"> </span><span class="c1">//1</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="c1">// 代码块中的defer 也是在函数返回前执行</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"代码块中的defer"</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="p">}()</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"代码块执行完毕"</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="mi">444</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="p">}()</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">执行结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span>
-<span class="normal"><a href="#__codelineno-1-8">8</a></span>
-<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>111
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>111
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>代码块执行完毕
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>defer1 1
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>0
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>1
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>222
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>444
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>代码块中的defer
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>333
-</span></code></pre></div></td></tr></table></div></p>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>222
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>444
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>代码块中的defer
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>333
+</span></code></pre></div></td></tr></table></div>
+<h3 id="2">例子2<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">OS</th>
+<th>go version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Ubuntu 20.04.3 LTS</td>
+<td>go1.20.4</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">匿名返回值</label><label for="__tabbed_1_2">有名返回值</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kd">func</span><span class="w"> </span><span class="nx">defer1</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">2</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="p">}()</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">i</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nx">ret</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">defer1</span><span class="p">()</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="c1">// 结果是2</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">ret</span><span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kd">func</span><span class="w"> </span><span class="nx">defer1</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">        </span><span class="nx">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="p">}()</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">i</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="p">}</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="nx">ret</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">defer1</span><span class="p">()</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="c1">// 结果是3</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">ret</span><span class="p">)</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>go<span class="w"> </span>tool<span class="w"> </span>compile<span class="w"> </span>-S<span class="w"> </span>-N<span class="w"> </span>-l<span class="w"> </span>main.go
+</span></code></pre></div></td></tr></table></div>
+<!-- ```bash
+dlv exec main  # b main.main c n 报错了...?
+``` -->
+<p>汇编代码使用的是go 1.15.4生成的, 省略部分.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"/><input id="__tabbed_2_2" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1">匿名返回值</label><label for="__tabbed_2_2">有名返回值</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#__codelineno-5-26">26</a></span>
+<span class="normal"><a href="#__codelineno-5-27">27</a></span>
+<span class="normal"><a href="#__codelineno-5-28">28</a></span>
+<span class="normal"><a href="#__codelineno-5-29">29</a></span>
+<span class="normal"><a href="#__codelineno-5-30">30</a></span>
+<span class="normal"><a href="#__codelineno-5-31">31</a></span>
+<span class="normal"><a href="#__codelineno-5-32">32</a></span>
+<span class="normal"><a href="#__codelineno-5-33">33</a></span>
+<span class="normal"><a href="#__codelineno-5-34">34</a></span>
+<span class="normal"><a href="#__codelineno-5-35">35</a></span>
+<span class="normal"><a href="#__codelineno-5-36">36</a></span>
+<span class="normal"><a href="#__codelineno-5-37">37</a></span>
+<span class="normal"><a href="#__codelineno-5-38">38</a></span>
+<span class="normal"><a href="#__codelineno-5-39">39</a></span>
+<span class="normal"><a href="#__codelineno-5-40">40</a></span>
+<span class="normal"><a href="#__codelineno-5-41">41</a></span>
+<span class="normal"><a href="#__codelineno-5-42">42</a></span>
+<span class="normal"><a href="#__codelineno-5-43">43</a></span>
+<span class="normal"><a href="#__codelineno-5-44">44</a></span>
+<span class="normal"><a href="#__codelineno-5-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="s2">""</span>.defer1<span class="w"> </span>STEXT<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">155</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x8<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x68
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>TEXT<span class="w">    </span><span class="s2">""</span>.defer1<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>ABIInternal,<span class="w"> </span><span class="nv">$104</span>-8
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span>0x0013<span class="w"> </span><span class="m">00019</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>SUBQ<span class="w">    </span><span class="nv">$104</span>,<span class="w"> </span>SP
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span>0x0017<span class="w"> </span><span class="m">00023</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>BP,<span class="w"> </span><span class="m">96</span><span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span>0x001c<span class="w"> </span><span class="m">00028</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="m">96</span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>BP
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="hll"><span class="w">    </span><span class="c1"># 返回值 r0</span>
+</span></span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="hll"><span class="w">    </span>0x0021<span class="w"> </span><span class="m">00033</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$0</span>,<span class="w"> </span><span class="s2">""</span>.~r0+112<span class="o">(</span>SP<span class="o">)</span>
+</span></span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="hll"><span class="w">    </span><span class="c1"># i</span>
+</span></span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="hll"><span class="w">    </span>0x002a<span class="w"> </span><span class="m">00042</span><span class="w"> </span><span class="o">(</span>main.go:4<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$2</span>,<span class="w"> </span><span class="s2">""</span>.i+8<span class="o">(</span>SP<span class="o">)</span>
+</span></span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span>0x0033<span class="w"> </span><span class="m">00051</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVL<span class="w">    </span><span class="nv">$8</span>,<span class="w"> </span><span class="s2">""</span>..autotmp_3+16<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span>0x003b<span class="w"> </span><span class="m">00059</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="s2">""</span>.defer1.func1·f<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span>0x0042<span class="w"> </span><span class="m">00066</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">""</span>..autotmp_3+40<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span>0x0047<span class="w"> </span><span class="m">00071</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="s2">""</span>.i+8<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span>0x004c<span class="w"> </span><span class="m">00076</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">""</span>..autotmp_3+88<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span>0x0051<span class="w"> </span><span class="m">00081</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="s2">""</span>..autotmp_3+16<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span>0x0056<span class="w"> </span><span class="m">00086</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span>0x005a<span class="w"> </span><span class="m">00090</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>CALL<span class="w">    </span>runtime.deferprocStack<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">    </span>0x005f<span class="w"> </span><span class="m">00095</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>NOP
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">    </span>0x0060<span class="w"> </span><span class="m">00096</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>TESTL<span class="w">   </span>AX,<span class="w"> </span>AX
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">    </span>0x0062<span class="w"> </span><span class="m">00098</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>JNE<span class="w"> </span><span class="m">129</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">    </span>0x0064<span class="w"> </span><span class="m">00100</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>JMP<span class="w"> </span><span class="m">102</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">    </span>0x0066<span class="w"> </span><span class="m">00102</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="s2">""</span>.i+8<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="hll"><span class="w">    </span><span class="c1"># i 附给 返回值</span>
+</span></span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="hll"><span class="w">    </span>0x006b<span class="w"> </span><span class="m">00107</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">""</span>.~r0+112<span class="o">(</span>SP<span class="o">)</span>
+</span></span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">    </span>0x0070<span class="w"> </span><span class="m">00112</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>XCHGL<span class="w">   </span>AX,<span class="w"> </span>AX
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="w">    </span>0x0071<span class="w"> </span><span class="m">00113</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>CALL<span class="w">    </span>runtime.deferreturn<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="s2">""</span>.defer1.func1<span class="w"> </span>STEXT<span class="w"> </span>nosplit<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">13</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x8<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x0
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">    </span>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>TEXT<span class="w">    </span><span class="s2">""</span>.defer1.func1<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>NOSPLIT<span class="p">|</span>ABIInternal,<span class="w"> </span><span class="nv">$0</span>-8
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="hll"><span class="w">    </span><span class="c1"># i的地址 给AX</span>
+</span></span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="hll"><span class="w">    </span>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:6<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="s2">""</span>.<span class="p">&amp;</span>i+8<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span></span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="hll"><span class="w">    </span><span class="c1"># 赋值3 给 i</span>
+</span></span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="hll"><span class="w">    </span>0x0005<span class="w"> </span><span class="m">00005</span><span class="w"> </span><span class="o">(</span>main.go:6<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$3</span>,<span class="w"> </span><span class="o">(</span>AX<span class="o">)</span>
+</span></span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33"></a><span class="s2">""</span>.main<span class="w"> </span>STEXT<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">98</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x0<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x18
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="w">    </span>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:11<span class="o">)</span><span class="w">   </span>TEXT<span class="w">    </span><span class="s2">""</span>.main<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>ABIInternal,<span class="w"> </span><span class="nv">$24</span>-0
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="w">    </span>0x000f<span class="w"> </span><span class="m">00015</span><span class="w"> </span><span class="o">(</span>main.go:11<span class="o">)</span><span class="w">   </span>SUBQ<span class="w">    </span><span class="nv">$24</span>,<span class="w"> </span>SP
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="w">    </span>0x0013<span class="w"> </span><span class="m">00019</span><span class="w"> </span><span class="o">(</span>main.go:11<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span>BP,<span class="w"> </span><span class="m">16</span><span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37"></a><span class="w">    </span>0x0018<span class="w"> </span><span class="m">00024</span><span class="w"> </span><span class="o">(</span>main.go:11<span class="o">)</span><span class="w">   </span>LEAQ<span class="w">    </span><span class="m">16</span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>BP
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38"></a><span class="w">    </span>0x0020<span class="w"> </span><span class="m">00032</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>CALL<span class="w">    </span><span class="s2">""</span>.defer1<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39"></a><span class="hll"><span class="w">    </span><span class="c1"># (SP) 就是 r0</span>
+</span></span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40"></a><span class="hll"><span class="w">    </span>0x0025<span class="w"> </span><span class="m">00037</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span></span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41"></a><span class="hll"><span class="w">    </span><span class="c1"># 赋值给 ret</span>
+</span></span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42"></a><span class="hll"><span class="w">    </span>0x0029<span class="w"> </span><span class="m">00041</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">""</span>.ret+8<span class="o">(</span>SP<span class="o">)</span>
+</span></span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43"></a><span class="w">    </span>0x002e<span class="w"> </span><span class="m">00046</span><span class="w"> </span><span class="o">(</span>main.go:13<span class="o">)</span><span class="w">   </span>CALL<span class="w">    </span>runtime.printlock<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44"></a><span class="w">    </span>0x0033<span class="w"> </span><span class="m">00051</span><span class="w"> </span><span class="o">(</span>main.go:13<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span><span class="s2">""</span>.ret+8<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45"></a><span class="w">    </span>0x0038<span class="w"> </span><span class="m">00056</span><span class="w"> </span><span class="o">(</span>main.go:13<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="o">(</span>SP<span class="o">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span>
+<span class="normal"><a href="#__codelineno-6-27">27</a></span>
+<span class="normal"><a href="#__codelineno-6-28">28</a></span>
+<span class="normal"><a href="#__codelineno-6-29">29</a></span>
+<span class="normal"><a href="#__codelineno-6-30">30</a></span>
+<span class="normal"><a href="#__codelineno-6-31">31</a></span>
+<span class="normal"><a href="#__codelineno-6-32">32</a></span>
+<span class="normal"><a href="#__codelineno-6-33">33</a></span>
+<span class="normal"><a href="#__codelineno-6-34">34</a></span>
+<span class="normal"><a href="#__codelineno-6-35">35</a></span>
+<span class="normal"><a href="#__codelineno-6-36">36</a></span>
+<span class="normal"><a href="#__codelineno-6-37">37</a></span>
+<span class="normal"><a href="#__codelineno-6-38">38</a></span>
+<span class="normal"><a href="#__codelineno-6-39">39</a></span>
+<span class="normal"><a href="#__codelineno-6-40">40</a></span>
+<span class="normal"><a href="#__codelineno-6-41">41</a></span>
+<span class="normal"><a href="#__codelineno-6-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="s2">""</span>.defer1<span class="w"> </span>STEXT<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">140</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x8<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x60
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>TEXT<span class="w">    </span><span class="s2">""</span>.defer1<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>ABIInternal,<span class="w"> </span><span class="nv">$96</span>-8
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span>0x000f<span class="w"> </span><span class="m">00015</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>SUBQ<span class="w">    </span><span class="nv">$96</span>,<span class="w"> </span>SP
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span>0x0013<span class="w"> </span><span class="m">00019</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>BP,<span class="w"> </span><span class="m">88</span><span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span>0x0018<span class="w"> </span><span class="m">00024</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="m">88</span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>BP
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="hll"><span class="w">    </span><span class="c1"># i 赋值</span>
+</span></span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="hll"><span class="w">    </span>0x001d<span class="w"> </span><span class="m">00029</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$0</span>,<span class="w"> </span><span class="s2">""</span>.i+104<span class="o">(</span>SP<span class="o">)</span>
+</span></span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span>0x0026<span class="w"> </span><span class="m">00038</span><span class="w"> </span><span class="o">(</span>main.go:4<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$2</span>,<span class="w"> </span><span class="s2">""</span>.i+104<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span>0x002f<span class="w"> </span><span class="m">00047</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVL<span class="w">    </span><span class="nv">$8</span>,<span class="w"> </span><span class="s2">""</span>..autotmp_2+8<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span>0x0037<span class="w"> </span><span class="m">00055</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="s2">""</span>.defer1.func1·f<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span>0x003e<span class="w"> </span><span class="m">00062</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">""</span>..autotmp_2+32<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span>0x0043<span class="w"> </span><span class="m">00067</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="s2">""</span>.i+104<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span>0x0048<span class="w"> </span><span class="m">00072</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">""</span>..autotmp_2+80<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span>0x004d<span class="w"> </span><span class="m">00077</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="s2">""</span>..autotmp_2+8<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">    </span>0x0052<span class="w"> </span><span class="m">00082</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span>0x0056<span class="w"> </span><span class="m">00086</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>PCDATA<span class="w">  </span><span class="nv">$1</span>,<span class="w"> </span><span class="nv">$0</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">    </span>0x0056<span class="w"> </span><span class="m">00086</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>CALL<span class="w">    </span>runtime.deferprocStack<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">    </span>0x005b<span class="w"> </span><span class="m">00091</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>TESTL<span class="w">   </span>AX,<span class="w"> </span>AX
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span>0x005d<span class="w"> </span><span class="m">00093</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>JNE<span class="w"> </span><span class="m">114</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">    </span>0x005f<span class="w"> </span><span class="m">00095</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>NOP
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">    </span>0x0060<span class="w"> </span><span class="m">00096</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>JMP<span class="w"> </span><span class="m">98</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">    </span>0x0062<span class="w"> </span><span class="m">00098</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>XCHGL<span class="w">   </span>AX,<span class="w"> </span>AX
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">    </span>0x0063<span class="w"> </span><span class="m">00099</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>CALL<span class="w">    </span>runtime.deferreturn<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="s2">""</span>.defer1.func1<span class="w"> </span>STEXT<span class="w"> </span>nosplit<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">13</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x8<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x0
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">    </span>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>TEXT<span class="w">    </span><span class="s2">""</span>.defer1.func1<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>NOSPLIT<span class="p">|</span>ABIInternal,<span class="w"> </span><span class="nv">$0</span>-8
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="hll"><span class="w">    </span><span class="c1"># i的地址 给AX</span>
+</span></span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="hll"><span class="w">    </span>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:6<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="s2">""</span>.<span class="p">&amp;</span>i+8<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span></span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="hll"><span class="w">    </span><span class="c1"># 赋值3 给 i</span>
+</span></span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="hll"><span class="w">    </span>0x0005<span class="w"> </span><span class="m">00005</span><span class="w"> </span><span class="o">(</span>main.go:6<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$3</span>,<span class="w"> </span><span class="o">(</span>AX<span class="o">)</span>
+</span></span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="s2">""</span>.main<span class="w"> </span>STEXT<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">98</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x0<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x18
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="w">    </span>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:11<span class="o">)</span><span class="w">   </span>TEXT<span class="w">    </span><span class="s2">""</span>.main<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>ABIInternal,<span class="w"> </span><span class="nv">$24</span>-0
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32"></a><span class="w">    </span>0x000f<span class="w"> </span><span class="m">00015</span><span class="w"> </span><span class="o">(</span>main.go:11<span class="o">)</span><span class="w">   </span>SUBQ<span class="w">    </span><span class="nv">$24</span>,<span class="w"> </span>SP
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="w">    </span>0x0013<span class="w"> </span><span class="m">00019</span><span class="w"> </span><span class="o">(</span>main.go:11<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span>BP,<span class="w"> </span><span class="m">16</span><span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34"></a><span class="w">    </span>0x0018<span class="w"> </span><span class="m">00024</span><span class="w"> </span><span class="o">(</span>main.go:11<span class="o">)</span><span class="w">   </span>LEAQ<span class="w">    </span><span class="m">16</span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>BP
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35"></a><span class="w">    </span>0x0020<span class="w"> </span><span class="m">00032</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>CALL<span class="w">    </span><span class="s2">""</span>.defer1<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="hll"><span class="w">    </span><span class="c1"># (SP) 就是 返回值也是 i</span>
+</span></span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37"></a><span class="hll"><span class="w">    </span>0x0025<span class="w"> </span><span class="m">00037</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span></span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38"></a><span class="hll"><span class="w">    </span><span class="c1"># 赋值给 ret</span>
+</span></span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39"></a><span class="hll"><span class="w">    </span>0x0029<span class="w"> </span><span class="m">00041</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">""</span>.ret+8<span class="o">(</span>SP<span class="o">)</span>
+</span></span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40"></a><span class="w">    </span>0x002e<span class="w"> </span><span class="m">00046</span><span class="w"> </span><span class="o">(</span>main.go:13<span class="o">)</span><span class="w">   </span>CALL<span class="w">    </span>runtime.printlock<span class="o">(</span>SB<span class="o">)</span>
+</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41"></a><span class="w">    </span>0x0033<span class="w"> </span><span class="m">00051</span><span class="w"> </span><span class="o">(</span>main.go:13<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span><span class="s2">""</span>.ret+8<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42"></a><span class="w">    </span>0x0038<span class="w"> </span><span class="m">00056</span><span class="w"> </span><span class="o">(</span>main.go:13<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="o">(</span>SP<span class="o">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>先设置返回值,然后执行defer ,最后将返回值复制给ret</p>
+<p>有名返回值的情况是 返回值与i变量是同一个内存位置, defer会修改这个i,就是修改了返回值,最后复制给ret,这样结果就是3了</p>
+<p>匿名返回值的情况是 会有一个临时变量(一块在main栈帧中的内存作为返回值),先设置返回值=2,接着执行defer,修改的是defer1函数栈帧中的 i变量,对返回值无影响</p>
 <!-- deferreturn -->
-<h2 id="_1">底层原理<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h2 id="_2">底层原理<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 
 
 

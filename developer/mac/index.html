@@ -4228,6 +4228,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    聚焦搜索
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4355,6 +4362,13 @@
           <li class="md-nav__item">
   <a href="#u_1" class="md-nav__link">
     遇到复制到u盘文件变灰色
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    聚焦搜索
   </a>
   
 </li>
@@ -4604,6 +4618,15 @@
 <span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># 表示删除文件或者文件夹里面的文件的 属性 com.apple.FinderInfo</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="c1"># -d 表示删除, -r递归</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>xattr<span class="w"> </span>-d<span class="w"> </span>-r<span class="w"> </span>com.apple.FinderInfo<span class="w"> </span>*
+</span></code></pre></div></td></tr></table></div>
+<h3 id="_3">聚焦搜索<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># 打开</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>sudo<span class="w"> </span>mdutil<span class="w"> </span>-a<span class="w"> </span>-i<span class="w"> </span>on
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="c1"># 关闭, 这样会搜不到软件</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>sudo<span class="w"> </span>mdutil<span class="w"> </span>-a<span class="w"> </span>-i<span class="w"> </span>off
 </span></code></pre></div></td></tr></table></div>
 <div class="footnote">
 <hr/>
