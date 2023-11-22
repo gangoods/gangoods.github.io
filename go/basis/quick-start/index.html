@@ -4549,6 +4549,10 @@
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="kd">func</span><span class="w"> </span><span class="nb">new</span><span class="p">(</span><span class="nx">Type</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">Type</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="_2">逃逸分析<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>函数局部变量在函数返回后,如果还会被引用到,那么就逃逸到堆上,即在堆上分配内存</p>
+</div>
 <table>
 <thead>
 <tr>
