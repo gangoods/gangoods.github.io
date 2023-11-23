@@ -4378,14 +4378,16 @@
 <p class="admonition-title">结论</p>
 <ul>
 <li>函数名竟然是个二级指针!!!</li>
+<li><strong><mark>带着为什么函数名是个二级指针的疑问,我们继续看闭包</mark></strong></li>
 </ul>
 </div>
 <h2 id="_2">闭包<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>闭包=函数+引用环境</p>
+<p class="admonition-title">闭包的定义</p>
+<p>闭包（closure）是一个函数以及其捆绑的周边环境状态（lexical environment，词法环境）的引用的组合.</p>
+<p>换而言之,闭包让开发者可以从内部函数访问外部函数的作用域</p>
 </div>
-<div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">请看高亮的注释的思考</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
@@ -4404,36 +4406,70 @@
 <span class="normal"><a href="#__codelineno-6-17">17</a></span>
 <span class="normal"><a href="#__codelineno-6-18">18</a></span>
 <span class="normal"><a href="#__codelineno-6-19">19</a></span>
-<span class="normal"><a href="#__codelineno-6-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span>
+<span class="normal"><a href="#__codelineno-6-27">27</a></span>
+<span class="normal"><a href="#__codelineno-6-28">28</a></span>
+<span class="normal"><a href="#__codelineno-6-29">29</a></span>
+<span class="normal"><a href="#__codelineno-6-30">30</a></span>
+<span class="normal"><a href="#__codelineno-6-31">31</a></span>
+<span class="normal"><a href="#__codelineno-6-32">32</a></span>
+<span class="normal"><a href="#__codelineno-6-33">33</a></span>
+<span class="normal"><a href="#__codelineno-6-34">34</a></span>
+<span class="normal"><a href="#__codelineno-6-35">35</a></span>
+<span class="normal"><a href="#__codelineno-6-36">36</a></span>
+<span class="normal"><a href="#__codelineno-6-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">// 外部函数</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kd">func</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="c1">// 内部函数</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="c1">// 这个匿名内部函数可以访问和操作外部函数中的x变量</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kd">func</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">()</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">=</span><span class="mi">1</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="c1">// 内部函数</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="nx">innerFunc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">innerFunc</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="p">}</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="c1">// 创建一个闭包函数</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">    </span><span class="nx">closure</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">    </span><span class="c1">// 调用闭包函数</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">    </span><span class="nx">closure</span><span class="p">()</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="p">}</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="hll"><span class="w">        </span><span class="c1">// x 属于 outerFunc的</span>
+</span></span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="hll"><span class="w">        </span><span class="c1">// 如果x在栈上,执行完 outerFunc ,x 那么作为它的局部变量会被释放,这肯定不行</span>
+</span></span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="hll"><span class="w">        </span><span class="c1">// 因为 我们这个 return的 innerFunc 还会操作x,所以逃逸到堆上 (只针对这里的情况)</span>
+</span></span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="hll"><span class="w">    </span><span class="c1">// 既然 innerFunc 会操作到x</span>
+</span></span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="hll"><span class="w">    </span><span class="c1">// 那么 innerFunc 这个东西所在的内存除了它自己函数的信息(函数体)外</span>
+</span></span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="hll"><span class="w">    </span><span class="c1">// 还必定含有x 这个数据的相关信息</span>
+</span></span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="hll"><span class="w">    </span><span class="cm">/*</span>
+</span></span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="hll"><span class="cm">    问: 为什么不直接将x 这个外部变量的信息编译到函数体内呢?</span>
+</span></span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="hll"><span class="cm">    答: 如果直接在函数体内, 那么堆上申请内存,初始化x 的操作都在函数内,</span>
+</span></span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="hll"><span class="cm">        然而这样你调用完函数后,没有任何东西再引用这个x了,x必定释放了,这与闭包本身的目的不一致了.</span>
+</span></span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="hll"><span class="cm">        而且你重新调用一次函数, 重新初始化了,不行</span>
+</span></span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="hll"><span class="cm">    */</span>
+</span></span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="hll"><span class="w">    </span><span class="c1">// 把x作为innerFunc的参数? 这不行,首先这不跟传参的一样吗, 还是值传递不成.</span>
+</span></span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="hll"><span class="w">    </span><span class="c1">// 值传递? 搞成传递指针 好像行得通? (这里只是一种思考)</span>
+</span></span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="hll"><span class="w">    </span><span class="c1">//   闭包的调用者堆上申请x的内存,(注:不同的闭包对外部变量的使用情况会有不同)</span>
+</span></span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="hll"><span class="w">    </span><span class="c1">//   然后在自己的栈帧上存地址,将地址传递给闭包函数</span>
+</span></span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">innerFunc</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="p">}</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30"></a>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32"></a><span class="w">    </span><span class="c1">// 创建一个闭包函数</span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="w">    </span><span class="nx">closure</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">()</span>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34"></a>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35"></a><span class="w">    </span><span class="c1">// 调用闭包函数</span>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="w">    </span><span class="nx">closure</span><span class="p">()</span>
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<p>查看汇编
+<p>通过汇编来看看实际的情况
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="w"> </span><span class="s2">"-N -l -S"</span><span class="w"> </span>main.go
 </span></code></pre></div></td></tr></table></div>
-会看到当前这个闭包的结构, 详细以后有时间再搞...
+会看到当前这个闭包的结构
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>runtime.newobject
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>LEAQ    type:noalg.struct { F uintptr; main.x int }(SB), AX
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>LEAQ    type:noalg.struct { F uintptr; main.x *int }(SB), AX
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">验证一下闭包结构</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">代码验证结构</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
@@ -4467,43 +4503,63 @@
 <span class="normal"><a href="#__codelineno-9-32">32</a></span>
 <span class="normal"><a href="#__codelineno-9-33">33</a></span>
 <span class="normal"><a href="#__codelineno-9-34">34</a></span>
-<span class="normal"><a href="#__codelineno-9-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<span class="normal"><a href="#__codelineno-9-35">35</a></span>
+<span class="normal"><a href="#__codelineno-9-36">36</a></span>
+<span class="normal"><a href="#__codelineno-9-37">37</a></span>
+<span class="normal"><a href="#__codelineno-9-38">38</a></span>
+<span class="normal"><a href="#__codelineno-9-39">39</a></span>
+<span class="normal"><a href="#__codelineno-9-40">40</a></span>
+<span class="normal"><a href="#__codelineno-9-41">41</a></span>
+<span class="normal"><a href="#__codelineno-9-42">42</a></span>
+<span class="normal"><a href="#__codelineno-9-43">43</a></span>
+<span class="normal"><a href="#__codelineno-9-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="s">"fmt"</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="s">"unsafe"</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="p">)</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="c1">// 外部函数</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">    </span><span class="c1">// 内部函数</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">    </span><span class="nx">innerFunc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">innerFunc</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="p">}</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">    </span><span class="c1">// 创建一个闭包函数</span>
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">    </span><span class="nx">closure</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">    </span><span class="c1">// 这个是针对 上面的闭包结构</span>
-</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">    </span><span class="kd">type</span><span class="w"> </span><span class="nx">closureStruct</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">        </span><span class="nx">F</span><span class="w"> </span><span class="kt">uintptr</span>
-</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">        </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span>
-</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closure</span><span class="p">)</span>
-</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"fmt.Printf(\"%%p\")打印的值: %p\n"</span><span class="p">,</span><span class="w"> </span><span class="nx">closure</span><span class="p">)</span><span class="w"> </span><span class="c1">// 0x108FB20</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="s">"unsafe"</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">)</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="kd">func</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">()</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span><span class="nx">innerFunc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">        </span><span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">innerFunc</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="p">}</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="c1">//go:linkname inheap runtime.inheap</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="kd">func</span><span class="w"> </span><span class="nx">inheap</span><span class="p">(</span><span class="nx">arg</span><span class="w"> </span><span class="kt">uintptr</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18"></a>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="kd">func</span><span class="w"> </span><span class="nx">inHeapOrStack</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="kt">uintptr</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="hll"><span class="w">    </span><span class="kd">type</span><span class="w"> </span><span class="nx">closureStruct</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="hll"><span class="w">        </span><span class="nx">F</span><span class="w"> </span><span class="kt">uintptr</span><span class="w"> </span><span class="c1">// 闭包的函数的地址</span>
+</span></span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="hll"><span class="w">        </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span><span class="w">    </span><span class="c1">// 闭包的外部变量 这里是指针</span>
+</span></span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span></span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">    </span><span class="c1">// 创建一个闭包函数</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">    </span><span class="nx">closure</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">()</span>
 </span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">    </span><span class="nx">closureVal</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="kt">uint64</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">closure</span><span class="p">))</span>
-</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closureVal</span><span class="p">)</span>
-</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">    </span><span class="nx">closureCodeRealAddrAndVar</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="nx">closureStruct</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="nb">uintptr</span><span class="p">(</span><span class="nx">closureVal</span><span class="p">)))</span>
-</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">//10</span>
-</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">F</span><span class="p">)</span><span class="w"> </span><span class="c1">//闭包函数的地址 0x108FB20</span>
-</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="w">    </span><span class="c1">// 调用闭包函数</span>
-</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33"></a><span class="w">    </span><span class="nx">closure</span><span class="p">()</span>
-</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34"></a>
-</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35"></a><span class="p">}</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">inheap</span><span class="p">(</span><span class="nb">uintptr</span><span class="p">(</span><span class="nx">closureVal</span><span class="p">)))</span><span class="w"> </span><span class="c1">//堆上</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closure</span><span class="p">,</span><span class="w"> </span><span class="nx">closureVal</span><span class="p">)</span><span class="w">         </span><span class="c1">// 0xc000090000</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="w">    </span><span class="nx">closureCodeRealAddrAndVar</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="nx">closureStruct</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="nb">uintptr</span><span class="p">(</span><span class="nx">closureVal</span><span class="p">)))</span>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="hll"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="o">*</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// 1</span>
+</span></span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="hll"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span><span class="w">  </span><span class="c1">// 0xc00008e000  堆上</span>
+</span></span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33"></a><span class="hll"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">F</span><span class="p">)</span><span class="w">  </span><span class="c1">// 闭包函数的地址 0x1057820  只读</span>
+</span></span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34"></a><span class="hll"><span class="w">    </span><span class="c1">// 调用闭包函数</span>
+</span></span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35"></a><span class="hll"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closure</span><span class="p">())</span><span class="w"> </span><span class="c1">// 2</span>
+</span></span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36"></a><span class="hll"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closure</span><span class="p">())</span><span class="w"> </span><span class="c1">// 3</span>
+</span></span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37"></a>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38"></a><span class="w">    </span><span class="nx">closure2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">()</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39"></a><span class="w">    </span><span class="nx">closureVal2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="kt">uint64</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">closure2</span><span class="p">))</span>
+</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40"></a><span class="w">    </span><span class="nx">closureCodeRealAddrAndVar2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="nx">closureStruct</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="nb">uintptr</span><span class="p">(</span><span class="nx">closureVal2</span><span class="p">)))</span>
+</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41"></a><span class="hll"><span class="w">    </span><span class="c1">// 函数地址一样</span>
+</span></span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42"></a><span class="hll"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closureCodeRealAddrAndVar2</span><span class="p">.</span><span class="nx">F</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">F</span><span class="p">)</span><span class="w"> </span><span class="c1">// true</span>
+</span></span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43"></a>
+</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">多次调用是否会修改闭包的变量</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/func-closure-c60d567dfab56bad4dcfdbaac2478037.svg"><img alt="Kroki" src="/images/func-closure-c60d567dfab56bad4dcfdbaac2478037.svg"/></a></p>
+<p>我们看看下面这个例子的结构</p>
+<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">验证一下闭包结构</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
@@ -4533,41 +4589,37 @@
 <span class="normal"><a href="#__codelineno-10-28">28</a></span>
 <span class="normal"><a href="#__codelineno-10-29">29</a></span>
 <span class="normal"><a href="#__codelineno-10-30">30</a></span>
-<span class="normal"><a href="#__codelineno-10-31">31</a></span>
-<span class="normal"><a href="#__codelineno-10-32">32</a></span>
-<span class="normal"><a href="#__codelineno-10-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<span class="normal"><a href="#__codelineno-10-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="s">"fmt"</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="s">"unsafe"</span>
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p">)</span>
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="c1">// 外部函数</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">    </span><span class="c1">// 内部函数</span>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="nx">innerFunc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">        </span><span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span>
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">innerFunc</span>
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="p">}</span>
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a>
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="kd">func</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="nx">innerFunc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">innerFunc</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="p">}</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">    </span><span class="c1">// 创建一个闭包函数</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">    </span><span class="nx">closure</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="c1">// 这个是针对 上面的闭包结构</span>
 </span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">    </span><span class="kd">type</span><span class="w"> </span><span class="nx">closureStruct</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">        </span><span class="nx">F</span><span class="w"> </span><span class="kt">uintptr</span>
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="hll"><span class="w">        </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span><span class="w">  </span><span class="c1">// 存的也是指针, 上面那个例子应该是因为没有去操作x,所以直接数据就行.</span>
-</span></span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">    </span><span class="c1">// 创建一个闭包函数</span>
-</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">    </span><span class="nx">closure</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">outerFunc</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">    </span><span class="nx">closureVal</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="kt">uint64</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">closure</span><span class="p">))</span>
-</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">    </span><span class="nx">closureCodeRealAddrAndVar</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="nx">closureStruct</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="nb">uintptr</span><span class="p">(</span><span class="nx">closureVal</span><span class="p">)))</span>
-</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">//10</span>
-</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">F</span><span class="p">)</span><span class="w">  </span><span class="c1">//闭包函数的地址</span>
-</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">    </span><span class="c1">// 调用闭包函数</span>
-</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30"></a><span class="hll"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closure</span><span class="p">())</span><span class="w"> </span><span class="c1">// 11</span>
-</span></span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="hll"><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closure</span><span class="p">())</span><span class="w"> </span><span class="c1">// 12</span>
-</span></span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32"></a>
-</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="p">}</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">        </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="c1">//直接存就行了.</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">    </span><span class="nx">closureVal</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="kt">uint64</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">closure</span><span class="p">))</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closureVal</span><span class="p">)</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">    </span><span class="nx">closureCodeRealAddrAndVar</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="nx">closureStruct</span><span class="p">)(</span><span class="nx">unsafe</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">(</span><span class="nb">uintptr</span><span class="p">(</span><span class="nx">closureVal</span><span class="p">)))</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">//10</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">closureCodeRealAddrAndVar</span><span class="p">.</span><span class="nx">F</span><span class="p">)</span><span class="w"> </span><span class="c1">//闭包函数的地址</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">    </span><span class="c1">// 调用闭包函数</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">    </span><span class="nx">closure</span><span class="p">()</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30"></a>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="println-fmtprint">println &amp; fmt.Print<a class="headerlink" href="#println-fmtprint" title="Permanent link">¶</a></h2>
 <div class="admonition todo">
