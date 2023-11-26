@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4426,13 +4440,13 @@
 
   <h1>镜像仓库</h1>
 
-<h2 id="harbor">harbor<a class="headerlink" href="#harbor" title="Permanent link">¶</a></h2>
+<h2 id="harbor">harbor<a class="headerlink" href="#harbor" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>搭建自己的仓库</p>
 </div>
-<h3 id="docker-compose">docker-compose 方式<a class="headerlink" href="#docker-compose" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Generate a Certificate Authority Certificate</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<h3 id="docker-compose">docker-compose 方式<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Generate a Certificate Authority Certificate</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
@@ -4444,11 +4458,11 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># Generate the CA certificate</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># CN= 改成你的域名</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>openssl<span class="w"> </span>req<span class="w"> </span>-x509<span class="w"> </span>-new<span class="w"> </span>-nodes<span class="w"> </span>-sha512<span class="w"> </span>-days<span class="w"> </span><span class="m">3650</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w"> </span>-subj<span class="w"> </span><span class="s2">"/C=CN/ST=Beijing/L=Beijing/O=example/OU=Personal/CN=hb.6o6.com"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w"> </span>-subj<span class="w"> </span><span class="s2">&quot;/C=CN/ST=Beijing/L=Beijing/O=example/OU=Personal/CN=hb.6o6.com&quot;</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w"> </span>-key<span class="w"> </span>ca.key<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w"> </span>-out<span class="w"> </span>ca.crt
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Generate a Server Certificate</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Generate a Server Certificate</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -4478,7 +4492,7 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>openssl<span class="w"> </span>genrsa<span class="w"> </span>-out<span class="w"> </span>hb.6o6.com.key<span class="w"> </span><span class="m">4096</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># Generate a certificate signing request (CSR).</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>openssl<span class="w"> </span>req<span class="w"> </span>-sha512<span class="w"> </span>-new<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>-subj<span class="w"> </span><span class="s2">"/C=CN/ST=Beijing/L=Beijing/O=example/OU=Personal/CN=hb.xx.com"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>-subj<span class="w"> </span><span class="s2">&quot;/C=CN/ST=Beijing/L=Beijing/O=example/OU=Personal/CN=hb.xx.com&quot;</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span>-key<span class="w"> </span>hb.6o6.com.key<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span>-out<span class="w"> </span>hb.6o6.com.csr
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
@@ -4502,7 +4516,7 @@
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">    </span>-in<span class="w"> </span>hb.6o6.com.csr<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">    </span>-out<span class="w"> </span>hb.6o6.com.crt
 </span></code></pre></div></td></tr></table></div>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Provide the Certificates to Harbor and Docker</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Provide the Certificates to Harbor and Docker</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4548,14 +4562,14 @@
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>tar<span class="w"> </span>xf<span class="w"> </span>harbor-online-installer-v2.8.2.tgz
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">cd</span><span class="w"> </span>harbor
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>cp<span class="w"> </span>harbor.yml.tmpl<span class="w"> </span>harbor.yml
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/reg.mydomain.com$/hb.6o6.com/'</span><span class="w"> </span>harbor.yml
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s#certificate: /your/certificate/path#certificate: /etc/docker/certs.d/hb.6o6.com/hb.6o6.com.cert#'</span><span class="w"> </span>harbor.yml
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s#private_key: /your/private/key/path#private_key: /etc/docker/certs.d/hb.6o6.com/hb.6o6.com.key#'</span><span class="w"> </span>harbor.yml
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/reg.mydomain.com$/hb.6o6.com/&#39;</span><span class="w"> </span>harbor.yml
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s#certificate: /your/certificate/path#certificate: /etc/docker/certs.d/hb.6o6.com/hb.6o6.com.cert#&#39;</span><span class="w"> </span>harbor.yml
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s#private_key: /your/private/key/path#private_key: /etc/docker/certs.d/hb.6o6.com/hb.6o6.com.key#&#39;</span><span class="w"> </span>harbor.yml
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="c1"># 页面密码</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/harbor_admin_password: Harbor12345/harbor_admin_password: hb123/'</span><span class="w"> </span>harbor.yml
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/harbor_admin_password: Harbor12345/harbor_admin_password: hb123/&#39;</span><span class="w"> </span>harbor.yml
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="c1"># db密码</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/password: root123/password: hb123/'</span><span class="w"> </span>harbor.yml
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s#data_volume: /data#data_volume: /hb_data#'</span><span class="w"> </span>harbor.yml
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/password: root123/password: hb123/&#39;</span><span class="w"> </span>harbor.yml
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s#data_volume: /data#data_volume: /hb_data#&#39;</span><span class="w"> </span>harbor.yml
 </span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a>
 </span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a>./install.sh
 </span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a>
@@ -4565,13 +4579,13 @@
 </span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="s">EOF</span>
 </span></code></pre></div></td></tr></table></div>
 浏览器访问 <a href="https://hb.6o6.com">自己的harbor</a> 用户是admin</p>
-<h3 id="helm">helm 方式安装<a class="headerlink" href="#helm" title="Permanent link">¶</a></h3>
-<h3 id="_1">使用<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h3 id="helm">helm 方式安装<a class="headerlink" href="#helm" title="Permanent link">&para;</a></h3>
+<h3 id="_1">使用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>新建项目, 设置一个名称xyz, 访问级别 不要点选, 这样就表示私有, -1表示容量不限.</li>
-<li>点击新建的项目名xyz→镜像仓库→推送命令</li>
+<li>点击新建的项目名xyz&rarr;镜像仓库&rarr;推送命令</li>
 </ol>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">在我们的k8s 节点上操作</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">在我们的k8s 节点上操作</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -4594,16 +4608,16 @@
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1"># 可以去页面看看.</span>
 </span></code></pre></div></td></tr></table></div>
 <p><a href="https://kubernetes.io/zh-cn/docs/tasks/administer-cluster/verify-signed-artifacts/">Cosign 签名</a></p>
-<h3 id="k8s">k8s使用私有镜像仓库<a class="headerlink" href="#k8s" title="Permanent link">¶</a></h3>
+<h3 id="k8s">k8s使用私有镜像仓库<a class="headerlink" href="#k8s" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>创建的secret需要和你创建的pod在同一个namespace</p>
 </div>
-<h4 id="dockerruntime">docker作为runtime<a class="headerlink" href="#dockerruntime" title="Permanent link">¶</a></h4>
+<h4 id="dockerruntime">docker作为runtime<a class="headerlink" href="#dockerruntime" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>创建secret</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">通过docker login后的配置文件</label><label for="__tabbed_1_2">指定用户密码</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">通过docker login后的配置文件</label><label for="__tabbed_1_2">指定用户密码</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
@@ -4636,13 +4650,13 @@
 <p>查看生成的secret
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>regcred<span class="w"> </span>--output<span class="o">=</span>yaml
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>regcred<span class="w"> </span>--output<span class="o">=</span><span class="s2">"jsonpath={.data.\.dockerconfigjson}"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>--decode
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>regcred<span class="w"> </span>--output<span class="o">=</span><span class="s2">&quot;jsonpath={.data.\.dockerconfigjson}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>--decode
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>配置docker
-<div class="language-json highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">所有节点上/etc/docker/daemon.json添加</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">// 与 "registry-mirrors" 同级</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nt">"insecure-registries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"hb.6o6.com"</span><span class="p">],</span>
+<div class="language-json highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">所有节点上/etc/docker/daemon.json添加</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">// 与 &quot;registry-mirrors&quot; 同级</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nt">&quot;insecure-registries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hb.6o6.com&quot;</span><span class="p">],</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>重启docker
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
@@ -4650,19 +4664,19 @@
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
 </span></code></pre></div></td></tr></table></div></li>
 <li>修改pod的yaml文件
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">pod的属性,与containers同级的</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pod的属性,与containers同级的</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">imagePullSecrets</span><span class="p">:</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regcred</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ol>
-<h4 id="containerd">containerd<a class="headerlink" href="#containerd" title="Permanent link">¶</a></h4>
-<h2 id="aliyun">aliyun 镜像仓库<a class="headerlink" href="#aliyun" title="Permanent link">¶</a></h2>
+<h4 id="containerd">containerd<a class="headerlink" href="#containerd" title="Permanent link">&para;</a></h4>
+<h2 id="aliyun">aliyun 镜像仓库<a class="headerlink" href="#aliyun" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>我们可以利用它来构建需要fq才能快速构建的镜像</p>
 </div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/harbor-18f20eb3b4083dbed19ead4cb3c42910.svg"><img alt="Kroki" src="/images/harbor-18f20eb3b4083dbed19ead4cb3c42910.svg"/></a></p>
-<h3 id="_2">基础设置<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<object type="image/svg+xml" data="/images/harbor-18f20eb3b4083dbed19ead4cb3c42910.svg" style="max-width:100%"></object>
+<h3 id="_2">基础设置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>打开<a href="https://cr.console.aliyun.com/cn-hangzhou/instance/dashboard">阿里云镜像仓库</a></p>
 <ol>
 <li>创建命名空间</li>
@@ -4672,8 +4686,8 @@
 <span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># 测试一下是否能登录</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="o">=</span>your-name<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com
 </span></code></pre></div></td></tr></table></div>
-<h3 id="gitdockerfile">通过关联的git仓库的dockerfile<a class="headerlink" href="#gitdockerfile" title="Permanent link">¶</a></h3>
-<h3 id="githubaction">通过独立github仓库的action<a class="headerlink" href="#githubaction" title="Permanent link">¶</a></h3>
+<h3 id="gitdockerfile">通过关联的git仓库的dockerfile<a class="headerlink" href="#gitdockerfile" title="Permanent link">&para;</a></h3>
+<h3 id="githubaction">通过独立github仓库的action<a class="headerlink" href="#githubaction" title="Permanent link">&para;</a></h3>
 <ol>
 <li>fork <a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">nfs-subdir-external-provisioner</a></li>
 <li>github forked的 仓库 激活action</li>
@@ -4718,7 +4732,7 @@
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a>on:
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">  </span>push:
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">    </span>branches:
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">      </span>-<span class="w"> </span><span class="s1">'test-br'</span><span class="w">  </span><span class="c1">#(1)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">      </span>-<span class="w"> </span><span class="s1">&#39;test-br&#39;</span><span class="w">  </span><span class="c1">#(1)</span>
 </span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a>jobs:
 </span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">  </span>docker:
 </span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">    </span>runs-on:<span class="w"> </span>ubuntu-latest
@@ -4727,7 +4741,7 @@
 </span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">        </span>name:<span class="w"> </span>Prepare
 </span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="w">        </span>id:<span class="w"> </span>prep
 </span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="w">        </span>name:<span class="w"> </span>Login<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>container<span class="w"> </span>registry
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">        </span><span class="k">if</span>:<span class="w"> </span>github.event_name<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s1">'pull_request'</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">        </span><span class="k">if</span>:<span class="w"> </span>github.event_name<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s1">&#39;pull_request&#39;</span>
 </span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="w">        </span>uses:<span class="w"> </span>docker/login-action@v1
 </span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="w">        </span>with:
 </span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="w">          </span>registry:<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com<span class="w"> </span><span class="c1">#(2)</span>
@@ -4738,10 +4752,10 @@
 </span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26"></a>
 </span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27"></a><span class="w">        </span>with:
 </span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28"></a><span class="w">          </span>platforms:<span class="w"> </span>linux/amd64<span class="w"> </span><span class="c1">#(4)</span>
-</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29"></a><span class="w">          </span>tags:<span class="w"> </span><span class="s1">'registry.cn-hangzhou.aliyuncs.com/your-namespace/nfs-subdir-external-provisioner:4.0.18'</span><span class="w"> </span><span class="c1">#(5)</span>
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29"></a><span class="w">          </span>tags:<span class="w"> </span><span class="s1">&#39;registry.cn-hangzhou.aliyuncs.com/your-namespace/nfs-subdir-external-provisioner:4.0.18&#39;</span><span class="w"> </span><span class="c1">#(5)</span>
 </span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30"></a>
 </span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31"></a>
-</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32"></a>git<span class="w"> </span>ci<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s1">'test'</span>
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32"></a>git<span class="w"> </span>ci<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;test&#39;</span>
 </span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>test-br
 </span></code></pre></div></td></tr></table></div>
 <ol>
@@ -4758,19 +4772,19 @@
 </ol>
 <p>去 github 对应项目的<a href="https://github.com/your-name/nfs-subdir-external-provisioner/actions/runs">action 页面</a>查看是否成功, 最后确认<a href="https://cr.console.aliyun.com/repository/cn-hangzhou/your-namespace/nfs-subdir-external-provisioner/images">阿里云镜像</a></p>
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://github.com/goharbor/harbor">harbor github</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://github.com/goharbor/harbor">harbor github</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://goharbor.io/">goharbor 官网</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><a href="https://goharbor.io/">goharbor 官网</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://goharbor.io/docs/2.8.0/install-config/installation-prereqs/">harbor安装</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+<p><a href="https://goharbor.io/docs/2.8.0/install-config/installation-prereqs/">harbor安装</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://cr.console.aliyun.com/cn-hangzhou/instance/dashboard">阿里云镜像仓库</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+<p><a href="https://cr.console.aliyun.com/cn-hangzhou/instance/dashboard">阿里云镜像仓库</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

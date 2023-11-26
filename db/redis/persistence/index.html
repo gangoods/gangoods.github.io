@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4374,7 +4388,7 @@
 <p class="admonition-title">Warning</p>
 <p>未完待续</p>
 </div>
-<h2 id="rdb">RDB<a class="headerlink" href="#rdb" title="Permanent link">¶</a></h2>
+<h2 id="rdb">RDB<a class="headerlink" href="#rdb" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -4386,7 +4400,7 @@
 <li>宕机后,数据会丢失一部分</li>
 </ul>
 </div>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">redis.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">redis.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">save 900 1</span><span class="w">  </span><span class="c1">#900秒内如果有&gt;=1个key发生变化(set写入的操作),则写入磁盘</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">save 300 10</span><span class="w"> </span><span class="c1">#300秒内如果有&gt;=10个key,则不用等待900秒 写入</span>
@@ -4396,13 +4410,13 @@
 <p class="admonition-title">Question</p>
 <p>如果你在60秒内 做了 999次操作, 然后这个时候redis服务器宕机了. 那么数据就不会写入磁盘,也就是说丢失了.</p>
 </div>
-<h3 id="rdb_1">主动生成rdb快照<a class="headerlink" href="#rdb_1" title="Permanent link">¶</a></h3>
+<h3 id="rdb_1">主动生成rdb快照<a class="headerlink" href="#rdb_1" title="Permanent link">&para;</a></h3>
 <p>进入客户端
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a># 每次执行这样的命令都会将所有redis内存快照到一个新的rdb文件,并覆盖原有快照文件
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>save 或 bgsave  
 </span></code></pre></div></td></tr></table></div></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">save</label><label for="__tabbed_1_2">bgsave</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">save</label><label for="__tabbed_1_2">bgsave</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>同步方式,在主线程中保存快照, 所以这个时候所有操作会阻塞,因为主线程就是用来执行client的请求的</p>
@@ -4418,25 +4432,25 @@
 </div>
 </div>
 </div>
-<h3 id="_1">重放<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h3 id="_1">重放<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>就是将dump.rdb 重新加载到内存</li>
 <li>rdb比aof的重放速度快,直接文件重新写入 ,aof是重新执行命令</li>
 </ul>
-<h2 id="aof">AOF<a class="headerlink" href="#aof" title="Permanent link">¶</a></h2>
+<h2 id="aof">AOF<a class="headerlink" href="#aof" title="Permanent link">&para;</a></h2>
 <p>● append only file
 ● 记录每一次的写操作,几乎不会丢失数据,但是 这样性能肯定就没那么好了
   ○ 因为写入磁盘本身 是先写到缓存的? 操作系统..
 ● 就是将你执行的redis命令 添加到指定的文件
 ● 文件会比较大
 ● 重启时,可以通过重新执行文件中的命令在内存中重建数据</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">redis.conf中开启aof</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">redis.conf中开启aof</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>appendonly no # 设置为yes 开启
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>appendfilename "appendonly.aof"  # 文件名
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>appendfilename &quot;appendonly.aof&quot;  # 文件名
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>dir /usr/local/var/db/redis/  # 存放的目录在这里
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_2">写入策略<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h3 id="_2">写入策略<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -4457,7 +4471,7 @@
 <span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">#可以用config set parma value 来修改</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>但是如果要永久话,需要<span class="w"> </span>config<span class="w"> </span>rewirte
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_3">重写优化<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<h3 id="_3">重写优化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>我们知道当redis重启时, 会将aof文件里的命令重新执行来达到重建数据的目的</p>
 <ul>
 <li>aof重写的问题</li>
@@ -4477,7 +4491,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="_4">重写策略<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h3 id="_4">重写策略<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
@@ -4488,7 +4502,7 @@
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># 表示当文件至少达到64m的时候才会自动重写, 因为文件太小 本身加载到内存就很快.</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>auto-aof-rewrite-min-size<span class="w"> </span>64mb
 </span></code></pre></div></td></tr></table></div>
-<h2 id="redis-40">redis 4.0以后 混合持久化<a class="headerlink" href="#redis-40" title="Permanent link">¶</a></h2>
+<h2 id="redis-40">redis 4.0以后 混合持久化<a class="headerlink" href="#redis-40" title="Permanent link">&para;</a></h2>
 <p>重启 Redis 时，我们很少使用 RDB来恢复内存状态，因为会丢失大量数据。我们通常使用 AOF 日志重 放，但是重放 AOF 日志性能相对 RDB来说要慢很多，这样在 Redis 实例很大的情况下，启动需要花费很 长的时间。 Redis 4.0 为了解决这个问题，带来了一个新的持久化选项——混合持久化</p>
 <ul>
 <li>就是结合了上面的2个</li>
@@ -4500,8 +4514,10 @@
 <li>
 <p>AOF在重写时，不再是单纯将内存数据转换为RESP命令写入AOF文件，而是将 <strong>重写这一刻之前的内存**做RDB快照处理，并且将RDB快照内容和**增量****的AOF修改内存数据的命令存在一 起</strong>，都写入新的AOF文件，新的文件一开始不叫appendonly.aof，等到重写完新的AOF文件才会进行改 名，原子的覆盖原有的AOF文件，完成新旧两个AOF文件的替换。 </p>
 </li>
-<li>于是在 Redis 重启的时候，可以先加载 RDB 的内容，然后再重放增量 AOF 日志就可以完全替代之前的 AOF 全量文件重放，因此重启效率大幅得到提升。
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/persistence-9f31d0e78a1a271f1f379287b16f85ff.svg"><img alt="Kroki" src="/images/persistence-9f31d0e78a1a271f1f379287b16f85ff.svg"/></a></li>
+<li>于是在 Redis 重启的时候，可以先加载 RDB 的内容，然后再重放增量 AOF 日志就可以完全替代之前的 AOF 全量文件重放，因此重启效率大幅得到提升。</li>
+</ul>
+<object type="image/svg+xml" data="/images/persistence-9f31d0e78a1a271f1f379287b16f85ff.svg" style="max-width:100%"></object>
+<ul>
 <li>bgrewirteaof 后看下 aof文件,然后 set  写入 ,再看看文件里的内容</li>
 </ul>
 

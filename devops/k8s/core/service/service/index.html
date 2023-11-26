@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4420,12 +4434,13 @@
 
 
 
-<h1 id="service">service<a class="headerlink" href="#service" title="Permanent link">¶</a></h1>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/service-c100e8ebc8e87f4b4ff6e83a6092d8cf.svg"><img alt="Kroki" src="/images/service-c100e8ebc8e87f4b4ff6e83a6092d8cf.svg"/></a></p>
-<h2 id="_1">为什么有这个设计<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h1 id="service">service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h1>
+<object type="image/svg+xml" data="/images/service-c100e8ebc8e87f4b4ff6e83a6092d8cf.svg" style="max-width:100%"></object>
+
+<h2 id="_1">为什么有这个设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>我们前面这个那个的pod 各种搞, 是时候让外面的用户来访问我们通过pod 提供的服务了<br/></p>
+<p>我们前面这个那个的pod 各种搞, 是时候让外面的用户来访问我们通过pod 提供的服务了<br></p>
 </div>
 <div class="admonition question">
 <p class="admonition-title">为什么</p>
@@ -4436,12 +4451,12 @@
 </div>
 <p>就是很多pod在前端的一个负载均衡调度器
 service 先到的endpoint controller 然后通过找到对应的pod</p>
-<h2 id="clusterip">clusterIP<a class="headerlink" href="#clusterip" title="Permanent link">¶</a></h2>
+<h2 id="clusterip">clusterIP<a class="headerlink" href="#clusterip" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Service的默认类型，服务被发布至仅集群内部可见的虚拟IP地址上</p>
 </div>
-<p><div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">deploy-nginx2.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<p><div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">deploy-nginx2.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4505,7 +4520,7 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>k<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deploy-nginx2.yaml
 </span></code></pre></div></td></tr></table></div>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">svc-deploy-nginx.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">svc-deploy-nginx.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4593,7 +4608,7 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a>
 </span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="c1"># 删除svc 会将关联的ep也删除</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">svc-nginx-multi-port.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">svc-nginx-multi-port.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -4623,10 +4638,10 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">    </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web2</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="nodeport">nodePort<a class="headerlink" href="#nodeport" title="Permanent link">¶</a></h2>
+<h2 id="nodeport">nodePort<a class="headerlink" href="#nodeport" title="Permanent link">&para;</a></h2>
 <p>ClusterIP 只能在集群内部访问 (默认)</p>
 <p>映射一个端口 给node, 外部可以直接访问node的端口</p>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">svc-nginx-node-port.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">svc-nginx-node-port.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -4670,11 +4685,11 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">控制随机使用的nodePort</p>
-<p>/etc/kubernetes/manifests/kube-apiserver.yaml<br/>
-在spec.containers.command 最后一行添加,比如<code>- --service-node-port-range=40000-40100</code> <br/>
+<p>/etc/kubernetes/manifests/kube-apiserver.yaml<br>
+在spec.containers.command 最后一行添加,比如<code>- --service-node-port-range=40000-40100</code> <br>
 等待 kube-apiserver 重启完成,稍微等等, <code>systemctl status kubelet</code></p>
 </div>
-<h2 id="k8s">代理 k8s 外部应用<a class="headerlink" href="#k8s" title="Permanent link">¶</a></h2>
+<h2 id="k8s">代理 k8s 外部应用<a class="headerlink" href="#k8s" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol>
@@ -4687,7 +4702,7 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </li>
 </ol>
 </div>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">svc-nginx-external.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">svc-nginx-external.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
@@ -4725,7 +4740,7 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="c1"># 之所以我们以前能通过svc  访问到 pod 的ip ,是根据 ep的设置</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1"># 那么现在我们手动创建一个ep,让ep指向外部的ip ,不就行了.</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">ep-single.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ep-single.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
@@ -4759,11 +4774,11 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 <p class="admonition-title">之前弄完后一直连接不了</p>
 <p>原因是 svc ports 里设置了name, ep里没有设置, 必须设置,且name名字一样才可以.</p>
 </div>
-<h2 id="externalname">ExternalName<a class="headerlink" href="#externalname" title="Permanent link">¶</a></h2>
-<h3 id="_2">外部域名<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h2 id="externalname">ExternalName<a class="headerlink" href="#externalname" title="Permanent link">&para;</a></h2>
+<h3 id="_2">外部域名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>通过svc访问外部的域名(就是给外部服务域名起一个别名) <br/>
+<p>通过svc访问外部的域名(就是给外部服务域名起一个别名) <br>
  ports 字段设置是无效的,因为这里就是域名的映射</p>
 </div>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
@@ -4792,7 +4807,7 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="c1"># 进入一个容器.</span>
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>dep-nginx-cc78676bc-ncrxb<span class="w"> </span>--<span class="w"> </span>ping<span class="w"> </span>svc-external-name-baidu
 </span></code></pre></div></td></tr></table></div>
-<h3 id="svc">内部svc 起个别名<a class="headerlink" href="#svc" title="Permanent link">¶</a></h3>
+<h3 id="svc">内部svc 起个别名<a class="headerlink" href="#svc" title="Permanent link">&para;</a></h3>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
@@ -4827,8 +4842,8 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="c1"># 直接访问, 其它namespace的svc 的别名, 就不需要带上 namespace</span>
 </span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a>k<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span><span class="nb">test</span><span class="w"> </span>deploy-nginx-test-65cb6bf5f6-8mrxw<span class="w">  </span>--<span class="w"> </span>wget<span class="w"> </span>svc-external-name-another-svc:8800
 </span></code></pre></div></td></tr></table></div>
-<h3 id="headless-svc">headless svc<a class="headerlink" href="#headless-svc" title="Permanent link">¶</a></h3>
-<p><div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">svc-headless-nginx.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<h3 id="headless-svc">headless svc<a class="headerlink" href="#headless-svc" title="Permanent link">&para;</a></h3>
+<p><div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">svc-headless-nginx.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
@@ -4880,13 +4895,13 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="c1"># 每次都会直接 ping 为 后端某一个pod的ip ,就是ep上设置的某一个ip</span>
 </span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a>k<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>deploy-nginx2-667f55f99f-frtxh<span class="w"> </span>--<span class="w"> </span>ping<span class="w"> </span>svc-headless-nginx
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="_3">几个注意的问题<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="pod">pod 健康检查失败<a class="headerlink" href="#pod" title="Permanent link">¶</a></h3>
+<h2 id="_3">几个注意的问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="pod">pod 健康检查失败<a class="headerlink" href="#pod" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>前面我们说过, pod 就绪探针失败, 会将pod 切断流量</p>
 </div>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">svc-pod-readiness.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">svc-pod-readiness.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
@@ -4974,7 +4989,7 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a>k<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>svc-pod-readiness.yaml
 </span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a>k<span class="w"> </span>get<span class="w"> </span>ep<span class="w"> </span><span class="c1"># 一开始是有的, 过了一段时间, pod 变成 不 ready了, ep里就删除了该pod ip</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="svcselector-pod">svc指定的selector 没有pod<a class="headerlink" href="#svcselector-pod" title="Permanent link">¶</a></h3>
+<h3 id="svcselector-pod">svc指定的selector 没有pod<a class="headerlink" href="#svcselector-pod" title="Permanent link">&para;</a></h3>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
@@ -5010,10 +5025,10 @@ service 先到的endpoint controller 然后通过找到对应的pod</p>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span>svc-selector-no-pod<span class="w">   </span>&lt;none&gt;<span class="w">                          </span>82s
 </span></code></pre></div></td></tr></table></div>
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
-<p><a href="[BV1QT4y1D7Zf](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/)">service</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="[BV1QT4y1D7Zf](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/)">service</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4276,12 +4290,12 @@
 
   <h1>二进制日志</h1>
 
-<h2 id="_1">配置<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">my.cnf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<h2 id="_1">配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">my.cnf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>server-id               = 1
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>log_bin                 = mysql-bin
 </span></code></pre></div></td></tr></table></div>
-<p><div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">查看变量</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">查看变量</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
@@ -4301,7 +4315,7 @@
 </span></code></pre></div></td></tr></table></div>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">show</span><span class="w"> </span><span class="n">master</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div></p>
-<p><div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
@@ -4321,9 +4335,9 @@
 <ul>
 <li>
 <p>查看binlog更具体的内容
-<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">show</span><span class="w"> </span><span class="n">binlog</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">'mysql-bin.000001'</span><span class="err">\</span><span class="k">G</span>
+<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">show</span><span class="w"> </span><span class="n">binlog</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;mysql-bin.000001&#39;</span><span class="err">\</span><span class="k">G</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
@@ -4370,7 +4384,7 @@
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 </ul>
-<h3 id="binlog_format">binlog_format<a class="headerlink" href="#binlog_format" title="Permanent link">¶</a></h3>
+<h3 id="binlog_format">binlog_format<a class="headerlink" href="#binlog_format" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -4381,7 +4395,7 @@
 <tbody>
 <tr>
 <td align="left">statement</td>
-<td>记录操作的sql文 <br/> <mark>不支持不确定的sql语句,<code>比如update ....  limit 3</code></mark></td>
+<td>记录操作的sql文 <br> <mark>不支持不确定的sql语句,<code>比如update ....  limit 3</code></mark></td>
 </tr>
 <tr>
 <td align="left">row</td>
@@ -4393,7 +4407,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="binlogsql">查看binlog文件里的sql语句<a class="headerlink" href="#binlogsql" title="Permanent link">¶</a></h2>
+<h2 id="binlogsql">查看binlog文件里的sql语句<a class="headerlink" href="#binlogsql" title="Permanent link">&para;</a></h2>
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>

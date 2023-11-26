@@ -1676,6 +1676,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4278,8 +4292,8 @@
 
   <h1>综合例子</h1>
 
-<h2 id="_1">实用脚本<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">看无注释的配置文件</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<h2 id="_1">实用脚本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">看无注释的配置文件</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
@@ -4289,13 +4303,13 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># 1. 首先以空格或tab开头的 (0个或多个,0就表示可以不是以这个为开头)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># 2. [^#[:blank:]] 反向字符集 ,表示接着的字符是 不能是# 空格和tab, 就是说匹配非(#空格tab)的字符</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#    过滤了空行, 过滤了 #开头的行, 过滤了 空格/tab+# 的行</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'/^[[:blank:]]*[^#[:blank:]]/p'</span><span class="w"> </span>my.cnf
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/^[[:blank:]]*[^#[:blank:]]/p&#39;</span><span class="w"> </span>my.cnf
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">修改配置文件并做备份</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">修改配置文件并做备份</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># 修改文件 my.cnf, 并做将源文件生成一个备份,文件名是my.cnf.bak</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">'s/hello/world/g'</span><span class="w"> </span>my.cnf
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">&#39;s/hello/world/g&#39;</span><span class="w"> </span>my.cnf
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">统计英语单词次数</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">统计英语单词次数</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4306,16 +4320,16 @@
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># (网上随便找到的例子基本都不太严谨.)</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># 这里我排除了 各种符号. 比如标点符号. &lt;&gt; 等等</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># 会将 don't 和 xxx's 这种 看成一个单词. (具体看实际的需求)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># 会将 don&#39;t 和 xxx&#39;s 这种 看成一个单词. (具体看实际的需求)</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># \L 表示都转成小写</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>sed<span class="w"> </span>-nE<span class="w"> </span><span class="s2">"s/[^a-zA-Z]*([a-zA-Z]+'[a-zA-Z]|[a-zA-Z]+)[^a-zA-Z]*/\L\1\n/gp"</span><span class="w"> </span>book.txt<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w"> </span><span class="p">|</span>sed<span class="w"> </span><span class="s1">'/^$/d'</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>sed<span class="w"> </span>-nE<span class="w"> </span><span class="s2">&quot;s/[^a-zA-Z]*([a-zA-Z]+&#39;[a-zA-Z]|[a-zA-Z]+)[^a-zA-Z]*/\L\1\n/gp&quot;</span><span class="w"> </span>book.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w"> </span><span class="p">|</span>sed<span class="w"> </span><span class="s1">&#39;/^$/d&#39;</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w"> </span><span class="p">|</span>sort<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w"> </span><span class="p">|</span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w"> </span><span class="p">|</span>sort<span class="w"> </span>-n<span class="w"> </span>-r<span class="w"> </span>-t<span class="w"> </span><span class="s2">" "</span><span class="w"> </span>-k<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w"> </span><span class="p">|</span>sort<span class="w"> </span>-n<span class="w"> </span>-r<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>-k<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w"> </span><span class="p">|</span>head<span class="w"> </span>-10
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">处理空行空格</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">处理空行空格</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
@@ -4323,15 +4337,15 @@
 <span class="normal"><a href="#__codelineno-3-6">6</a></span>
 <span class="normal"><a href="#__codelineno-3-7">7</a></span>
 <span class="normal"><a href="#__codelineno-3-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">#删除行首的空格和行尾的空格</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>sed<span class="w"> </span><span class="s1">'s/^ *//;s/ *$//'</span><span class="w"> </span>example.txt
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>sed<span class="w"> </span><span class="s1">&#39;s/^ *//;s/ *$//&#39;</span><span class="w"> </span>example.txt
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># 制表符 tab 转为空格</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>sed<span class="w"> </span><span class="s1">'s/\t/  /g'</span><span class="w"> </span>example.txt
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>sed<span class="w"> </span><span class="s1">&#39;s/\t/  /g&#39;</span><span class="w"> </span>example.txt
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1"># 删除空行</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>sed<span class="w">  </span><span class="s1">'/^$/d'</span><span class="w"> </span>example.txt
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>sed<span class="w">  </span><span class="s1">&#39;/^$/d&#39;</span><span class="w"> </span>example.txt
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">指定行号,正则匹配,区间,非!,最后一行$</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">指定行号,正则匹配,区间,非!,最后一行$</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -4368,21 +4382,21 @@
 <span class="normal"><a href="#__codelineno-4-35">35</a></span>
 <span class="normal"><a href="#__codelineno-4-36">36</a></span>
 <span class="normal"><a href="#__codelineno-4-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># 打印第5行</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'5p'</span><span class="w"> </span>example.txt
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;5p&#39;</span><span class="w"> </span>example.txt
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># 打印5-10行</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'5,10p'</span><span class="w"> </span>example.txt
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;5,10p&#39;</span><span class="w"> </span>example.txt
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="c1"># 删除 第2-4行, 7-10行</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="p">|</span>sed<span class="w"> </span><span class="s1">'2,4d;7,+3d'</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="p">|</span>sed<span class="w"> </span><span class="s1">&#39;2,4d;7,+3d&#39;</span>
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1"># 打印不包含hello的行, I表示 忽略大小写, 要放到!的前面</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>sed<span class="w"> </span>-En<span class="w"> </span><span class="s1">'/hello/I!p'</span><span class="w"> </span>example.txt
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>sed<span class="w"> </span>-En<span class="w"> </span><span class="s1">&#39;/hello/I!p&#39;</span><span class="w"> </span>example.txt
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1"># 首行不打印</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'1!p'</span><span class="w"> </span>example.txt
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;1!p&#39;</span><span class="w"> </span>example.txt
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1"># 打印最后一行</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'$p'</span><span class="w"> </span>example.txt
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;$p&#39;</span><span class="w"> </span>example.txt
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="c1"># 匹配包含python的行到 包含java的行</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="c1"># macos和linux下的都会匹配上,2个区间</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'/python/,/java/p'</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/python/,/java/p&#39;</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 </span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="s">macos</span>
 </span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="s">    python url1</span>
 </span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="s">    golang url2</span>
@@ -4394,7 +4408,7 @@
 </span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="s">EOF</span>
 </span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>
 </span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="c1"># 只打印macos下的 ,可以这样</span>
-</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'/^macos/,/^linux/{/python/,/java/p}'</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/^macos/,/^linux/{/python/,/java/p}&#39;</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 </span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="s">macos</span>
 </span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="s">    python url1</span>
 </span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="s">    golang url2</span>
@@ -4407,11 +4421,11 @@
 </span></code></pre></div></td></tr></table></div></p>
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># 将第2行和第3行合成一行</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>sed<span class="w">  </span><span class="s1">'2N;s/\n/ /'</span><span class="w"> </span>example.txt
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>sed<span class="w">  </span><span class="s1">&#39;2N;s/\n/ /&#39;</span><span class="w"> </span>example.txt
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">整理中...</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">整理中...</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="python-conda">python conda 一键安装脚本<a class="headerlink" href="#python-conda" title="Permanent link">¶</a></h2>
+<h2 id="python-conda">python conda 一键安装脚本<a class="headerlink" href="#python-conda" title="Permanent link">&para;</a></h2>
 <p>这里只支持ubuntu和mac, 我只暂时测试了 ubuntu 下的安装,后续会再优化测试.
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
@@ -4471,40 +4485,40 @@
 <span class="normal"><a href="#__codelineno-7-56">56</a></span>
 <span class="normal"><a href="#__codelineno-7-57">57</a></span>
 <span class="normal"><a href="#__codelineno-7-58">58</a></span>
-<span class="normal"><a href="#__codelineno-7-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nv">os</span><span class="o">=</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="p">|</span>tr<span class="w"> </span><span class="s1">'[:upper:]'</span><span class="w"> </span><span class="s1">'[:lower:]'</span><span class="k">)</span>
+<span class="normal"><a href="#__codelineno-7-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nv">os</span><span class="o">=</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="p">|</span>tr<span class="w"> </span><span class="s1">&#39;[:upper:]&#39;</span><span class="w"> </span><span class="s1">&#39;[:lower:]&#39;</span><span class="k">)</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>install_python<span class="o">(){</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="c1">#/Linux installers/,/Installing/ 表示找 这2个之间的文本</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$os</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"linux"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">        </span><span class="nv">os_begin</span><span class="o">=</span><span class="s2">"Linux installers"</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">        </span><span class="nv">os_end</span><span class="o">=</span><span class="s2">"Installing"</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$os</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;linux&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">        </span><span class="nv">os_begin</span><span class="o">=</span><span class="s2">&quot;Linux installers&quot;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">        </span><span class="nv">os_end</span><span class="o">=</span><span class="s2">&quot;Installing&quot;</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="k">else</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">        </span><span class="nv">os_begin</span><span class="o">=</span><span class="s2">"macOS installers"</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">        </span><span class="nv">os_end</span><span class="o">=</span><span class="s2">"Linux installers"</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">        </span><span class="nv">os_begin</span><span class="o">=</span><span class="s2">&quot;macOS installers&quot;</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">        </span><span class="nv">os_end</span><span class="o">=</span><span class="s2">&quot;Linux installers&quot;</span>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">    </span><span class="k">fi</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="nv">pyversion</span><span class="o">=(</span><span class="k">$(</span>curl<span class="w"> </span>-Ss<span class="w"> </span>https://docs.conda.io/en/latest/miniconda.html<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w">  </span><span class="s1">'/'</span><span class="s2">"</span><span class="si">${</span><span class="nv">os_begin</span><span class="si">}</span><span class="s2">"</span><span class="s1">'/,/'</span><span class="s2">"</span><span class="si">${</span><span class="nv">os_end</span><span class="si">}</span><span class="s2">"</span><span class="s1">'/s#.*&lt;td&gt;Python \([0-9.]*\)&lt;/td&gt;#\1#p'</span><span class="k">)</span><span class="o">)</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"选择你的python版本"</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="nv">pyversion</span><span class="o">=(</span><span class="k">$(</span>curl<span class="w"> </span>-Ss<span class="w"> </span>https://docs.conda.io/en/latest/miniconda.html<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w">  </span><span class="s1">&#39;/&#39;</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_begin</span><span class="si">}</span><span class="s2">&quot;</span><span class="s1">&#39;/,/&#39;</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="s1">&#39;/s#.*&lt;td&gt;Python \([0-9.]*\)&lt;/td&gt;#\1#p&#39;</span><span class="k">)</span><span class="o">)</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;选择你的python版本&quot;</span>
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span>j<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="p">!pyversion[@]</span><span class="si">}</span>
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">    </span><span class="k">do</span>
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>expr<span class="w"> </span><span class="nv">$j</span><span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="k">)</span>:<span class="w"> </span><span class="si">${</span><span class="nv">pyversion</span><span class="p">[</span><span class="nv">$j</span><span class="p">]</span><span class="si">}</span>
 </span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">    </span><span class="k">done</span>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"请输入编号:"</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;请输入编号:&quot;</span>
 </span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">    </span><span class="nb">read</span><span class="w"> </span>python_version_no
 </span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">    </span><span class="c1"># 将. 转义</span>
 </span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">    </span><span class="nv">python_version</span><span class="o">=</span><span class="si">${</span><span class="nv">pyversion</span><span class="p">[</span><span class="k">$(</span>expr<span class="w"> </span><span class="nv">$python_version_no</span>-1<span class="k">)</span><span class="p">]/./</span><span class="se">\\</span><span class="p">.</span><span class="si">}</span>
 </span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">    </span><span class="nv">python_next_version</span><span class="o">=</span><span class="si">${</span><span class="nv">pyversion</span><span class="p">[</span><span class="nv">$python_version_no</span><span class="p">]/./</span><span class="se">\\</span><span class="p">.</span><span class="si">}</span>
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">    </span><span class="nv">between_begin</span><span class="o">=</span><span class="s2">"Python "</span><span class="si">${</span><span class="nv">python_version</span><span class="si">}</span>
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">    </span><span class="nv">between_end</span><span class="o">=</span><span class="s2">"Python "</span><span class="si">${</span><span class="nv">python_next_version</span><span class="si">}</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">    </span><span class="nv">between_begin</span><span class="o">=</span><span class="s2">&quot;Python &quot;</span><span class="si">${</span><span class="nv">python_version</span><span class="si">}</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">    </span><span class="nv">between_end</span><span class="o">=</span><span class="s2">&quot;Python &quot;</span><span class="si">${</span><span class="nv">python_next_version</span><span class="si">}</span>
 </span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="si">${</span><span class="nv">python_next_version</span><span class="si">}</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
-</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">        </span><span class="nv">between_end</span><span class="o">=</span><span class="s2">"Installing"</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">        </span><span class="nv">between_end</span><span class="o">=</span><span class="s2">&quot;Installing&quot;</span>
 </span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">    </span><span class="k">fi</span>
 </span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">    </span><span class="c1"># 使用//,//{//,//} 来范围内找范围</span>
-</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">    </span><span class="nv">cpuverurl</span><span class="o">=(</span><span class="k">$(</span>curl<span class="w"> </span>-Ss<span class="w"> </span>https://docs.conda.io/en/latest/miniconda.html<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'/'</span><span class="s2">"</span><span class="si">${</span><span class="nv">os_begin</span><span class="si">}</span><span class="s2">"</span><span class="s1">'/,/'</span><span class="s2">"</span><span class="si">${</span><span class="nv">os_end</span><span class="si">}</span><span class="s2">"</span><span class="s1">'/{/'</span><span class="s2">"</span><span class="si">${</span><span class="nv">between_begin</span><span class="si">}</span><span class="s2">"</span><span class="s1">'/,/'</span><span class="s2">"</span><span class="si">${</span><span class="nv">between_end</span><span class="si">}</span><span class="s2">"</span><span class="s1">'/s/.* class="reference external" href="\(.*Linux-\(.*\)\.sh\)"&gt;.*/\2 \1/p}'</span><span class="k">)</span><span class="o">)</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">    </span><span class="nv">cpuverurl</span><span class="o">=(</span><span class="k">$(</span>curl<span class="w"> </span>-Ss<span class="w"> </span>https://docs.conda.io/en/latest/miniconda.html<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_begin</span><span class="si">}</span><span class="s2">&quot;</span><span class="s1">&#39;/,/&#39;</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="s1">&#39;/{/&#39;</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">between_begin</span><span class="si">}</span><span class="s2">&quot;</span><span class="s1">&#39;/,/&#39;</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">between_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="s1">&#39;/s/.* class=&quot;reference external&quot; href=&quot;\(.*Linux-\(.*\)\.sh\)&quot;&gt;.*/\2 \1/p}&#39;</span><span class="k">)</span><span class="o">)</span>
 </span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30"></a>
 </span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="w">    </span><span class="nb">declare</span><span class="w"> </span>conda_url
 </span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="w">    </span><span class="nb">declare</span><span class="w"> </span>cpu_ver
 </span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33"></a>
-</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"选择你的cpu架构"</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;选择你的cpu架构&quot;</span>
 </span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span>j<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="p">!cpuverurl[@]</span><span class="si">}</span>
 </span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="w">    </span><span class="k">do</span>
 </span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="k">$((</span><span class="nv">$j</span><span class="o">%</span><span class="m">2</span><span class="k">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
@@ -4514,9 +4528,9 @@
 </span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41"></a><span class="w">            </span>conda_url<span class="o">[</span><span class="nv">$i</span><span class="o">]=</span><span class="si">${</span><span class="nv">cpuverurl</span><span class="p">[</span><span class="k">$(</span>expr<span class="w"> </span><span class="nv">$j</span><span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="k">)</span><span class="p">]</span><span class="si">}</span>
 </span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42"></a><span class="w">        </span><span class="k">fi</span>
 </span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43"></a><span class="w">    </span><span class="k">done</span>
-</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"输入编号:"</span>
+</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;输入编号:&quot;</span>
 </span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45"></a><span class="w">    </span><span class="nb">read</span><span class="w"> </span>chosen_cpu
-</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"你选择的是:"</span><span class="w"> </span><span class="si">${</span><span class="nv">cpu_ver</span><span class="p">[</span><span class="si">${</span><span class="nv">chosen_cpu</span><span class="si">}</span><span class="p">]</span><span class="si">}</span>
+</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;你选择的是:&quot;</span><span class="w"> </span><span class="si">${</span><span class="nv">cpu_ver</span><span class="p">[</span><span class="si">${</span><span class="nv">chosen_cpu</span><span class="si">}</span><span class="p">]</span><span class="si">}</span>
 </span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47"></a><span class="w">    </span><span class="nv">miniconda_url</span><span class="o">=</span><span class="si">${</span><span class="nv">conda_url</span><span class="p">[</span><span class="si">${</span><span class="nv">chosen_cpu</span><span class="si">}</span><span class="p">]</span><span class="si">}</span>
 </span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48"></a><span class="w">    </span><span class="nv">execfile</span><span class="o">=</span><span class="si">${</span><span class="nv">conda_url</span><span class="p">[</span><span class="si">${</span><span class="nv">chosen_cpu</span><span class="si">}</span><span class="p">]##*/</span><span class="si">}</span>
 </span><span id="__span-7-49"><a id="__codelineno-7-49" name="__codelineno-7-49"></a><span class="w">    </span>wget<span class="w"> </span><span class="si">${</span><span class="nv">miniconda_url</span><span class="si">}</span>
@@ -4531,7 +4545,7 @@
 </span><span id="__span-7-58"><a id="__codelineno-7-58" name="__codelineno-7-58"></a><span class="o">}</span>
 </span><span id="__span-7-59"><a id="__codelineno-7-59" name="__codelineno-7-59"></a>install_python
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="go">go 一键安装脚本<a class="headerlink" href="#go" title="Permanent link">¶</a></h2>
+<h2 id="go">go 一键安装脚本<a class="headerlink" href="#go" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -4545,16 +4559,16 @@
 <span class="normal"><a href="#__codelineno-8-11">11</a></span>
 <span class="normal"><a href="#__codelineno-8-12">12</a></span>
 <span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nv">os</span><span class="o">=</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="p">|</span>tr<span class="w"> </span><span class="s1">'[:upper:]'</span><span class="w"> </span><span class="s1">'[:lower:]'</span><span class="k">)</span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nv">os</span><span class="o">=</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="p">|</span>tr<span class="w"> </span><span class="s1">&#39;[:upper:]&#39;</span><span class="w"> </span><span class="s1">&#39;[:lower:]&#39;</span><span class="k">)</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>install_go<span class="o">(){</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w">  </span>暂时只写了<span class="w"> </span>amd64版本的下载.
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">" 输入你要的go版本"</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span>curl<span class="w"> </span>-Ss<span class="w"> </span>https://golang.google.cn/dl/<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">'s/.*class="toggle" id="go\([.0-9]*\)"&gt;/\1/p'</span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-20
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot; 输入你要的go版本&quot;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span>curl<span class="w"> </span>-Ss<span class="w"> </span>https://golang.google.cn/dl/<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;s/.*class=&quot;toggle&quot; id=&quot;go\([.0-9]*\)&quot;&gt;/\1/p&#39;</span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-20
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="nb">read</span><span class="w"> </span>go_version
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span>wget<span class="w"> </span>https://golang.google.cn/dl/go<span class="si">${</span><span class="nv">go_version</span><span class="si">}</span>.<span class="si">${</span><span class="nv">os</span><span class="si">}</span>-amd64.tar.gz
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="c1"># 这里我直接删除了旧的, 后续再完善 , 可以用 软链接之类的.</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span>/usr/local/go<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr/local<span class="w"> </span>-xzf<span class="w"> </span>go<span class="si">${</span><span class="nv">go_version</span><span class="si">}</span>.<span class="si">${</span><span class="nv">os</span><span class="si">}</span>-amd64.tar.gz
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'export PATH=$PATH:/usr/local/go/bin'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=$PATH:/usr/local/go/bin&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 </span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span>.<span class="w"> </span>~/.zshrc
 </span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span>go<span class="w"> </span>env<span class="w"> </span>-w<span class="w"> </span><span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.cn,http://mirrors.aliyun.com/goproxy/,https://goproxy.io,direct
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="o">}</span>

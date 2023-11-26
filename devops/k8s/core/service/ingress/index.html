@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4268,17 +4282,18 @@
 
   <h1>ingress</h1>
 
-<h2 id="_1">为什么需要?<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h2 id="_1">为什么需要?<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>外部访问我们的pod提供的服务, 怎么办?</li>
 <li>直接使用svc 不行吗? 直接 nodePort类型?</li>
 <li>需要搞好多端口, 管理麻烦</li>
 </ol>
-<h2 id="_2">介绍<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h2 id="_2">介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>ingress  用于实现 <mark>用域名的方式访问</mark> k8s 内部应用</p>
 <p>ingress <mark>为k8s集群中的服务提供了入口</mark>, 可以提供负载均衡、SsL终止和基于域名的虚拟主机、应用的灰度发布等功能</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/ingress-55487a731dda0411b29513f6efc8e456.svg"><img alt="Kroki" src="/images/ingress-55487a731dda0411b29513f6efc8e456.svg"/></a></p>
-<h2 id="_3">实战<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<object type="image/svg+xml" data="/images/ingress-55487a731dda0411b29513f6efc8e456.svg" style="max-width:100%"></object>
+
+<h2 id="_3">实战<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><a href="https://kubernetes.github.io/ingress-nginx/deploy/">部署</a>
 <a href="https://kubernetes.github.io/ingress-nginx/deploy/#bare-metal-clusters">手动安装k8s集群的系统部署方式</a></p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>

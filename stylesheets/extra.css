@@ -4,6 +4,16 @@
   font-family: "OperatorMonoSSm-Medium";
   src: url("font/OperatorMonoSSm-Medium.otf");
 }
+@font-face {
+  /* excalidraw英文手写 ,注意在obsidian 中的excalidraw 使用 第一个手写字体,就是这里的了.
+  使用m 号字体就可以了*/
+  font-family: "Virgil";
+  /* https://github.com/arrowtype/shantell-sans */
+  /* 这里我用的是 tldraw 的手写英文字体
+  Shantell_Sans-Normal-SemiBold.woff2
+  Shantell_Sans-Normal-Medium.woff2 重命名的 */
+  src: url("font/Virgil-hand.woff2");
+}
 
 @font-face {
   font-family: "Hack Nerd Font";

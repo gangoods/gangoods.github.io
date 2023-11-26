@@ -1710,6 +1710,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../gc/" class="md-nav__link">
         GC
       </a>
@@ -4346,7 +4360,7 @@
 
   <h1>汇编</h1>
 
-<h2 id="_1">查看汇编代码<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h2 id="_1">查看汇编代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="admonition important">
 <p class="admonition-title">重要</p>
 <ul>
@@ -4354,7 +4368,7 @@
 <li>下面几个查看的方式,结果格式略有不同</li>
 </ul>
 </div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">方式一</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">方式一</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4372,40 +4386,40 @@
 <span class="normal"><a href="#__codelineno-0-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># -l 禁止内联优化</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1"># -N Disable optimizations.</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># 编译的二进制文件 禁止内联优化</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="w"> </span><span class="s2">"-N -l"</span><span class="w"> </span>main.go
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="w"> </span><span class="s2">&quot;-N -l&quot;</span><span class="w"> </span>main.go
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1"># -S Print assembly listing to standard output (code only).</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1"># 编译成二进制文件,并打印汇编代码</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="o">=</span><span class="s2">"-N -l -S"</span><span class="w"> </span>main.go
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="o">=</span><span class="s2">&quot;-N -l -S&quot;</span><span class="w"> </span>main.go
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1"># 从可执行文件 反编译出汇编代码</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1"># 表示只输出 main 包中相关的汇编</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>go<span class="w"> </span>tool<span class="w"> </span>objdump<span class="w"> </span>-s<span class="w"> </span><span class="s2">"main."</span><span class="w"> </span>main
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1"># 如果使用 "main.main" 则表示 只输出 main.main方法相关的汇编</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>go<span class="w"> </span>tool<span class="w"> </span>objdump<span class="w"> </span>-s<span class="w"> </span><span class="s2">"main.main"</span><span class="w"> </span>main
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>go<span class="w"> </span>tool<span class="w"> </span>objdump<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;main.&quot;</span><span class="w"> </span>main
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1"># 如果使用 &quot;main.main&quot; 则表示 只输出 main.main方法相关的汇编</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>go<span class="w"> </span>tool<span class="w"> </span>objdump<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;main.main&quot;</span><span class="w"> </span>main
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="c1">#  -S   print Go code alongside assembly</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c1"># 会打印对应的go代码</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>go<span class="w"> </span>tool<span class="w"> </span>objdump<span class="w"> </span>-s<span class="w"> </span><span class="s2">"main.main"</span><span class="w"> </span>-S<span class="w"> </span>main
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>go<span class="w"> </span>tool<span class="w"> </span>objdump<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;main.main&quot;</span><span class="w"> </span>-S<span class="w"> </span>main
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">方式二</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">方式二</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#  会生成main.o 文件, -S 输出汇编代码</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>go<span class="w"> </span>tool<span class="w"> </span>compile<span class="w"> </span>-S<span class="w"> </span>-N<span class="w"> </span>-l<span class="w"> </span>main.go
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># 直接看代码的第几行的汇编代码</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>go<span class="w"> </span>tool<span class="w"> </span>compile<span class="w"> </span>-S<span class="w"> </span>-N<span class="w"> </span>-l<span class="w"> </span>main.go<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s2">"main.go:8"</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>go<span class="w"> </span>tool<span class="w"> </span>compile<span class="w"> </span>-S<span class="w"> </span>-N<span class="w"> </span>-l<span class="w"> </span>main.go<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;main.go:8&quot;</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">方式三</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">方式三</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># dlv  disassemble</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># 查看汇编代码</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>disassemble<span class="w"> </span>-l<span class="w"> </span>main.main
 </span></code></pre></div></td></tr></table></div>
-<h2 id="go">汇编分析go代码<a class="headerlink" href="#go" title="Permanent link">¶</a></h2>
+<h2 id="go">汇编分析go代码<a class="headerlink" href="#go" title="Permanent link">&para;</a></h2>
 <div class="admonition todo">
 <p class="admonition-title">Todo</p>
 <p>更详细的汇编说明后续会专门写教程,有些很多都忘记了...,得重新花时间再看看</p>
 </div>
-<h3 id="_2">函数调用为啥使用栈<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h3 id="_2">函数调用为啥使用栈<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -4460,7 +4474,7 @@
 </li>
 </ol>
 </div>
-<h3 id="go_1">要分析的go代码<a class="headerlink" href="#go_1" title="Permanent link">¶</a></h3>
+<h3 id="go_1">要分析的go代码<a class="headerlink" href="#go_1" title="Permanent link">&para;</a></h3>
 <div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -4509,7 +4523,7 @@
 </table>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>go<span class="w"> </span>tool<span class="w"> </span>compile<span class="w"> </span>-S<span class="w"> </span>-N<span class="w"> </span>-l<span class="w"> </span>main.go
 </span></code></pre></div></td></tr></table></div>
-<h3 id="mainmain">main.main<a class="headerlink" href="#mainmain" title="Permanent link">¶</a></h3>
+<h3 id="mainmain">main.main<a class="headerlink" href="#mainmain" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -4567,7 +4581,7 @@
 </div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>main.main<span class="w"> </span>STEXT<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">109</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x0<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x30<span class="w"> </span><span class="nv">funcid</span><span class="o">=</span>0x0<span class="w"> </span><span class="nv">align</span><span class="o">=</span>0x0
 </span></code></pre></div></td></tr></table></div>
-<hr/>
+<hr />
 <p>SB  伪寄存器，保存静态基地址(static-base) 指针，即我们程序地址空间的开始地址
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
@@ -4581,7 +4595,7 @@
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span>0x0004<span class="w"> </span><span class="m">00004</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>JLS<span class="w"> </span><span class="m">102</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span>0x0006<span class="w"> </span><span class="m">00006</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>PCDATA<span class="w">  </span><span class="nv">$0</span>,<span class="w"> </span><span class="nv">$-</span><span class="m">1</span>
 </span></code></pre></div></td></tr></table></div></p>
-<hr/>
+<hr />
 <div class="admonition tip">
 <p class="admonition-title">main 申请的48个字节</p>
 <ul>
@@ -4612,7 +4626,7 @@
 </span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">    </span>0x0014<span class="w"> </span><span class="m">00020</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>FUNCDATA<span class="w">    </span><span class="nv">$0</span>,<span class="w"> </span>gclocals·g2BeySu+wFnoycgXfElmcg<span class="o">==(</span>SB<span class="o">)</span>
 </span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">    </span>0x0014<span class="w"> </span><span class="m">00020</span><span class="w"> </span><span class="o">(</span>main.go:9<span class="o">)</span><span class="w">    </span>FUNCDATA<span class="w">    </span><span class="nv">$1</span>,<span class="w"> </span>gclocals·g2BeySu+wFnoycgXfElmcg<span class="o">==(</span>SB<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
-<hr/>
+<hr />
 <ul>
 <li>将 SP+16 的栈内存 设置 立即数 0 ==&gt; r变量</li>
 <li>将 SP+24 的栈内存 设置 立即数 2 ==&gt; b变量</li>
@@ -4632,7 +4646,7 @@
 </span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">    </span>0x0034<span class="w"> </span><span class="m">00052</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>MOVL<span class="w">    </span><span class="nv">$2</span>,<span class="w"> </span>BX
 </span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">    </span>0x0039<span class="w"> </span><span class="m">00057</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>PCDATA<span class="w">  </span><span class="nv">$1</span>,<span class="w"> </span><span class="nv">$0</span>
 </span></code></pre></div></td></tr></table></div>
-<hr/>
+<hr />
 <ul>
 <li>调用 add 函数, <strong><mark>去看main.add</mark></strong></li>
 <li>CALL 指令<ul>
@@ -4642,16 +4656,18 @@
 </ul>
 </li>
 </ul>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">    </span>0x0039<span class="w"> </span><span class="m">00057</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>CALL<span class="w">    </span>main.add<span class="o">(</span>SB<span class="o">)</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">    </span>0x0039<span class="w"> </span><span class="m">00057</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>CALL<span class="w">    </span>main.add<span class="o">(</span>SB<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/plan9-358b60717f4a99c000a4b0ecfb8b378a.svg"><img alt="Kroki" src="/images/plan9-358b60717f4a99c000a4b0ecfb8b378a.svg"/></a></p>
-<hr/>
-<p>CALL 的add 最后的RET后, SP又重新变成一开始的 SP-48的位置了.<br/>
+<object type="image/svg+xml" data="/images/plan9-358b60717f4a99c000a4b0ecfb8b378a.svg" style="max-width:100%"></object>
+
+<hr />
+<p>CALL 的add 最后的RET后, SP又重新变成一开始的 SP-48的位置了.<br>
 将AX寄存器里的值设置到 r的栈内存位置</p>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25"></a><span class="w">    </span>0x003e<span class="w"> </span><span class="m">00062</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span>main.r+16<span class="o">(</span>SP<span class="o">)</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25"></a><span class="w">    </span>0x003e<span class="w"> </span><span class="m">00062</span><span class="w"> </span><span class="o">(</span>main.go:12<span class="o">)</span><span class="w">   </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span>main.r+16<span class="o">(</span>SP<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/plan9-60dd7d81a1258989379d9152cb3cf4c6.svg"><img alt="Kroki" src="/images/plan9-60dd7d81a1258989379d9152cb3cf4c6.svg"/></a></p>
-<hr/>
+<object type="image/svg+xml" data="/images/plan9-60dd7d81a1258989379d9152cb3cf4c6.svg" style="max-width:100%"></object>
+
+<hr />
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-26">26</a></span>
 <span class="normal"><a href="#__codelineno-12-27">27</a></span>
 <span class="normal"><a href="#__codelineno-12-28">28</a></span>
@@ -4669,7 +4685,7 @@
 </span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32"></a><span class="w">    </span>0x0061<span class="w"> </span><span class="m">00097</span><span class="w"> </span><span class="o">(</span>main.go:14<span class="o">)</span><span class="w">   </span>ADDQ<span class="w">    </span><span class="nv">$48</span>,<span class="w"> </span>SP
 </span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33"></a><span class="w">    </span>0x0065<span class="w"> </span><span class="m">00101</span><span class="w"> </span><span class="o">(</span>main.go:14<span class="o">)</span><span class="w">   </span>RET
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="mainadd">main.add<a class="headerlink" href="#mainadd" title="Permanent link">¶</a></h3>
+<h3 id="mainadd">main.add<a class="headerlink" href="#mainadd" title="Permanent link">&para;</a></h3>
 <ul>
 <li>args = 0x10=16, 使用了caller的栈内存 (参数+返回值)</li>
 <li>$24-16<ul>
@@ -4699,7 +4715,7 @@
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span>0x000e<span class="w"> </span><span class="m">00014</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>FUNCDATA<span class="w">    </span><span class="nv">$1</span>,<span class="w"> </span>gclocals·g2BeySu+wFnoycgXfElmcg<span class="o">==(</span>SB<span class="o">)</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">    </span>0x000e<span class="w"> </span><span class="m">00014</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>FUNCDATA<span class="w">    </span><span class="nv">$5</span>,<span class="w"> </span>main.add.arginfo1<span class="o">(</span>SB<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
-<hr/>
+<hr />
 <ol>
 <li>将AX( 即 1) 设置到 SP+32 =SP+24(add申请的栈空间)+8(call add 压栈) 这个位置就是 main一开始申请栈内存后的 sp的位置, 参数c</li>
 <li>将BX( 即 2) 参数d</li>
@@ -4716,7 +4732,7 @@
 <span class="normal"><a href="#__codelineno-17-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="w">    </span>0x0018<span class="w"> </span><span class="m">00024</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$0</span>,<span class="w"> </span>main.sum<span class="o">(</span>SP<span class="o">)</span>
 </span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="w">    </span>0x0020<span class="w"> </span><span class="m">00032</span><span class="w"> </span><span class="o">(</span>main.go:4<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$3</span>,<span class="w"> </span>main.add_local_var+8<span class="o">(</span>SP<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
-<hr/>
+<hr />
 <ul>
 <li>计算后将结果设置到AX 以及sum变量,我们发现这里并没有操作main的栈内存分配的返回值r</li>
 <li><mark>所以 $24-16 写的是16</mark></li>
@@ -4726,7 +4742,7 @@
 <ul>
 <li>我在看笔记的时候,发现以前的显示的args是24, 以前的看起来符合我们前面说的.</li>
 <li>为什么不一样 我估计是go 版本的问题, 下面是我试了几个go版本后,一个符合的
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">go1.15.4版本的汇编情况</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">go1.15.4版本的汇编情况</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
@@ -4741,19 +4757,19 @@
 <span class="normal"><a href="#__codelineno-18-13">13</a></span>
 <span class="normal"><a href="#__codelineno-18-14">14</a></span>
 <span class="normal"><a href="#__codelineno-18-15">15</a></span>
-<span class="normal"><a href="#__codelineno-18-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="s2">""</span>.add<span class="w"> </span>STEXT<span class="w"> </span>nosplit<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">60</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x18<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x10
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>TEXT<span class="w">    </span><span class="s2">""</span>.add<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>NOSPLIT<span class="p">|</span>ABIInternal,<span class="w"> </span><span class="nv">$16</span>-24
+<span class="normal"><a href="#__codelineno-18-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="s2">&quot;&quot;</span>.add<span class="w"> </span>STEXT<span class="w"> </span>nosplit<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">60</span><span class="w"> </span><span class="nv">args</span><span class="o">=</span>0x18<span class="w"> </span><span class="nv">locals</span><span class="o">=</span>0x10
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>TEXT<span class="w">    </span><span class="s2">&quot;&quot;</span>.add<span class="o">(</span>SB<span class="o">)</span>,<span class="w"> </span>NOSPLIT<span class="p">|</span>ABIInternal,<span class="w"> </span><span class="nv">$16</span>-24
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a>0x0000<span class="w"> </span><span class="m">00000</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>SUBQ<span class="w">    </span><span class="nv">$16</span>,<span class="w"> </span>SP
 </span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a>0x0004<span class="w"> </span><span class="m">00004</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>BP,<span class="w"> </span><span class="m">8</span><span class="o">(</span>SP<span class="o">)</span>
 </span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a>0x0009<span class="w"> </span><span class="m">00009</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="m">8</span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>BP
 </span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a>0x000e<span class="w"> </span><span class="m">00014</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>FUNCDATA<span class="w">    </span><span class="nv">$0</span>,<span class="w"> </span>gclocals·33cdeccccebe80329f1fdbee7f5874cb<span class="o">(</span>SB<span class="o">)</span>
 </span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7"></a>0x000e<span class="w"> </span><span class="m">00014</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>FUNCDATA<span class="w">    </span><span class="nv">$1</span>,<span class="w"> </span>gclocals·33cdeccccebe80329f1fdbee7f5874cb<span class="o">(</span>SB<span class="o">)</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="hll">0x000e<span class="w"> </span><span class="m">00014</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$0</span>,<span class="w"> </span><span class="s2">""</span>.sum+40<span class="o">(</span>SP<span class="o">)</span>
-</span></span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a>0x0017<span class="w"> </span><span class="m">00023</span><span class="w"> </span><span class="o">(</span>main.go:4<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$3</span>,<span class="w"> </span><span class="s2">""</span>.add_local_var<span class="o">(</span>SP<span class="o">)</span>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a>0x001f<span class="w"> </span><span class="m">00031</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="s2">""</span>.c+24<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a>0x0024<span class="w"> </span><span class="m">00036</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>ADDQ<span class="w">    </span><span class="s2">""</span>.d+32<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="hll">0x000e<span class="w"> </span><span class="m">00014</span><span class="w"> </span><span class="o">(</span>main.go:3<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$0</span>,<span class="w"> </span><span class="s2">&quot;&quot;</span>.sum+40<span class="o">(</span>SP<span class="o">)</span>
+</span></span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a>0x0017<span class="w"> </span><span class="m">00023</span><span class="w"> </span><span class="o">(</span>main.go:4<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="nv">$3</span>,<span class="w"> </span><span class="s2">&quot;&quot;</span>.add_local_var<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a>0x001f<span class="w"> </span><span class="m">00031</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="s2">&quot;&quot;</span>.c+24<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a>0x0024<span class="w"> </span><span class="m">00036</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>ADDQ<span class="w">    </span><span class="s2">&quot;&quot;</span>.d+32<span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>AX
 </span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12"></a>0x0029<span class="w"> </span><span class="m">00041</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>ADDQ<span class="w">    </span><span class="nv">$3</span>,<span class="w"> </span>AX
-</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="hll">0x002d<span class="w"> </span><span class="m">00045</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">""</span>.sum+40<span class="o">(</span>SP<span class="o">)</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="hll">0x002d<span class="w"> </span><span class="m">00045</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span><span class="s2">&quot;&quot;</span>.sum+40<span class="o">(</span>SP<span class="o">)</span>
 </span></span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14"></a>0x0032<span class="w"> </span><span class="m">00050</span><span class="w"> </span><span class="o">(</span>main.go:6<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="m">8</span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>BP
 </span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15"></a>0x0037<span class="w"> </span><span class="m">00055</span><span class="w"> </span><span class="o">(</span>main.go:6<span class="o">)</span><span class="w">    </span>ADDQ<span class="w">    </span><span class="nv">$16</span>,<span class="w"> </span>SP
 </span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16"></a>0x003b<span class="w"> </span><span class="m">00059</span><span class="w"> </span><span class="o">(</span>main.go:6<span class="o">)</span><span class="w">    </span>RET
@@ -4767,8 +4783,9 @@
 </span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14"></a><span class="w">    </span>0x002d<span class="w"> </span><span class="m">00045</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>LEAQ<span class="w">    </span><span class="m">3</span><span class="o">(</span>AX<span class="o">)</span>,<span class="w"> </span>AX
 </span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="w">    </span>0x0031<span class="w"> </span><span class="m">00049</span><span class="w"> </span><span class="o">(</span>main.go:5<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span>AX,<span class="w"> </span>main.sum<span class="o">(</span>SP<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/plan9-4c85eed160797c284d5847e0174ac746.svg"><img alt="Kroki" src="/images/plan9-4c85eed160797c284d5847e0174ac746.svg"/></a></p>
-<hr/>
+<object type="image/svg+xml" data="/images/plan9-4c85eed160797c284d5847e0174ac746.svg" style="max-width:100%"></object>
+
+<hr />
 <p>BP和SP归位
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-16">16</a></span>
 <span class="normal"><a href="#__codelineno-20-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16"></a><span class="w">    </span>0x0035<span class="w"> </span><span class="m">00053</span><span class="w"> </span><span class="o">(</span>main.go:6<span class="o">)</span><span class="w">    </span>MOVQ<span class="w">    </span><span class="m">16</span><span class="o">(</span>SP<span class="o">)</span>,<span class="w"> </span>BP
@@ -4786,13 +4803,15 @@
 <!-- !!! tip "go 的bp 伪寄存器"
     x86平台上BP寄存器，通常用来指示函数栈的起始位置，仅仅其一个指示作用，现代编译器生成的代码 通常不会用到BP寄存器，但是可能某些debug工具会用到该寄存器来寻找函数参数、局部变量等。因此我们写汇编 代码时，也最好将栈起始位置存储在BP寄存器中。因此在amd64平台上，会在函数返回值之后插入8byte来放置CALLER BP寄存器 : 表示调用者的函数栈的起始位置。
     此外需要注意的是，CALLER BP是在编译期由编译器插入的，用户手写代码时，计算 framesize 时是不包括这个 CALLER BP部分的，但是要计算函数返回值的8byte -->
-<!-- ![Kroki](/images/plan9-b34d217fddd0b53f2fd08e69a47cd5ec.svg) -->
-<h2 id="go_2">go调用汇编代码写的函数<a class="headerlink" href="#go_2" title="Permanent link">¶</a></h2>
+
+<!-- <object type="image/svg+xml" data="/images/plan9-b34d217fddd0b53f2fd08e69a47cd5ec.svg" style="max-width:100%"></object> -->
+
+<h2 id="go_2">go调用汇编代码写的函数<a class="headerlink" href="#go_2" title="Permanent link">&para;</a></h2>
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://pkg.go.dev/cmd/compile">tool compile</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://pkg.go.dev/cmd/compile">tool compile</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

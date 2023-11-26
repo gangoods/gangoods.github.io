@@ -1612,6 +1612,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4193,9 +4207,9 @@
 
   <h1>Plantuml</h1>
 
-<h2 id="mindmap">mindmap<a class="headerlink" href="#mindmap" title="Permanent link">¶</a></h2>
+<h2 id="mindmap">mindmap<a class="headerlink" href="#mindmap" title="Permanent link">&para;</a></h2>
 <p><a href="https://plantuml.com/zh/mindmap-diagram">plantuml-mindmap</a></p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">通用模板</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">  1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">通用模板</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">  2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">  3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">  4</a></span>
@@ -4304,7 +4318,7 @@
 <span class="normal"><a href="#__codelineno-0-107">107</a></span>
 <span class="normal"><a href="#__codelineno-0-108">108</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>@startmindmap
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>&lt;style&gt;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>' 通用设置
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>&#39; 通用设置
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>node {
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    Padding 12
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    Margin 10
@@ -4313,20 +4327,20 @@
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>    LineThickness 1.0
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>    BackgroundColor #eab8de
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>    RoundCorner 15
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>    ' 自动换行, 每行最大长度
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>    &#39; 自动换行, 每行最大长度
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>    MaximumWidth 100
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>    Shadowing 6.0
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>    ' leafNode的优先级更高'
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>    &#39; leafNode的优先级更高&#39;
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>    :depth(3) {
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>        BackGroundColor white
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>    }
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>}
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>' 在外层也可以 好像只影响node 的样式
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>&#39; 在外层也可以 好像只影响node 的样式
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>:depth(3) {
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>    BackGroundColor white
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>}
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>rootNode {
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>    ' LineStyle 8.0;3.0
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>    &#39; LineStyle 8.0;3.0
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>    RoundCorner 15
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>    Padding 12
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>    BackgroundColor #a8eb99
@@ -4334,7 +4348,7 @@
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>leafNode {
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>    LineColor gold
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>    RoundCorner 15
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>    ' Padding 12
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>    &#39; Padding 12
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>    LineColor black
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>    Shadowing 4.0
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>    BackgroundColor #fbe972
@@ -4343,12 +4357,12 @@
 </span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>    LineStyle 5
 </span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>    LineThickness 1.0
 </span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>    LineColor green
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>    ' 可设置 层级的 箭头样式
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>    &#39; 可设置 层级的 箭头样式
 </span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>    :depth(1) {
 </span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>      LineColor red
 </span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>    }
 </span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>}
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>' ***_ 无框框的节点的样式
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>&#39; ***_ 无框框的节点的样式
 </span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>boxless {
 </span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>    FontColor darkgreen
 </span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>}
@@ -4360,30 +4374,30 @@
 </span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a>    Padding 10
 </span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a>    FontColor grey
 </span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a>}
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a>' 配置一个class(当成class) 这样可以修改某个node的样式
-</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a>' 然后在 node 后面的 ; 后面 使用 &lt;&lt;rose&gt;&gt; 即可
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a>&#39; 配置一个class(当成class) 这样可以修改某个node的样式
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a>&#39; 然后在 node 后面的 ; 后面 使用 &lt;&lt;rose&gt;&gt; 即可
 </span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a>.rose {
 </span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a>    BackgroundColor #FFBBCC
 </span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a>    RoundCorner 1
 </span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a>}
-</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a>' 影响该节点以及它的所有子孙节点
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a>&#39; 影响该节点以及它的所有子孙节点
 </span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a>.LightCyan *{
 </span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a>    BackgroundColor LightCyan
 </span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a>}
 </span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a>.lightyellow *{
 </span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70"></a>    BackgroundColor  LightYellow
-</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a>    ' 可以使用这种方式来 调颜色, 对应还有 darken'
-</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a>    ' BackgroundColor %lighten(LightYellow, 1)
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a>    &#39; 可以使用这种方式来 调颜色, 对应还有 darken&#39;
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a>    &#39; BackgroundColor %lighten(LightYellow, 1)
 </span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73"></a>}
 </span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a>.yellow *{
 </span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a>    BackgroundColor #fbe972
-</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a>    ' 再设置它自己的各个层级的背景
-</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a>    ' :depth(2) {
-</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a>    '   BackgroundColor #89c6fa
-</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a>    ' }
-</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80"></a>    ' :depth(3) {
-</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a>    '   BackgroundColor gold
-</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82"></a>    ' }
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a>    &#39; 再设置它自己的各个层级的背景
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a>    &#39; :depth(2) {
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a>    &#39;   BackgroundColor #89c6fa
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a>    &#39; }
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80"></a>    &#39; :depth(3) {
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a>    &#39;   BackgroundColor gold
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82"></a>    &#39; }
 </span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83"></a>}
 </span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a>.lightgreen *{
 </span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85"></a>    BackgroundColor  #94c644
@@ -4411,8 +4425,8 @@
 </span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a>endlegend
 </span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108"></a>@endmindmap
 </span></code></pre></div></td></tr></table></div>
-<h2 id="color">color<a class="headerlink" href="#color" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/plantuml-ff8c08dedcabc132ee2c156353ca7a8a.svg"><img alt="Kroki" src="/images/plantuml-ff8c08dedcabc132ee2c156353ca7a8a.svg"/></a></p>
+<h2 id="color">color<a class="headerlink" href="#color" title="Permanent link">&para;</a></h2>
+<object type="image/svg+xml" data="/images/plantuml-ff8c08dedcabc132ee2c156353ca7a8a.svg" style="max-width:100%"></object>
 
 
 

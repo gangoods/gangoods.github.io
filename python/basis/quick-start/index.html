@@ -1612,6 +1612,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4223,12 +4237,12 @@
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">name</span> <span class="o">=</span> <span class="s1">'ab'</span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ab&#39;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">name2</span><span class="o">=</span><span class="n">name</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># 打印地址</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">name2</span><span class="p">))</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'hello '</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello &#39;</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -4240,25 +4254,25 @@
 <span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">name</span><span class="o">=</span><span class="s1">'tom'</span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">name</span><span class="o">=</span><span class="s1">&#39;tom&#39;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">age</span><span class="o">=</span><span class="mi">10</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#会开辟多块内存,效率低下</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'my name is '</span><span class="o">+</span> <span class="n">name</span><span class="p">)</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'my name is </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">'tom'</span><span class="p">)</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'my name is </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">'tom'</span><span class="p">))</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is &#39;</span><span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="s1">&#39;tom&#39;</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;tom&#39;</span><span class="p">))</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1">#推荐一下2中方式,比较好,只会开辟一块内存</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'my name is </span><span class="si">{_name}</span><span class="s1">, age is </span><span class="si">{_age}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">_age</span><span class="o">=</span><span class="n">age</span><span class="p">))</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'my name is </span><span class="si">{0}</span><span class="s1">, age is </span><span class="si">{1}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">age</span><span class="p">))</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">{_name}</span><span class="s1">, age is </span><span class="si">{_age}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">_age</span><span class="o">=</span><span class="n">age</span><span class="p">))</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">{0}</span><span class="s1">, age is </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">age</span><span class="p">))</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'my name is </span><span class="si">%(name)s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span><span class="s1">'tom'</span><span class="p">})</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%(name)s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;tom&#39;</span><span class="p">})</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-py highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">输入密码, 就是让你看不到的那个效果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">输入密码, 就是让你看不到的那个效果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span>  <span class="nn">getpass</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">name</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">'name:'</span><span class="p">)</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">password</span><span class="o">=</span><span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s1">'password:'</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">name</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">password</span><span class="o">=</span><span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s1">&#39;password:&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-py highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">for range</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">for range</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
@@ -4268,7 +4282,7 @@
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># 0 2 4 6 8</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="_1">字典<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h2 id="_1">字典<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -4329,37 +4343,37 @@
 <span class="normal"><a href="#__codelineno-4-58">58</a></span>
 <span class="normal"><a href="#__codelineno-4-59">59</a></span>
 <span class="normal"><a href="#__codelineno-4-60">60</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">st</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="s1">'001'</span><span class="p">:</span><span class="s1">'x'</span><span class="p">,</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="s1">'002'</span><span class="p">:</span><span class="s1">'y'</span><span class="p">,</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="s1">'003'</span><span class="p">:</span><span class="s1">'z'</span><span class="p">,</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="s1">'004'</span><span class="p">:</span><span class="s1">'a'</span><span class="p">,</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="s1">'005'</span><span class="p">:</span><span class="s1">'b'</span><span class="p">,</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="s1">&#39;001&#39;</span><span class="p">:</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="s1">&#39;002&#39;</span><span class="p">:</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="s1">&#39;003&#39;</span><span class="p">:</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="s1">&#39;004&#39;</span><span class="p">:</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="s1">&#39;005&#39;</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">}</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">r</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'001'</span><span class="p">)</span> <span class="c1">#获取 key是001的 value</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">r</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;001&#39;</span><span class="p">)</span> <span class="c1">#获取 key是001的 value</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="c1"># x</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="c1"># st 实际已经被修改了哦! {'002': 'y', '003': 'z'}</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="c1"># st 实际已经被修改了哦! {&#39;002&#39;: &#39;y&#39;, &#39;003&#39;: &#39;z&#39;}</span>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="c1"># 删除key</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="k">del</span> <span class="n">st</span><span class="p">[</span><span class="s1">'002'</span><span class="p">]</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="k">del</span> <span class="n">st</span><span class="p">[</span><span class="s1">&#39;002&#39;</span><span class="p">]</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="c1">#随机删除</span>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="c1"># st.popitem()</span>
 </span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a>
 </span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="c1"># 查找</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="n">b</span><span class="o">=</span><span class="s1">'004'</span> <span class="ow">in</span> <span class="n">st</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="n">b</span><span class="o">=</span><span class="s1">&#39;004&#39;</span> <span class="ow">in</span> <span class="n">st</span>
 </span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1">#True</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="n">c</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'000'</span><span class="p">)</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="n">c</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;000&#39;</span><span class="p">)</span>
 </span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1">#None</span>
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a>
 </span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="c1"># 如果没有,则设置为后面的,如果已经有了,则不做操作</span>
-</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="n">st</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">'000'</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 生效了</span>
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="n">st</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">'000'</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># 不会修改, 还是 [1,2]</span>
-</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="s1">'000'</span><span class="p">])</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="n">st</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;000&#39;</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 生效了</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="n">st</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;000&#39;</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># 不会修改, 还是 [1,2]</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="s1">&#39;000&#39;</span><span class="p">])</span>
 </span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>
 </span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>
 </span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="n">st2</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>    <span class="s1">'001'</span><span class="p">:</span><span class="s1">'tom'</span><span class="p">,</span>
-</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="s1">'006'</span><span class="p">:</span><span class="s1">'jack'</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>    <span class="s1">&#39;001&#39;</span><span class="p">:</span><span class="s1">&#39;tom&#39;</span><span class="p">,</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="s1">&#39;006&#39;</span><span class="p">:</span><span class="s1">&#39;jack&#39;</span>
 </span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="p">}</span>
 </span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="c1"># st 用 st2来更新自己</span>
 </span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="n">st</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">st2</span><span class="p">)</span> <span class="c1"># 用st2的内容 覆盖了st</span>
@@ -4371,7 +4385,7 @@
 </span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">st</span><span class="p">:</span>
 </span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="n">i</span><span class="o">=</span><span class="n">st</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># dict_items([('001', 'x'), ('002', 'y'), ('003', 'z'), ('004', 'a'), ('005', 'b')])</span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># dict_items([(&#39;001&#39;, &#39;x&#39;), (&#39;002&#39;, &#39;y&#39;), (&#39;003&#39;, &#39;z&#39;), (&#39;004&#39;, &#39;a&#39;), (&#39;005&#39;, &#39;b&#39;)])</span>
 </span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 </span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="c1"># 效率比上面低</span>
 </span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
@@ -4379,17 +4393,17 @@
 </span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49"></a>
 </span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50"></a>
 </span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="c1">#初始化一个新的字典,第二个参数是字典的值,第一个是key</span>
-</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="n">new</span><span class="o">=</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="s1">'o'</span><span class="p">)</span>
+</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="n">new</span><span class="o">=</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 </span><span id="__span-4-53"><a id="__codelineno-4-53" name="__codelineno-4-53"></a><span class="nb">print</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
-</span><span id="__span-4-54"><a id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="n">new</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="s1">'y'</span>
-</span><span id="__span-4-55"><a id="__codelineno-4-55" name="__codelineno-4-55"></a><span class="nb">print</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>  <span class="c1"># {1: 'y', 2: 'o', 3: 'o'}</span>
+</span><span id="__span-4-54"><a id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="n">new</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;y&#39;</span>
+</span><span id="__span-4-55"><a id="__codelineno-4-55" name="__codelineno-4-55"></a><span class="nb">print</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>  <span class="c1"># {1: &#39;y&#39;, 2: &#39;o&#39;, 3: &#39;o&#39;}</span>
 </span><span id="__span-4-56"><a id="__codelineno-4-56" name="__codelineno-4-56"></a>
-</span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="n">new2</span><span class="o">=</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],{</span><span class="s1">'name'</span><span class="p">:</span><span class="s1">'z'</span><span class="p">})</span>
+</span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="n">new2</span><span class="o">=</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;z&#39;</span><span class="p">})</span>
 </span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58"></a><span class="c1"># 该字典的值共享一个内存地址,value是个字典,改变一个,所有的值都会改变</span>
-</span><span id="__span-4-59"><a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="n">new2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="o">=</span><span class="s1">'yy'</span>
-</span><span id="__span-4-60"><a id="__codelineno-4-60" name="__codelineno-4-60"></a><span class="nb">print</span><span class="p">(</span><span class="n">new2</span><span class="p">)</span> <span class="c1">#{1: {'name': 'yy'}, 2: {'name': 'yy'}, 3: {'name': 'yy'}}</span>
+</span><span id="__span-4-59"><a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="n">new2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;yy&#39;</span>
+</span><span id="__span-4-60"><a id="__codelineno-4-60" name="__codelineno-4-60"></a><span class="nb">print</span><span class="p">(</span><span class="n">new2</span><span class="p">)</span> <span class="c1">#{1: {&#39;name&#39;: &#39;yy&#39;}, 2: {&#39;name&#39;: &#39;yy&#39;}, 3: {&#39;name&#39;: &#39;yy&#39;}}</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="set">set 集合<a class="headerlink" href="#set" title="Permanent link">¶</a></h2>
+<h2 id="set">set 集合<a class="headerlink" href="#set" title="Permanent link">&para;</a></h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -4431,7 +4445,7 @@
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">set1</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span> <span class="c1"># {2, 4, 5, 7, 8, 9}</span>
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a>
 </span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="c1">#添加 一个</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="n">set1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="n">set1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="c1"># 添加多个</span>
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="n">set1</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
 </span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="c1"># 删除, 如果没有这个 元素,则报错</span>
@@ -4440,7 +4454,7 @@
 </span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="n">set1</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="ow">in</span> <span class="n">set1</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="file">file<a class="headerlink" href="#file" title="Permanent link">¶</a></h2>
+<h2 id="file">file<a class="headerlink" href="#file" title="Permanent link">&para;</a></h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -4470,20 +4484,20 @@
 <span class="normal"><a href="#__codelineno-6-27">27</a></span>
 <span class="normal"><a href="#__codelineno-6-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># 如果以w模式打开 文件的话, 首先你不能读取内容</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1"># 其次如果已经有个文件是a.txt 那么里面的内容会被清空</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s1">'w'</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">#</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'aaa'</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">)</span>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="c1"># r 读</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">)</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">x</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="c1"># 这个是追加内容,不会覆盖掉原来的</span>
 </span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="c1"># 还是不能读</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="n">f2</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">)</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="n">f2</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 </span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="n">f2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="c1"># 如果文件非常大,这样会一行一行的把内容存放到内存中</span>
 </span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="c1"># 这个不太好</span>
 </span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
@@ -4491,7 +4505,7 @@
 </span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()):</span>
 </span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">line</span><span class="p">)</span>
 </span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># ?</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">)</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="c1">#这个也是一行一行的读,但是内存里只保存一行的数据,这个就比较好的方法</span>
 </span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
 </span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
@@ -4511,7 +4525,7 @@
 <span class="normal"><a href="#__codelineno-7-12">12</a></span>
 <span class="normal"><a href="#__codelineno-7-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># a.txt</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="c1"># hello world</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">x</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># he</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="c1"># tell 获取了几个字节</span>
@@ -4538,17 +4552,17 @@
 <span class="normal"><a href="#__codelineno-8-13">13</a></span>
 <span class="normal"><a href="#__codelineno-8-14">14</a></span>
 <span class="normal"><a href="#__codelineno-8-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">time</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">)</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'b'</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">f</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span> <span class="c1">#立刻刷新到磁盘</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'c'</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># 这个期间你就能看到文件里有了b, 但是看不到c</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">time</span>
 </span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)</span>
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="c1"># 这里就是立刻刷新,要不然会等结束后一起出来的</span>
 </span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 </span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
@@ -4563,10 +4577,10 @@
 <span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1">#w+ 写读</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="c1"># 还是会先 重写该文件的,所以一般写读模式没什么用,我们一般用r+模式</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="c1">#r+ 是读写, 追加模式</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s1">'r+'</span><span class="p">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span>
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'------'</span><span class="p">)</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;------&#39;</span><span class="p">)</span>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
@@ -4575,12 +4589,12 @@
 <span class="normal"><a href="#__codelineno-10-4">4</a></span>
 <span class="normal"><a href="#__codelineno-10-5">5</a></span>
 <span class="normal"><a href="#__codelineno-10-6">6</a></span>
-<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># f=open('a.txt','rb') #b 表示以二进制模式打开</span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># f=open(&#39;a.txt&#39;,&#39;rb&#39;) #b 表示以二进制模式打开</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="c1">#以二进制打开后,不能读取多少字节</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">#一般在socket网络编程里会用到</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'b.txt'</span><span class="p">,</span><span class="s1">'wb'</span><span class="p">)</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;b.txt&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="c1">#需要将字符串转换成二进制写入,你看到的b.txt文件里还是hello</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'hello'</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
@@ -4598,22 +4612,22 @@
 <span class="normal"><a href="#__codelineno-11-13">13</a></span>
 <span class="normal"><a href="#__codelineno-11-14">14</a></span>
 <span class="normal"><a href="#__codelineno-11-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">#修改文件,通过把该文件保存到另外一个文件</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">"09"</span><span class="p">,</span><span class="s2">"r"</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">fn</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'09.new'</span><span class="p">,</span><span class="s1">'w'</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;09&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">fn</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;09.new&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>    <span class="k">if</span> <span class="s1">'a'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a>        <span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"xxx"</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>    <span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a>        <span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;xxx&quot;</span><span class="p">)</span>
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a>    <span class="n">fn</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a>
 </span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a>
 </span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="c1">#为了避免打开文件后忘记关闭</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;a.txt&#39;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 </span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a>   <span class="k">pass</span>
 </span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="c1">#支持打开多个</span>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"a.txt"</span><span class="p">,</span><span class="s1">'a'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f1</span><span class="p">,</span><span class="nb">open</span><span class="p">(</span><span class="s2">"b.txt"</span><span class="p">,</span><span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f2</span><span class="p">:</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;a.txt&quot;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f1</span><span class="p">,</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;b.txt&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f2</span><span class="p">:</span>
 </span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a>    <span class="k">pass</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="chardet">chardet<a class="headerlink" href="#chardet" title="Permanent link">¶</a></h2>
+<h2 id="chardet">chardet<a class="headerlink" href="#chardet" title="Permanent link">&para;</a></h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
@@ -4622,7 +4636,7 @@
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="kn">import</span>  <span class="nn">chardet</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getdefaultencoding</span><span class="p">())</span> <span class="c1"># utf-8</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="_2">函数<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h2 id="_2">函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>

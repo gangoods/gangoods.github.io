@@ -1626,6 +1626,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../gc/" class="md-nav__link">
         GC
       </a>
@@ -4185,7 +4199,8 @@
 
   <h1>程序的内存分布</h1>
 
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/mem-b6cf7568c0a5e43ade50726716f6ff5f.svg"><img alt="Kroki" src="/images/mem-b6cf7568c0a5e43ade50726716f6ff5f.svg"/></a></p>
+<object type="image/svg+xml" data="/images/mem-a945cdc432eb605413fdaa5c79dc9b40.svg" style="max-width:100%"></object>
+
 <div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -4206,7 +4221,7 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_init_xyz</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_noinit_xyz</span><span class="w"> </span><span class="kt">int64</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_init_strxyz</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"hello"</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_init_strxyz</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">global_noinit_strxyz</span><span class="w"> </span><span class="kt">string</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">global_xyz</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">314</span><span class="w">  </span><span class="c1">// 常量</span>
@@ -4220,7 +4235,7 @@
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="nb">println</span><span class="p">(</span><span class="nx">global_xyz</span><span class="p">)</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">objdump查看各个段</label><label for="__tabbed_1_2">go tool compile -S -N -l main.go 查看</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">objdump查看各个段</label><label for="__tabbed_1_2">go tool compile -S -N -l main.go 查看</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -4238,7 +4253,7 @@
 <span class="normal"><a href="#__codelineno-1-13">13</a></span>
 <span class="normal"><a href="#__codelineno-1-14">14</a></span>
 <span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="w"> </span><span class="s2">"-N -l"</span><span class="w"> </span>main.go
+<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>-gcflags<span class="w"> </span><span class="s2">&quot;-N -l&quot;</span><span class="w"> </span>main.go
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># size 可执行文件</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># 查看程序内存的代码段 数据段等</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># 最好使用c程序来 看各个变量在哪个段</span>
@@ -4263,7 +4278,7 @@
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
 <span class="normal"><a href="#__codelineno-2-5">5</a></span>
 <span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="hll">go:string.<span class="s2">"hello"</span><span class="w"> </span>SRODATA<span class="w"> </span>dupok<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">5</span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="hll">go:string.<span class="s2">&quot;hello&quot;</span><span class="w"> </span>SRODATA<span class="w"> </span>dupok<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">5</span>
 </span></span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="hll">0x0000<span class="w"> </span><span class="m">68</span><span class="w"> </span><span class="m">65</span><span class="w"> </span>6c<span class="w"> </span>6c<span class="w"> </span>6f<span class="w">                                   </span>hello
 </span></span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>main.global_init_xyz<span class="w"> </span>SNOPTRDATA<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">8</span>
@@ -4276,8 +4291,8 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>字符串 字面量 hello这种是在只读的内存区的.<br/>
-定义的常量 global_xyz ,在汇编中可能是以 <code>MOVL    $314, AX</code> 这种形式来操作的,并不存在只读区,具体情况具体分析<br/>
+<p>字符串 字面量 hello这种是在只读的内存区的.<br>
+定义的常量 global_xyz ,在汇编中可能是以 <code>MOVL    $314, AX</code> 这种形式来操作的,并不存在只读区,具体情况具体分析<br>
 可以关注到go里有 noptrdata noptrbss这种 无指针的 这种区</p>
 </div>
 

@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4412,11 +4426,11 @@
 
   <h1>git进阶</h1>
 
-<h2 id="hook">hook 钩子<a class="headerlink" href="#hook" title="Permanent link">¶</a></h2>
-<h2 id="_1">子模块<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<h3 id="subtree">subtree<a class="headerlink" href="#subtree" title="Permanent link">¶</a></h3>
-<h3 id="submodule">submodule<a class="headerlink" href="#submodule" title="Permanent link">¶</a></h3>
-<h4 id="gitmodulesurl">修改.gitmodules仓库url后需要的操作<a class="headerlink" href="#gitmodulesurl" title="Permanent link">¶</a></h4>
+<h2 id="hook">hook 钩子<a class="headerlink" href="#hook" title="Permanent link">&para;</a></h2>
+<h2 id="_1">子模块<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="subtree">subtree<a class="headerlink" href="#subtree" title="Permanent link">&para;</a></h3>
+<h3 id="submodule">submodule<a class="headerlink" href="#submodule" title="Permanent link">&para;</a></h3>
+<h4 id="gitmodulesurl">修改.gitmodules仓库url后需要的操作<a class="headerlink" href="#gitmodulesurl" title="Permanent link">&para;</a></h4>
 <p>```toml ".gitmodules"
 [submodule "themes/docsy"]
     path = themes/docsy
@@ -4430,8 +4444,8 @@
 <span class="normal"><a href="#__codelineno-0-6">6</a></span>
 <span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>后来这个地址变更了,拉取最新, .gitmodules 是变更了
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>```toml title=".gitmodules 变更后的结果"
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>[submodule "themes/docsy"]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>```toml title=&quot;.gitmodules 变更后的结果&quot;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>[submodule &quot;themes/docsy&quot;]
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    path = themes/docsy
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    url = https://github.com/google/docsy2.git
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    branch = v0.2.0
@@ -4440,7 +4454,7 @@
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># 发现还是 用的老地址 进行clone</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">需要更新到本地的配置</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">需要更新到本地的配置</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
@@ -4452,7 +4466,7 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># 可以了</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="git-filter-repo">git filter-repo<a class="headerlink" href="#git-filter-repo" title="Permanent link">¶</a></h2>
+<h2 id="git-filter-repo">git filter-repo<a class="headerlink" href="#git-filter-repo" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>比如commit了一个可执行文件,推送到了远程,然后下个commit你将它删除,推送,</p>
@@ -4473,7 +4487,7 @@
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>git<span class="w"> </span>filter-repo<span class="w"> </span>--path<span class="w"> </span>README.md<span class="w"> </span>--path<span class="w"> </span>guides/<span class="w"> </span>--path<span class="w"> </span>tools/releases
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># 与上面刚好相反, 只删除这几个 东西 , 相对于根目录位置的文件</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>git<span class="w"> </span>filter-repo<span class="w"> </span>--path<span class="w"> </span>README.md<span class="w"> </span>--path<span class="w"> </span>guides/<span class="w"> </span>--path<span class="w"> </span>tools/releases<span class="w"> </span>--invert-paths
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">#--path-glob '*.DS_Store' 指定这个的话 , 相比path,这个会 包含这类foo.DS_Store or bar/baz.DS_Store</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">#--path-glob &#39;*.DS_Store&#39; 指定这个的话 , 相比path,这个会 包含这类foo.DS_Store or bar/baz.DS_Store</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">#--path 基于根目录的</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1">#使用这个命令后, 不需要再 清理reflog 和original里的东西 (git filter-branch 这个官方的需要这么做), 因为已经帮你做了</span>
@@ -4481,7 +4495,7 @@
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>--all
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>--tags
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_2">实际仓库瘦身<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h3 id="_2">实际仓库瘦身<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -4533,10 +4547,10 @@
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>git<span class="w"> </span>verify-pack<span class="w"> </span>-v<span class="w"> </span>.git/objects/pack/*.idx<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-k<span class="w"> </span><span class="m">3</span><span class="w"> </span>-n<span class="w">  </span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="c1">#找到占用空间比较大的文件名</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>git<span class="w"> </span>rev-list<span class="w"> </span>--objects<span class="w"> </span>--all<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>git<span class="w"> </span>verify-pack<span class="w"> </span>-v<span class="w"> </span>.git/objects/pack/*.idx<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-k<span class="w"> </span><span class="m">3</span><span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-15<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print$1}'</span><span class="k">)</span><span class="s2">"</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>git<span class="w"> </span>rev-list<span class="w"> </span>--objects<span class="w"> </span>--all<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>verify-pack<span class="w"> </span>-v<span class="w"> </span>.git/objects/pack/*.idx<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-k<span class="w"> </span><span class="m">3</span><span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-15<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print$1}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a>
 </span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="c1">#下方命令中的 path/to/large/files 是大文件所在的路径，千万不要弄错！</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a>git<span class="w"> </span>filter-branch<span class="w"> </span>--tree-filter<span class="w"> </span><span class="s1">'rm -f path/to/large/files'</span><span class="w"> </span>--tag-name-filter<span class="w"> </span>cat<span class="w"> </span>--<span class="w"> </span>--all
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a>git<span class="w"> </span>filter-branch<span class="w"> </span>--tree-filter<span class="w"> </span><span class="s1">&#39;rm -f path/to/large/files&#39;</span><span class="w"> </span>--tag-name-filter<span class="w"> </span>cat<span class="w"> </span>--<span class="w"> </span>--all
 </span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a>
 </span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a>
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="c1">#如果提示</span>
@@ -4544,14 +4558,14 @@
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a>A<span class="w"> </span>previous<span class="w"> </span>backup<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>refs/original/
 </span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a>Force<span class="w"> </span>overwriting<span class="w"> </span>the<span class="w"> </span>backup<span class="w"> </span>with<span class="w"> </span>-f
 </span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a>就
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>git<span class="w"> </span>filter-branch<span class="w"> </span>-f<span class="w"> </span>--tree-filter<span class="w"> </span><span class="s1">'rm -f path/to/large/files'</span><span class="w"> </span>--tag-name-filter<span class="w"> </span>cat<span class="w"> </span>--<span class="w"> </span>--all
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>git<span class="w"> </span>filter-branch<span class="w"> </span>-f<span class="w"> </span>--tree-filter<span class="w"> </span><span class="s1">&#39;rm -f path/to/large/files&#39;</span><span class="w"> </span>--tag-name-filter<span class="w"> </span>cat<span class="w"> </span>--<span class="w"> </span>--all
 </span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a>
 </span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="c1"># 运行后</span>
 </span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>提示<span class="w"> </span>所有分支都重写了.<span class="w"> </span>所有分支里的这个文件<span class="w"> </span>都没有了哦
-</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a>Ref<span class="w"> </span><span class="s1">'refs/heads/master'</span><span class="w"> </span>was<span class="w"> </span>rewritten
-</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>Ref<span class="w"> </span><span class="s1">'refs/heads/x'</span><span class="w"> </span>was<span class="w"> </span>rewritten
-</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a>Ref<span class="w"> </span><span class="s1">'refs/remotes/origin/master'</span><span class="w"> </span>was<span class="w"> </span>rewritten
-</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a>Ref<span class="w"> </span><span class="s1">'refs/remotes/origin/x'</span><span class="w"> </span>was<span class="w"> </span>rewritten
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a>Ref<span class="w"> </span><span class="s1">&#39;refs/heads/master&#39;</span><span class="w"> </span>was<span class="w"> </span>rewritten
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>Ref<span class="w"> </span><span class="s1">&#39;refs/heads/x&#39;</span><span class="w"> </span>was<span class="w"> </span>rewritten
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a>Ref<span class="w"> </span><span class="s1">&#39;refs/remotes/origin/master&#39;</span><span class="w"> </span>was<span class="w"> </span>rewritten
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a>Ref<span class="w"> </span><span class="s1">&#39;refs/remotes/origin/x&#39;</span><span class="w"> </span>was<span class="w"> </span>rewritten
 </span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a>
 </span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="c1"># 提交</span>
 </span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a>
@@ -4562,8 +4576,8 @@
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># 其他开发人员</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="_3">提升目录为根目录<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">仓库当前目录结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<h3 id="_3">提升目录为根目录<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">仓库当前目录结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
@@ -4577,14 +4591,14 @@
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>   stuff.txt
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>zebra.jpg
 </span></code></pre></div></td></tr></table></div>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">只保留module下的文件, 并且将module下的所有文件移动到根目录下</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>filter-repo<span class="w"> </span>--subdirectory-filter<span class="w"> </span>module/
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">只保留module下的文件, 并且将module下的所有文件移动到根目录下</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>filter-repo<span class="w"> </span>--subdirectory-filter<span class="w"> </span>module/
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">执行完后的仓库目录结构,其他都没了</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">执行完后的仓库目录结构,其他都没了</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>foo.c
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>bar.c
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="_4">移动所有文件到其他目录下<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<p><div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">仓库当前目录结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<h3 id="_4">移动所有文件到其他目录下<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">仓库当前目录结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span>
@@ -4600,7 +4614,7 @@
 </span></code></pre></div></td></tr></table></div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>filter-repo<span class="w"> </span>--to-subdirectory-filter<span class="w"> </span>my-module/
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">执行后的目录结构</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">执行后的目录结构</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
 <span class="normal"><a href="#__codelineno-11-4">4</a></span>
@@ -4616,25 +4630,25 @@
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a>      stuff.txt
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a>   zebra.jpg
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="commit-message">commit message 规范<a class="headerlink" href="#commit-message" title="Permanent link">¶</a></h2>
-<h2 id="_5">错误排查<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h2 id="commit-message">commit message 规范<a class="headerlink" href="#commit-message" title="Permanent link">&para;</a></h2>
+<h2 id="_5">错误排查<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>detected dubious ownership in repository
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># 代码的 owner 有问题, 修改一下.</span>
 </span></code></pre></div></td></tr></table></div></p>
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://github.com/newren/git-filter-repo/blob/main/INSTALL.md#installation-via-package-manager">https://github.com/newren/git-filter-repo/blob/main/INSTALL.md#installation-via-package-manager</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://github.com/newren/git-filter-repo/blob/main/INSTALL.md#installation-via-package-manager">https://github.com/newren/git-filter-repo/blob/main/INSTALL.md#installation-via-package-manager</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html#EXAMPLES">EXAMPLES</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><a href="https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html#EXAMPLES">EXAMPLES</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://git-scm.com/book/en/v2/Git-Internals-Packfiles">Git packFile)</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+<p><a href="https://git-scm.com/book/en/v2/Git-Internals-Packfiles">Git packFile)</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://gitee.com/help/articles/4232#article-header2">仓库体积何减小</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+<p><a href="https://gitee.com/help/articles/4232#article-header2">仓库体积何减小</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

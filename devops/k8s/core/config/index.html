@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4440,21 +4454,21 @@
 
   <h1>配置管理</h1>
 
-<h2 id="configmap">configmap<a class="headerlink" href="#configmap" title="Permanent link">¶</a></h2>
+<h2 id="configmap">configmap<a class="headerlink" href="#configmap" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>就是为了配置与代码分离.<br/>
-不同的pod 里某些东西可能使用相同的配置, 这样只要写一次, pod里直接用就行.<br/>
-secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
-<mark>configmap存放的时候明文数据</mark><br/>
+<p>就是为了配置与代码分离.<br>
+不同的pod 里某些东西可能使用相同的配置, 这样只要写一次, pod里直接用就行.<br>
+secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br>
+<mark>configmap存放的时候明文数据</mark><br>
 简称 cm</p>
 </div>
 <p><a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-pod-configmap/">configmap</a></p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>k<span class="w"> </span>explain<span class="w"> </span>cm
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_1">创建<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<h4 id="_2">基于目录或文件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">环境准备</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<h3 id="_1">创建<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="_2">基于目录或文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">环境准备</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -4496,7 +4510,7 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">    </span>├──<span class="w"> </span>game.properties
 </span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">    </span>└──<span class="w"> </span>ui.properties
 </span></code></pre></div></td></tr></table></div>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">创建</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">创建</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4516,7 +4530,7 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span>--from-file<span class="o">=</span>./cfg/ui.properties<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span>--from-file<span class="o">=</span>./cfg/game.properties
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">查看</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">查看</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>k<span class="w"> </span>get<span class="w"> </span>cm<span class="w"> </span><span class="c1">#(1)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>k<span class="w"> </span>describe<span class="w"> </span>cm<span class="w"> </span>game-all-config
@@ -4567,14 +4581,14 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="no">how.nice.to.look=fairlyNice</span>
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
 </span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2023-07-17T08:16:36Z"</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2023-07-17T08:16:36Z&quot;</span>
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">game-config</span>
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s">"906578"</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;906578&quot;</span>
 </span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">  </span><span class="nt">uid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a8341d85-c916-40cd-bb5e-0ef334cc31f6</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ol>
-<h4 id="env">基于文件以env形式<a class="headerlink" href="#env" title="Permanent link">¶</a></h4>
+<h4 id="env">基于文件以env形式<a class="headerlink" href="#env" title="Permanent link">&para;</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
@@ -4587,28 +4601,28 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </li>
 </ul>
 </div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">环境准备</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">环境准备</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
 <span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>cat<span class="w"> </span>&gt;game-env-file.properties<span class="s">&lt;&lt;EOF</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="s">enemies=aliens</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="s">lives=3</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="s">allowed="true"</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="s">allowed=&quot;true&quot;</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="s">EOF</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">创建</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">创建</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">#从 k8s 1.23 版本开始，kubectl 支持多次指定 --from-env-file 参数来从多个数据源创建</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>k<span class="w"> </span>create<span class="w"> </span>cm<span class="w"> </span>game-env-file<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span>--from-env-file<span class="o">=</span>./cfg/game-env-file.properties
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">查看</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>k<span class="w"> </span>get<span class="w"> </span>cm<span class="w"> </span>game-env-file<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="c1">#(1)</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">查看</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>k<span class="w"> </span>get<span class="w"> </span>cm<span class="w"> </span>game-env-file<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="c1">#(1)</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
 <li>
 <p>结果</p>
-<p>注意 allowed: '"true"' 的true<br/>
+<p>注意 allowed: '"true"' 的true<br>
 数字会用双引号</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
@@ -4623,18 +4637,18 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 <span class="normal"><a href="#__codelineno-9-11">11</a></span>
 <span class="normal"><a href="#__codelineno-9-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nt">data</span><span class="p">:</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">  </span><span class="nt">allowed</span><span class="p">:</span><span class="w"> </span><span class="s">'"true"'</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">  </span><span class="nt">allowed</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&quot;true&quot;&#39;</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="nt">enemies</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aliens</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">  </span><span class="nt">lives</span><span class="p">:</span><span class="w"> </span><span class="s">"3"</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">  </span><span class="nt">lives</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3&quot;</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2023-07-17T08:43:55Z"</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2023-07-17T08:43:55Z&quot;</span>
 </span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">game-env-file</span>
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s">"908873"</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;908873&quot;</span>
 </span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">  </span><span class="nt">uid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5f8c87a6-9af0-4b7b-8ed3-9018667c338f</span>
 </span></code></pre></div></td></tr></table></div>
-<h4 id="_3">基于字面值<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<h4 id="_3">基于字面值<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 </li>
 </ol>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
@@ -4643,8 +4657,8 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span>--from-literal<span class="o">=</span>mysql.user<span class="o">=</span>root<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">    </span>--from-literal<span class="o">=</span>mysql.port<span class="o">=</span><span class="m">3306</span>
 </span></code></pre></div></td></tr></table></div>
-<h4 id="yaml">基于yaml文件<a class="headerlink" href="#yaml" title="Permanent link">¶</a></h4>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">mysql-cm.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<h4 id="yaml">基于yaml文件<a class="headerlink" href="#yaml" title="Permanent link">&para;</a></h4>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">mysql-cm.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
 <span class="normal"><a href="#__codelineno-11-4">4</a></span>
@@ -4659,8 +4673,8 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-config2</span>
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="c1">#同命令创建的 --from-literal=database=test --from-literal=port=3306</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="s">"test"</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">"3306"</span><span class="w"> </span><span class="c1">#(2)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;test&quot;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3306&quot;</span><span class="w"> </span><span class="c1">#(2)</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
 <li>设置成不可变
@@ -4674,17 +4688,17 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </ol>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>k<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>mysql-cm.yaml
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_4">使用<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h3 id="_4">使用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>ConfigMap 位于确定的命名空间中. 每个 ConfigMap 只能被同一命名空间中的 Pod 引用</p>
 </div>
-<h4 id="valuefrom">valueFrom<a class="headerlink" href="#valuefrom" title="Permanent link">¶</a></h4>
+<h4 id="valuefrom">valueFrom<a class="headerlink" href="#valuefrom" title="Permanent link">&para;</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>适用于使用几个环境变量, 直接注入,  如果你后续修改了configmap, 是不会同步到pod里的</p>
 </div>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">pod-cm-valuefrom.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pod-cm-valuefrom.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
@@ -4742,7 +4756,7 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cm-mysql</span>
 </span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 </span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="nt">data</span><span class="p">:</span>
-</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">  </span><span class="nt">mysql_port</span><span class="p">:</span><span class="w"> </span><span class="s">"3306"</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">  </span><span class="nt">mysql_port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3306&quot;</span>
 </span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="nn">---</span>
 </span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 </span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
@@ -4753,7 +4767,7 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test-container</span>
 </span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox</span>
 </span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26"></a><span class="w">      </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
-</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27"></a><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">"/bin/sh"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-c"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"env"</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27"></a><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&quot;/bin/sh&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;env&quot;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 </span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28"></a><span class="w">      </span><span class="nt">env</span><span class="p">:</span>
 </span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tom</span>
 </span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cat</span><span class="w"> </span><span class="c1"># env环境变量,我们当然可以直接赋值</span>
@@ -4789,7 +4803,7 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="c1"># 打印 env 环境变量 ,可以看到 WELCOME = world, MYSQL_PORT等</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a>k<span class="w"> </span>logs<span class="w"> </span>pod-cm-valuefrom
 </span></code></pre></div></td></tr></table></div>
-<h4 id="envfrom">envFrom<a class="headerlink" href="#envfrom" title="Permanent link">¶</a></h4>
+<h4 id="envfrom">envFrom<a class="headerlink" href="#envfrom" title="Permanent link">&para;</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>将configmap里所有的作为环境变量,也是注入的方式, 修改configmap,同样不会同步到pod里</p>
@@ -4836,7 +4850,7 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test-container</span>
 </span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox</span>
 </span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">      </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
-</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">"/bin/sh"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-c"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"env"</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&quot;/bin/sh&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;env&quot;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 </span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="w">      </span><span class="nt">envFrom</span><span class="p">:</span>
 </span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TEST_</span><span class="w"> </span><span class="c1">#(1)</span>
 </span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="w">          </span><span class="nt">configMapRef</span><span class="p">:</span>
@@ -4852,8 +4866,8 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </ul>
 </li>
 </ol>
-<h4 id="_5">文件挂载<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
-<p><div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">my.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<h4 id="_5">文件挂载<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">my.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
@@ -4945,14 +4959,14 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span></code></pre></div></td></tr></table></div></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>这种文件挂载的方式, 如果你的configmap修改了,pod里看到的配置也会是修改后的,<br/>
+<p>这种文件挂载的方式, 如果你的configmap修改了,pod里看到的配置也会是修改后的,<br>
 <mark class="critic"><strong>不过 这还不行, 你的pod里的程序必须也能够 热加载才行, (就是能监控配置文件的变化,自动重启)</strong></mark></p>
 </div>
-<h2 id="secret">secret<a class="headerlink" href="#secret" title="Permanent link">¶</a></h2>
+<h2 id="secret">secret<a class="headerlink" href="#secret" title="Permanent link">&para;</a></h2>
 <p><a href="https://kubernetes.io/docs/concepts/configuration/secret/#creating-a-secret">官方文档</a></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>由于configmap 是明文, 因此与configmap 有着同样功能的 secret 就相应的设计出来了.<br/>
+<p>由于configmap 是明文, 因此与configmap 有着同样功能的 secret 就相应的设计出来了.<br>
 使用方法与 configmap 类似,在yaml文件上把configmap 改成 secret,大部分就ok了</p>
 </div>
 <details class="tip">
@@ -5071,21 +5085,21 @@ secret &amp;&amp; configmap 可以理解为2中特殊类型的存储卷<br/>
 </span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cm9vdA==</span>
 </span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
 </span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2023-07-18T01:56:16Z"</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2023-07-18T01:56:16Z&quot;</span>
 </span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql-root-password</span>
 </span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
-</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s">"941954"</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;941954&quot;</span>
 </span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="w">  </span><span class="nt">uid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">51b42a5f-02c8-4cc1-a482-2c6c0eceb3eb</span>
 </span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+    <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
 <span class="normal"><a href="#__codelineno-25-2">2</a></span>
 <span class="normal"><a href="#__codelineno-25-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="c1"># 然而那这个加密仅仅是base64 可以解密</span>
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="c1"># 能够得到 密码 123456</span>
 </span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="nb">echo</span><span class="w"> </span>MTIzNDU2<span class="w"> </span><span class="p">|</span>base64<span class="w"> </span>-d
 </span></code></pre></div></td></tr></table></div></li>
 </ol>
-<h2 id="_6">注意<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h2 id="_6">注意<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>我们一般是用配置文件来创建configmap
 <mark>前面提到过,真正的热更新,还需要程序检测自动重启的支持</mark>
 <mark>使用envFrom和valueFrom是无法更新环境变量的.</mark> 环境变量是启动容器就定了的.需要重启容器</p>

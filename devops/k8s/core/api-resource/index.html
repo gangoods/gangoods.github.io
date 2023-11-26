@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4269,14 +4283,15 @@
 <p>本机(安装kubectl并配置可访问k8s的任何机器)代理到apiserver</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>k<span class="w"> </span>proxy<span class="w"> </span>--accept-hosts<span class="o">=</span><span class="s2">".*"</span><span class="w"> </span>--address<span class="o">=</span><span class="m">0</span>.0.0.0
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>k<span class="w"> </span>proxy<span class="w"> </span>--accept-hosts<span class="o">=</span><span class="s2">&quot;.*&quot;</span><span class="w"> </span>--address<span class="o">=</span><span class="m">0</span>.0.0.0
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1"># 这样可以直接访问</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>curl<span class="w"> </span>localhost:8001/api/v1/namespaces
 </span></code></pre></div></td></tr></table></div>
 </div>
-<h2 id="api">API组织方式<a class="headerlink" href="#api" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/api-resource-d936e6b6e8262e6a86b0cf1c00c3c9a6.svg"><img alt="Kroki" src="/images/api-resource-d936e6b6e8262e6a86b0cf1c00c3c9a6.svg"/></a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">核心对象</label><label for="__tabbed_1_2">非核心对象</label></div>
+<h2 id="api">API组织方式<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<object type="image/svg+xml" data="/images/api-resource-d936e6b6e8262e6a86b0cf1c00c3c9a6.svg" style="max-width:100%"></object>
+
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">核心对象</label><label for="__tabbed_1_2">非核心对象</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="admonition info">
@@ -4358,13 +4373,14 @@
 </div>
 </div>
 </div>
-<h2 id="_1">属性<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/api-resource-70c7c5f01d20c70970127422238b94cb.svg"><img alt="Kroki" src="/images/api-resource-70c7c5f01d20c70970127422238b94cb.svg"/></a></p>
+<h2 id="_1">属性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<object type="image/svg+xml" data="/images/api-resource-70c7c5f01d20c70970127422238b94cb.svg" style="max-width:100%"></object>
+
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://kubernetes.io/zh-cn/docs/concepts/overview/working-with-objects/">api对象</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://kubernetes.io/zh-cn/docs/concepts/overview/working-with-objects/">api对象</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

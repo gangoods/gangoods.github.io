@@ -1614,6 +1614,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4201,7 +4215,7 @@
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>kubectl是一个k8s的命令行工具,它允许用户以命令行的方式与k8s交互,<mark class="critic">默认读取配置文件~/.kube/config</mark><br/>
+<p>kubectl是一个k8s的命令行工具,它允许用户以命令行的方式与k8s交互,<mark class="critic">默认读取配置文件~/.kube/config</mark><br>
 kubectl会将接收到的<mark class="critic">用户请求转化为rest调用</mark>以 rest 的形式与 apiserver 通讯</p>
 </div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -4215,7 +4229,7 @@ kubectl会将接收到的<mark class="critic">用户请求转化为rest调用</m
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># 在任意可以 通过kubectl 对k8s 进行操作的机器上</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>k<span class="w"> </span>proxy<span class="w"> </span>--accept-hosts<span class="o">=</span><span class="s2">".*"</span><span class="w"> </span>--address<span class="o">=</span><span class="m">0</span>.0.0.0
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>k<span class="w"> </span>proxy<span class="w"> </span>--accept-hosts<span class="o">=</span><span class="s2">&quot;.*&quot;</span><span class="w"> </span>--address<span class="o">=</span><span class="m">0</span>.0.0.0
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># 然后就能直接 curl localhost:8001/...</span>
 </span></code></pre></div></td></tr></table></div>
 

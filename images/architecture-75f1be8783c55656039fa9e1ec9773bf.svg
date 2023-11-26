@@ -5,7 +5,7 @@
     <style class="style-fonts">
       @font-face {
         font-family: "Virgil";
-        src: url("https://unpkg.com/@excalidraw/excalidraw@0.15.3/dist/excalidraw-assets/Virgil.woff2");
+        src: url("/stylesheets/font/Virgil-hand.woff2");
       }
       @font-face {
         font-family: "Cascadia";

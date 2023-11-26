@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4386,12 +4400,12 @@
 
   <h1>备份与恢复</h1>
 
-<h2 id="csv">导出csv,带字段名<a class="headerlink" href="#csv" title="Permanent link">¶</a></h2>
+<h2 id="csv">导出csv,带字段名<a class="headerlink" href="#csv" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># 默认导出没有标题. 所以用union 来完成效果</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>mysql<span class="w"> </span>-uroot<span class="w"> </span>-proot<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"select 'a','b','c'</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="s2">from dual union select a,b,c from test  into outfile '/tmp/x.csv' CHARACTER SET gbk fields terminated by ',' optionally enclosed by '\"' lines terminated by '\r\n'; "</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>mysql<span class="w"> </span>-uroot<span class="w"> </span>-proot<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;select &#39;a&#39;,&#39;b&#39;,&#39;c&#39;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="s2">from dual union select a,b,c from test  into outfile &#39;/tmp/x.csv&#39; CHARACTER SET gbk fields terminated by &#39;,&#39; optionally enclosed by &#39;\&quot;&#39; lines terminated by &#39;\r\n&#39;; &quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -4399,16 +4413,16 @@
 secure_file_priv=/tmp/    这个参数影响 导出文件的位置,以及是否可导出
 如果 上面的参数为空, 去 /tmp/xxxxx-mariadb/tmp 看看</p>
 </div>
-<h3 id="_1">查看默认配置文件位置<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>mysql<span class="w"> </span>--help<span class="p">|</span>grep<span class="w"> </span><span class="s1">'my.cnf'</span>
+<h3 id="_1">查看默认配置文件位置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>mysql<span class="w"> </span>--help<span class="p">|</span>grep<span class="w"> </span><span class="s1">&#39;my.cnf&#39;</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_2">备份<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<h4 id="-compact">--compact测试导出结果<a class="headerlink" href="#-compact" title="Permanent link">¶</a></h4>
+<h3 id="_2">备份<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="-compact">--compact测试导出结果<a class="headerlink" href="#-compact" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># --compact</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p12345<span class="w"> </span>--compact<span class="w"> </span>-B<span class="w"> </span>dbname
 </span></code></pre></div></td></tr></table></div>
-<h4 id="_3">开发常用的命令<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<h4 id="_3">开发常用的命令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -4443,7 +4457,7 @@ secure_file_priv=/tmp/    这个参数影响 导出文件的位置,以及是否�
 </span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a>
 </span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a>mysql<span class="w"> </span>-uroot<span class="w"> </span>-p123456<span class="w"> </span>dbname<span class="w"> </span>&lt;<span class="w"> </span>sometable.sql
 </span></code></pre></div></td></tr></table></div>
-<h4 id="_4">生产环境命令<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<h4 id="_4">生产环境命令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -4452,7 +4466,7 @@ secure_file_priv=/tmp/    这个参数影响 导出文件的位置,以及是否�
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># -F --flush-logs</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p123456<span class="w"> </span>-A<span class="w"> </span>--flush-privileges<span class="w"> </span>--single-transaction<span class="w"> </span>--master-data<span class="o">=</span><span class="m">1</span><span class="o">(</span>或者2<span class="o">)</span><span class="w"> </span>-F<span class="w"> </span>--triggers<span class="w"> </span>-R<span class="w"> </span>-E<span class="w"> </span>--hex-blob<span class="w"> </span><span class="p">|</span>gzip<span class="w"> </span>&gt;xx.sql.gz
 </span></code></pre></div></td></tr></table></div>
-<h4 id="_5">备份单个与多个数据库<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<h4 id="_5">备份单个与多个数据库<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p><div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>默认是导出表创建语句和数据的
 </span></code></pre></div></td></tr></table></div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
@@ -4461,12 +4475,12 @@ secure_file_priv=/tmp/    这个参数影响 导出文件的位置,以及是否�
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p12345<span class="w">  </span>-B<span class="w"> </span>dbname<span class="w"> </span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p12345<span class="w">  </span>-B<span class="w"> </span>dbname<span class="w">  </span>dbname2
 </span></code></pre></div></td></tr></table></div></p>
-<h4 id="_6">备份单表和多个表<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<h4 id="_6">备份单表和多个表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p12345<span class="w"> </span>dbname<span class="w"> </span>school<span class="w"> </span>&gt;<span class="w"> </span>school.sql
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p12345<span class="w"> </span>dbname<span class="w"> </span>city<span class="w"> </span>school<span class="w"> </span>&gt;<span class="w"> </span>city_school.sql
 </span></code></pre></div></td></tr></table></div>
-<h4 id="_7">只导出表结构<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<h4 id="_7">只导出表结构<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
@@ -4477,7 +4491,7 @@ secure_file_priv=/tmp/    这个参数影响 导出文件的位置,以及是否�
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1"># 多个表的创建语句</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p12345<span class="w"> </span>-d<span class="w"> </span>dbname<span class="w"> </span>table1<span class="w"> </span>table2<span class="w"> </span>&gt;<span class="w"> </span>dbname.sql
 </span></code></pre></div></td></tr></table></div>
-<h4 id="_8">只导出数据<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<h4 id="_8">只导出数据<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p12345<span class="w"> </span>-t<span class="w"> </span>dbname<span class="w"> </span>&gt;<span class="w"> </span>dbname.sql
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p12345<span class="w"> </span>-t<span class="w"> </span>dbname<span class="w"> </span>table1<span class="w"> </span>table2<span class="w"> </span>&gt;<span class="w"> </span>dbname.sql

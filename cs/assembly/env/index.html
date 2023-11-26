@@ -1612,6 +1612,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4429,8 +4443,8 @@
 
 
 
-<h2 id="_1">开发环境配置<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<h3 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h2 id="_1">开发环境配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.dosbox.com/download.php?main=1">dosbox</a></p>
 <p>安装后,将dosbox 拖到应用程序
 安装目录有 Manual.txt  这样的说明文档,里面可以看看
@@ -4453,7 +4467,7 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="na">mount c ~/myasm</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="na">c</span><span class="o">:</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="debug">debug的使用方法<a class="headerlink" href="#debug" title="Permanent link">¶</a></h3>
+<h3 id="debug">debug的使用方法<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
 <p>输入debug 回车</p>
 <ol>
 <li>r 命令</li>
@@ -4502,8 +4516,8 @@ a 1000:0 回车
 </ol>
 <p>a 回车 写入指令
 从一个预设地址开始输入指令，直接回车，结束操作</p>
-<h2 id="_3">小的数字之间进制快速转换<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="_4">小的十进制数快速转二进制<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h2 id="_3">小的数字之间进制快速转换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">小的十进制数快速转二进制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>一个字节的7个位 111 1111
 2的7次方=64 依次类推
 我们把一个字节的7个位 对应的十进制数记住
@@ -4512,39 +4526,39 @@ a 1000:0 回车
 给个73的10进制,我们脑子里要想到73=64+9 =64+8+1
 =01001001
 35=32+3=32+2+1 = 0010 0011</p>
-<h3 id="1016">小的10进制快速转16进制<a class="headerlink" href="#1016" title="Permanent link">¶</a></h3>
+<h3 id="1016">小的10进制快速转16进制<a class="headerlink" href="#1016" title="Permanent link">&para;</a></h3>
 <p>16进制 : Hexadecimal -&gt;hex
 10进制: Decimal -&gt;dec
 16的倍数 和余数
 82=16X5+2 =0x52</p>
-<h3 id="162">16进制快速转2进制<a class="headerlink" href="#162" title="Permanent link">¶</a></h3>
+<h3 id="162">16进制快速转2进制<a class="headerlink" href="#162" title="Permanent link">&para;</a></h3>
 <p>7E= 7个16+14= 7个16马上脑子里就能分出 4个16+2个16+1个16 +14
 记住一个字节的后4个位,都是16的倍数,所以这里的7马上想到4+2+1 = 0111
 =0111+ 8+4+2+0 = 0111 1110</p>
-<h2 id="_5">开发工具<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<h3 id="windows">windows<a class="headerlink" href="#windows" title="Permanent link">¶</a></h3>
+<h2 id="_5">开发工具<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="windows">windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>dosbox</p>
-<h3 id="mac">mac<a class="headerlink" href="#mac" title="Permanent link">¶</a></h3>
+<h3 id="mac">mac<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h3>
 <p>nasm</p>
-<h2 id="_6">机器指令<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
-<h3 id="_7">机器指令与汇编指令<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h2 id="_6">机器指令<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">机器指令与汇编指令<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>机器指令就是0和1 的二进制数字, 就是讲二进制数字转换成高低电平,然后驱动计算机部件运行</p>
 </blockquote>
 <p>既然是指令,那么一定有他的含义
 如果安装dosbox ,输入debug 再输入-u 输入 -d可以看到一些信息
 比如 B440 这个16进制  对应的指令是 MOV AH,40
-B440 ==&gt; 转成二进制 → 对应指令
+B440 ==&gt; 转成二进制 &rarr; 对应指令
 我们把 二进制的叫做机器指令
 把 对应的MOV AH,40 这样的叫做汇编指令</p>
-<h3 id="_8">编译器<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<h3 id="_8">编译器<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>我们肯定是用汇编语言来编写程序,比你直接写0101 什么的好的多了, 因为计算机只认识机器指令,那么我们写的汇编如何让计算机认识呢,
 这个就需要一个翻译软件了,这个翻译软件就叫编译器</p>
 <p>注意
 汇编指令 <mark>&gt;通过编译器 =</mark>&gt; 01010101
 伪指令   ==&gt;告诉编译器这里的怎么翻译,由编译器指向,没有对应的机器指令
 符号体系 ==&gt; + - * / 没有对应的机器指令,也由编译器执行</p>
-<h3 id="cpu">cpu与内存<a class="headerlink" href="#cpu" title="Permanent link">¶</a></h3>
+<h3 id="cpu">cpu与内存<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>通过cpu来执行这些机器指令的,CPU通过指令来控制计算机的
 计算机关有指令还不行的,需要数据
@@ -4572,7 +4586,7 @@ cpu通过内存的读写来控制计算机</p>
 <p>控制信息   == 控制线</p>
 </li>
 </ol>
-<h3 id="_9">地址线<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<h3 id="_9">地址线<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>地址线 用0或1表示,
 内存是从0开始编号的,
 如果只有一个根地址线 那么编号为0的地址 用0来表示编号为0的地址
@@ -4589,16 +4603,16 @@ cpu通过内存的读写来控制计算机</p>
 <p>1kb的存储器有 1024个存储单元,编号从0-1023</p>
 <p>8080,8088,80286,80386的地址总线宽度分别为16根,20根,24根,32根,他的寻址能力分别为
 2的16次方byte=2的6次方 X 2的10次方=64X1kb,</p>
-<h3 id="_10">数据线<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<h3 id="_10">数据线<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>数据线也是用 0或1 表示
 最小单位是字节 = 8个位
 所以最少要8根 数据线
 一个byte 8个bit 要传送到每一个数据线上</p>
 <p>8080,8088,8086,80286,80386的数据总线宽度分别为8,8,16根,16,32根,他们依次可以传送的数据为1byte,1,2,2,4</p>
 <p>从内存中读取1024个字节的数据,8086至少要读512次,因为8086一次可以传送的数据2byte</p>
-<h3 id="_11">控制线<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<h3 id="_11">控制线<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>控制线决定了cpu能够对哪些部件进行控制</p>
-<h2 id="_12">内存<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
+<h2 id="_12">内存<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>debug 
 -e B800:400 修改内存中的数据,我们发现
 在dosbox 窗口上显示 了不同的信息, 其实这个内存地址不是内存条的地址</p>
@@ -4625,17 +4639,17 @@ cpu通过内存的读写来控制计算机</p>
 键盘通过与主板链接的电线,发送他的指令到端口,
 cpu通过三根线(..) 获取端口中的指令</p>
 <p>cpu 是可以通过主板上的电路,读到所有的数据的</p>
-<h3 id="_13">端口号<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<h3 id="_13">端口号<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>什么键盘鼠标,cpu是通过端口号来连接控制的
 cpu也给 他们编号了
 60H是键盘的</p>
 <p>通过内存地址去访问内存条,显存 rom等的</p>
-<h3 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">¶</a></h3>
+<h3 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>图形的要求越来越高了, 早期画图这个工作也是cpu干的,, 现在就把图形的处理专门 给GPU来处理了
 GPU也有专门的编程语言</p>
 </blockquote>
-<h3 id="cpu_1">cpu与汇编<a class="headerlink" href="#cpu_1" title="Permanent link">¶</a></h3>
+<h3 id="cpu_1">cpu与汇编<a class="headerlink" href="#cpu_1" title="Permanent link">&para;</a></h3>
 <p>我们汇编语言 就是针对cpu的语言
 cpu通过地址线,数据线,控制线来 访问内存和端口的
 那么cpu中肯定存储着这些线的信息(地址信息,数据信息) ,,这些地方就叫做 寄存器</p>
@@ -4643,8 +4657,8 @@ cpu通过地址线,数据线,控制线来 访问内存和端口的
 <p>比如指令 : MOV AX,0005  其中的AC就是一个数据寄存器</p>
 <p>debug 
 -r 查看寄存器</p>
-<h1 id="_14">寄存器<a class="headerlink" href="#_14" title="Permanent link">¶</a></h1>
-<h2 id="_15">通用寄存器<a class="headerlink" href="#_15" title="Permanent link">¶</a></h2>
+<h1 id="_14">寄存器<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h1>
+<h2 id="_15">通用寄存器<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <p>AX
 BX
 CX
@@ -4665,7 +4679,7 @@ DX =DH+DL</p>
 <p>这些个8位寄存器 只能表示 0000 0000 - 1111 1111 0-255  256个状态</p>
 <p>为什么有8位寄存器呢?
 为了兼容,就是以前编写的程序,改改就能运行在8086cpu上</p>
-<h2 id="816816">8位,16寄存器和8位,16位数据<a class="headerlink" href="#816816" title="Permanent link">¶</a></h2>
+<h2 id="816816">8位,16寄存器和8位,16位数据<a class="headerlink" href="#816816" title="Permanent link">&para;</a></h2>
 <p>在使用mov 时,要保证数据与寄存器之间 位数的一致性
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -4751,7 +4765,7 @@ DX =DH+DL</p>
 </span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41"></a>
 </span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42"></a>寄存器 都是互相独立的,al是al,ah是ah 不会互相影响
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="_16">存放内存地址的寄存器<a class="headerlink" href="#_16" title="Permanent link">¶</a></h2>
+<h2 id="_16">存放内存地址的寄存器<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p>ds    sp
 es    bp
 ss    si
@@ -4770,7 +4784,7 @@ ds=073F
 地址线的数量决定了cpu的寻址能力
 但是寄存器只有16位啊, 如何?
 有了地址加法器  </p>
-<h3 id="_17">地址的计算方式<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
+<h3 id="_17">地址的计算方式<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>段地址 X 16 (这个16是10进制的 ,这个结果也叫基础地址) + 偏移地址  =物理地址</p>
 <p>使用科学计算器的时候 用16进制的段地址 X 10 即可 (16的10进制 换成16进制 是10)</p>
 <p>这样的计算方式 可以用上所有的20根地址线, 不浪费</p>
@@ -4794,7 +4808,7 @@ cpu的寻址范围是 10H ~ 0001H*10H+(0~FFFFH)</p>
 再加上一个1 就可以达到20000H了</p>
 <p>d指令是查看内存地址里面开始存放的字节当做数据, 所以上面的d 2000:1F60 你看到01 00 ..
 u指令 是把内存地址开始的字节 全部当作指令 显示给你看</p>
-<h3 id="cpu_2">cpu是如何区分指令和数据的<a class="headerlink" href="#cpu_2" title="Permanent link">¶</a></h3>
+<h3 id="cpu_2">cpu是如何区分指令和数据的<a class="headerlink" href="#cpu_2" title="Permanent link">&para;</a></h3>
 <p>先做个测试
 输入
 a 
@@ -4831,7 +4845,7 @@ add ax,1416</p>
 然后按t 就可以查看到效果了</p>
 <p>cpu会从cs段地址寄存器和ip偏移地址寄存器 组合的时候,从中读取内容,当作指令来执行</p>
 <p>这2个寄存器决定了cpu从哪里获取指令,所以我们一旦修改了这2个寄存器的地址,然后 你在该地址上写上数据, 这些个数据就会被当作指令来执行了</p>
-<h3 id="_18">指令的执行过程<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
+<h3 id="_18">指令的执行过程<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>指令是有长度的,一条指令可以有多个字节构成</p>
 </blockquote>
@@ -4839,7 +4853,7 @@ add ax,1416</p>
 1. CPU从cs:ip所指向的内存单元读取指令,存放到指令缓冲器中
 2. 设置ip=ip+指令的长度, 从而指向下一条指令
 3. 指向指令缓冲器中的内容,回到步骤1 再次读取新指令</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../imgs/2019-01-31-14-34-34.png"><img alt="" src="../imgs/2019-01-31-14-34-34.png"/></a></p>
+<p><a class="glightbox" href="../imgs/2019-01-31-14-34-34.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../imgs/2019-01-31-14-34-34.png" /></a></p>
 <p>分析一下具体指令的执行过程
 假设cs=2000 ip=0000
 a 2000:0    cs =2000 ip=0
@@ -4853,7 +4867,7 @@ a 2000:0    cs =2000 ip=0
 读取指令jmp 1000:0到缓冲器.. cs=2000 ip=3+5, 执行指令
 执行指令后,这个时候cs和ip都变了, 前面的执行过程有说的很清楚了,
 执行完指令后,重复步骤1, 是从cs:ip 读取指令的,这个时候再次读取的地方就不是原来的了, 所以mov cx,ax 可以说没有执行了</p>
-<h1 id="_19">汇编指令简单介绍<a class="headerlink" href="#_19" title="Permanent link">¶</a></h1>
+<h1 id="_19">汇编指令简单介绍<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h1>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>MOV AH,40 #表示将数字40 移动到 一个叫AH的寄存器
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>ADD AX,8 # 表示将ax+8 的值再赋值给ax
@@ -4892,7 +4906,7 @@ a 2000:0    cs =2000 ip=0
 <ol>
 <li>call (与函数调用类似) </li>
 </ol>
-<h1 id="_20">练习题<a class="headerlink" href="#_20" title="Permanent link">¶</a></h1>
+<h1 id="_20">练习题<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h1>
 <ol>
 <li>实现2的8次方</li>
 </ol>

@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4508,7 +4522,7 @@
 
   <h1>存储管理</h1>
 
-<h2 id="_1">卷挂载<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h2 id="_1">卷挂载<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol>
@@ -4528,7 +4542,7 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>kubectl<span class="w"> </span>explain<span class="w"> </span>pod.spec.containers.volumeMounts
 </span></code></pre></div></td></tr></table></div>
 <p><a href="https://kubernetes.io/zh/docs/concepts/storage/volumes/">官方文档</a></p>
-<h3 id="emptydir">emptyDir<a class="headerlink" href="#emptydir" title="Permanent link">¶</a></h3>
+<h3 id="emptydir">emptyDir<a class="headerlink" href="#emptydir" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol>
@@ -4590,14 +4604,14 @@
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">    </span><span class="nt">volumeMounts</span><span class="p">:</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">html</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">      </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/html</span><span class="w"> </span><span class="c1"># 挂载到不同的目录</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"/bin/sh"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-c"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/bin/sh&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p p-Indicator">]</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">    </span><span class="nt">args</span><span class="p">:</span>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">while true; do</span>
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">echo $(hostname) $(date) &gt;&gt; /html/index.html;</span>
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">sleep 10;</span>
 </span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">done</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">查看卷在节点中的位置</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">查看卷在节点中的位置</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4639,10 +4653,10 @@
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">      </span>└──<span class="w"> </span>index.html
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="c1"># 在 这个节点上的html目录增加文件, 2个容器都能看到</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="hostpath">hostPath<a class="headerlink" href="#hostpath" title="Permanent link">¶</a></h3>
+<h3 id="hostpath">hostPath<a class="headerlink" href="#hostpath" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>将主机节点文件系统上的文件或目录挂载到你的 Pod 中<br/></p>
+<p>将主机节点文件系统上的文件或目录挂载到你的 Pod 中<br></p>
 </div>
 <p><a href="https://kubernetes.io/zh/docs/concepts/storage/volumes/#hostpath">hostPath</a></p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -4691,12 +4705,12 @@
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span>/nginx_html/index.html
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>curl<span class="w"> </span><span class="m">10</span>.244.1.45<span class="w"> </span><span class="c1"># 显示hello</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">¶</a></h3>
+<h3 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>nfs 卷能将 NFS (网络文件系统) 挂载到你的 Pod 中。 不像 emptyDir 那样会在删除 Pod 的同时也会被删除，nfs 卷的内容在删除 Pod 时会被保存，卷只是被卸载。 这意味着 nfs 卷可以被预先填充数据，并且这些数据可以在 Pod 之间共享</p>
 </div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">服务端安装</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">服务端安装</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -4735,16 +4749,16 @@
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a>systemctl<span class="w"> </span>start<span class="w">  </span>rpcbind
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a>
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="c1"># *号 位可以设置成ip段 192.168.124.0/24 表示这些ip段的才可以访问</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"/data/nfs *(rw,sync,no_subtree_check,no_root_squash)"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/exports
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;/data/nfs *(rw,sync,no_subtree_check,no_root_squash)&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/exports
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="c1"># 这个不行...</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="c1">#echo "/data/nfs *(rw,sync,all_squash)" &gt;&gt; /etc/exports</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="c1">#echo &quot;/data/nfs *(rw,sync,all_squash)&quot; &gt;&gt; /etc/exports</span>
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a>exportfs<span class="w"> </span>-r<span class="w"> </span><span class="c1"># 更新配置,重新读取配置</span>
 </span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a>exportfs<span class="w"> </span><span class="c1">#显示共享了哪些目录</span>
 </span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>nfs
 </span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a>systemctl<span class="w"> </span>restart<span class="w">  </span>rpcbind
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"hello"</span><span class="w"> </span>&gt;<span class="w"> </span>/data/nfs/index.html
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/data/nfs/index.html
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">其他节点上挂载</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">其他节点上挂载</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
@@ -4754,7 +4768,7 @@
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span>-o<span class="w"> </span>rw,nosuid,noexec,nodev<span class="w"> </span><span class="m">192</span>.168.66.110:/data/nfs<span class="w"> </span>/nfs
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a>ll<span class="w"> </span>/nfs<span class="w"> </span><span class="c1"># 能看到index.html</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">pod-vol-nfs.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pod-vol-nfs.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
@@ -4794,20 +4808,21 @@
 <span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>k<span class="w"> </span>create<span class="w"> </span>-f<span class="w">  </span>pod-vol-nfs.yaml
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="c1"># curl pod ip 可以看到hello</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="downwardapi">downwardAPI<a class="headerlink" href="#downwardapi" title="Permanent link">¶</a></h3>
-<h2 id="_2">投射卷<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="downwardapi">downwardAPI<a class="headerlink" href="#downwardapi" title="Permanent link">&para;</a></h3>
+<h2 id="_2">投射卷<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><a href="https://kubernetes.io/docs/concepts/storage/projected-volumes/">官方文档</a></p>
-<h2 id="pv-pvc">pv pvc<a class="headerlink" href="#pv-pvc" title="Permanent link">¶</a></h2>
-<h3 id="_3">概念<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/persistence-1a2ba59e737fadbb759553aed6acdd60.svg"><img alt="Kroki" src="/images/persistence-1a2ba59e737fadbb759553aed6acdd60.svg"/></a></p>
+<h2 id="pv-pvc">pv pvc<a class="headerlink" href="#pv-pvc" title="Permanent link">&para;</a></h2>
+<h3 id="_3">概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<object type="image/svg+xml" data="/images/persistence-1a2ba59e737fadbb759553aed6acdd60.svg" style="max-width:100%"></object>
+
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>一个pod 可以关联多个pvc, 一个pvc 只能绑定一个pv, 一个pv 可以被多个pvc 绑定</li>
 </ul>
 </div>
-<h3 id="pv">创建pv<a class="headerlink" href="#pv" title="Permanent link">¶</a></h3>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">pv-nfs-1.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<h3 id="pv">创建pv<a class="headerlink" href="#pv" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pv-nfs-1.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
@@ -4838,7 +4853,7 @@
 </span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">  </span><span class="c1"># storageClassName: nfsslow  #(4)</span>
 </span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">  </span><span class="nt">persistentVolumeReclaimPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Retain</span><span class="w"> </span><span class="c1">#(5)</span>
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">  </span><span class="nt">nfs</span><span class="p">:</span><span class="w"> </span><span class="c1">#(6)</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w">  </span><span class="s">"/data/nfs"</span><span class="w"> </span><span class="c1">#(7)</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;/data/nfs&quot;</span><span class="w"> </span><span class="c1">#(7)</span>
 </span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.66.110</span><span class="w"> </span><span class="c1">#(8)</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
@@ -4862,7 +4877,7 @@
 </tr>
 <tr>
 <td align="left">Recycle</td>
-<td>表示pv里数据删除,但是pv还是保留的.<br/> k8s会创建一个pod .里面有rm 命令 来进行对数据删除</td>
+<td>表示pv里数据删除,但是pv还是保留的.<br> k8s会创建一个pod .里面有rm 命令 来进行对数据删除</td>
 </tr>
 <tr>
 <td align="left">delete</td>
@@ -4910,8 +4925,8 @@
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>NAME<span class="w">          </span>CAPACITY<span class="w">   </span>ACCESS<span class="w"> </span>MODES<span class="w">   </span>RECLAIM<span class="w"> </span>POLICY<span class="w">   </span>STATUS<span class="w">      </span>CLAIM<span class="w">   </span>STORAGECLASS<span class="w">   </span>REASON<span class="w">   </span>AGE
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>pv-nfs-1<span class="w">   </span>100Mi<span class="w">      </span>RWX<span class="w">            </span>Retain<span class="w">           </span>Available<span class="w">                                   </span>1s
 </span></code></pre></div></td></tr></table></div>
-<h3 id="pvc">创建pvc<a class="headerlink" href="#pvc" title="Permanent link">¶</a></h3>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">pvc-nfs-1.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<h3 id="pvc">创建pvc<a class="headerlink" href="#pvc" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pvc-nfs-1.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
@@ -4939,7 +4954,7 @@
 </span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">  </span><span class="c1"># storageClassName:  #(3)</span>
 </span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="c1">#(3)</span>
 </span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">      </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="s">"stable"</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">      </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;stable&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
 <li>注意 这个要与 pv一致</li>
@@ -4962,7 +4977,7 @@
 </span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>NAME<span class="w">          </span>CAPACITY<span class="w">   </span>ACCESS<span class="w"> </span>MODES<span class="w">   </span>RECLAIM<span class="w"> </span>POLICY<span class="w">   </span>STATUS<span class="w">   </span>CLAIM<span class="w">               </span>STORAGECLASS<span class="w">   </span>REASON<span class="w">   </span>AGE
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>pv-nfs-1<span class="w">       </span>100Mi<span class="w">      </span>RWX<span class="w">            </span>Retain<span class="w">          </span>Bound<span class="w">    </span>default/pvc-nfs-1<span class="w">                           </span>101s
 </span></code></pre></div></td></tr></table></div>
-<h3 id="podpvc">创建pod绑定pvc<a class="headerlink" href="#podpvc" title="Permanent link">¶</a></h3>
+<h3 id="podpvc">创建pod绑定pvc<a class="headerlink" href="#podpvc" title="Permanent link">&para;</a></h3>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
@@ -4993,11 +5008,11 @@
 </span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">    </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span><span class="w"> </span><span class="c1"># 指定pvc的name</span>
 </span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">      </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pvc-nfs-1</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="storageclass">storageClass<a class="headerlink" href="#storageclass" title="Permanent link">¶</a></h3>
+<h3 id="storageclass">storageClass<a class="headerlink" href="#storageclass" title="Permanent link">&para;</a></h3>
 <p><a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/">官方文档</a></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>storageClass 没有命名空间一说.<br/>
+<p>storageClass 没有命名空间一说.<br>
 只能有一个默认的 sc, 如果设置多个, 那么创建pvc 未指定 storageClassName 会报错 <code>Internal error occurred: 2 default StorageClasses were found</code></p>
 </div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
@@ -5029,7 +5044,7 @@
 </span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="nt">parameters</span><span class="p">:</span>
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">  </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs-server.example.com</span>
 </span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/share</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">  </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">  </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ol>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
@@ -5038,7 +5053,7 @@
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="c1"># 创建完比后, 设置为默认</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a>k<span class="w"> </span>annotate<span class="w"> </span>sc<span class="w"> </span>example-nfs<span class="w"> </span>storageclass.kubernetes.io/is-default-class<span class="o">=</span><span class="nb">true</span>
 </span></code></pre></div></td></tr></table></div>
-<p><div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">pvc-nfs-2.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<p><div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pvc-nfs-2.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
@@ -5070,7 +5085,7 @@
 </span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="c1"># 因为这个 sc 不ok, 所以没有动态创建pv</span>
 </span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a>k<span class="w"> </span>get<span class="w"> </span>pvc<span class="w"> </span>pvc-nfs-2<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">pv-2.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pv-2.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
@@ -5101,11 +5116,11 @@
 </span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13"></a><span class="w">  </span><span class="nt">persistentVolumeReclaimPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Recycle</span>
 </span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14"></a><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-nfs</span>
 </span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15"></a><span class="w">  </span><span class="nt">nfs</span><span class="p">:</span>
-</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w">  </span><span class="s">"/data/nfs/abc"</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;/data/nfs/abc&quot;</span>
 </span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17"></a><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.66.110</span>
 </span></code></pre></div></td></tr></table></div>
 <p>创建这个pv后, 我们发现上面的 pvc 与pv 绑定了, 说明有这个storageClassName的pv 的应该优先级更高</p>
-<h4 id="nfs_1">nfs<a class="headerlink" href="#nfs_1" title="Permanent link">¶</a></h4>
+<h4 id="nfs_1">nfs<a class="headerlink" href="#nfs_1" title="Permanent link">&para;</a></h4>
 <p><a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#nfs">nfs storage class</a></p>
 <p><a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">NFS subdir 外部驱动</a></p>
 <p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
@@ -5161,7 +5176,7 @@
 </span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26"></a><span class="w">  </span>└──<span class="w"> </span>values.yaml<span class="w">  </span><span class="c1">#修改这个文件</span>
 </span></code></pre></div></td></tr></table></div>
 <a href="/devops/k8s/env/harbor/#githubaction">自己构建nfs-subdir-external-provisioner镜像</a>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">value.yaml 部分要修改的内容</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">value.yaml 部分要修改的内容</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
@@ -5186,7 +5201,7 @@
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v4.0.18</span><span class="w"> </span><span class="c1">#(2)</span>
 </span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">  </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 </span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="nt">imagePullSecrets</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span>
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="s">"name"</span><span class="p p-Indicator">:</span><span class="s">"regcred"</span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1">#(3)</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="s">&quot;name&quot;</span><span class="p p-Indicator">:</span><span class="s">&quot;regcred&quot;</span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1">#(3)</span>
 </span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="p p-Indicator">]</span>
 </span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11"></a>
 </span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="nt">nfs</span><span class="p">:</span>
@@ -5233,7 +5248,7 @@
 <ol>
 <li>
 <p>storageClass 的yaml 里provisioner
-    <div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">可以这样获取</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+    <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">可以这样获取</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
 <span class="normal"><a href="#__codelineno-25-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a>ks<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>nfs-subdir-external-provisioner-6db4fd89d9-nwqfv<span class="w"> </span>-oyaml<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>PROVISIONER_NAME<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span>
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a>ks<span class="w"> </span>describe<span class="w"> </span>po<span class="w"> </span>nfs-subdir-external-provisioner-6db4fd89d9-nwqfv<span class="w">  </span><span class="p">|</span>grep<span class="w"> </span>PROVISIONER_NAME<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span>
 </span></code></pre></div></td></tr></table></div></p>
@@ -5264,7 +5279,7 @@
 </span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
 </span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="w">    </span><span class="nt">meta.helm.sh/release-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs-subdir-external-provisioner</span>
 </span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="w">    </span><span class="nt">meta.helm.sh/release-namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kube-system</span>
-</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s">"2023-07-19T08:37:44Z"</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2023-07-19T08:37:44Z&quot;</span>
 </span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
 </span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs-subdir-external-provisioner</span>
 </span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11"></a><span class="w">    </span><span class="nt">app.kubernetes.io/managed-by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Helm</span>
@@ -5272,16 +5287,16 @@
 </span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13"></a><span class="w">    </span><span class="nt">heritage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Helm</span>
 </span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14"></a><span class="w">    </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs-subdir-external-provisioner</span>
 </span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs-client</span>
-</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16"></a><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s">"1055715"</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16"></a><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1055715&quot;</span>
 </span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17"></a><span class="w">  </span><span class="nt">uid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5ae9beff-7646-4022-8acc-52396ea9723b</span>
 </span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18"></a><span class="nt">parameters</span><span class="p">:</span>
-</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19"></a><span class="w">  </span><span class="nt">archiveOnDelete</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19"></a><span class="w">  </span><span class="nt">archiveOnDelete</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
 </span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20"></a><span class="nt">provisioner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster.local/nfs-subdir-external-provisioner</span>
 </span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21"></a><span class="nt">reclaimPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Delete</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">pod-pvc-with-sc.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pod-pvc-with-sc.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
@@ -5338,9 +5353,9 @@
 </span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28"></a><span class="w">      </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pvc-nfs-with-sc</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
-<li>前面已经自动创建了sc, 当然我们可以自己手动创建一个.<br/>
-    利用这个sc对应的provisioner组件自动创建pv <br/>
-<mark>还有如果没有指定的sc不存在, 那么它会找对应pv,会与有设置这个storageClassName的pv进行绑定</mark></li>
+<li>前面已经自动创建了sc, 当然我们可以自己手动创建一个.<br>
+    利用这个sc对应的provisioner组件自动创建pv <br>
+    <mark>还有如果没有指定的sc不存在, 那么它会找对应pv,会与有设置这个storageClassName的pv进行绑定</mark></li>
 </ol>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
 <span class="normal"><a href="#__codelineno-28-2">2</a></span>
@@ -5368,14 +5383,14 @@
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2"></a>pvc-c5aebbf9-cd9e-43ba-866c-33bef06b4c2a   200Mi    Bound    default/pvc-nfs-with-sc   nfs-client
 </span></code></pre></div></td></tr></table></div></li>
 </ol>
-<h3 id="_4">问题<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<h4 id="pvc-pending">pvc 处于pending<a class="headerlink" href="#pvc-pending" title="Permanent link">¶</a></h4>
+<h3 id="_4">问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="pvc-pending">pvc 处于pending<a class="headerlink" href="#pvc-pending" title="Permanent link">&para;</a></h4>
 <ul>
 <li>PVC的空间申请大小大于PV的大小</li>
 <li>PVC的StorageClassName没有和PV的一致</li>
 <li>PVC的accessModes和PV的不一致</li>
 </ul>
-<h4 id="pvcpodpending">挂载PVC的Pod一直处于Pending<a class="headerlink" href="#pvcpodpending" title="Permanent link">¶</a></h4>
+<h4 id="pvcpodpending">挂载PVC的Pod一直处于Pending<a class="headerlink" href="#pvcpodpending" title="Permanent link">&para;</a></h4>
 <ul>
 <li>PVC没有创建成功/PVC不存在</li>
 <li>PVC和Pod不在同一个Namespace</li>

@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4280,22 +4294,23 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">啥是索引?</p>
-<p>一本新华字典,如果没有前面的目录,你查个字 是不是遭老罪了!<br/>
-app上选择你的城市时,如果没有右边的那个滑动,是不是也挺麻烦的.<br/>
+<p>一本新华字典,如果没有前面的目录,你查个字 是不是遭老罪了!<br>
+app上选择你的城市时,如果没有右边的那个滑动,是不是也挺麻烦的.<br>
 这些让你找起来方便的东西就是索引. mysql 数据库同样如此,都是在一堆数据里找你要的东西.</p>
 </div>
-<h2 id="_1">底层数据结构<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<h3 id="red-black-trees">红黑树 Red-Black Trees<a class="headerlink" href="#red-black-trees" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/index-a8bd81d163d207b9490fc9ae7147dfe6.svg"><img alt="Kroki" src="/images/index-a8bd81d163d207b9490fc9ae7147dfe6.svg"/></a></p>
+<h2 id="_1">底层数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="red-black-trees">红黑树 Red-Black Trees<a class="headerlink" href="#red-black-trees" title="Permanent link">&para;</a></h3>
+<object type="image/svg+xml" data="/images/index-a8bd81d163d207b9490fc9ae7147dfe6.svg" style="max-width:100%"></object>
+
 <div class="admonition note">
 <p class="admonition-title">说明</p>
-<p>红黑树解决了二叉树插入有序数据导致所有的节点都会在根节点的右侧或左侧,变成了链表的问题, 插入一条数据后,会自动调整 <br/>
-<mark>那么能不能用这个结构来存储mysql数据呢?</mark> <br/></p>
-<p>n层的话, 总共能放 total = 2⁰ + 2¹ +2² +...  2ⁿ⁻¹ <br/>
-<mark>2total</mark> =  2¹ +2² +...  2ⁿ <br/>= <mark>2⁰ + 2¹ +2² +...  2ⁿ⁻¹</mark>+ <strong>2ⁿ - 2⁰</strong> <br/>
-  = total + 2ⁿ - 2⁰ <br/>
-2total = total + 2ⁿ - 2⁰ <br/>
-结果: <mark><strong><ins>total = 2ⁿ-1</ins></strong></mark><br/></p>
+<p>红黑树解决了二叉树插入有序数据导致所有的节点都会在根节点的右侧或左侧,变成了链表的问题, 插入一条数据后,会自动调整 <br>
+<mark>那么能不能用这个结构来存储mysql数据呢?</mark> <br></p>
+<p>n层的话, 总共能放 total = 2⁰ + 2¹ +2² +...  2ⁿ⁻¹ <br>
+<mark>2total</mark> =  2¹ +2² +...  2ⁿ <br>= <mark>2⁰ + 2¹ +2² +...  2ⁿ⁻¹</mark>+ <strong>2ⁿ - 2⁰</strong> <br>
+  = total + 2ⁿ - 2⁰ <br>
+2total = total + 2ⁿ - 2⁰ <br>
+结果: <mark><strong><ins>total = 2ⁿ-1</ins></strong></mark><br></p>
 </div>
 
 

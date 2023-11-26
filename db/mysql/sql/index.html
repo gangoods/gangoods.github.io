@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4514,7 +4528,7 @@
 <p class="admonition-title">Note</p>
 <p>sql语句后面都可以加上\G <mark>(;分号前面)</mark>,这样会显示一行一行,而不是表格.</p>
 </div>
-<h2 id="_1">常用函数<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h2 id="_1">常用函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -4523,14 +4537,14 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">-- 当前时间</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">select</span><span class="w"> </span><span class="n">now</span><span class="p">();</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_2">字符串处理<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<h2 id="mysql">mysql 配置相关<a class="headerlink" href="#mysql" title="Permanent link">¶</a></h2>
-<h3 id="mysql_1">查看mysql相关信息<a class="headerlink" href="#mysql_1" title="Permanent link">¶</a></h3>
+<h3 id="_2">字符串处理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="mysql">mysql 配置相关<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
+<h3 id="mysql_1">查看mysql相关信息<a class="headerlink" href="#mysql_1" title="Permanent link">&para;</a></h3>
 <p><div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">-- 进入mysql控制台后 (mysql -uroot .. 命令连接后的界面) 输入 \s 后回车</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="err">\</span><span class="n">s</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">执行结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">执行结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4554,7 +4568,7 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>Connection id:      3
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>Current database:   test
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>Current pager:      stdout
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>Using outfile:      ''
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>Using outfile:      &#39;&#39;
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>Using delimiter:    ;
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>Server version:     5.7.41 MySQL Community Server (GPL)
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>Protocol version:   10
@@ -4568,7 +4582,7 @@
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>Uptime:         43 min 23 sec
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>--------------
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="_3">查看会话与全局变量<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<h3 id="_3">查看会话与全局变量<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -4593,12 +4607,12 @@
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1">-- global只对以后的会话有效,对当前无效,当前的还是保持原来的</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="k">set</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">autocommit</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="c1">-- 模糊查看变量</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">"%log%"</span><span class="p">;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">&quot;%log%&quot;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_4">查看字符集<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<p><div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">show</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'%utf%'</span><span class="p">;</span>
+<h3 id="_4">查看字符集<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">show</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%utf%&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">执行结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">执行结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span>
@@ -4616,10 +4630,10 @@
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>| utf32   | UTF-32 Unicode   | utf32_general_ci   |      4 |
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>+---------+------------------+--------------------+--------+
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="_5">隔离级别<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
-<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'%tx%'</span><span class="p">;</span>
+<h3 id="_5">隔离级别<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%tx%&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="_6">权限设置<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h2 id="_6">权限设置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -4635,18 +4649,18 @@
 <span class="normal"><a href="#__codelineno-7-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">-- 角色,mysql中没有角色,用的一种叫代理的方式  这个只有5.7支持</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="c1">-- 官方叫 role like 机制</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="p">;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">'dba'</span><span class="o">@</span><span class="s1">'127.0.0.1'</span><span class="p">;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">'xyz'</span><span class="o">@</span><span class="s1">'::1'</span><span class="p">;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="k">grant</span><span class="w"> </span><span class="n">proxy</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="s1">'dba'</span><span class="o">@</span><span class="s1">'127.0.0.1'</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">'xyz'</span><span class="o">@</span><span class="s1">'::1'</span><span class="p">;</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">'dba'</span><span class="o">@</span><span class="s1">'127.0.0.1'</span><span class="p">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;dba&#39;</span><span class="o">@</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;xyz&#39;</span><span class="o">@</span><span class="s1">&#39;::1&#39;</span><span class="p">;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="k">grant</span><span class="w"> </span><span class="n">proxy</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="s1">&#39;dba&#39;</span><span class="o">@</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;xyz&#39;</span><span class="o">@</span><span class="s1">&#39;::1&#39;</span><span class="p">;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;dba&#39;</span><span class="o">@</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">;</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="c1">-- 查看该用户的权限</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">'dba'</span><span class="o">@</span><span class="s1">'127.0.0.1'</span><span class="p">;</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;dba&#39;</span><span class="o">@</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">;</span>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a>
 </span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="c1">-- 可以查看到</span>
 </span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="n">proxies_priv</span><span class="p">;</span><span class="w"> </span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="database">database<a class="headerlink" href="#database" title="Permanent link">¶</a></h2>
+<h2 id="database">database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h2>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -4675,8 +4689,8 @@
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="c1">-- 我们发现这些个表的引擎都是memory,所以..没有</span>
 </span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="k">show</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">status</span><span class="p">;</span><span class="w"> </span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="table">table<a class="headerlink" href="#table" title="Permanent link">¶</a></h2>
-<h3 id="_7">查看创建信息<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h2 id="table">table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h2>
+<h3 id="_7">查看创建信息<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
@@ -4685,11 +4699,11 @@
 <span class="normal"><a href="#__codelineno-9-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1">-- 查看当前db下的所有表信息</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">show</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="c1">-- 某个表的一些信息</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">show</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'table_name'</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">show</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;table_name&#39;</span><span class="p">;</span>
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="c1">-- 显示创建表的语句</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_8">索引<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<h3 id="_8">索引<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span>
@@ -4698,7 +4712,7 @@
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">-- 删除一般索引</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">index_name</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_9">临时表<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<h3 id="_9">临时表<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <ol>
@@ -4712,9 +4726,9 @@
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">create</span><span class="w"> </span><span class="k">temporary</span><span class="w"> </span><span class="k">table</span><span class="w">  </span><span class="n">tmp_a</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">int</span><span class="p">);</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>查看临时表的默认存储引擎
-<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'%default_tmp%'</span><span class="p">;</span>
+<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%default_tmp%&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
 <span class="normal"><a href="#__codelineno-13-4">4</a></span>
@@ -4730,11 +4744,11 @@
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span>
 <span class="normal"><a href="#__codelineno-14-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1">-- 可以看到系统里有创建了多少个临时表</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="k">show</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'%tmp_tables%'</span><span class="p">;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="k">show</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%tmp_tables%&#39;</span><span class="p">;</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="c1">-- 当前会话里的情况</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="k">show</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'%tmp_tables%'</span><span class="p">;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="k">show</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%tmp_tables%&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">结果</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
 <span class="normal"><a href="#__codelineno-15-3">3</a></span>
 <span class="normal"><a href="#__codelineno-15-4">4</a></span>
@@ -4747,7 +4761,7 @@
 </li>
 <li>
 <p>表结构存放目录
-<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'tmpdir'</span><span class="p">;</span>
+<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;tmpdir&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
 <span class="normal"><a href="#__codelineno-17-2">2</a></span>
@@ -4757,16 +4771,16 @@
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="c1">-- 退出当前mysql 会话, 这个表空间文件会删除的.</span>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="k">system</span><span class="w"> </span><span class="n">ls</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">临时表表结构文件命名方式</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">临时表表结构文件命名方式</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
 <span class="normal"><a href="#__codelineno-18-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a>临时表的表结构文件.frm 命名方式是 #sql{进程id}_{线程id}_序列号&lt;br&gt;
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>线程id 通过 `show processlist` 的ID列获得.
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>表空间的存放目录
-<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">"%data%"</span><span class="p">;</span>
+<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">&quot;%data%&quot;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">这里显示几个我们关心的</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">这里显示几个我们关心的</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
@@ -4794,11 +4808,11 @@
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 </ul>
-<h3 id="_10">增<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
-<h3 id="_11">删<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
-<h3 id="_12">改<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
-<h3 id="_13">查<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
-<h2 id="null">null<a class="headerlink" href="#null" title="Permanent link">¶</a></h2>
+<h3 id="_10">增<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_11">删<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_12">改<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_13">查<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h2 id="null">null<a class="headerlink" href="#null" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <ol>

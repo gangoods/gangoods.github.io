@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4336,9 +4350,9 @@
 <p class="admonition-title">Warning</p>
 <p>未完待续</p>
 </div>
-<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<h2 id="_2">配置<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">/usr/local/etc/redis.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2">配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">/usr/local/etc/redis.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
@@ -4346,11 +4360,11 @@
 <span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nn">...</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">daemonize no</span><span class="w"> </span><span class="c1"># 是否守护, 一般正式用的话 是yes,你测试的时候可以是no</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">port 6379</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">logfile "6379.log"</span><span class="w"> </span><span class="c1"># 文件会存放到dir指定的目录</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">logfile &quot;6379.log&quot;</span><span class="w"> </span><span class="c1"># 文件会存放到dir指定的目录</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">dir /usr/local/var/db/redis/</span><span class="w"> </span><span class="c1">#工作目录 数据都会保存在这里, (rdb文件和aof文件)</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nn">...</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">命令查看相关配置</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">命令查看相关配置</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
@@ -4366,11 +4380,11 @@
 </span></code></pre></div></td></tr></table></div>
 <ol>
 <li>结果
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>1) "port"
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>2) "6379"
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1) &quot;port&quot;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>2) &quot;6379&quot;
 </span></code></pre></div></li>
 </ol>
-<h2 id="_3">基础命令<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="_3">基础命令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -4417,7 +4431,7 @@
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>ping
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1"># set string</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span><span class="s2">"hei"</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span><span class="s2">&quot;hei&quot;</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>get<span class="w"> </span>name
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1"># 判断key是否存在</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>exists<span class="w"> </span>name
@@ -4449,14 +4463,14 @@
 </span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="c1">#再次 查看</span>
 </span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39"></a>ttl<span class="w"> </span>name<span class="w"> </span><span class="c1">#返回-1 表示key没有设置过期时间</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="redis">redis生命周期<a class="headerlink" href="#redis" title="Permanent link">¶</a></h2>
+<h2 id="redis">redis生命周期<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h2>
 <ol>
 <li>客户端发送命令,向服务端发送请求</li>
 <li>在redis服务端,redis是单线程的,所以可以想象成有一个队列在维护客户端发送来的请求命令</li>
 <li>服务端一个一个的执行队列里的命令</li>
 <li>返回结果给客户端</li>
 </ol>
-<h2 id="pipeline">流水线pipeline<a class="headerlink" href="#pipeline" title="Permanent link">¶</a></h2>
+<h2 id="pipeline">流水线pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h2>
 <p>一次网络命令通信的时间= 客户端传输命令给服务端需要的网络时间+ 服务端执行命令需要的时间 + 返回结果给客户端需要的网络时间
 或者说  一次时间= 一次网络时间+ 命令执行时间
 n次网络命令通信的时间 = n次网络时间+ n次命令执行时间
@@ -4467,12 +4481,12 @@ n次网络命令通信的时间 = n次网络时间+ n次命令执行时间
 我们需要控制的就是网络时间的减少,</p>
 <p>mset 命令是原子性的,就是说里面的命令一次性全部执行完毕
 而我们的pipeline不是原子性的,他可能把所有要执行的命令拆分了,先执行了一部分,然后被其他一般的命令插入了,执行它后,再...</p>
-<h2 id="_4">慢查询<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<h2 id="_4">慢查询<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>mysql 有慢查询, redis 也有, 就是服务端真正执行命令所花费的时间 比较慢的 语句</li>
 <li>redis把慢查询的命令存放到一个队列中,这个队列有一个长度,如果超过了这个长度,则会踢掉,先进先踢</li>
 </ul>
-<p><div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">redis.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<p><div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">redis.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># 如果设置为0 ,表示记录所有命令</span>
@@ -4493,13 +4507,13 @@ n次网络命令通信的时间 = n次网络时间+ n次命令执行时间
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="c1"># 清空慢查询队列</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>slowlog<span class="w"> </span>reset
 </span></code></pre></div></td></tr></table></div>
-<h2 id="_5">客户端工具<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h2 id="_5">客户端工具<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>insight</p>
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://redis.io/docs/ui/insight/">insight</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://redis.io/docs/ui/insight/">insight</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

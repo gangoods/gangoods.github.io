@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4650,25 +4664,25 @@
 <p class="admonition-title">Warning</p>
 <p>未完待续</p>
 </div>
-<h2 id="dockerfile">dockerfile 指令<a class="headerlink" href="#dockerfile" title="Permanent link">¶</a></h2>
-<h3 id="from">from<a class="headerlink" href="#from" title="Permanent link">¶</a></h3>
+<h2 id="dockerfile">dockerfile 指令<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
+<h3 id="from">from<a class="headerlink" href="#from" title="Permanent link">&para;</a></h3>
 <p>FROM:选择基础镜像，推荐 alpine
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">[--platform=&lt;platform&gt;]</span><span class="w"> </span>&lt;image&gt;<span class="o">[</span>@&lt;digest&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>AS<span class="w"> </span>&lt;name&gt;<span class="o">]</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="label">LABEL<a class="headerlink" href="#label" title="Permanent link">¶</a></h3>
+<h3 id="label">LABEL<a class="headerlink" href="#label" title="Permanent link">&para;</a></h3>
 <p>maintainer 废弃</p>
 <p><strong>按标签组织项目 (不用搞目录什么的.)</strong></p>
-<div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">LABEL</span><span class="w"> </span>multi.label1<span class="o">=</span><span class="s2">"value1"</span><span class="w"> </span>multi.label2<span class="o">=</span><span class="s2">"value2"</span><span class="w"> </span><span class="nv">other</span><span class="o">=</span><span class="s2">"value3"</span>
+<div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">LABEL</span><span class="w"> </span>multi.label1<span class="o">=</span><span class="s2">&quot;value1&quot;</span><span class="w"> </span>multi.label2<span class="o">=</span><span class="s2">&quot;value2&quot;</span><span class="w"> </span><span class="nv">other</span><span class="o">=</span><span class="s2">&quot;value3&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>配合 label filter 可过滤镜像查询结果</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>images<span class="w"> </span>-f<span class="w"> </span><span class="nv">label</span><span class="o">=</span>multi.label1<span class="o">=</span><span class="s2">"value1"</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>images<span class="w"> </span>-f<span class="w"> </span><span class="nv">label</span><span class="o">=</span>multi.label1<span class="o">=</span><span class="s2">&quot;value1&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>查看镜像的label</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># -A 10 看 labels 后10行</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>docker<span class="w"> </span>inspect<span class="w"> </span>image_name<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>labels<span class="w"> </span>-A<span class="w"> </span><span class="m">10</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="run">RUN<a class="headerlink" href="#run" title="Permanent link">¶</a></h3>
+<h3 id="run">RUN<a class="headerlink" href="#run" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>这两条命令应该永远用&amp;&amp;连接，如果分开执行，RUN apt-get update 构建层被缓存，可能会导致新 package 无法安装</p>
@@ -4676,7 +4690,7 @@
 <p>执行命令,最常见的用法是
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>RUN<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="cmd">CMD<a class="headerlink" href="#cmd" title="Permanent link">¶</a></h3>
+<h3 id="cmd">CMD<a class="headerlink" href="#cmd" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol>
@@ -4686,8 +4700,8 @@
 </ol>
 </div>
 <p><div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"executableA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"param1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"param2"</span><span class="err">...</span><span class="p">]</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"executableB"</span><span class="p">,</span><span class="w"> </span><span class="s2">"param1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"param2"</span><span class="err">...</span><span class="p">]</span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;executableA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;param1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;param2&quot;</span><span class="err">...</span><span class="p">]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;executableB&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;param1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;param2&quot;</span><span class="err">...</span><span class="p">]</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
@@ -4695,7 +4709,7 @@
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1"># 在没有 ENTRYPOINT的时候,我们运行容器, 想执行什么命令就执行什么命令</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>docker<span class="w"> </span>run<span class="w"> </span>image_name<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="entrypoint">ENTRYPOINT<a class="headerlink" href="#entrypoint" title="Permanent link">¶</a></h3>
+<h3 id="entrypoint">ENTRYPOINT<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h3>
 <div class="admonition tips">
 <p class="admonition-title">Tips</p>
 <ul>
@@ -4730,8 +4744,8 @@
 <span class="normal"><a href="#__codelineno-8-6">6</a></span>
 <span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c">#docker run –-entrypoint 可替换 Dockerfile 中定义的 ENTRYPOINT  </span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="c">#ENTRYPOINT 的最佳实践是用 ENTRYPOINT 定义镜像主命令，并通过 CMD 定义主要参数，如下所示</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">"sed"</span><span class="p">]</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"--help"</span><span class="p">]</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sed&quot;</span><span class="p">]</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--help&quot;</span><span class="p">]</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c">#可以这样, 这样的话, 就看你运行的时候指定啥了.</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[]</span>
@@ -4741,7 +4755,7 @@
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w">  </span>-y<span class="w"> </span>stress
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">"/usr/bin/stress"</span><span class="p">]</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/usr/bin/stress&quot;</span><span class="p">]</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[]</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
@@ -4750,24 +4764,24 @@
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="c1"># 指定的参数-v会覆盖 dockerfile里配置的cmd</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>stress<span class="w"> </span>-v
 </span></code></pre></div></td></tr></table></div></p>
-<h4 id="exec-shell">exec模式 与 shell模式<a class="headerlink" href="#exec-shell" title="Permanent link">¶</a></h4>
+<h4 id="exec-shell">exec模式 与 shell模式<a class="headerlink" href="#exec-shell" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">shell模式与exec模式的区别</p>
-<p>shell 模式会忽略所有 CMD 命令的参数和 docker run 的命令行参数，ENTRYPOINT 要运行的命令会作为 /bin/sh -c 的子命令运行，而且 /bin/sh 不会传递信号，也就是说 ENTRYPOINT 要运行的命令不是 PID 为 1 的进程，且不会收到 Unix 信号，所以你要执行的命令不会收到 docker stop <container> 发出的 SIGTERM 信号 (这里说的是,不会优雅退出, 就是直接停止了容器, 还没停止里面的程序, 可以写个程序测试)<br/>
-一般情况下,我们停止一个服务, 是需要优雅退出的. 比如nginx ,会先让其处理已经发送过来的请求.</container></p>
+<p>shell 模式会忽略所有 CMD 命令的参数和 docker run 的命令行参数，ENTRYPOINT 要运行的命令会作为 /bin/sh -c 的子命令运行，而且 /bin/sh 不会传递信号，也就是说 ENTRYPOINT 要运行的命令不是 PID 为 1 的进程，且不会收到 Unix 信号，所以你要执行的命令不会收到 docker stop <container> 发出的 SIGTERM 信号 (这里说的是,不会优雅退出, 就是直接停止了容器, 还没停止里面的程序, 可以写个程序测试)<br>
+一般情况下,我们停止一个服务, 是需要优雅退出的. 比如nginx ,会先让其处理已经发送过来的请求.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><input id="__tabbed_1_3" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">exec模式 (推荐)</label><label for="__tabbed_1_2">shell模式</label><label for="__tabbed_1_3">go程序测试</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">exec模式 (推荐)</label><label for="__tabbed_1_2">shell模式</label><label for="__tabbed_1_3">go程序测试</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c"># exec 模式</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">"executable"</span><span class="p">,</span><span class="w"> </span><span class="s2">"param1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"param2"</span><span class="p">]</span><span class="w"> </span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;executable&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;param1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;param2&quot;</span><span class="p">]</span><span class="w"> </span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">"top"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-b"</span><span class="p">]</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"-c"</span><span class="p">]</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-b&quot;</span><span class="p">]</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-c&quot;</span><span class="p">]</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
@@ -4813,13 +4827,13 @@
 <div class="tabbed-block">
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>写的代码 测试信号接收..<br/>
+<p>写的代码 测试信号接收..<br>
 代码暂时没找到在哪.....</p>
 </div>
 </div>
 </div>
 </div>
-<h3 id="expose">EXPOSE<a class="headerlink" href="#expose" title="Permanent link">¶</a></h3>
+<h3 id="expose">EXPOSE<a class="headerlink" href="#expose" title="Permanent link">&para;</a></h3>
 <p>暴露端口</p>
 <ul>
 <li>是镜像创建者和使用者的约定,告知用户你暴露了什么服务(端口)</li>
@@ -4841,16 +4855,16 @@
 <span class="normal"><a href="#__codelineno-17-12">12</a></span>
 <span class="normal"><a href="#__codelineno-17-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">"github.com/gin-gonic/gin"</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/gin-gonic/gin&quot;</span>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a>
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">    </span><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">gin</span><span class="p">.</span><span class="nx">Default</span><span class="p">()</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="w">    </span><span class="nx">r</span><span class="p">.</span><span class="nx">GET</span><span class="p">(</span><span class="s">"/ping"</span><span class="p">,</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="w">    </span><span class="nx">r</span><span class="p">.</span><span class="nx">GET</span><span class="p">(</span><span class="s">&quot;/ping&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="w">        </span><span class="nx">c</span><span class="p">.</span><span class="nx">JSON</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="nx">gin</span><span class="p">.</span><span class="nx">H</span><span class="p">{</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="w">            </span><span class="s">"message"</span><span class="p">:</span><span class="w"> </span><span class="s">"pong"</span><span class="p">,</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="w">            </span><span class="s">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;pong&quot;</span><span class="p">,</span>
 </span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="w">        </span><span class="p">})</span>
 </span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="w">    </span><span class="p">})</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="w">    </span><span class="nx">r</span><span class="p">.</span><span class="nx">Run</span><span class="p">(</span><span class="s">":9090"</span><span class="p">)</span><span class="w"> </span><span class="c1">// 监听并在 0.0.0.0:8080(默认) 上启动服务</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="w">    </span><span class="nx">r</span><span class="p">.</span><span class="nx">Run</span><span class="p">(</span><span class="s">&quot;:9090&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 监听并在 0.0.0.0:8080(默认) 上启动服务</span>
 </span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
@@ -4873,12 +4887,12 @@
 </span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:3.16</span>
 </span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>base<span class="w"> </span>/test/go-web<span class="w"> </span>/go-web
 </span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">9090</span>
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"/go-web"</span><span class="p">]</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/go-web&quot;</span><span class="p">]</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ul>
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">&lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="healthcheck">HEALTHCHECK<a class="headerlink" href="#healthcheck" title="Permanent link">¶</a></h3>
+<h3 id="healthcheck">HEALTHCHECK<a class="headerlink" href="#healthcheck" title="Permanent link">&para;</a></h3>
 <p>健康检查
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
 <span class="normal"><a href="#__codelineno-20-2">2</a></span>
@@ -4890,7 +4904,7 @@
 <span class="normal"><a href="#__codelineno-21-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">HEALTHCHECK</span><span class="w"> </span>--interval<span class="o">=</span>5s<span class="w"> </span>--timeout<span class="o">=</span>3s<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">  </span><span class="k">CMD</span><span class="w"> </span>curl<span class="w"> </span>-f<span class="w"> </span>http://localhost/<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="env">ENV<a class="headerlink" href="#env" title="Permanent link">¶</a></h3>
+<h3 id="env">ENV<a class="headerlink" href="#env" title="Permanent link">&para;</a></h3>
 <p>设置环境变量, 就是进入容器后,你可以用env 看到这些</p>
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
 <span class="normal"><a href="#__codelineno-22-2">2</a></span>
@@ -4900,9 +4914,9 @@
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="c">#或者MYSQL_VERSION=5.7</span>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="k">ENV</span><span class="w"> </span>MYSQL_VERSION<span class="w"> </span><span class="m">5</span>.7
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="c"># run 实际上是进入容器执行的. 所以用到的变量可以</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="k">RUN</span><span class="w"> </span>agt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>mysql-server<span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">MYSQL_VERSION</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="k">RUN</span><span class="w"> </span>agt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>mysql-server<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MYSQL_VERSION</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="add">ADD (不推荐)<a class="headerlink" href="#add" title="Permanent link">¶</a></h3>
+<h3 id="add">ADD (不推荐)<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -4917,9 +4931,9 @@
 </div>
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
 <span class="normal"><a href="#__codelineno-23-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">ADD</span><span class="w"> </span><span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span><span class="w"> </span>&lt;src&gt;...<span class="w"> </span>&lt;dest&gt;<span class="w">  </span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="k">ADD</span><span class="w"> </span><span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="s2">"&lt;src&gt;"</span>,...<span class="w"> </span><span class="s2">"&lt;dest&gt;"</span><span class="o">]</span><span class="w"> </span><span class="o">(</span>路径中有空格时使用<span class="o">)</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="k">ADD</span><span class="w"> </span><span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;&lt;src&gt;&quot;</span>,...<span class="w"> </span><span class="s2">&quot;&lt;dest&gt;&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">(</span>路径中有空格时使用<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="copy">COPY<a class="headerlink" href="#copy" title="Permanent link">¶</a></h3>
+<h3 id="copy">COPY<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -4932,10 +4946,10 @@
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
 <span class="normal"><a href="#__codelineno-24-2">2</a></span>
 <span class="normal"><a href="#__codelineno-24-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">COPY</span><span class="w"> </span><span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span><span class="w"> </span>&lt;src&gt;...<span class="w"> </span>&lt;dest&gt;
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="k">COPY</span><span class="w"> </span><span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="s2">"&lt;src&gt;"</span>,...<span class="w"> </span><span class="s2">"&lt;dest&gt;"</span><span class="o">]</span><span class="w"> </span>#<span class="w"> </span>路径中有空格时使用
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="k">COPY</span><span class="w"> </span><span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;&lt;src&gt;&quot;</span>,...<span class="w"> </span><span class="s2">&quot;&lt;dest&gt;&quot;</span><span class="o">]</span><span class="w"> </span>#<span class="w"> </span>路径中有空格时使用
 </span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build<span class="w"> </span>/bin/project<span class="w"> </span>/bin/project
 </span></code></pre></div></td></tr></table></div>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">src是目录时注意点</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src是目录时注意点</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
@@ -4967,17 +4981,17 @@
 </span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15"></a><span class="w">    </span>t2
 </span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16"></a><span class="c1">#没有 tmp 目录,, 所以写copy的时候 要 copy tmp /root/tmp</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="volume">VOLUME<a class="headerlink" href="#volume" title="Permanent link">¶</a></h3>
+<h3 id="volume">VOLUME<a class="headerlink" href="#volume" title="Permanent link">&para;</a></h3>
 <p>将指定目录定义为外挂存储卷，Dockerfile 中在该指令之后所有对同一目录的修改都无效 VOLUME ["/data"]
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1"></a>等价于 docker run –v /data，可通过 docker inspect 查看主机的 mount point， /var/lib/docker/volumes/&lt;containerid&gt;/_data
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="workdir">WORKDIR<a class="headerlink" href="#workdir" title="Permanent link">¶</a></h3>
+<h3 id="workdir">WORKDIR<a class="headerlink" href="#workdir" title="Permanent link">&para;</a></h3>
 <p>切换工作目录
 WORKDIR，意思是在这一句之后，Dockerfile 后面的操作都以这一句指定的 WORKDIR 目录作为当前目录
 还有设置后,你<code>docker run -it xxx bash</code> 进入后, <code>pwd</code>看到的,就不会是默认的/ 而是这个了.</p>
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/path/to/workdir</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="user">USER<a class="headerlink" href="#user" title="Permanent link">¶</a></h3>
+<h3 id="user">USER<a class="headerlink" href="#user" title="Permanent link">&para;</a></h3>
 <p>USER:切换运行镜像的用户和用户组,
 容器默认会以root的用户去运行容器, 可以用user指定成其他
 用户必须存在,没有的话先添加</p>
@@ -4989,7 +5003,7 @@ WORKDIR，意思是在这一句之后，Dockerfile 后面的操作都以这一�
 </span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3"></a>
 </span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="c"># 进去容器后,  whoami 能看到</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="arg">ARG<a class="headerlink" href="#arg" title="Permanent link">¶</a></h3>
+<h3 id="arg">ARG<a class="headerlink" href="#arg" title="Permanent link">&para;</a></h3>
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
 <span class="normal"><a href="#__codelineno-29-2">2</a></span>
 <span class="normal"><a href="#__codelineno-29-3">3</a></span>
@@ -5001,14 +5015,14 @@ WORKDIR，意思是在这一句之后，Dockerfile 后面的操作都以这一�
 <span class="normal"><a href="#__codelineno-29-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">from</span><span class="w"> </span><span class="s">ubuntu</span>
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="k">ARG</span><span class="w"> </span>FILE
 </span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="c"># 可以有默认值</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="k">ARG</span><span class="w"> </span><span class="nv">DIR</span><span class="o">=</span><span class="s2">"/root"</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="k">ARG</span><span class="w"> </span><span class="nv">DIR</span><span class="o">=</span><span class="s2">&quot;/root&quot;</span>
 </span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5"></a>
 </span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="k">RUN</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w"> </span><span class="nv">$FILE</span>
 </span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7"></a>
 </span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="c"># 生成镜像的时候 --build-arg 然后 FILE=hello.txt 传递 参数</span>
 </span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9"></a>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">FILE</span><span class="o">=</span>hello.txt<span class="w"> </span>-t<span class="w"> </span>yyy<span class="w">  </span>.
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_1">其他<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h3 id="_1">其他<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
 <span class="normal"><a href="#__codelineno-30-2">2</a></span>
 <span class="normal"><a href="#__codelineno-30-3">3</a></span>
@@ -5017,7 +5031,7 @@ WORKDIR，意思是在这一句之后，Dockerfile 后面的操作都以这一�
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3"></a>• HEALTHCHECK 
 </span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4"></a>• SHELL
 </span></code></pre></div></td></tr></table></div>
-<h3 id="dockerfile_1">dockerfile 最佳实践<a class="headerlink" href="#dockerfile_1" title="Permanent link">¶</a></h3>
+<h3 id="dockerfile_1">dockerfile 最佳实践<a class="headerlink" href="#dockerfile_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>每个镜像最好只有一个进程</li>
 <li>当无法避免同一镜像运行多进程时,应选择合理的初始化进程(init process)</li>
@@ -5031,14 +5045,14 @@ WORKDIR，意思是在这一句之后，Dockerfile 后面的操作都以这一�
 <li>编写 dockerfile 的时候,应该把变更频率低的编译指令优先构建以便放在镜像底层以有效利用 build cache</li>
 <li>复制文件时,每个文件应独立复制,这确保某个文件变更时,只影响改文件对应的缓存</li>
 </ul>
-<h2 id="1">多进程的容器镜像<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<h2 id="1">多进程的容器镜像<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>选择适当的 init 进程</li>
 <li>需要捕获 SIGTERM 信号并完成子进程的优雅终止</li>
 <li>负责清理退出的子进程以避免僵尸进程</li>
 </ul>
-<h2 id="build">构建 build<a class="headerlink" href="#build" title="Permanent link">¶</a></h2>
-<h3 id="build-context">理解构建上下文(Build Context)<a class="headerlink" href="#build-context" title="Permanent link">¶</a></h3>
+<h2 id="build">构建 build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
+<h3 id="build-context">理解构建上下文(Build Context)<a class="headerlink" href="#build-context" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -5054,9 +5068,9 @@ WORKDIR，意思是在这一句之后，Dockerfile 后面的操作都以这一�
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="c1"># 默认查找当前目录的 Dockerfile ,–f 指定 Dockerfile</span>
 </span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3"></a>docker<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span>–f<span class="w"> </span>./Dockerfile
 </span></code></pre></div></td></tr></table></div>
-<h3 id="build-cache">Build Cache<a class="headerlink" href="#build-cache" title="Permanent link">¶</a></h3>
-<p>构建容器镜像时，Docker 依次读取 Dockerfile 中的指令，并按顺序依次执行构建指令。<br>
-Docker 读取指令后，会先判断缓存中是否有可用的已存镜像，只有已存镜像不存在时才会重新构建。</br></p>
+<h3 id="build-cache">Build Cache<a class="headerlink" href="#build-cache" title="Permanent link">&para;</a></h3>
+<p>构建容器镜像时，Docker 依次读取 Dockerfile 中的指令，并按顺序依次执行构建指令。<br />
+Docker 读取指令后，会先判断缓存中是否有可用的已存镜像，只有已存镜像不存在时才会重新构建。</p>
 <ul>
 <li>通常 Docker 简单判断 Dockerfile 中的指令与镜像。</li>
 <li>针对 ADD 和 COPY 指令，Docker 判断该镜像层每一个文件的内容并生成一个 checksum，与现存镜像比较时，Docker 比较的是二者的 checksum。</li>
@@ -5066,7 +5080,7 @@ Docker 读取指令后，会先判断缓存中是否有可用的已存镜像，�
 </ul>
 </li>
 </ul>
-<h3 id="multi-stage-build">多段构建(Multi-stage build)<a class="headerlink" href="#multi-stage-build" title="Permanent link">¶</a></h3>
+<h3 id="multi-stage-build">多段构建(Multi-stage build)<a class="headerlink" href="#multi-stage-build" title="Permanent link">&para;</a></h3>
 <div class="language-dockerfile highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
@@ -5099,13 +5113,13 @@ Docker 读取指令后，会先判断缓存中是否有可用的已存镜像，�
 </span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14"></a><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:3.8</span>
 </span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>multistage<span class="w"> </span>/go/bin/api<span class="w"> </span>/go/bin/
 </span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">3000</span>
-</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"/go/bin/api"</span><span class="p">]</span>
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/go/bin/api&quot;</span><span class="p">]</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>也可以使用<code>--from=0</code> 来表示从第一个阶段来</p>
 </div>
-<h4 id="_2">使用最小的镜像<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<h4 id="_2">使用最小的镜像<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
 <span class="normal"><a href="#__codelineno-33-2">2</a></span>
 <span class="normal"><a href="#__codelineno-33-3">3</a></span>
@@ -5118,18 +5132,18 @@ Docker 读取指令后，会先判断缓存中是否有可用的已存镜像，�
 </span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5"></a>
 </span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6"></a>from<span class="w"> </span>openjdk:alpine
 </span></code></pre></div></td></tr></table></div>
-<h2 id="dockerfile_2">通过镜像逆向dockerfile<a class="headerlink" href="#dockerfile_2" title="Permanent link">¶</a></h2>
+<h2 id="dockerfile_2">通过镜像逆向dockerfile<a class="headerlink" href="#dockerfile_2" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/var/run/docker.sock:/var/run/docker.sock<span class="w"> </span>alpine/dfimage<span class="w"> </span>nginx:alpine
 </span></code></pre></div></td></tr></table></div>
-<h2 id="dockerignore">.dockerignore<a class="headerlink" href="#dockerignore" title="Permanent link">¶</a></h2>
+<h2 id="dockerignore">.dockerignore<a class="headerlink" href="#dockerignore" title="Permanent link">&para;</a></h2>
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://github.com/krallin/tini">https://github.com/krallin/tini</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://github.com/krallin/tini">https://github.com/krallin/tini</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://github.com/gliderlabs/docker-alpine">alpine</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><a href="https://github.com/gliderlabs/docker-alpine">alpine</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4283,15 +4297,15 @@
 <div class="admonition danger">
 <p class="admonition-title">重要说明</p>
 <ol>
-<li><a href="/devops/k8s/component/controller-manager/">先看控制器组件的原理以及自定义控制器</a><br/></li>
-<li>operator 其实就是自定义控制器, 可能一般会将 编写自定义资源和自定以控制器 叫做编写operator<br/></li>
+<li><a href="/devops/k8s/component/controller-manager/">先看控制器组件的原理以及自定义控制器</a><br></li>
+<li>operator 其实就是自定义控制器, 可能一般会将 编写自定义资源和自定以控制器 叫做编写operator<br></li>
 </ol>
 </div>
-<p><mark>参考学习 k8s源码中<code>staging/src/k8s.io/sample-controller/</code>这个例子</mark><br/>
+<p><mark>参考学习 k8s源码中<code>staging/src/k8s.io/sample-controller/</code>这个例子</mark><br>
 这个时候 再看看 里面的controller.go文件, 和我们之前写的自定义控制器差不多.</p>
-<h3 id="_1">自定义资源<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h3 id="_1">自定义资源<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><a href="/devops/k8s/develop/operator/crd/">自定义资源</a></p>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">crd-crontab.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">crd-crontab.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4355,17 +4369,17 @@
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">                </span><span class="nt">availableReplicas</span><span class="p">:</span>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="nn">---</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="s">"stable.example.com/v1"</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;stable.example.com/v1&quot;</span>
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CronTab</span>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="nt">metadata</span><span class="p">:</span>
 </span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-new-cron-object</span>
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">  </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">"*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*/5"</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">  </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*/5&quot;</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-awesome-cron-image</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>k<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>crd-crontab.yaml
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_2">定义类型<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h3 id="_2">定义类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>参考k8s源码中`staging/src/k8s.io/sample-controller/ 相关文件复制过来修改修改</p>
@@ -4402,7 +4416,7 @@
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">                </span>├──<span class="w"> </span>register.go
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">                </span>├──<span class="w"> </span>types.go
 </span></code></pre></div></td></tr></table></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><input id="__tabbed_1_3" name="__tabbed_1" type="radio"/><input id="__tabbed_1_4" name="__tabbed_1" type="radio"/><input id="__tabbed_1_5" name="__tabbed_1" type="radio"/><input id="__tabbed_1_6" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">register.go</label><label for="__tabbed_1_2">v1/register.go</label><label for="__tabbed_1_3">v1/doc.go</label><label for="__tabbed_1_4">v1/types.go</label><label for="__tabbed_1_5">hack/tools.go</label><label for="__tabbed_1_6">hack/update-codegen.sh</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">register.go</label><label for="__tabbed_1_2">v1/register.go</label><label for="__tabbed_1_3">v1/doc.go</label><label for="__tabbed_1_4">v1/types.go</label><label for="__tabbed_1_5">hack/tools.go</label><label for="__tabbed_1_6">hack/update-codegen.sh</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-go highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -4412,7 +4426,7 @@
 <span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">stableexamplecom</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="nx">GroupName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"stable.example.com"</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="nx">GroupName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;stable.example.com&quot;</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
@@ -4458,15 +4472,15 @@
 <span class="normal"><a href="#__codelineno-4-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">v1</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nx">stableexamplecom</span><span class="w"> </span><span class="s">"crd-operator/pkg/apis/stable.example.com"</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nx">stableexamplecom</span><span class="w"> </span><span class="s">&quot;crd-operator/pkg/apis/stable.example.com&quot;</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="nx">metav1</span><span class="w"> </span><span class="s">"k8s.io/apimachinery/pkg/apis/meta/v1"</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="s">"k8s.io/apimachinery/pkg/runtime"</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="s">"k8s.io/apimachinery/pkg/runtime/schema"</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="nx">metav1</span><span class="w"> </span><span class="s">&quot;k8s.io/apimachinery/pkg/apis/meta/v1&quot;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="s">&quot;k8s.io/apimachinery/pkg/runtime&quot;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="s">&quot;k8s.io/apimachinery/pkg/runtime/schema&quot;</span>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="p">)</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a>
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1">// SchemeGroupVersion is group version used to register these objects</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="kd">var</span><span class="w"> </span><span class="nx">SchemeGroupVersion</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">schema</span><span class="p">.</span><span class="nx">GroupVersion</span><span class="p">{</span><span class="nx">Group</span><span class="p">:</span><span class="w"> </span><span class="nx">stableexamplecom</span><span class="p">.</span><span class="nx">GroupName</span><span class="p">,</span><span class="w"> </span><span class="nx">Version</span><span class="p">:</span><span class="w"> </span><span class="s">"v1"</span><span class="p">}</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="kd">var</span><span class="w"> </span><span class="nx">SchemeGroupVersion</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">schema</span><span class="p">.</span><span class="nx">GroupVersion</span><span class="p">{</span><span class="nx">Group</span><span class="p">:</span><span class="w"> </span><span class="nx">stableexamplecom</span><span class="p">.</span><span class="nx">GroupName</span><span class="p">,</span><span class="w"> </span><span class="nx">Version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;v1&quot;</span><span class="p">}</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="c1">// Kind takes an unqualified kind and returns back a Group qualified GroupKind</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="kd">func</span><span class="w"> </span><span class="nx">Kind</span><span class="p">(</span><span class="nx">kind</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="nx">schema</span><span class="p">.</span><span class="nx">GroupKind</span><span class="w"> </span><span class="p">{</span>
@@ -4550,7 +4564,7 @@
 <span class="normal"><a href="#__codelineno-6-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">v1</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="nx">metav1</span><span class="w"> </span><span class="s">"k8s.io/apimachinery/pkg/apis/meta/v1"</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="nx">metav1</span><span class="w"> </span><span class="s">&quot;k8s.io/apimachinery/pkg/apis/meta/v1&quot;</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="p">)</span>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="c1">// +genclient</span>
@@ -4559,32 +4573,32 @@
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="c1">// CronTab is a specification for a CronTab resource</span>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="c1">// 就像内置资源对象一样, 4个大属性.</span>
 </span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="kd">type</span><span class="w"> </span><span class="nx">CronTab</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">TypeMeta</span><span class="w">   </span><span class="s">`json:",inline"`</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">ObjectMeta</span><span class="w"> </span><span class="s">`json:"metadata,omitempty"`</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">TypeMeta</span><span class="w">   </span><span class="s">`json:&quot;,inline&quot;`</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">ObjectMeta</span><span class="w"> </span><span class="s">`json:&quot;metadata,omitempty&quot;`</span>
 </span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="nx">Spec</span><span class="w">   </span><span class="nx">CronTabSpec</span><span class="w">   </span><span class="s">`json:"spec"`</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">    </span><span class="nx">Status</span><span class="w"> </span><span class="nx">CronTabStatus</span><span class="w"> </span><span class="s">`json:"status"`</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="nx">Spec</span><span class="w">   </span><span class="nx">CronTabSpec</span><span class="w">   </span><span class="s">`json:&quot;spec&quot;`</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">    </span><span class="nx">Status</span><span class="w"> </span><span class="nx">CronTabStatus</span><span class="w"> </span><span class="s">`json:&quot;status&quot;`</span>
 </span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="p">}</span>
 </span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a>
 </span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="c1">// CronTabSpec is the spec for a CronTab resource</span>
 </span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="kd">type</span><span class="w"> </span><span class="nx">CronTabSpec</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">    </span><span class="nx">Cron</span><span class="w">     </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:"cron"`</span><span class="w"> </span><span class="c1">// 注意和你的crd里定义的一样</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">    </span><span class="nx">Replicas</span><span class="w"> </span><span class="o">*</span><span class="kt">int32</span><span class="w"> </span><span class="s">`json:"replicas"`</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">    </span><span class="nx">Cron</span><span class="w">     </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;cron&quot;`</span><span class="w"> </span><span class="c1">// 注意和你的crd里定义的一样</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">    </span><span class="nx">Replicas</span><span class="w"> </span><span class="o">*</span><span class="kt">int32</span><span class="w"> </span><span class="s">`json:&quot;replicas&quot;`</span>
 </span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="p">}</span>
 </span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a>
 </span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="c1">// CronTabStatus is the status for a CronTab resource</span>
 </span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="kd">type</span><span class="w"> </span><span class="nx">CronTabStatus</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">    </span><span class="nx">AvailableReplicas</span><span class="w"> </span><span class="kt">int32</span><span class="w"> </span><span class="s">`json:"availableReplicas"`</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">    </span><span class="nx">AvailableReplicas</span><span class="w"> </span><span class="kt">int32</span><span class="w"> </span><span class="s">`json:&quot;availableReplicas&quot;`</span>
 </span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="p">}</span>
 </span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30"></a>
 </span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="c1">// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object</span>
 </span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32"></a>
 </span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="c1">// CronTabList is a list of CronTab resources</span>
 </span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34"></a><span class="kd">type</span><span class="w"> </span><span class="nx">CronTabList</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35"></a><span class="w">    </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">TypeMeta</span><span class="w"> </span><span class="s">`json:",inline"`</span>
-</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="w">    </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">ListMeta</span><span class="w"> </span><span class="s">`json:"metadata"`</span>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35"></a><span class="w">    </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">TypeMeta</span><span class="w"> </span><span class="s">`json:&quot;,inline&quot;`</span>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="w">    </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">ListMeta</span><span class="w"> </span><span class="s">`json:&quot;metadata&quot;`</span>
 </span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37"></a>
-</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38"></a><span class="w">    </span><span class="nx">Items</span><span class="w"> </span><span class="p">[]</span><span class="nx">CronTab</span><span class="w"> </span><span class="s">`json:"items"`</span>
+</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38"></a><span class="w">    </span><span class="nx">Items</span><span class="w"> </span><span class="p">[]</span><span class="nx">CronTab</span><span class="w"> </span><span class="s">`json:&quot;items&quot;`</span>
 </span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
@@ -4620,14 +4634,14 @@
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="cm">/*</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="cm">Copyright 2019 The Kubernetes Authors.</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="cm">Licensed under the Apache License, Version 2.0 (the "License");</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="cm">Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="cm">you may not use this file except in compliance with the License.</span>
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="cm">You may obtain a copy of the License at</span>
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="cm">    http://www.apache.org/licenses/LICENSE-2.0</span>
 </span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>
 </span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="cm">Unless required by applicable law or agreed to in writing, software</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="cm">distributed under the License is distributed on an "AS IS" BASIS,</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="cm">distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="cm">WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="cm">See the License for the specific language governing permissions and</span>
 </span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="cm">limitations under the License.</span>
@@ -4639,7 +4653,7 @@
 </span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="c1">// 所以用这个方式将这个依赖下载下来 (你当然可以在任何.go文件里写上这样的import,也是ok的.)</span>
 </span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="c1">// 然后 使用 go mod vendor 后将下载依赖到项目目录下的vendor 目录,里面就会有依赖(code-generator)</span>
 </span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="c1">// 接着 我们在代码生成脚本中指定code-generator的路径 (update-codegen.sh)</span>
-</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="kn">import</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="s">"k8s.io/code-generator"</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="kn">import</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;k8s.io/code-generator&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -4669,36 +4683,36 @@
 <span class="normal"><a href="#__codelineno-8-24">24</a></span>
 <span class="normal"><a href="#__codelineno-8-25">25</a></span>
 <span class="normal"><a href="#__codelineno-8-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="nv">SCRIPT_ROOT</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">"</span><span class="k">)</span>/..
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="nv">SCRIPT_ROOT</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>/..
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1"># code-generator 目录</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1"># 一般情况下我们创建operator 写代码, 是在任何一个地方创建项目目录的</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="c1"># 所以可能最好是 在项目目录 将依赖生成到vendor 目录(go mod vendor)</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1"># 然后从这个 vendor 目录下找到 代码生成器脚本</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="nv">CODEGEN_PKG</span><span class="o">=</span><span class="si">${</span><span class="nv">CODEGEN_PKG</span><span class="k">:-$(</span><span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SCRIPT_ROOT</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-d<span class="w"> </span>-1<span class="w"> </span>./vendor/k8s.io/code-generator<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="k">)</span><span class="si">}</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="nv">CODEGEN_PKG</span><span class="o">=</span><span class="si">${</span><span class="nv">CODEGEN_PKG</span><span class="k">:-$(</span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_ROOT</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-d<span class="w"> </span>-1<span class="w"> </span>./vendor/k8s.io/code-generator<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="k">)</span><span class="si">}</span>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="si">${</span><span class="nv">CODEGEN_PKG</span><span class="si">}</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"请指定代码生成器脚本路径!!!或使用 go mod vendor后再执行脚本!"</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;请指定代码生成器脚本路径!!!或使用 go mod vendor后再执行脚本!&quot;</span>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="nb">exit</span>
 </span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="k">fi</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="nv">GROUP_NAME</span><span class="o">=</span><span class="s2">"stable.example.com"</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="nv">VERSION</span><span class="o">=</span><span class="s2">"v1"</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="nv">MOD_NAME</span><span class="o">=</span><span class="s2">"crd-operator"</span><span class="w"> </span><span class="c1"># go mod init 创建的名字</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="nv">GROUP_NAME</span><span class="o">=</span><span class="s2">&quot;stable.example.com&quot;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;v1&quot;</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="nv">MOD_NAME</span><span class="o">=</span><span class="s2">&quot;crd-operator&quot;</span><span class="w"> </span><span class="c1"># go mod init 创建的名字</span>
 </span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$ROOT_DIR</span>
 </span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="c1"># generate-groups.sh &lt;generators&gt; &lt;output-package&gt; &lt;apis-package&gt; &lt;groups-versions&gt; ...</span>
 </span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="c1"># output-package:</span>
 </span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="c1">#       设置为当前项目根目录的父目录</span>
 </span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="c1">#       项目目录的名字要与  MOD_NAME 一样</span>
 </span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="c1"># --go-header-file  生成的文件前面的注释,必须指定,否则报错</span>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="c1"># bash "${CODEGEN_PKG}"/generate-groups.sh "deepcopy,client,informer,lister" \</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22"></a>bash<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CODEGEN_PKG</span><span class="si">}</span><span class="s2">"</span>/generate-groups.sh<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="c1"># bash &quot;${CODEGEN_PKG}&quot;/generate-groups.sh &quot;deepcopy,client,informer,lister&quot; \</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22"></a>bash<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CODEGEN_PKG</span><span class="si">}</span><span class="s2">&quot;</span>/generate-groups.sh<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">  </span><span class="si">${</span><span class="nv">MOD_NAME</span><span class="si">}</span>/pkg/generated<span class="w"> </span><span class="si">${</span><span class="nv">MOD_NAME</span><span class="si">}</span>/pkg/apis<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">  </span><span class="si">${</span><span class="nv">GROUP_NAME</span><span class="si">}</span>:<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">  </span>--output-base<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SCRIPT_ROOT</span><span class="si">}</span><span class="s2">/../"</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">  </span>--go-header-file<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SCRIPT_ROOT</span><span class="si">}</span><span class="s2">"</span>/hack/boilerplate.go.txt
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">  </span>--output-base<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_ROOT</span><span class="si">}</span><span class="s2">/../&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">  </span>--go-header-file<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_ROOT</span><span class="si">}</span><span class="s2">&quot;</span>/hack/boilerplate.go.txt
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-<h3 id="_3">代码生成器生成所需代码<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<h3 id="_3">代码生成器生成所需代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>生成代码后, 可以像 操作内置资源对象那样</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
@@ -4728,16 +4742,16 @@
 </span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a>│<span class="w">   </span>├──<span class="w"> </span>apis
 </span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>stable.example.com
 </span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a>│<span class="w">   </span>└──<span class="w"> </span>generated<span class="w"> </span><span class="c1"># 自动生成的目录</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a>│<span class="w">       </span>├──<span class="w"> </span>clientset<span class="w"> </span><span class="c1"># 这样我们能像使用pod 一样, 用clientset.CoreV1().Pods("").List()</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a>│<span class="w">       </span>├──<span class="w"> </span>clientset<span class="w"> </span><span class="c1"># 这样我们能像使用pod 一样, 用clientset.CoreV1().Pods(&quot;&quot;).List()</span>
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a>│<span class="w">       </span>├──<span class="w"> </span>informers<span class="w"> </span><span class="c1"># 同理</span>
 </span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a>│<span class="w">       </span>└──<span class="w"> </span>listers
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>编写main.go, 就像 <a href="/devops/k8s/develop/client-go/client-go/#pod">client-go查询pod列表一样</a><br/>
+<p>编写main.go, 就像 <a href="/devops/k8s/develop/client-go/client-go/#pod">client-go查询pod列表一样</a><br>
 或<a href="/devops/k8s/component/controller-manager/#_11">编写自定义控制器那样使用informer 等等..</a></p>
 </div>
-<div class="language-go highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">main.go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">main.go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
@@ -4785,31 +4799,31 @@
 <span class="normal"><a href="#__codelineno-10-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="s">"context"</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="s">"flag"</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="s">"fmt"</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="s">"path/filepath"</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="s">&quot;context&quot;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="s">&quot;flag&quot;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="s">&quot;path/filepath&quot;</span>
 </span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="nx">clientset</span><span class="w"> </span><span class="s">"crd-operator/pkg/generated/clientset/versioned"</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="nx">clientset</span><span class="w"> </span><span class="s">&quot;crd-operator/pkg/generated/clientset/versioned&quot;</span>
 </span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="nx">metav1</span><span class="w"> </span><span class="s">"k8s.io/apimachinery/pkg/apis/meta/v1"</span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="s">"k8s.io/client-go/tools/clientcmd"</span>
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">    </span><span class="s">"k8s.io/client-go/util/homedir"</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="nx">metav1</span><span class="w"> </span><span class="s">&quot;k8s.io/apimachinery/pkg/apis/meta/v1&quot;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="s">&quot;k8s.io/client-go/tools/clientcmd&quot;</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">    </span><span class="s">&quot;k8s.io/client-go/util/homedir&quot;</span>
 </span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="p">)</span>
 </span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a>
 </span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">kubeconfig</span><span class="w"> </span><span class="o">*</span><span class="kt">string</span>
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">home</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">homedir</span><span class="p">.</span><span class="nx">HomeDir</span><span class="p">();</span><span class="w"> </span><span class="nx">home</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">""</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">home</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">homedir</span><span class="p">.</span><span class="nx">HomeDir</span><span class="p">();</span><span class="w"> </span><span class="nx">home</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">        </span><span class="c1">// ~/.kube/config 确保你家目录下有k8s的配置文件</span>
 </span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">        </span><span class="c1">// 你本地可以用kubectl get po 进行查询.</span>
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">        </span><span class="nx">kubeconfig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">flag</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="s">"kubeconfig"</span><span class="p">,</span><span class="w"> </span><span class="nx">filepath</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">home</span><span class="p">,</span><span class="w"> </span><span class="s">".kube"</span><span class="p">,</span><span class="w"> </span><span class="s">"config"</span><span class="p">),</span><span class="w"> </span><span class="s">"(optional) absolute path to the kubeconfig file"</span><span class="p">)</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">        </span><span class="nx">kubeconfig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">flag</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="s">&quot;kubeconfig&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">filepath</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">home</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.kube&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;config&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;(optional) absolute path to the kubeconfig file&quot;</span><span class="p">)</span>
 </span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">        </span><span class="nx">kubeconfig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">flag</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="s">"kubeconfig"</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">,</span><span class="w"> </span><span class="s">"absolute path to the kubeconfig file"</span><span class="p">)</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">        </span><span class="nx">kubeconfig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">flag</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="s">&quot;kubeconfig&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;absolute path to the kubeconfig file&quot;</span><span class="p">)</span>
 </span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">    </span><span class="nx">flag</span><span class="p">.</span><span class="nx">Parse</span><span class="p">()</span>
 </span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26"></a>
 </span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">    </span><span class="c1">// 使用指定的kubeconfig文件创建一个Config对象</span>
-</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">    </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">clientcmd</span><span class="p">.</span><span class="nx">BuildConfigFromFlags</span><span class="p">(</span><span class="s">""</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="nx">kubeconfig</span><span class="p">)</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">    </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">clientcmd</span><span class="p">.</span><span class="nx">BuildConfigFromFlags</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="nx">kubeconfig</span><span class="p">)</span>
 </span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30"></a><span class="w">        </span><span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
 </span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="w">    </span><span class="p">}</span>
@@ -4819,24 +4833,24 @@
 </span></span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="w">        </span><span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
 </span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="hll"><span class="w">    </span><span class="nx">crontabs</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">StableV1</span><span class="p">().</span><span class="nx">CronTabs</span><span class="p">(</span><span class="s">"default"</span><span class="p">).</span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="hll"><span class="w">    </span><span class="nx">crontabs</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">StableV1</span><span class="p">().</span><span class="nx">CronTabs</span><span class="p">(</span><span class="s">&quot;default&quot;</span><span class="p">).</span>
 </span></span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39"></a><span class="w">        </span><span class="nx">List</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">metav1</span><span class="p">.</span><span class="nx">ListOptions</span><span class="p">{})</span>
 </span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41"></a><span class="w">        </span><span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
 </span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">crontabs</span><span class="p">.</span><span class="nx">Items</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span><span class="w"> </span><span class="s">":"</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">Spec</span><span class="p">.</span><span class="nx">Cron</span><span class="p">)</span>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">Spec</span><span class="p">.</span><span class="nx">Cron</span><span class="p">)</span>
 </span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://kubernetes.io/zh/docs/concepts/extend-kubernetes/operator/">operator</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://kubernetes.io/zh/docs/concepts/extend-kubernetes/operator/">operator</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://cloud.redhat.com/blog/kubernetes-deep-dive-code-generation-customresources">code-generation-customresources</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><a href="https://cloud.redhat.com/blog/kubernetes-deep-dive-code-generation-customresources">code-generation-customresources</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

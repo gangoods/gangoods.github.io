@@ -1619,6 +1619,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../go/basis/escape/" class="md-nav__link">
+        逃逸分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../go/basis/gc/" class="md-nav__link">
         GC
       </a>
@@ -4400,13 +4414,13 @@
 
   <h1>SQL优化</h1>
 
-<h2 id="_1">系统默认的优化<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<h3 id="join">join 优化(没写完... )<a class="headerlink" href="#join" title="Permanent link">¶</a></h3>
+<h2 id="_1">系统默认的优化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="join">join 优化(没写完... )<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">什么是驱动表</p>
 <p>在join连表查询时,用来最先获得数据，并以此表的数据为依据，逐步获得其他表的数据，直至最终查询到所有满足条件的数据的第一个表</p>
 </div>
-<p><div class="language-text highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">2个表 id主键</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">2个表 id主键</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4444,8 +4458,8 @@
 </span></code></pre></div></td></tr></table></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>这就好比来了2个人,去你上学的班级里找和他们同名的同学.<br/>
-你总不至于用你班级的人的名字一个一个去和这2个人对比吧?<br/>
+<p>这就好比来了2个人,去你上学的班级里找和他们同名的同学.<br>
+你总不至于用你班级的人的名字一个一个去和这2个人对比吧?<br>
 直接用2个人的名字 从你班级里找就是了.只需要2次</p>
 </div>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
@@ -4466,15 +4480,15 @@
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>|  1 | SIMPLE      | b     | PRIMARY       |    3 |    33.33 | Using where; Using join buffer (Block Nested Loop) |
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>+----+-------------+-------+---------------+------+----------+----------------------------------------------------+
 </span></code></pre></div></td></tr></table></div>
-<h2 id="sql">SQL编写优化<a class="headerlink" href="#sql" title="Permanent link">¶</a></h2>
-<h3 id="_2">最左前缀法则<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<h3 id="_3">不在索引列上做任何操作<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<h3 id="orinunion">少用or或in,使用union<a class="headerlink" href="#orinunion" title="Permanent link">¶</a></h3>
-<h3 id="_4">字符串要加单引号<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<h3 id="null">!= 和 null 判断 都会使索引失效<a class="headerlink" href="#null" title="Permanent link">¶</a></h3>
-<h3 id="order-by">order by 优化<a class="headerlink" href="#order-by" title="Permanent link">¶</a></h3>
-<h3 id="_5">分页查询优化<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
-<h3 id="in-exists">in &amp; exists<a class="headerlink" href="#in-exists" title="Permanent link">¶</a></h3>
+<h2 id="sql">SQL编写优化<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h2>
+<h3 id="_2">最左前缀法则<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">不在索引列上做任何操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="orinunion">少用or或in,使用union<a class="headerlink" href="#orinunion" title="Permanent link">&para;</a></h3>
+<h3 id="_4">字符串要加单引号<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="null">!= 和 null 判断 都会使索引失效<a class="headerlink" href="#null" title="Permanent link">&para;</a></h3>
+<h3 id="order-by">order by 优化<a class="headerlink" href="#order-by" title="Permanent link">&para;</a></h3>
+<h3 id="_5">分页查询优化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="in-exists">in &amp; exists<a class="headerlink" href="#in-exists" title="Permanent link">&para;</a></h3>
 
 
 
