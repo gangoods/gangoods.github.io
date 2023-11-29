@@ -4476,6 +4476,44 @@
 </div>
 </div>
 </div>
+<!-- ## 组合
+!!! tip
+    用组合的方式, 可以实现类似继承的效果
+
+```go
+package main
+
+type Animal struct {
+    Color string
+    Age   int
+}
+type Dog struct {
+    Animal
+}
+type Cat struct {
+    A Animal
+}
+
+func (a Animal) p() {
+    println(a.Age)
+}
+func main() {
+    d := Dog{Animal{
+        Color: "black",
+        Age:   1,
+    }}
+    c := Cat{Animal{
+        Color: "white",
+        Age:   2,
+    }}
+    println(d.Animal.Age, d.Age, c.A.Age)
+    d.p()
+    d.Animal.p()
+    c.A.p()
+}
+
+``` -->
+
 <h2 id="_3">内存对齐<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">应该是这样说的... 忘记了. 先这样写</p>
